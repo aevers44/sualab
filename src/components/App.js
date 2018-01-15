@@ -1,11 +1,11 @@
 import React from 'react';
-import Test from './test/index.jsx';
+import Test from './test';
 
 class App extends React.PureComponent {
     render() {
         return (
             <div>
-                <h1>Hello ssReactd</h1>
+                <h1>Initial react setting</h1>
                 <Test />
             </div>
         );

@@ -7,7 +7,7 @@ module.exports = {
     },
 
     resolve: {
-        extensions: ['.js', 'jsx']
+        extensions: ['.js', '.jsx']
     },
 
     devServer: {
@@ -19,12 +19,27 @@ module.exports = {
     module: {
         rules: [
             {
-                test: [/\.scss$/],
+                test: /\.scss$/,
                 use: [
-                    'style-loader',
-                    'css-loader',
-                    'sass-loader'
-                  ]
+                    { loader: 'style-loader' },
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true,
+                            minimize: true,
+                            localIdentName: '[name]__[local]__[hash:base64:5]',
+                        },
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins() {
+                                return [require('precss'), require('autoprefixer'), require('postcss-flexbugs-fixes')];
+                            },
+                        },
+                    },
+                    { loader: 'sass-loader' },
+                ],
             },
             {
                 test: [/\.js$/, /\.jsx$/],
