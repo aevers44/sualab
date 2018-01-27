@@ -4,7 +4,7 @@ import styles from './fourthContainer.scss';
 const FourthContainer = () =>
     <section className={styles.fourthContainer}>
         <div className={styles.innerContainer}>
-            <div className={styles.title}>
+            <div className={styles.bigTitle}>
                 블로그
             </div>
             <div className={styles.subTitle}>

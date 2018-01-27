@@ -8,7 +8,7 @@ const ThirdContainer = () =>
                 <div className={styles.title}>
                     CUSTOMER
                 </div>
-                <div className={styles.customer}>
+                <div className={styles.bigTitle}>
                     고객사
                 </div>
                 <div className={styles.content}>
