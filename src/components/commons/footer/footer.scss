@@ -9,6 +9,14 @@ $container-width: 1080px;
     .innerContainer {
         max-width: $container-width;        
         margin: 0 auto;
+
+        &:before, &:after {
+            content: " ";
+            display: table;
+        }
+        &:after {
+            clear: both;
+        }
     }
 }
 
