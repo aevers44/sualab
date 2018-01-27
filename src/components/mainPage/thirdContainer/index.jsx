@@ -1,9 +1,10 @@
 import React from 'react';
+import styles from './thirdContainer.scss';
 
 const ThirdContainer = () =>
-    <div>
+    <section className={styles.thirdContainer}>
         hello ThirdContainer
-    </div>
+    </section>
 
 export default ThirdContainer;
 

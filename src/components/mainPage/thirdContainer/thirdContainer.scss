@@ -1,0 +1,11 @@
+$container-width: 1080px;
+
+.thirdContainer {
+    height: 380px;
+    background-color: #f5f7fb;
+
+    .innerContainer {
+        max-width: $container-width;
+        margin: 0 auto;
+    }
+}

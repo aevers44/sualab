@@ -31,8 +31,11 @@ $container-width: 1080px;
 
 .awardWrapper {
     text-align: center;
+    white-space: nowrap;
+    
     .award {
-        display: inline-block;
+        float: left;
+        min-width: 300px;
         padding-left: 50px;
         padding-right: 50px;
 
@@ -50,5 +53,13 @@ $container-width: 1080px;
             color: #666d7c;
             vertical-align: middle;
         }
+    }
+
+    &:before, &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
     }
 }
