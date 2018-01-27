@@ -1,11 +1,70 @@
 $container-width: 1080px;
 
 .thirdContainer {
-    height: 380px;
     background-color: #f5f7fb;
+    padding-top: 40px;
+    padding-bottom: 40px;
 
     .innerContainer {
         max-width: $container-width;
         margin: 0 auto;
+
+        &:before, &:after {
+            content: " ";
+            display: table;
+        }
+        &:after {
+            clear: both;
+        }
+    }
+}
+
+.title {
+    font-size: 16px;
+    line-height: 1.31;
+    letter-spacing: 1.7px;
+    color: #bbc2d0;
+    margin-bottom: 8px;
+}
+
+.customer {
+    font-size: 28px;
+    font-weight: bold;
+    color: #0c1020;
+    margin-bottom: 8px;
+}
+
+.content {
+    font-size: 16px;
+    color: #666d7c;
+    margin-bottom: 35px;
+}
+
+.readmoreBtn {
+    font-size: 16.8px;
+    font-weight: 600;
+    line-height: 1.71;
+    color: #30343f;
+    vertical-align: middle;
+    text-decoration: none;
+
+    img {
+        width: 13px;
+        margin-left: 18px;
+        margin-bottom: 5px;
+        vertical-align: middle;
+    }
+}
+
+.contentWrapper {
+    float: left;
+}
+
+.imageWrapper {
+    float: right;
+    max-width: 315px;
+    width: 50%;
+    .customers {
+        width: 100%;
     }
 }

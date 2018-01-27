@@ -11,8 +11,7 @@ const SecondContainer = () =>
 
             <div className={styles.awardWrapper}>
                 <div className={styles.award}>
-                    <img src="https://d3rqapinkc8b8p.cloudfront.net
-/mainPage/vision-system@2x.png" alt="" className={styles.awardImage} />
+                    <img src="https://d3rqapinkc8b8p.cloudfront.net/mainPage/vision-system@2x.png" alt="" className={styles.awardImage} />
                     <span className={styles.awardContent}>
                         2017 Innovators Awards <br />
                         PLATINUM 수상
@@ -20,8 +19,7 @@ const SecondContainer = () =>
                 </div>
 
                 <div className={styles.award}>
-                    <img src="https://d3rqapinkc8b8p.cloudfront.net
-/mainPage/bitmap@2x.png" alt="" className={styles.awardImage} />
+                    <img src="https://d3rqapinkc8b8p.cloudfront.net/mainPage/bitmap@2x.png" alt="" className={styles.awardImage} />
                     <span className={styles.awardContent}>
                         2017 KGCCI Innovation Awards <br />
                         디지털혁신 부문 수상
@@ -29,8 +27,7 @@ const SecondContainer = () =>
                 </div>
 
                 <div className={styles.award}>
-                    <img src="https://d3rqapinkc8b8p.cloudfront.net
-/mainPage/aia@2x.png" alt="" className={styles.awardImage} />
+                    <img src="https://d3rqapinkc8b8p.cloudfront.net/mainPage/aia@2x.png" alt="" className={styles.awardImage} />
                     <span className={styles.awardContent}>
                         2016 AIA VIsion Show <br />
                         Global Top 8 Start-up
