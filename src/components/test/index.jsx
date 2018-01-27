@@ -3,7 +3,7 @@ import styles from './test.scss';
 
 const Test = () =>
     <div className={styles.red}>
-        test section
+        test sectiondd
     </div>;
 
 export default Test;

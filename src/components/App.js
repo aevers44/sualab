@@ -1,13 +1,19 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+
+import MainPage from './mainPage';
 import Test from './test';
 
 class App extends React.PureComponent {
     render() {
         return (
-            <div>
-                <h1>Initial react setting</h1>
-                <Test />
-            </div>
+            <BrowserRouter>
+                <div>
+                    <Route exact path="/" component={MainPage} />
+                    <Route path="/test" component={Test} />
+                </div>
+            </BrowserRouter>
         );
     }
 }
