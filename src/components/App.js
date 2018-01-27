@@ -5,6 +5,7 @@ import { Route } from 'react-router-dom';
 import MainPage from './mainPage';
 import Test from './test';
 
+import './normalize.scss';
 import './root.scss';
 
 class App extends React.PureComponent {
