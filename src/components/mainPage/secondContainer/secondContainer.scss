@@ -1,0 +1,54 @@
+$container-width: 1080px;
+
+.secondContainer {
+    height: 150px;
+    padding-top: 18px;
+    padding-bottom: 40px;
+
+    .innerContainer {
+        max-width: $container-width;
+        margin: 0 auto;
+    }
+}
+
+.title {
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.5;
+    letter-spacing: 1.5px;
+    color: #bbc2d0;
+    text-align: center;
+}
+
+.grayLine {
+    width: 200px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 32px;
+    border-bottom: 1px solid #d8dde7;
+}
+
+.awardWrapper {
+    text-align: center;
+    .award {
+        display: inline-block;
+        padding-left: 50px;
+        padding-right: 50px;
+
+        .awardImage {
+            display: inline-block;
+            vertical-align: middle;
+            height: 30px;
+        }
+        
+        .awardContent {
+            display: inline-block;
+            margin-left: 20px;
+            font-size: 10px;
+            font-weight: 300;
+            color: #666d7c;
+            vertical-align: middle;
+        }
+    }
+}

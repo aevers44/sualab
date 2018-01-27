@@ -5,6 +5,8 @@ import { Route } from 'react-router-dom';
 import MainPage from './mainPage';
 import Test from './test';
 
+import './root.scss';
+
 class App extends React.PureComponent {
     render() {
         return (
