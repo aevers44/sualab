@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="187px" height="141px" viewBox="0 0 187 141" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>82E06B7E-38BE-4D25-866D-3C449AD0E1E7</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <polygon id="solution_2_path-1" points="32.6274746 4.30769231 145.372525 4.30769231 178 28 0 28"></polygon>
+        <polygon id="solution_2_path-2" points="46.2935414 5.38461538 131.706459 5.38461538 156.424242 26.9230769 21.5757576 26.9230769"></polygon>
+        <polygon id="solution_2_path-3" points="62.0095182 5.38461538 115.990482 5.38461538 131.612121 26.9230769 46.3878788 26.9230769"></polygon>
+        <polygon id="solution_2_path-4" points="79.7754049 5.38461538 98.2245951 5.38461538 103.563636 26.9230769 74.4363636 26.9230769"></polygon>
+        <linearGradient x1="-87.2768055%" y1="0%" x2="65.2157219%" y2="160.736863%" id="solution_2_linearGradient-5">
+            <stop stop-color="#29DCF9" offset="0%"></stop>
+            <stop stop-color="#1FF2D2" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="72.2783365%" y1="100%" x2="27.4908247%" y2="0%" id="solution_2_linearGradient-6">
+            <stop stop-color="#E4EAF2" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <rect id="solution_2_path-7" x="0" y="67" width="187" height="19" rx="9.5"></rect>
+        <path d="M83.1813928,21.627907 L87.3297212,0.804623368 L87.3297212,0.804623368 C87.422909,0.336850761 87.833485,9.55335776e-16 88.3104495,4.4408921e-16 L101.749758,0 L101.749758,4.4408921e-16 C102.226723,-1.33804617e-15 102.637299,0.336850761 102.730486,0.804623368 L106.878815,21.627907 L109.002031,91.9698295 L109.002031,91.9698295 C109.018694,92.5218629 108.58469,92.9828821 108.032657,92.9995448 C108.022603,92.9998482 108.012545,93 108.002486,93 L80.996227,93 L80.996227,93 C80.4439422,93 79.996227,92.5522847 79.996227,92 C79.996227,91.9849175 79.9965682,91.969837 79.9972504,91.95477 L83.1813928,21.627907 Z" id="solution_2_path-8"></path>
+    </defs>
+    <g id="solution_2_Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="solution_2_Company-about-us" transform="translate(-507.000000, -1737.000000)">
+            <g id="solution_2_solution_2" transform="translate(494.000000, 1691.000000)">
+                <path d="M79.2900719,177.619707 C122.367717,183.72105 181.359246,169.483842 181.715698,128.213319 C182.072149,86.9427969 117.312082,34.6063984 80.5702174,29.4024304 C43.828353,24.1984623 28.3181651,70.5359625 28.0080396,106.442793 C27.697914,142.349623 36.2124264,171.518365 79.2900719,177.619707 Z" id="solution_2_Oval-4" fill="#ECF1FA" transform="translate(104.858582, 103.985332) rotate(-30.000000) translate(-104.858582, -103.985332) "></path>
+                <g id="solution_2_Group-16" transform="translate(13.000000, 70.000000)">
+                    <g id="solution_2_Group-15" transform="translate(5.000000, 41.000000)">
+                        <g id="solution_2_Rectangle-9">
+                            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#solution_2_path-1"></use>
+                            <path stroke="#5F7591" stroke-width="2" d="M32.9522508,5.30769231 L3.07904352,27 L174.920956,27 L145.047749,5.30769231 L32.9522508,5.30769231 Z"></path>
+                        </g>
+                        <g id="solution_2_Rectangle-9">
+                            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#solution_2_path-2"></use>
+                            <path stroke="#5F7591" stroke-width="1" d="M46.4808224,5.88461538 L22.91065,26.4230769 L155.08935,26.4230769 L131.519178,5.88461538 L46.4808224,5.88461538 Z"></path>
+                        </g>
+                        <g id="solution_2_Rectangle-9">
+                            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#solution_2_path-3"></use>
+                            <path stroke="#5F7591" stroke-width="1" d="M62.2645392,5.88461538 L47.3681902,26.4230769 L130.63181,26.4230769 L115.735461,5.88461538 L62.2645392,5.88461538 Z"></path>
+                        </g>
+                        <g id="solution_2_Rectangle-9">
+                            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#solution_2_path-4"></use>
+                            <path stroke="#5F7591" stroke-width="1" d="M80.1665955,5.88461538 L75.0754383,26.4230769 L102.924562,26.4230769 L97.8334045,5.88461538 L80.1665955,5.88461538 Z"></path>
+                        </g>
+                        <g id="solution_2_Group-3" transform="translate(25.890909, 0.000000)" stroke="#5F7591" stroke-width="1.98">
+                            <ellipse id="solution_2_Oval-5" fill="url(#solution_2_linearGradient-5)" cx="44.5842803" cy="9.69230769" rx="9.69223485" ry="9.69230769"></ellipse>
+                            <ellipse id="solution_2_Oval-5" fill="url(#solution_2_linearGradient-6)" cx="9.69223485" cy="9.69230769" rx="9.69223485" ry="9.69230769"></ellipse>
+                            <ellipse id="solution_2_Oval-5" fill="url(#solution_2_linearGradient-6)" cx="79.4763258" cy="9.69230769" rx="9.69223485" ry="9.69230769"></ellipse>
+                            <ellipse id="solution_2_Oval-5" fill="url(#solution_2_linearGradient-6)" cx="114.368371" cy="9.69230769" rx="9.69223485" ry="9.69230769"></ellipse>
+                        </g>
+                    </g>
+                    <g id="solution_2_Rectangle-10">
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#solution_2_path-7"></use>
+                        <rect stroke="#5F7591" stroke-width="2" x="1" y="68" width="185" height="17" rx="8.5"></rect>
+                    </g>
+                    <g id="solution_2_Rectangle-9">
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#solution_2_path-8"></use>
+                        <path stroke="#5F7591" stroke-width="2" d="M84.176939,21.7489023 L80.996227,92 L108.002486,92 L105.881787,21.7414654 L101.749758,1 L88.3104495,1 L84.176939,21.7489023 Z"></path>
+                    </g>
+                    <circle id="solution_2_Oval-3" stroke="#5F7591" fill="#E7EAF2" cx="177.5" cy="76.5" r="5.5"></circle>
+                    <circle id="solution_2_Oval-3" stroke="#5F7591" fill="#E7EAF2" cx="9.5" cy="76.5" r="5.5"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

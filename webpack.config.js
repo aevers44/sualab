@@ -18,6 +18,14 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.svg$/,
+                exclude: /node_modules/,
+                loader: 'svg-inline-loader',
+                options: {
+                  classPrefix: true,
+                },
+            },
+            {
                 test: /\.scss$/,
                 use: [
                     { loader: 'style-loader' },
