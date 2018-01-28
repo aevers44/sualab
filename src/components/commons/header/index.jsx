@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 
+import Navbar from './navbar';
 import styles from './header.scss';
 
 const Header = () => 
@@ -21,6 +22,8 @@ const Header = () =>
                 <Link className={styles.menuItem} to="/">Contact</Link>
             </div>
         </div>
+
+        <Route path="/company" component={Navbar} />
     </header>;
 
 export default Header;
