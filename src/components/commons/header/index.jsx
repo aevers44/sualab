@@ -13,7 +13,7 @@ const Header = () =>
             </div>
 
             <div className={styles.menuWrapper}>
-                <Link className={styles.menuItem} to="/">Company</Link>
+                <Link className={styles.menuItem} to="/company">Company</Link>
                 <Link className={styles.menuItem} to="/">Product</Link>
                 <Link className={styles.menuItem} to="/">News</Link>
                 <Link className={styles.menuItem} to="/">Career</Link>
