@@ -1,0 +1,32 @@
+$container-width: 1080px;
+
+.peoplePage {
+    .innerContainer {
+        padding-top: 100px;
+        padding-bottom: 60px;
+
+        max-width: $container-width;;
+        margin: 0 auto;
+    }
+}
+
+.cardWrapper {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.line {
+    width: 48px;
+    border-bottom: solid 2px #1ae8c9;
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+.subTitle {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #0c1020;
+    margin-bottom: 48px;
+}

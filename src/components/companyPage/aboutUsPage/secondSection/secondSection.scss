@@ -1,0 +1,49 @@
+$container-width: 1080px;
+
+.secondSection {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    .innerContainer {
+        max-width: $container-width;
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+
+.line {
+    width: 48px;
+    margin: 0 auto;
+    border-bottom: solid 2px #1ae8c9;
+    margin-bottom: 16px;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #0c1020;
+}
+
+.subTitle {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #202d3e;
+    margin-top: 60px;
+    margin-bottom: 14px;
+    
+    .mint {
+        color: #1ae8c9;
+    }
+}
+
+.subContent {
+    font-size: 14px;
+    font-weight: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+}

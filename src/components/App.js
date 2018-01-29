@@ -1,8 +1,9 @@
 import React from 'react';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Link, Switch, Redirect } from 'react-router-dom';
 
 import MainPage from './mainPage';
 import Test from './test';
+import { AboutUsPage, PeoplePage } from './companyPage';
 
 import Header from './commons/header';
 import Footer from './commons/footer';
@@ -17,9 +18,16 @@ class App extends React.PureComponent {
                 <div>
                     <Header />
 
-                    <Route exact path="/" component={MainPage} />
-                    <Route path="/test" component={Test} />
-                    
+                    <Switch>
+                        <Route exact path="/" component={MainPage} />
+
+                        <Route exact path="/company/about-us" component={AboutUsPage} />
+                        <Route exact path="/company/people" component={PeoplePage} />
+                        <Redirect from="/company" to="/company/about-us" />
+
+                        <Route path="/test" component={Test} />
+                    </Switch>
+
                     <Footer />
                 </div>
             </BrowserRouter>
