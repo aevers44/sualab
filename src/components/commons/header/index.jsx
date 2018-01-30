@@ -25,13 +25,13 @@ const Header = () => {
                     </Link>
                     <Link 
                         className={`${styles.menuItem} ${curPath === 'product' ? styles.active : ''}`} 
-                        to="/"
+                        to="/news"
                     >
                         Product
                     </Link>
                     <Link 
                         className={`${styles.menuItem} ${curPath === 'news' ? styles.active : ''}`} 
-                        to="/"
+                        to="/news"
                     >
                         News
                     </Link>

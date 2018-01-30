@@ -5,11 +5,12 @@ const TitleSection = () =>
     <section className={styles.titleSection}>
         <div className={styles.innerContainer}>
             <div className={styles.subTitle}>
-                PEOPLE
+                SUALAB IN MEDIA
             </div>
             <div className={styles.title}>
-                SUALAB은 <span className={styles.strong}>최고의 사람들</span>
-                과 함께 합니다
+                <span className={styles.strong}>언론</span>
+                에 보도된 <span className={styles.strong}>SUALAB</span>
+                을 확인해 보세요
             </div>
             <div className={styles.line}></div>
         </div>
