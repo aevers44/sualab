@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
+import Icon from '../../commons/icons';
 import styles from './newsDetail.scss';
 
 const testData = {
@@ -21,7 +23,7 @@ const testData = {
 };
 
 const NewsDetail = ({ match }) => {
-    const number = match.params.number;
+    const number = parseInt(match.params.number);
 
     return (
         <section className={styles.newsDetail}>
@@ -49,11 +51,39 @@ const NewsDetail = ({ match }) => {
                         {testData.content}
                     </div>
                 </div>
+
+                <div className={styles.otherArticle}>
+                    <Link to={`/news/media/${number - 1}`} className={styles.linkWrapper}>
+                        <div className={styles.iconWrapper}>
+                            <Icon icon="ARROW_UP" />
+                            <span className={styles.label}>
+                                이전 글
+                            </span>
+                        </div>
+                        <div className={styles.article}>
+                            한국 인공지능 스타트업 SUALAB, 세계 최대 자동화 컨퍼런스서 대상 수상
+                        </div>
+                    </Link>
+                    <Link to={`/news/media/${number + 1}`} className={styles.linkWrapper}>
+                        <div className={styles.iconWrapper}>
+                            <Icon icon="ARROW_DOWN" />
+                            <span className={styles.label}>
+                                다음 글
+                            </span>
+                        </div>
+                        <div className={styles.article}>
+                            SUALAB, 한국공항공사와 영상 자동 판독 솔루션 연구한다
+                        </div>
+                    </Link>
+                </div>
+
+                <Link to="/news/media" className={styles.listBtn}>
+                    목록으로 돌아가기
+                </Link>
             </div>
-            hello {number} page;
         </section>
     );
 };
 
 
-export default NewsDetail;
+export default NewsDetail; 
