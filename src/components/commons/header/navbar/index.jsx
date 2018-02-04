@@ -4,13 +4,17 @@ import styles from './navbar.scss';
 
 const marginList = {
     'company': 275,
+    'news': 160,
 };
 
 const linkItem = {
     'company': [
         {'name': 'About us', 'link': 'about-us'},
         {'name': 'People', 'link': 'people'}
-    ]
+    ],
+    'news': [
+        {'name': 'SUALAB in media', 'link': 'media'},
+    ],
 };
 
 const makeLinks = (curPath, subPath) => {

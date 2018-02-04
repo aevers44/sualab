@@ -5,6 +5,8 @@ const ICONS = {
     SOLUTION_1: require("./solution-1.svg"),
     SOLUTION_2: require("./solution-2.svg"),
     SOLUTION_3: require("./solution-3.svg"),
+    ARROW_UP: require("./arrow-point-to-up.svg"),
+    ARROW_DOWN: require("./arrow-point-to-down.svg"),
 };
 
 class Icon extends React.PureComponent {
