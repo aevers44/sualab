@@ -1,44 +1,44 @@
 $container-width: 1080px;
 
 .firstSection {
-    background-image: url(https://d3rqapinkc8b8p.cloudfront.net/companyPage/aboutus-background@2x.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    height: 208px;
-    padding-top: 68px;
+  background-image: url(https://d3rqapinkc8b8p.cloudfront.net/companyPage/aboutus-background@2x.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 208px;
+  padding-top: 68px;
 
-    .innerContainer {
-        max-width: $container-width;
-        margin: 0 auto;
-        text-align: center;
-    }
+  .innerContainer {
+    max-width: $container-width;
+    margin: 0 auto;
+    text-align: center;
+  }
 }
 
 .subTitle {
-    font-size: 13px;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: 1.7px;
-    color: #30343f;
-    margin-bottom: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 1.7px;
+  color: #30343f;
+  margin-bottom: 4px;
 }
 
 .content {
-    font-size: 24px;
-    font-weight: 300;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #16212f;
-    margin-bottom: 15px;
-    
-    .strong {
-        font-weight: bold;
-    }
+  font-size: 24px;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #16212f;
+  margin-bottom: 15px;
+
+  .strong {
+    font-weight: bold;
+  }
 }
 
 .line {
-    width: 48px;
-    margin: 0 auto;
-    border-bottom: solid 2px #16212f;
+  width: 48px;
+  margin: 0 auto;
+  border-bottom: solid 2px #16212f;
 }
