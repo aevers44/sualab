@@ -1,90 +1,93 @@
 $container-width: 1080px;
 
 .fifthContainer {
-    padding-top: 60px;
-    padding-bottom: 60px;
+  padding-top: 60px;
+  padding-bottom: 80px;
 
-    .innerContainer {
-        max-width: $container-width;
-        margin: 0 auto;
-        padding-left: 90px;
-        padding-right: 90px;
-    }
+  .innerContainer {
+    max-width: $container-width;
+    margin: 0 auto;
+    padding-left: 90px;
+    padding-right: 90px;
+  }
 }
 
 .title {
-    font-size: 16px;
-    line-height: 1.31;
-    letter-spacing: 1.7px;
-    color: #bbc2d0;
-    margin-bottom: 8px;
+  font-size: 16px;
+  line-height: 1.31;
+  letter-spacing: 1.7px;
+  color: #bbc2d0;
+  margin-bottom: 16px;
 }
 
 .bigTitle {
-    font-size: 28px;
-    font-weight: bold;
-    color: #0c1020;
-    margin-bottom: 8px;
-    margin-bottom: 45px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #0c1020;
+  margin-bottom: 8px;
+  margin-bottom: 45px;
 }
 
 .newsLink {
-    text-decoration: none;
-    // color: inherit;
+  text-decoration: none;
+  // color: inherit;
 }
 
 .newsWrapper {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
 }
 
 .newsItem {
-    flex: 1 0 100%;
-    max-width: 260px;
-    border-top: solid 2px #d8dde7;
-    padding: 15px 1px 0 1px;
+  flex: 1 0 100%;
+  max-width: 260px;
+  border-top: solid 2px #d8dde7;
+  padding: 15px 1px 0 1px;
 
-    .newsHeader {
-        font-size: 16px;
-        letter-spacing: -0.1px;
-        color: #0c1020;
-        position: relative;
-        margin-bottom: 30px;
+  .newsHeader {
+    font-size: 16px;
+    letter-spacing: -0.1px;
+    color: #0c1020;
+    position: relative;
+    margin-bottom: 30px;
 
-        &:after {
-            content: '';
-            display: block;
-            position: absolute;
-            top: 2px;
-            right: 12px;
-            width: 12px;
-            height: 12px;
-            background-image: url(https://d3rqapinkc8b8p.cloudfront.net/mainPage/rightside-arrow-black@2x.png);
-            background-size: contain;
-        }
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 2px;
+      right: 12px;
+      width: 12px;
+      height: 12px;
+      background-image: url(https://d3rqapinkc8b8p.cloudfront.net/mainPage/rightside-arrow-black@2x.png);
+      background-size: contain;
     }
+  }
 
-    .newsTitle {
-        font-size: 20px;
-        font-weight: 500;
-        letter-spacing: -0.1px;
-        color: #0c1020;
-    }
+  .newsTitle {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -0.1px;
+    color: #0c1020;
+  }
+  &:hover {
+    border-top: solid 2px #1ff2d2;
+  }
 }
 
 .readmoreBtn {
-    font-size: 16.8px;
-    font-weight: 600;
-    line-height: 1.71;
-    color: #30343f;
-    vertical-align: middle;
-    text-decoration: none;
+  font-size: 16.8px;
+  font-weight: 600;
+  line-height: 1.71;
+  color: #30343f;
+  vertical-align: middle;
+  text-decoration: none;
 
-    img {
-        width: 13px;
-        margin-left: 18px;
-        margin-bottom: 5px;
-        vertical-align: middle;
-    }
+  img {
+    width: 13px;
+    margin-left: 18px;
+    margin-bottom: 5px;
+    vertical-align: middle;
+  }
 }
