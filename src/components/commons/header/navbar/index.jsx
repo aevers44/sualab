@@ -15,6 +15,9 @@ const linkItem = {
     'news': [
         {'name': 'SUALAB in media', 'link': 'media'},
     ],
+    'carrer': [
+        {'name': '채용 절차', 'link': 'recruit'},
+    ],
 };
 
 const makeLinks = (curPath, subPath) => {
