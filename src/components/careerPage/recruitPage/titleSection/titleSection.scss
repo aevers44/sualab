@@ -1,0 +1,42 @@
+$container-width: 1080px;
+
+.titleSection {
+  padding-top: 65px;
+  padding-bottom: 65px;
+  background-color: #5f7591;
+
+  .innerContainer {
+    max-width: $container-width;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+.subTitle {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 1.7px;
+  color: #9dadc5;
+  margin-bottom: 4px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  margin-bottom: 16px;
+
+  .strong {
+    font-weight: bold;
+  }
+}
+
+.line {
+  width: 48px;
+  margin: 0 auto;
+  border-bottom: solid 2px #1ae8c9;
+  margin-bottom: 10px;
+}
