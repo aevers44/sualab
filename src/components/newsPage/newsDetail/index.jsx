@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import TitleSection from "../../commons/titleSection";
+
 import Icon from "../../commons/icons";
 import styles from "./newsDetail.scss";
 
@@ -27,6 +29,12 @@ const NewsDetail = ({ match }) => {
 
   return (
     <section className={styles.newsDetail}>
+      <TitleSection
+        subTitle="SUALAB IN MEDIA"
+        title="*언론*에 보도된 *SUALAB*을 확인해 보세요"
+        bgImage="https://d3rqapinkc8b8p.cloudfront.net/newsPage/media-background%402x.png"
+      />
+
       <div className={styles.innerContainer}>
         <div className={styles.detailWrapper}>
           <div className={styles.line} />
