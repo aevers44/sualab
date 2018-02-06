@@ -37,7 +37,7 @@ const Header = () => {
                     </Link>
                     <Link 
                         className={`${styles.menuItem} ${curPath === 'career' ? styles.active : ''}`} 
-                        to="/"
+                        to="/career"
                     >
                         Career
                     </Link>
