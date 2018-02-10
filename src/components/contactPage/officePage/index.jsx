@@ -1,7 +1,7 @@
 import React from "react";
 
 import TitleSection from "../../commons/titleSection";
-
+import MyMapComponent from "./googleMap";
 import styles from "./officePage.scss";
 
 const OfficePage = () => (
@@ -21,7 +21,13 @@ const OfficePage = () => (
 
         <div className={styles.contentWrapper}>
           <div className={styles.mapWrapper}>
-            <img src="http://placehold.it/898x449" alt="" />
+            <MyMapComponent
+              isMarkerShown
+              googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+              loadingElement={<div style={{ height: `100%` }} />}
+              containerElement={<div style={{ height: `450px` }} />}
+              mapElement={<div style={{ height: `100%` }} />}
+            />
           </div>
 
           <div className={styles.infoLine}>
@@ -45,8 +51,11 @@ const OfficePage = () => (
           <div className={styles.infoLine}>
             <div className={styles.label}>메일</div>
             <div className={styles.info}>
-              <span>채용 문의 | </span>recruit@sualab.com<br />
-              <span>영업 문의 | </span>sales@sualab.com
+              <span>채용 문의 | </span>
+              <a href="mailto:recruit@sualab.com">recruit@sualab.com</a>
+              <br />
+              <span>영업 문의 | </span>
+              <a href="mailto:sales@sualab.com">sales@sualab.com</a>
             </div>
           </div>
         </div>
