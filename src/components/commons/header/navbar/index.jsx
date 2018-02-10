@@ -12,6 +12,7 @@ const linkItem = {
   company: [{ name: "About us", link: "about-us" }, { name: "People", link: "people" }],
   news: [{ name: "SUALAB in media", link: "media" }],
   career: [{ name: "채용 절차", link: "recruit" }],
+  contact: [{ name: "Office", link: "office" }, { name: "Global Sales Network", link: "global-sales-network" }],
 };
 
 const makeLinks = (curPath, subPath) => {
