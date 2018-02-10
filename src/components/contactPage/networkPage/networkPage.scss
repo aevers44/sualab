@@ -1,0 +1,74 @@
+$container-width: 1080px;
+
+.networkPage {
+  .innerContainer {
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 55px 90px;
+    text-align: center;
+  }
+}
+
+.mapWrapper {
+  margin-bottom: 55px;
+}
+
+.networkListWrapper {
+  .continentLabel {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #9aa3b5;
+    margin-bottom: 16px;
+  }
+}
+
+.companyItem {
+  display: flex;
+  text-align: left;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-top: solid 1px #d8dde7;
+
+  .country {
+    flex: 0 180px;
+    min-width: 180px;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #0c1020;
+  }
+
+  .infoWrapper {
+    flex: 0 auto;
+    .infoLine {
+      .label {
+        display: inline-block;
+        width: 130px;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 2;
+        letter-spacing: normal;
+        text-align: left;
+        color: #34495e;
+      }
+
+      .content {
+        display: inline-block;
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 2;
+        letter-spacing: normal;
+        text-align: left;
+        color: #000000;
+      }
+    }
+  }
+
+  &:last-child {
+    border-bottom: solid 1px #d8dde7;
+  }
+}
