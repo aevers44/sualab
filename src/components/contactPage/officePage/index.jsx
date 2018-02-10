@@ -1,7 +1,7 @@
 import React from "react";
 
 import TitleSection from "../../commons/titleSection";
-import MyMapComponent from "./googleMap";
+import OfficeMapComponent from "./googleMap";
 import styles from "./officePage.scss";
 
 const OfficePage = () => (
@@ -21,9 +21,9 @@ const OfficePage = () => (
 
         <div className={styles.contentWrapper}>
           <div className={styles.mapWrapper}>
-            <MyMapComponent
+            <OfficeMapComponent
               isMarkerShown
-              googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+              googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,placess&key=AIzaSyC2l8AiJrv0oRBAQIKI60rgH16h93W98Ac"
               loadingElement={<div style={{ height: `100%` }} />}
               containerElement={<div style={{ height: `450px` }} />}
               mapElement={<div style={{ height: `100%` }} />}

@@ -1,6 +1,8 @@
 import React from "react";
 
 import TitleSection from "../../commons/titleSection";
+import NetworkMapComponent from "./googleMap";
+
 import styles from "./networkPage.scss";
 
 const asiaCompanyList = [
@@ -74,7 +76,13 @@ const NetworkPage = () => (
 
     <div className={styles.innerContainer}>
       <div className={styles.mapWrapper}>
-        <img src="http://placehold.it/900x480" alt="" />
+        <NetworkMapComponent
+          isMarkerShown
+          googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyC2l8AiJrv0oRBAQIKI60rgH16h93W98Ac"
+          loadingElement={<div style={{ height: `100%` }} />}
+          containerElement={<div style={{ height: `450px` }} />}
+          mapElement={<div style={{ height: `100%` }} />}
+        />
       </div>
 
       <div className={styles.networkListWrapper}>
