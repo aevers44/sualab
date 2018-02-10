@@ -34,7 +34,7 @@ const Footer = () => (
           <Link className={styles.menuItem} to="/">
             Blog
           </Link>
-          <Link className={styles.menuItem} to="/">
+          <Link className={styles.menuItem} to="/contact">
             Contact
           </Link>
         </div>
