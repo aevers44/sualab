@@ -6,7 +6,7 @@ import Test from "./test";
 import { AboutUsPage, PeoplePage } from "./companyPage";
 import { MediaPage, NewsDetail } from "./newsPage";
 import { RecruitPage } from "./careerPage";
-import { OfficePage } from "./contactPage";
+import { OfficePage, NetworkPage } from "./contactPage";
 
 import Header from "./commons/header";
 import Footer from "./commons/footer";
@@ -36,6 +36,7 @@ class App extends React.PureComponent {
             <Redirect from="/career" to="/career/recruit" />
 
             <Route exact path="/contact/office" component={OfficePage} />
+            <Route exact path="/contact/global-sales-network" component={NetworkPage} />
             <Redirect from="/contact" to="/contact/office" />
 
             <Route path="/test" component={Test} />
