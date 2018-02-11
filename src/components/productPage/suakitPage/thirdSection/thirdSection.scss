@@ -1,0 +1,35 @@
+$container-width: 1080px;
+
+.thirdSection {
+  .innerContainer {
+    max-width: $container-width;
+    margin: 0 auto;
+    padding-top: 60px;
+    padding-bottom: 48px;
+  }
+}
+
+.line {
+  width: 48px;
+  height: 1px;
+  border-bottom: solid 2px #1ae8c9;
+  margin-bottom: 16px;
+}
+
+.subTitle {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #0c1020;
+  margin-bottom: 24px;
+}
+
+.subContent {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #666d7c;
+  margin-bottom: 50px;
+}
