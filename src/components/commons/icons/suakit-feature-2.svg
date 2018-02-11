@@ -23,27 +23,27 @@
         <g id="suakit_feature_2_Product-suakit" transform="translate(-155.000000, -576.000000)">
             <g id="suakit_feature_2_suakit-feature-2" transform="translate(155.000000, 576.000000)">
                 <g id="suakit_feature_2_Rectangle-16">
-                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="suakit_feature_2_#path-1"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#suakit_feature_2_path-1"></use>
                     <rect stroke="#5F7591" stroke-width="1.5" x="0.75" y="14.75" width="93.5" height="101.5"></rect>
                 </g>
                 <g id="suakit_feature_2_Rectangle-16">
-                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="suakit_feature_2_#path-2"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#suakit_feature_2_path-2"></use>
                     <rect stroke="#5F7591" stroke-width="1.5" x="63.75" y="14.75" width="93.5" height="101.5"></rect>
                 </g>
                 <g id="suakit_feature_2_Rectangle-16">
-                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="suakit_feature_2_#path-3"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#suakit_feature_2_path-3"></use>
                     <rect stroke="#5F7591" stroke-width="1.5" x="5.75" y="7.75" width="105.5" height="114.5"></rect>
                 </g>
                 <g id="suakit_feature_2_Rectangle-16">
-                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="suakit_feature_2_#path-4"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#suakit_feature_2_path-4"></use>
                     <rect stroke="#5F7591" stroke-width="1.5" x="46.75" y="7.75" width="105.5" height="114.5"></rect>
                 </g>
                 <g id="suakit_feature_2_Rectangle-16">
-                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="suakit_feature_2_#path-5"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#suakit_feature_2_path-5"></use>
                     <rect stroke="#5F7591" stroke-width="1.98" x="18.99" y="0.99" width="119.02" height="129.02"></rect>
                 </g>
                 <g id="suakit_feature_2_Rectangle-16">
-                    <use fill="#F5F7FB" fill-rule="evenodd" xlink:href="suakit_feature_2_#path-6"></use>
+                    <use fill="#F5F7FB" fill-rule="evenodd" xlink:href="#suakit_feature_2_path-6"></use>
                     <rect stroke="#BBC2D0" stroke-width="1" x="26.5" y="7.5" width="105" height="94"></rect>
                 </g>
                 <path d="M78.9696478,30.4383909 C78.9550211,30.4370409 78.9405241,30.4363636 78.9261586,30.4363636 C74.5902115,30.4363636 71.1897124,23.3491006 58.4139702,27.1090909 C48.2032487,30.1141777 44,40.6948366 44,52.0636364 C44,71.3584572 59.6369738,87 78.9261586,87 C79.0789632,87 79.2296073,86.9964504 79.3781135,86.9894074 C98.5271999,86.8259493 114,71.2476066 114,52.0543419 C114,40.6855422 109.796751,30.1048832 99.5860298,27.0997964 C86.8102876,23.3398061 83.4097885,30.4270692 79.0738414,30.4270692 C79.0398389,30.4270692 79.0050994,30.4308638 78.9696478,30.4383909 Z" id="suakit_feature_2_Combined-Shape" stroke="#5F7591" stroke-width="2" fill="url(#suakit_feature_2_radialGradient-7)"></path>

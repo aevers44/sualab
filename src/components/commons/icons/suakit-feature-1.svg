@@ -42,11 +42,11 @@
                 <rect id="suakit_feature_1_Rectangle-2" stroke="url(#suakit_feature_1_linearGradient-1)" stroke-width="3" x="16.5" y="29.5" width="56" height="48"></rect>
                 <g id="suakit_feature_1_Group-6">
                     <g id="suakit_feature_1_Rectangle-16">
-                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="suakit_feature_1_#path-2"></use>
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#suakit_feature_1_path-2"></use>
                         <rect stroke="#5F7591" stroke-width="2" x="1" y="1" width="135" height="146"></rect>
                     </g>
                     <g id="suakit_feature_1_Rectangle-16">
-                        <use fill="#F5F7FB" fill-rule="evenodd" xlink:href="suakit_feature_1_#path-3"></use>
+                        <use fill="#F5F7FB" fill-rule="evenodd" xlink:href="#suakit_feature_1_path-3"></use>
                         <rect stroke="#BBC2D0" stroke-width="1" x="9.69463087" y="8.77329193" width="118.530201" height="106.552795"></rect>
                     </g>
                 </g>
