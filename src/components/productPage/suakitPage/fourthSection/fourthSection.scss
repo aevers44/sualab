@@ -1,0 +1,58 @@
+$container-width: 1080px;
+
+.fourthSection {
+  .innerContainer {
+    max-width: $container-width;
+    margin: 0 auto;
+    padding-top: 48px;
+    padding-bottom: 60px;
+  }
+}
+
+.line {
+  width: 48px;
+  height: 1px;
+  border-bottom: solid 2px #1ae8c9;
+  margin-bottom: 16px;
+}
+
+.subTitle {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #0c1020;
+  margin-bottom: 50px;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contentItem {
+  flex: 1 auto;
+  max-width: 33%;
+  padding: 10px;
+
+  .imgWrapper {
+    img {
+      height: 93px;
+    }
+  }
+
+  .itemTitle {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #30343f;
+  }
+  .itemContent {
+    font-size: 14px;
+    font-weight: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #666d7c;
+  }
+}
