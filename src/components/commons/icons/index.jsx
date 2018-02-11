@@ -10,6 +10,7 @@ const ICONS = {
   SUAKIT_FEATURE_1: require("./suakit-feature-1.svg"),
   SUAKIT_FEATURE_2: require("./suakit-feature-2.svg"),
   SUAKIT_FEATURE_3: require("./suakit-feature-3.svg"),
+  RIGHT_SIDE_ARROW: require("./right-side-arrow.svg"),
 };
 
 class Icon extends React.PureComponent {
