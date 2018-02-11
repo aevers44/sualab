@@ -1,0 +1,92 @@
+$container-width: 1080px;
+
+.firstSection {
+  background-color: #f5f7fb;
+
+  .innerContainer {
+    max-width: $container-width;
+    margin: 0 auto;
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+}
+
+.titleWrapper {
+  display: flex;
+  padding-right: 90px;
+  margin-bottom: 45px;
+
+  .lineAndTitle {
+    flex-grow: 4;
+    min-width: 33%;
+    width: auto;
+    .line {
+      width: 48px;
+      height: 1px;
+      border-bottom: solid 2px #1ae8c9;
+      margin-bottom: 16px;
+    }
+
+    .title {
+      font-size: 28px;
+      font-weight: 600;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #0c1020;
+    }
+  }
+
+  .content {
+    flex-grow: 8;
+    width: auto;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #666d7c;
+  }
+}
+
+.itemWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.itemCard {
+  flex-grow: 1;
+  max-width: 347px;
+  padding: 40px 20px 20px 20px;
+  background-color: #ffffff;
+
+  .svgWrapper {
+    margin-bottom: 32px;
+    text-align: center;
+    svg {
+      height: 150px;
+    }
+  }
+
+  .cardTitle {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #34495e;
+    margin-bottom: 18px;
+  }
+
+  .cardContent {
+    font-size: 14px;
+    font-weight: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #666d7c;
+  }
+
+  &:hover {
+    box-shadow: 0 2px 17px 0 #e7eaf2;
+  }
+}

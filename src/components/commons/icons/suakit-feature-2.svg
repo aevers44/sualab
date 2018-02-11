@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="158px" height="131px" viewBox="0 0 158 131" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>3B39D339-199B-4516-8F66-89574119843E</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <rect id="suakit_feature_2_path-1" x="0" y="14" width="95" height="103"></rect>
+        <rect id="suakit_feature_2_path-2" x="63" y="14" width="95" height="103"></rect>
+        <rect id="suakit_feature_2_path-3" x="5" y="7" width="107" height="116"></rect>
+        <rect id="suakit_feature_2_path-4" x="46" y="7" width="107" height="116"></rect>
+        <rect id="suakit_feature_2_path-5" x="18" y="0" width="121" height="131"></rect>
+        <rect id="suakit_feature_2_path-6" x="26" y="7" width="106" height="95"></rect>
+        <radialGradient cx="50%" cy="21.4210746%" fx="50%" fy="21.4210746%" r="154.904142%" gradientTransform="translate(0.500000,0.214211),scale(0.871429,1.000000),rotate(90.000000),translate(-0.500000,-0.214211)" id="suakit_feature_2_radialGradient-7">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#5F7591" offset="98.5750159%"></stop>
+        </radialGradient>
+        <linearGradient x1="-87.2768055%" y1="0%" x2="65.2157219%" y2="160.736863%" id="suakit_feature_2_linearGradient-8">
+            <stop stop-color="#29DCF9" offset="0%"></stop>
+            <stop stop-color="#1FF2D2" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="suakit_feature_2_Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="suakit_feature_2_Product-suakit" transform="translate(-155.000000, -576.000000)">
+            <g id="suakit_feature_2_suakit-feature-2" transform="translate(155.000000, 576.000000)">
+                <g id="suakit_feature_2_Rectangle-16">
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="suakit_feature_2_#path-1"></use>
+                    <rect stroke="#5F7591" stroke-width="1.5" x="0.75" y="14.75" width="93.5" height="101.5"></rect>
+                </g>
+                <g id="suakit_feature_2_Rectangle-16">
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="suakit_feature_2_#path-2"></use>
+                    <rect stroke="#5F7591" stroke-width="1.5" x="63.75" y="14.75" width="93.5" height="101.5"></rect>
+                </g>
+                <g id="suakit_feature_2_Rectangle-16">
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="suakit_feature_2_#path-3"></use>
+                    <rect stroke="#5F7591" stroke-width="1.5" x="5.75" y="7.75" width="105.5" height="114.5"></rect>
+                </g>
+                <g id="suakit_feature_2_Rectangle-16">
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="suakit_feature_2_#path-4"></use>
+                    <rect stroke="#5F7591" stroke-width="1.5" x="46.75" y="7.75" width="105.5" height="114.5"></rect>
+                </g>
+                <g id="suakit_feature_2_Rectangle-16">
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="suakit_feature_2_#path-5"></use>
+                    <rect stroke="#5F7591" stroke-width="1.98" x="18.99" y="0.99" width="119.02" height="129.02"></rect>
+                </g>
+                <g id="suakit_feature_2_Rectangle-16">
+                    <use fill="#F5F7FB" fill-rule="evenodd" xlink:href="suakit_feature_2_#path-6"></use>
+                    <rect stroke="#BBC2D0" stroke-width="1" x="26.5" y="7.5" width="105" height="94"></rect>
+                </g>
+                <path d="M78.9696478,30.4383909 C78.9550211,30.4370409 78.9405241,30.4363636 78.9261586,30.4363636 C74.5902115,30.4363636 71.1897124,23.3491006 58.4139702,27.1090909 C48.2032487,30.1141777 44,40.6948366 44,52.0636364 C44,71.3584572 59.6369738,87 78.9261586,87 C79.0789632,87 79.2296073,86.9964504 79.3781135,86.9894074 C98.5271999,86.8259493 114,71.2476066 114,52.0543419 C114,40.6855422 109.796751,30.1048832 99.5860298,27.0997964 C86.8102876,23.3398061 83.4097885,30.4270692 79.0738414,30.4270692 C79.0398389,30.4270692 79.0050994,30.4308638 78.9696478,30.4383909 Z" id="suakit_feature_2_Combined-Shape" stroke="#5F7591" stroke-width="2" fill="url(#suakit_feature_2_radialGradient-7)"></path>
+                <path d="M72,34 C74.3333333,36.6666667 76.6666667,38 79,38 C81.3333333,38 83.6666667,36.6666667 86,34" id="suakit_feature_2_Path-7" stroke="#5F7591" stroke-width="2" stroke-linecap="round"></path>
+                <path d="M79.0463372,37 C78.8527847,35.213683 79.26559,32.8803496 80.2847529,30 C81.3039158,27.1196504 82.5423315,24.786317 84,23" id="suakit_feature_2_Path-8" stroke="#5F7591" stroke-width="2" stroke-linecap="round"></path>
+                <circle id="suakit_feature_2_Oval-13" fill="#9AA3B5" cx="101" cy="57" r="2"></circle>
+                <circle id="suakit_feature_2_Oval-13" fill="#9AA3B5" cx="104" cy="63" r="2"></circle>
+                <circle id="suakit_feature_2_Oval-13" fill="#9AA3B5" cx="107" cy="57" r="2"></circle>
+                <circle id="suakit_feature_2_Oval-13" fill="#9AA3B5" cx="98" cy="63" r="2"></circle>
+                <circle id="suakit_feature_2_Oval-13" fill="#9AA3B5" cx="101" cy="69" r="2"></circle>
+                <circle id="suakit_feature_2_Oval-13" fill="#9AA3B5" cx="95" cy="69" r="2"></circle>
+                <g id="suakit_feature_2_Group-11" transform="translate(50.000000, 42.000000)" fill="#9AA3B5">
+                    <path d="M6.11218992,-1.13686838e-13 C3.05609496,-9.01159489e-14 7.00684476e-17,5.11843917 0,8.84376866 C0,15.4765952 10.7935773,10.9140064 12.2243798,8.84376866 C13.6551823,6.77353092 9.16828488,-1.37257727e-13 6.11218992,-1.13686838e-13 Z" id="suakit_feature_2_Path-10"></path>
+                    <path d="M9.9024352,14.3984985 C7.67860308,14.965029 4.16618357,16.7047398 4.16618357,19.8020996 C4.16618357,25.3168466 11.9306908,23.772154 13.1859042,21.6403486 C14.4411176,19.5085431 12.1262673,13.8319681 9.9024352,14.3984985 Z" id="suakit_feature_2_Path-10" transform="translate(8.853140, 18.974359) rotate(-180.000000) translate(-8.853140, -18.974359) "></path>
+                </g>
+                <rect id="suakit_feature_2_Rectangle-17" fill="#F54B5E" opacity="0.5" transform="translate(101.500000, 64.000000) rotate(24.000000) translate(-101.500000, -64.000000) " x="95" y="49" width="13" height="30" rx="6.5"></rect>
+                <ellipse id="suakit_feature_2_Oval-15" fill="url(#suakit_feature_2_linearGradient-8)" opacity="0.5" transform="translate(57.500000, 53.500000) rotate(-11.000000) translate(-57.500000, -53.500000) " cx="57.5" cy="53.5" rx="11.5" ry="15.5"></ellipse>
+            </g>
+        </g>
+    </g>
+</svg>
