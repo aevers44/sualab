@@ -4,6 +4,10 @@ var _express = require("express");
 
 var _express2 = _interopRequireDefault(_express);
 
+var _path = require("path");
+
+var _path2 = _interopRequireDefault(_path);
+
 var _webpackDevServer = require("webpack-dev-server");
 
 var _webpackDevServer2 = _interopRequireDefault(_webpackDevServer);
@@ -28,26 +32,8 @@ if (process.env.NODE_ENV === "development") {
     console.log("webpack-dev-server is listening on port", devPort);
   });
 }
-
-app.use("*", _express2.default.static(__dirname + "/../public"));
+app.use("/", _express2.default.static(__dirname + "/../public"));
 
 var server = app.listen(port, function () {
   console.log("Express listening on port ", port);
 });
-;
-
-var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-    return;
-  }
-
-  __REACT_HOT_LOADER__.register(app, "app", "server/main.js");
-
-  __REACT_HOT_LOADER__.register(port, "port", "server/main.js");
-
-  __REACT_HOT_LOADER__.register(devPort, "devPort", "server/main.js");
-
-  __REACT_HOT_LOADER__.register(server, "server", "server/main.js");
-}();
-
-;

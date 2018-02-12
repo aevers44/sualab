@@ -1,4 +1,5 @@
 import express from "express";
+import path from "path";
 import WebpackDevServer from "webpack-dev-server";
 import webpack from "webpack";
 
@@ -16,8 +17,7 @@ if (process.env.NODE_ENV === "development") {
     console.log("webpack-dev-server is listening on port", devPort);
   });
 }
-
-app.use("*", express.static(__dirname + "/../public"));
+app.use("/", express.static(__dirname + "/../public"));
 
 const server = app.listen(port, () => {
   console.log("Express listening on port ", port);
