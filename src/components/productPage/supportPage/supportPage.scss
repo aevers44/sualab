@@ -138,6 +138,7 @@ $container-width: 1080px;
 .productForm {
   padding-left: 90px;
   padding-right: 90px;
+  margin-bottom: 30px;
 }
 
 .textWrapper {
@@ -153,5 +154,49 @@ $container-width: 1080px;
     line-height: normal;
     letter-spacing: normal;
     color: #666d7c;
+  }
+}
+
+.submitWrapper {
+  text-align: center;
+  .checkboxWrapper {
+    font-size: 16px;
+    font-weight: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #5f7591;
+    margin-bottom: 11px;
+
+    input {
+      margin-right: 16px;
+    }
+    label {
+      text-align: left;
+      display: inline-block;
+      min-width: 310px;
+    }
+  }
+
+  .submitBtn {
+    margin-top: 30px;
+    width: 347px;
+    height: 69px;
+    line-height: 69px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: solid 1px #d8dde7;
+    font-size: 18px;
+    font-weight: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #5f7591;
+    cursor: pointer;
+
+    &:hover,
+    &.active {
+      border-color: #34495e;
+      background-color: #34495e;
+      color: #1ae8c9;
+    }
   }
 }

@@ -48,7 +48,7 @@ const ProductForm = () => (
         알게 된 경로*
       </label>
       <select className={styles.selectForm}>
-        <option selected disabled>
+        <option defaultValue disabled>
           알게 된 경로를 선택하세요.
         </option>
         <option value="0">예시 1</option>
@@ -59,7 +59,7 @@ const ProductForm = () => (
 
     <div className={styles.textWrapper}>
       <label htmlFor="content" className={styles.label}>
-        생산라인 수*
+        문의 내용*
       </label>
       <textarea name="content" id="content" />
     </div>
