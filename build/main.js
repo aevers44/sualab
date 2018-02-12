@@ -32,8 +32,12 @@ if (process.env.NODE_ENV === "development") {
     console.log("webpack-dev-server is listening on port", devPort);
   });
 }
-app.use("/", _express2.default.static(__dirname + "/../public"));
 
+app.use(_express2.default.static(_path2.default.join(__dirname, "..", "public")));
+
+app.get("*", function (request, response) {
+  response.sendFile(_path2.default.resolve(__dirname, "..", "public", "index.html"));
+});
 var server = app.listen(port, function () {
   console.log("Express listening on port ", port);
 });
