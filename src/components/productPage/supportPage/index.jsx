@@ -1,6 +1,7 @@
 import React from "react";
 
 import TitleSection from "../../commons/titleSection";
+import ProductForm from "./ProductForm";
 
 import styles from "./supportPage.scss";
 
@@ -60,7 +61,7 @@ const SupportPage = () => (
         </div>
       </div>
 
-      <div className={styles.selectWrapper}>
+      <div className={`${styles.selectWrapper} ${styles.reasonSelect}`}>
         <label htmlFor="reason" className={styles.label}>
           문의이유*
         </label>
@@ -78,6 +79,8 @@ const SupportPage = () => (
         제품 사용 중 생긴 문의 사항은 현재 페이지가 아닌<br />
         <a href="mailto:support@sualab.com">support@sualab.com</a>으로 메일을 보내시길 바랍니다.
       </div>
+
+      <ProductForm />
     </div>
   </section>
 );
