@@ -5,8 +5,6 @@ import styles from "./firstSection.scss";
 
 const FirstSection = () => (
   <section className={styles.firstSection}>
-    asdf<br />
-    asdf<br />
     <div className={styles.innerContainer}>
       <div className={styles.titleWrapper}>
         <div className={styles.lineAndTitle}>
