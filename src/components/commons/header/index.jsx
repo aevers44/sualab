@@ -20,7 +20,7 @@ const Header = () => {
           <Link className={`${styles.menuItem} ${curPath === "company" ? styles.active : ""}`} to="/company">
             Company
           </Link>
-          <Link className={`${styles.menuItem} ${curPath === "product" ? styles.active : ""}`} to="/news">
+          <Link className={`${styles.menuItem} ${curPath === "product" ? styles.active : ""}`} to="/product">
             Product
           </Link>
           <Link className={`${styles.menuItem} ${curPath === "news" ? styles.active : ""}`} to="/news">
