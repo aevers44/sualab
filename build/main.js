@@ -16,6 +16,10 @@ var _webpack = require("webpack");
 
 var _webpack2 = _interopRequireDefault(_webpack);
 
+var _routes = require("./routes");
+
+var _routes2 = _interopRequireDefault(_routes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var app = (0, _express2.default)();
@@ -35,14 +39,12 @@ if (process.env.NODE_ENV === "development") {
 
 app.use(_express2.default.static(_path2.default.join(__dirname, "..", "public")));
 
-app.get("/api", function (req, res) {
-  res.send("api");
-});
+app.use("/api", _routes2.default);
 
 app.get("*", function (req, res) {
   res.sendFile(_path2.default.resolve(__dirname, "..", "public", "index.html"));
 });
 
 var server = app.listen(port, function () {
-  console.log("Express listening on port ", port);
+  console.log("Express listening on port", port);
 });

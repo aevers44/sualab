@@ -66,3 +66,6 @@ dst.zip
 # Editor
 .idea
 .vscode
+
+build/
+*.sqlite3
