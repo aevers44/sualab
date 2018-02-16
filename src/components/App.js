@@ -18,7 +18,7 @@ import "./root.scss";
 class App extends React.PureComponent {
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter onUpdate={() => window.scrollTo(0, 0)}>
         <div>
           <Header />
 

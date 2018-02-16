@@ -27,18 +27,48 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
+  const id = req.params.id;
   const db = new sqlite3.Database("./sualabdb.sqlite3");
-  db.get("SELECT * FROM media WHERE id=?", [req.params.id], (err, row) => {
-    if (err) {
-      console.error(err);
-      res.status(500).json({ error: "server error" });
-    } else if (!row) {
-      res.status(404).json({ error: "Not found" });
-    } else {
-      res.json(row);
-    }
+  let result = {};
+  db.serialize(() => {
+    db.get("SELECT * FROM media WHERE id=?", [id], (err, row) => {
+      if (err) {
+        console.error(err);
+        res.status(500);
+      } else if (!row) {
+        res.status(404);
+      } else {
+        result = { ...row };
+        // res.json(row);
+      }
+    });
+
+    db.get("SELECT id, title FROM media WHERE id=(SELECT MAX(id) FROM media WHERE id < ?)", [id], (err, row) => {
+      if (err) {
+        console.error(err);
+        res.status(500);
+      } else if (row) {
+        result.prev = { ...row };
+      } else {
+        result.prev = { id: -1, title: "" };
+      }
+    });
+
+    db.get("SELECT id, title FROM media WHERE id=(SELECT MIN(id) FROM media WHERE id > ?)", [id], (err, row) => {
+      if (err) {
+        console.error(err);
+        res.status(500);
+      } else if (row) {
+        result.next = { ...row };
+      } else {
+        result.next = { id: -1, title: "" };
+      }
+    });
   });
-  db.close();
+
+  db.close(err => {
+    res.json(result);
+  });
 });
 
 router.post("/", (req, res) => {
