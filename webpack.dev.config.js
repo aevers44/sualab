@@ -1,8 +1,10 @@
+var webpack = require("webpack");
+
 module.exports = {
-  entry: "./src/index.js",
+  entry: ["./src/index.js", "webpack-dev-server/client?http://0.0.0.0:8080", "webpack/hot/only-dev-server"],
 
   output: {
-    path: __dirname + "/public/",
+    path: "/",
     filename: "bundle.js",
   },
 
@@ -11,9 +13,21 @@ module.exports = {
   },
 
   devServer: {
-    contentBase: __dirname + "/public/",
+    hot: true,
+    filename: "bundle.js",
+    publicPath: "/",
+    contentBase: "./public/",
     historyApiFallback: true,
+    proxy: {
+      "**": "http://localhost:3000",
+    },
   },
+  plugins: [
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
+  ],
 
   module: {
     rules: [
@@ -52,6 +66,10 @@ module.exports = {
         test: [/\.js$/, /\.jsx$/],
         exclude: /node_modules/,
         loader: "babel-loader",
+        options: {
+          cacheDirectory: true,
+          plugins: ["react-hot-loader/babel"],
+        },
       },
     ],
   },
