@@ -1,11 +1,17 @@
 var webpack = require("webpack");
 
 module.exports = {
-  entry: ["./src/index.js", "webpack-dev-server/client?http://0.0.0.0:8080", "webpack/hot/only-dev-server"],
+  entry: [
+    "react-hot-loader/patch",
+    "./src/index.js",
+    "webpack-dev-server/client?http://0.0.0.0:8080",
+    "webpack/hot/only-dev-server",
+  ],
 
   output: {
     path: "/",
     filename: "bundle.js",
+    publicPath: "/",
   },
 
   resolve: {

@@ -1,37 +1,104 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import axios from "axios";
+import { parse } from "query-string";
+import { Link } from "react-router-dom";
 
-import styles from './newsList.scss';
+import styles from "./newsList.scss";
 
-const NewsItem = ({ number }) => 
-    <Link to={`/news/media/${number}`}>
-        <div className={styles.newsItem}>
-            <div className={styles.imgWrapper}>
-                <img src="http://placehold.it/300x300" alt=""/>
-            </div>
-            <div className={styles.contentWrapper}>
-                <div className={styles.title}>
-                    SUALAB, 한국공항공사와 영상 자동 판독 솔루션 연구한다
-                </div>
-                <div className={styles.date}>
-                    <span>2017-11-16</span>
-                    <span> | </span>
-                    <span>매일 경제</span>
-                </div>
-                <div className={styles.content}>
-                    AI 스타트업 SUALAB과 한국공항공사는 엑스레이(X-Ray) 보안검색 영상 자동판독 솔루션 연구개발협약식을 가졌다. 인공지능(AI)으로 위험물질을 분석해 자동 검출하고 분류할 수 있는 기술이 공항 검색대에 적용될 전망이다.[…]
-                </div>
-            </div>
+const PAGE_LIMIT = 10;
+
+const NewsItem = ({ id, title, date, media, link, image, content }) => {
+  const subContent = content ? content.substr(0, 150) + " ..." : "";
+  return (
+    <Link to={`/news/media/${id}`}>
+      <div className={styles.newsItem}>
+        <div className={styles.imgWrapper}>
+          <img src={image ? image : "http://placehold.it/300x300"} alt="" />
         </div>
-    </Link>;
+        <div className={styles.contentWrapper}>
+          <div className={styles.title}>{title}</div>
+          <div className={styles.date}>
+            <span>{date}</span>
+            <span> | </span>
+            <span>{media}</span>
+          </div>
+          <div className={styles.content}>{subContent}</div>
+        </div>
+      </div>
+    </Link>
+  );
+};
 
-const newsItemList = [1,2,3,4,5];
+class NewsList extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      totalArticleNum: 0,
+      curPageNum: 0,
+      newsItemList: [],
+    };
+    this.getArticleList = this.getArticleList.bind(this);
+  }
 
-const NewsList = () =>
-    <section className={styles.newsList}>
+  componentDidMount() {
+    const pageNo = parse(this.props.location.search)["pageNo"] || 1;
+    this.setState({ curPageNum: pageNo });
+    this.getArticleList(pageNo);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const pageNo = parse(nextProps.location.search)["pageNo"] || 1;
+    this.setState({ curPageNum: pageNo });
+    this.getArticleList(pageNo);
+  }
+
+  render() {
+    const { totalArticleNum, newsItemList, curPageNum } = this.state;
+    const totalPageNum = Math.ceil(totalArticleNum / 5);
+    const startPageNum = (Math.ceil(curPageNum / PAGE_LIMIT) - 1) * PAGE_LIMIT + 1;
+    const endPageNum = Math.min((Math.ceil(curPageNum / PAGE_LIMIT) - 1) * PAGE_LIMIT + PAGE_LIMIT, totalPageNum);
+    const pageArray = [];
+    for (let idx = startPageNum; idx <= endPageNum; idx++) {
+      pageArray.push(idx);
+    }
+
+    return (
+      <section className={styles.newsList}>
         <div className={styles.innerContainer}>
-            {newsItemList.map(elem => <NewsItem number={elem} />)}
+          {newsItemList.map(elem => <NewsItem {...elem} />)}
+
+          <div className={styles.pageWrapper}>
+            <Link
+              className={`${styles.pageLink} ${startPageNum > 1 ? "" : styles.disabled}`}
+              to={`?pageNo=${startPageNum - 1}`}
+            >
+              &lt;
+            </Link>
+            {pageArray.map(elem => (
+              <Link className={`${styles.pageLink} ${elem == curPageNum ? styles.active : ""}`} to={`?pageNo=${elem}`}>
+                {elem}
+              </Link>
+            ))}
+            <Link
+              className={`${styles.pageLink} ${endPageNum < totalPageNum ? "" : styles.disabled}`}
+              to={`?pageNo=${endPageNum + 1}`}
+            >
+              &gt;
+            </Link>
+          </div>
         </div>
-    </section>;
+      </section>
+    );
+  }
+
+  getArticleList(pageNo) {
+    axios.get("/api/media?pageNo=" + pageNo).then(res => {
+      this.setState({
+        totalArticleNum: res.headers["x-total-count"],
+        newsItemList: res.data,
+      });
+    });
+  }
+}
 
 export default NewsList;

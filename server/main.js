@@ -20,9 +20,8 @@ if (process.env.NODE_ENV === "development") {
 
 app.use(express.static(path.join(__dirname, "..", "public")));
 
-app.get("/api", (req, res) => {
-  res.send("api");
-});
+import rrr from "./routes";
+app.use("/api", rrr);
 
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "..", "public", "index.html"));
