@@ -31,7 +31,7 @@ const makeLinks = (curPath, subPath) => {
       <Link
         key={item.link}
         className={`${styles.linkItem} ${subPath === item.link ? styles.active : ""}`}
-        to={item.link}
+        to={`/${curPath}/${item.link}`}
       >
         {item.name}
       </Link>,
