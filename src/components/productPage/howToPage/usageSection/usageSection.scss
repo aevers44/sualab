@@ -1,0 +1,106 @@
+$contaner-width: 1080px;
+
+.usageSection {
+}
+
+.innerContainer {
+  max-width: $contaner-width;
+  margin: 0 auto;
+}
+
+.line {
+  width: 48px;
+  height: 1px;
+  border-bottom: solid 1px #1ae8c9;
+  margin-bottom: 16px;
+}
+
+.subTitle {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #0c1020;
+  margin-bottom: 32px;
+}
+
+.content {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #666d7c;
+  margin-bottom: 60px;
+}
+
+.tabButtons {
+  display: flex;
+  align-items: center;
+
+  .button {
+    cursor: pointer;
+    height: 90px;
+    line-height: 90px;
+    flex: 1 100%;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: normal;
+    text-align: center;
+    color: #9aa3b5;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+
+    &.active {
+      background-color: #f5f7fb;
+      color: #34495e;
+    }
+  }
+}
+
+.tabSection {
+  background-color: #f5f7fb;
+  padding-top: 35px;
+  padding-bottom: 16px;
+
+  .innerContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+.cardItem {
+  flex: 1 33%;
+  max-width: 340px;
+  height: 390px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 5px 0 rgba(181, 186, 197, 0.44);
+  padding: 30px 24px;
+  margin-bottom: 40px;
+
+  .cardTitle {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    margin-bottom: 8px;
+  }
+  .cardContent {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    margin-bottom: 55px;
+  }
+
+  .imgWrapper {
+    text-align: center;
+    height: 160px;
+    img {
+      height: 100%;
+    }
+  }
+}
