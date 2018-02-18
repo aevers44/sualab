@@ -13,10 +13,8 @@
   align-items: center;
   justify-content: center;
 
-  margin-left: 20px;
-  &:first-child {
-    margin-left: 0;
-  }
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 .innerWrapper {
@@ -25,6 +23,8 @@
     height: 105px;
     border-radius: 50%;
     overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 18px;
     img {
       width: 100%;
@@ -78,7 +78,7 @@
     line-height: normal;
     letter-spacing: normal;
     color: #ffffff;
-    white-space: pre;
+    white-space: pre-wrap;
   }
 }
 

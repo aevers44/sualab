@@ -1,215 +1,376 @@
 export const ceoList = [
-    {
-        'imgUrl': "http://placehold.it/300x300",
-        'position': 'CEO',
-        'name': '송기영',
-        'engName': 'Song, Kiyoung',
-        'detail': [
-            "두산밥캣 오퍼레이션 전략",
-            "두산 지주사 전략기획실(Tri-C)",
-            "서울대학교 기계항공공학부",
-            "서울대학교 경영학과(부)",
-        ]
-    },
-    {
-        'imgUrl': "http://placehold.it/300x300",
-        'position': 'CEO',
-        'name': '송기영',
-        'engName': 'Song, Kiyoung',
-        'detail': [
-            "두산밥캣 오퍼레이션 전략",
-            "두산 지주사 전략기획실(Tri-C)",
-            "서울대학교 기계항공공학부",
-            "서울대학교 경영학과(부)",
-        ]
-    },
-    {
-        'imgUrl': "http://placehold.it/300x300",
-        'position': 'CEO',
-        'name': '송기영',
-        'engName': 'Song, Kiyoung',
-        'detail': [
-            "두산밥캣 오퍼레이션 전략",
-            "두산 지주사 전략기획실(Tri-C)",
-            "서울대학교 기계항공공학부",
-            "서울대학교 경영학과(부)",
-        ]
-    },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    position: "CEO, Co-Founder",
+    name: "송기영",
+    engName: "Song, Kiyoung",
+    detail: [
+      "인텔코리아 MCG VIED",
+      "에스엔유프리시젼 연구팀",
+      "서울대학교 기계항공공학부",
+      "서울대학교 컴퓨터공학부(부)",
+    ],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    position: "CTO, Co-Founder",
+    name: "윤관우",
+    engName: "Yoon, Kwanwoo",
+    detail: ["삼성 에스원 디바이스 개발그룹", "에스엔유프리시젼 연구팀", "한양대학교 기계공학 석사"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    position: "CSO",
+    name: "문태연",
+    engName: "Moon, Taeyeon",
+    detail: [
+      "두산밥캣 오퍼레이션 전략",
+      "두산 지주사 전략기획실(Tri-C)",
+      "서울대학교 기계항공공학부",
+      "서울대학교 경영학과(부)",
+    ],
+  },
 ];
 
 export const researchList = [
-    {
-        'imgUrl': "http://placehold.it/300x300",
-        'position': 'CEO',
-        'name': '송기영',
-        'engName': 'Song, Kiyoung',
-        'detail': [
-            "두산밥캣 오퍼레이션 전략",
-            "두산 지주사 전략기획실(Tri-C)",
-            "서울대학교 기계항공공학부",
-            "서울대학교 경영학과(부)",
-        ]
-    },
-    {
-        'imgUrl': "http://placehold.it/300x300",
-        'position': 'CEO',
-        'name': '송기영',
-        'engName': 'Song, Kiyoung',
-        'detail': [
-            "두산밥캣 오퍼레이션 전략",
-            "두산 지주사 전략기획실(Tri-C)",
-            "서울대학교 기계항공공학부",
-            "서울대학교 경영학과(부)",
-        ]
-    },
-    {
-        'imgUrl': "http://placehold.it/300x300",
-        'position': 'CEO',
-        'name': '송기영',
-        'engName': 'Song, Kiyoung',
-        'detail': [
-            "두산밥캣 오퍼레이션 전략",
-            "두산 지주사 전략기획실(Tri-C)",
-            "서울대학교 기계항공공학부",
-            "서울대학교 경영학과(부)",
-        ]
-    },
-    {
-        'imgUrl': "http://placehold.it/300x300",
-        'position': 'CEO',
-        'name': '송기영',
-        'engName': 'Song, Kiyoung',
-        'detail': [
-            "두산밥캣 오퍼레이션 전략",
-            "두산 지주사 전략기획실(Tri-C)",
-            "서울대학교 기계항공공학부",
-            "서울대학교 경영학과(부)",
-        ]
-    },
-    {
-        'imgUrl': "http://placehold.it/300x300",
-        'position': 'CEO',
-        'name': '송기영',
-        'engName': 'Song, Kiyoung',
-        'detail': [
-            "두산밥캣 오퍼레이션 전략",
-            "두산 지주사 전략기획실(Tri-C)",
-            "서울대학교 기계항공공학부",
-            "서울대학교 경영학과(부)",
-        ]
-    },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "강형신",
+    engName: "Kang, Hyeongshin",
+    position: "Research Engineer",
+    detail: ["연세대학교 컴퓨터과학과"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "이동호",
+    engName: "Lee, Donghoe",
+    position: "Research Engineer",
+    detail: ["연세대학교 컴퓨터과학과"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "김광민",
+    engName: "Kim, Gwangmin",
+    position: "Research Engineer",
+    detail: ["가톨릭대학교 정보통신전자공학과"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "김길호",
+    engName: "Kim, Kilho",
+    position: "Research Engineer",
+    detail: ["서울대학교 산업공학과 석사"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "신연식",
+    engName: "Shin, Yeonsik",
+    position: "Research Engineer",
+    detail: ["고려대학교 컴퓨터통신공학부", "안랩 소프트웨어 개발실", "해피나믹"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "기홍도",
+    engName: "Ki, Hongdo",
+    position: "Research Engineer",
+    detail: ["서울대학교 산업공학과 석사"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "이남구",
+    engName: "Lee, Namgoo",
+    position: "Research Engineer",
+    detail: ["서울대학교 컴퓨터공학과 석사"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "강정훈",
+    engName: "Kang, Junghoon",
+    position: "Research Engineer",
+    detail: ["듀크대 컴퓨터과학부 석사", "버클리대 전기컴퓨터과학부 학사"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "이재환",
+    engName: "Lee, Jaehwan",
+    position: "Research Engineer",
+    detail: ["삼성전자 서비스 인텔리전스팀", "상명대학교 컴퓨터과학과"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "김현준",
+    engName: "Kim, Hyunjun",
+    position: "Research Engineer",
+    detail: ["서울대학교 전기정보공학과 석사"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "금종수",
+    engName: "Keum, Jongsoo",
+    position: "Research Engineer",
+    detail: ["광주과학기술원 전기전자컴퓨터공학부 석사"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "박종호",
+    engName: "Park, Jongho",
+    position: "Research Engineer",
+    detail: ["서울대학교 컴퓨터공학부 석사"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "주민규",
+    engName: "Joo, Mingyu",
+    position: "Research Engineer",
+    detail: ["고려대학교 전기전자공학과 석사", "고려대학교 전기전자공학과"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "백호식",
+    engName: "Baek, Hosik",
+    position: "Research Engineer",
+    detail: ["건국대학교 벤처경영공학 석박사(통)", "동국대학교 산업시스템공학과", "기상청 국가기상위성센터 연구팀"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "박종관",
+    engName: "Park, Jongkwan",
+    position: "응용개발팀 책임연구원",
+    detail: ["한양대학교 전자공학전공", "에스엔유프리시젼 연구팀"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "최익현",
+    engName: "Choi, Ickhyun",
+    position: "응용개발팀 선임연구원",
+    detail: ["인하대학교 전자공학과 석사", "인하대학교 전자공학전공", "고영테크놀러지 Vision팀 LG전자 VC사업부"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "송하덕",
+    engName: "Song, Hadeok",
+    position: "응용개발팀 대리",
+    detail: ["명지대학교 정보통신공학 석사"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "조훈민",
+    engName: "Cho, Hoonmin",
+    position: "모름",
+    detail: ["서울대학교 전기컴퓨터공학부 석사", "고영테크놀러지 머신비전 연구소"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "김남훈",
+    engName: "Kim, Namhoon",
+    position: "모름",
+    detail: ["중앙대학교 경영학부"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "신찬우",
+    engName: "Shin, Chanwoo",
+    position: "모름",
+    detail: ["건국대학교 융합인재학부"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "권순욱",
+    engName: "Kwon, Soonwook",
+    position: "소프트웨어개발팀 책임연구원",
+    detail: ["삼성전자 SmartTV 외 다수 프로젝트 참여"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "강승연",
+    engName: "Kang, Seungyeun",
+    position: "소프트웨어개발팀 선임연구원",
+    detail: ["선문대학교 정보통신공학과", "넥스트아이 소프트웨어개발팀"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "류덕상",
+    engName: "Ryu, Deoksang",
+    position: "소프트웨어개발팀 선임연구원",
+    detail: ["건양대학교 의공학과", "맥사이언스 소프트웨어개발팀"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "오용철",
+    engName: "Oh, yongchul",
+    position: "설계팀장",
+    detail: ["에스엔유프리시젼 설계팀", "미래컴퍼니 설계팀"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "유승균",
+    engName: "Yoo, Seunggyun",
+    position: "설계팀 대리",
+    detail: ["선문대학교 신소재공학과", "에스엔유프리시젼 설계팀"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "나종헌",
+    engName: "Na, Jongheon",
+    position: "기술지원팀 대리",
+    detail: ["인천대학교 컴퓨터공학과", "다산뉴텍 개발팀"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "박지훈",
+    engName: "Park, Jihoon",
+    position: "기술지원팀 대리",
+    detail: ["인천대학교 컴퓨터공학과"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "장현진",
+    engName: "Jang, Hyunjin",
+    position: "기술지원팀 대리",
+    detail: ["인천대학교 컴퓨터공학과"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "송준석",
+    engName: "Song, Junseok",
+    position: "기술지원팀 대리",
+    detail: ["인천대학교 컴퓨터공학과"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "김정훈",
+    engName: "Kim, Jeonghoon",
+    position: "기술지원팀 대리",
+    detail: ["전북대학교 정밀기계공학과", "구네보코리아 기술팀"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "김철훈",
+    engName: "kim, Chulhoon",
+    position: "기술지원팀 대리",
+    detail: ["연성대학교 디지털전자과", "넥스트아이 개발팀"],
+  },
 ];
 
 export const salesList = [
-    {
-        'imgUrl': "http://placehold.it/300x300",
-        'position': 'CEO',
-        'name': '송기영',
-        'engName': 'Song, Kiyoung',
-        'detail': [
-            "두산밥캣 오퍼레이션 전략",
-            "두산 지주사 전략기획실(Tri-C)",
-            "서울대학교 기계항공공학부",
-            "서울대학교 경영학과(부)",
-        ]
-    },
-    {
-        'imgUrl': "http://placehold.it/300x300",
-        'position': 'CEO',
-        'name': '송기영',
-        'engName': 'Song, Kiyoung',
-        'detail': [
-            "두산밥캣 오퍼레이션 전략",
-            "두산 지주사 전략기획실(Tri-C)",
-            "서울대학교 기계항공공학부",
-            "서울대학교 경영학과(부)",
-        ]
-    },
-    {
-        'imgUrl': "http://placehold.it/300x300",
-        'position': 'CEO',
-        'name': '송기영',
-        'engName': 'Song, Kiyoung',
-        'detail': [
-            "두산밥캣 오퍼레이션 전략",
-            "두산 지주사 전략기획실(Tri-C)",
-            "서울대학교 기계항공공학부",
-            "서울대학교 경영학과(부)",
-        ]
-    },
-    {
-        'imgUrl': "http://placehold.it/300x300",
-        'position': 'CEO',
-        'name': '송기영',
-        'engName': 'Song, Kiyoung',
-        'detail': [
-            "두산밥캣 오퍼레이션 전략",
-            "두산 지주사 전략기획실(Tri-C)",
-            "서울대학교 기계항공공학부",
-            "서울대학교 경영학과(부)",
-        ]
-    },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "이동희",
+    engName: "Lee, Donghee",
+    position: "사업개발팀 이사",
+    detail: ["서울대학교 경영학과", "두산 지주사 전략기획실(Tri-C)"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "김왕수",
+    engName: "Kim, Wangsoo",
+    position: "사업개발팀 이사",
+    detail: ["서울대학교 심리학과", "삼성물산 화학팀"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "한쉬",
+    engName: "Han, Xu",
+    position: "중국 사업개발팀 팀장",
+    detail: ["서울대학교 컴퓨터공학부", "HanDou(Shanghai)마케팅 이사", "현대중공업(상해) R&D 엔지니어"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "이홍석",
+    engName: "Lee, Hongsuk",
+    position: "사업개발팀 팀장",
+    detail: ["서울대학교 경영학과", "LG디스플레이 전략마케팅그룹"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "김민석",
+    engName: "Kim, Minseok",
+    position: "사업개발팀 팀장",
+    detail: ["서울대학교 산업공학과", "현대자동차 R&D 전략팀", "컴투스 퍼블리싱팀"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "정희재",
+    engName: "Jung, Heejae",
+    position: "사업개발팀 팀장",
+    detail: ["서울대학교 경영학과", "현대자동차 수출기획팀"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "조용훈",
+    engName: "Cho, Yonghoon",
+    position: "사업개발팀 대리",
+    detail: ["서울대학교 산업인력개발학과"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "김한준",
+    engName: "Kim, Hanjun",
+    position: "사업개발팀 대리",
+    detail: ["서울대학교 경영학과", "제일기획 캠페인기획팀"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "홍철진",
+    engName: "Hong, Cheoljin",
+    position: "사업개발팀 대리",
+    detail: ["한국산업기술대학교 전자공학과", "TDK Korea 기술영업팀"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "노광용",
+    engName: "Noh, Kwangyong",
+    position: "사업개발팀 대리",
+    detail: ["경기대학교 스포츠경영학 전공", "한국후지제록스 B2B 영업"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "문선호",
+    engName: "Mun, Seonho",
+    position: "사업개발팀 사원",
+    detail: ["경희대학교 컨벤션경영학과"],
+  },
 ];
 
 export const manageList = [
-    {
-        'imgUrl': "http://placehold.it/300x300",
-        'position': 'CEO',
-        'name': '송기영',
-        'engName': 'Song, Kiyoung',
-        'detail': [
-            "두산밥캣 오퍼레이션 전략",
-            "두산 지주사 전략기획실(Tri-C)",
-            "서울대학교 기계항공공학부",
-            "서울대학교 경영학과(부)",
-        ]
-    },
-    {
-        'imgUrl': "http://placehold.it/300x300",
-        'position': 'CEO',
-        'name': '송기영',
-        'engName': 'Song, Kiyoung',
-        'detail': [
-            "두산밥캣 오퍼레이션 전략",
-            "두산 지주사 전략기획실(Tri-C)",
-            "서울대학교 기계항공공학부",
-            "서울대학교 경영학과(부)",
-        ]
-    },
-    {
-        'imgUrl': "http://placehold.it/300x300",
-        'position': 'CEO',
-        'name': '송기영',
-        'engName': 'Song, Kiyoung',
-        'detail': [
-            "두산밥캣 오퍼레이션 전략",
-            "두산 지주사 전략기획실(Tri-C)",
-            "서울대학교 기계항공공학부",
-            "서울대학교 경영학과(부)",
-        ]
-    },
-    {
-        'imgUrl': "http://placehold.it/300x300",
-        'position': 'CEO',
-        'name': '송기영',
-        'engName': 'Song, Kiyoung',
-        'detail': [
-            "두산밥캣 오퍼레이션 전략",
-            "두산 지주사 전략기획실(Tri-C)",
-            "서울대학교 기계항공공학부",
-            "서울대학교 경영학과(부)",
-        ]
-    },
-    {
-        'imgUrl': "http://placehold.it/300x300",
-        'position': 'CEO',
-        'name': '송기영',
-        'engName': 'Song, Kiyoung',
-        'detail': [
-            "두산밥캣 오퍼레이션 전략",
-            "두산 지주사 전략기획실(Tri-C)",
-            "서울대학교 기계항공공학부",
-            "서울대학교 경영학과(부)",
-        ]
-    },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "윤영훈",
+    engName: "Yun, Younghoon",
+    position: "사업개발팀 팀장",
+    detail: [
+      "서울대학교 기술경영∙경제∙정책전공 석사",
+      "고려대학교 공과대학 산업시스템정보공학과",
+      "두산 지주사 전략기획실(Tri-C)",
+      "ST Unitas 신사업전략팀",
+    ],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "이보라",
+    engName: "Lee, Bora",
+    position: "경영지원팀 팀장",
+    detail: ["숙명여자대학교 문화관광학과", "숙명여자대학교 일본학과(부)", "하이트론시스템즈 해외영업팀"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "손기호",
+    engName: "Son, Kiho",
+    position: "경영지원팀 팀장",
+    detail: ["고려대학교 사학과", "고려대학교 과학기술학융합학과", "고려대학교 경제학과(부)"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "신솔빈",
+    engName: "Shin, Solbin",
+    position: "경영지원팀 대리",
+    detail: ["한신대학교 정보통신학과", "나래회계법인 기장팀", "socar 경영관리팀"],
+  },
+  {
+    imgUrl: "http://placehold.it/300x300",
+    name: "오승진",
+    engName: "Oh, Seungjin",
+    position: "경영지원팀 사원",
+    detail: ["동원대학교 e비즈니스학과", "한국폴리텍대학 CAD&모델링과"],
+  },
 ];
