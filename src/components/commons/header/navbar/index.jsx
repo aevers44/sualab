@@ -12,7 +12,7 @@ const linkItem = {
   company: [{ name: "About us", link: "about-us" }, { name: "People", link: "people" }],
   product: [
     { name: "SuaKIT", link: "suakit" },
-    { name: "How to apply SuaKIT", link: "how-to" },
+    { name: "How to apply SuaKIT", link: "how-to-apply" },
     { name: "제품문의", link: "support" },
     { name: "Download", link: "downaload" },
   ],
