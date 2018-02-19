@@ -1,32 +1,50 @@
 import express from "express";
+import xAdmin from "express-admin";
 import path from "path";
 import WebpackDevServer from "webpack-dev-server";
 import webpack from "webpack";
 
-const app = express();
-let port = 3000;
-let devPort = 8080;
+import apiRouter from "./routes";
 
-if (process.env.NODE_ENV === "development") {
-  console.log("Server is running on development mode");
+const adminConfig = {
+  dpath: __dirname + "/../config/",
+  config: require(__dirname + "/../config/config.json"),
+  settings: require(__dirname + "/../config/settings.json"),
+  custom: require(__dirname + "/../config/custom.json"),
+  users: require(__dirname + "/../config/users.json"),
+};
 
-  const config = require("../webpack.dev.config");
-  let compiler = webpack(config);
-  let devServer = new WebpackDevServer(compiler, config.devServer);
-  devServer.listen(devPort, () => {
-    console.log("webpack-dev-server is listening on port", devPort);
+xAdmin.init(adminConfig, (err, admin) => {
+  if (err) {
+    return console.log(err);
+  }
+
+  const app = express();
+  let port = process.env.PORT || 3000;
+  let devPort = 8080;
+
+  if (process.env.NODE_ENV === "development") {
+    console.log("Server is running on development mode");
+
+    const config = require("../webpack.dev.config");
+    let compiler = webpack(config);
+    let devServer = new WebpackDevServer(compiler, config.devServer);
+    devServer.listen(devPort, () => {
+      console.log("webpack-dev-server is listening on port", devPort);
+    });
+  }
+
+  app.use("/admin", admin);
+
+  app.use(express.static(path.join(__dirname, "..", "public")));
+
+  app.use("/api", apiRouter);
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "..", "public", "index.html"));
   });
-}
 
-app.use(express.static(path.join(__dirname, "..", "public")));
-
-import rrr from "./routes";
-app.use("/api", rrr);
-
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "..", "public", "index.html"));
-});
-
-const server = app.listen(port, () => {
-  console.log("Express listening on port", port);
+  const server = app.listen(port, () => {
+    console.log("Express listening on port", port);
+  });
 });

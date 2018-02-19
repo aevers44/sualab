@@ -1,0 +1,15 @@
+{
+  "sqlite": {
+    "database": "sualabdb.sqlite3"
+  },
+  "server": {
+    "port": 3030
+  },
+  "app": {
+    "layouts": true,
+    "themes": true,
+    "languages": true,
+    "upload": "public/upload",
+    "root": "/admin"
+  }
+}
