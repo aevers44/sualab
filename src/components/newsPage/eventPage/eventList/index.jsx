@@ -7,7 +7,7 @@ import styles from "../../mediaPage/newsList/newsList.scss";
 
 const PAGE_LIMIT = 10;
 
-const EventItem = ({ id, title, date, media, link, image, content }) => {
+const EventItem = ({ id, title, date, place, image, content }) => {
   const subContent = content ? content.substr(0, 150) + " ..." : "";
   return (
     <Link to={`/news/event/${id}`}>
@@ -20,7 +20,7 @@ const EventItem = ({ id, title, date, media, link, image, content }) => {
           <div className={styles.date}>
             <span>{date}</span>
             <span> | </span>
-            <span>{media}</span>
+            <span>{place}</span>
           </div>
           <div className={styles.content}>{subContent}</div>
         </div>
@@ -92,7 +92,7 @@ class EventList extends React.PureComponent {
   }
 
   getArticleList(pageNo) {
-    axios.get("/api/media?pageNo=" + pageNo).then(res => {
+    axios.get("/api/event?pageNo=" + pageNo).then(res => {
       this.setState({
         totalArticleNum: res.headers["x-total-count"],
         newsItemList: res.data,

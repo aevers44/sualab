@@ -14,8 +14,7 @@ class EventDetail extends React.PureComponent {
     this.state = {
       title: "-",
       date: "-",
-      media: "-",
-      link: "-",
+      place: "-",
       image: "-",
       content: "-",
       prevTitle: "-",
@@ -58,10 +57,7 @@ class EventDetail extends React.PureComponent {
             <div className={styles.date}>
               <span>{article.date}</span>
               <span> | </span>
-              <span>{article.media}</span>
-            </div>
-            <div className={styles.link}>
-              <a href={article.link}>{article.link}</a>
+              <span>{article.place}</span>
             </div>
             <div className={styles.grayLine} />
             <div className={styles.imgWrapper}>
@@ -103,13 +99,12 @@ class EventDetail extends React.PureComponent {
 
   getArticleData(id) {
     axios
-      .get("/api/media/" + id)
+      .get("/api/event/" + id)
       .then(res => {
         this.setState({
           title: res.data.title,
           date: res.data.date,
-          media: res.data.media,
-          link: res.data.link,
+          place: res.data.place,
           image: res.data.image,
           content: res.data.content,
           prevId: res.data.prev.id,
