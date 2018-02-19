@@ -16,7 +16,7 @@ const linkItem = {
     { name: "제품문의", link: "support" },
     // { name: "Download", link: "downaload" },
   ],
-  news: [{ name: "SUALAB in media", link: "media" }],
+  news: [{ name: "SUALAB in media", link: "media" }, { name: "Events", link: "event" }],
   career: [{ name: "채용 절차", link: "recruit" }],
   contact: [{ name: "Office", link: "office" }, { name: "Global Sales Network", link: "global-sales-network" }],
 };
