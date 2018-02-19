@@ -9,7 +9,6 @@
     "layouts": true,
     "themes": true,
     "languages": true,
-    "upload": "public/upload",
     "root": "/admin"
   }
 }

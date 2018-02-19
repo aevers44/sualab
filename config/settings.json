@@ -56,7 +56,7 @@
                     "show": true
                 },
                 "editview": {
-                    "show": true
+                    "show": false
                 }
             },
             {
@@ -143,14 +143,13 @@
                 "name": "content",
                 "verbose": "content",
                 "control": {
-                    "textarea": true,
-                    "editor": "textarea-editor"
+                    "textarea": true
                 },
                 "type": "TEXT",
                 "allowNull": true,
                 "defaultValue": null,
                 "listview": {
-                    "show": true
+                    "show": false
                 },
                 "editview": {
                     "show": true
@@ -189,7 +188,7 @@
                     "show": true
                 },
                 "editview": {
-                    "show": true
+                    "show": false
                 }
             },
             {
@@ -244,7 +243,7 @@
                 "name": "image",
                 "verbose": "image",
                 "control": {
-                    "text": true
+                    "file": true
                 },
                 "type": "TEXT",
                 "allowNull": true,
@@ -260,13 +259,13 @@
                 "name": "content",
                 "verbose": "content",
                 "control": {
-                    "text": true
+                    "textarea": true
                 },
                 "type": "TEXT",
                 "allowNull": true,
                 "defaultValue": null,
                 "listview": {
-                    "show": true
+                    "show": false
                 },
                 "editview": {
                     "show": true
