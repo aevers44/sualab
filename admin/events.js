@@ -1,7 +1,9 @@
 var AWS = require("aws-sdk");
 var path = require("path");
 var fs = require("fs");
+var parse = require("url-parse");
 
+var CLOUDFRONT_LINK = "d3rqapinkc8b8p.cloudfront.net";
 AWS.config.region = "ap-northeast-2";
 AWS.config.update({
   accessKeyId: "AKIAJIOJ4D5IJ5AAANLA",
@@ -37,7 +39,11 @@ exports.preSave = function(req, res, args, next) {
           //S3 File URL
           var url = data.Location;
           console.log(url);
-          record.image = url;
+          var parseUrl = parse(url);
+          parseUrl.set("hostname", CLOUDFRONT_LINK);
+          console.log(parseUrl.href);
+          // record path
+          record.image = parseUrl.href;
           next();
         });
     } else {
