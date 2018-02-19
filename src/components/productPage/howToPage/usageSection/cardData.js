@@ -54,7 +54,7 @@ const classificationList = [
   },
   {
     title: "테스트",
-    content: "테스트를 통해 딥러닝 모델이 검출한 불량영역을 확인합니다.",
+    content: "테스트를 통해 유형별로 분류된 이미지들을 확인합니다.",
     imgUrl: "https://d3rqapinkc8b8p.cloudfront.net/productPage/process-classification-5@2x.png",
   },
   {

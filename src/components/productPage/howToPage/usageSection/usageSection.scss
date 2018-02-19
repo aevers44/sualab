@@ -1,10 +1,11 @@
-$contaner-width: 1080px;
+$container-width: 1080px;
 
 .usageSection {
+  padding-top: 72px;
 }
 
 .innerContainer {
-  max-width: $contaner-width;
+  max-width: $container-width;
   margin: 0 auto;
 }
 
