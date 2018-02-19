@@ -1,4 +1,4 @@
 import SuakitPage from "./suakitPage";
 import SupportPage from "./supportPage";
-
-export { SuakitPage, SupportPage };
+import HowToPage from "./howToPage";
+export { SuakitPage, HowToPage, SupportPage };

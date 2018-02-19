@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="82px" height="16px" viewBox="0 0 82 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>96240B59-15ED-44ED-9795-34A1DAD665F7</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <linearGradient x1="5.17492065%" y1="0%" x2="54.968399%" y2="160.736863%" id="linearGradient-1">
+            <stop stop-color="#29DCF9" offset="0%"></stop>
+            <stop stop-color="#1FF2D2" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Product-how-to-apply" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-697.000000, -2366.000000)">
+        <g id="long-arrow-point-to-left" transform="translate(737.500000, 2374.000000) scale(-1, 1) rotate(-90.000000) translate(-737.500000, -2374.000000) translate(730.000000, 2333.000000)">
+            <g id="arrow_pont_to_down_arrow-point-to-down" transform="translate(7.500000, 40.937500) scale(-1, 1) rotate(-180.000000) translate(-7.500000, -40.937500) translate(0.000000, 0.437500)">
+                <path d="M7.5,80.21875 L7.5,6.71704934" id="long_arrow_point_to_left_Line-2" stroke="#5F7591" stroke-width="2" stroke-linecap="round" stroke-dasharray="4"></path>
+                <path d="M6.75803744,0.303760226 L0.307974601,6.66798536 C0.111352203,6.85873659 1.53524523e-16,7.12373245 0,7.40090292 C-1.53524523e-16,7.67807346 0.111352203,7.94306925 0.307974601,8.13382052 C0.7241066,8.53872652 1.37760707,8.53872652 1.79373907,8.13382052 L7.50129464,2.50212942 L13.2073503,8.13382052 C13.6233824,8.53824023 14.2763326,8.53824023 14.6923647,8.13382052 C14.8887881,7.94295703 15,7.67800308 15,7.40090292 C15,7.12380277 14.8887881,6.85884883 14.6923647,6.66798536 L8.24305193,0.303760226 C8.04343979,0.107848295 7.77720086,-0.00106740617 7.50054464,7.88689119e-06 C7.23204207,7.88689119e-06 6.96278943,0.101258667 6.75803744,0.303760226 Z" id="long_arrow_point_to_left_Shape" fill="#5F7591" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>
