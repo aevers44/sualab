@@ -1,0 +1,76 @@
+$container-width: 1080px;
+
+.firstSection {
+  padding-top: 60px;
+  padding-bottom: 50px;
+  background-color: #f5f7fb;
+
+  .innerContainer {
+    max-width: $container-width;
+    margin: 0 auto;
+  }
+}
+
+.line {
+  width: 48px;
+  height: 1px;
+  border-bottom: solid 1px #1ae8c9;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.subTitle {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #0c1020;
+  margin-bottom: 50px;
+}
+
+.contentWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .cardItem {
+    flex: 1 0px;
+    max-width: 347px;
+    height: 375px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .cardTitle {
+      font-size: 19px;
+      font-weight: 500;
+      line-height: 1.89;
+      letter-spacing: normal;
+      text-align: center;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    .cardContent {
+      font-size: 14px;
+      font-weight: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: center;
+      color: #b5bac5;
+    }
+
+    &:nth-child(1) {
+      background-image: url(https://d3rqapinkc8b8p.cloudfront.net/careerPage/philosophy-1.jpg);
+    }
+    &:nth-child(2) {
+      background-image: url(https://d3rqapinkc8b8p.cloudfront.net/careerPage/philosophy-2.jpg);
+    }
+    &:nth-child(3) {
+      background-image: url(https://d3rqapinkc8b8p.cloudfront.net/careerPage/philosophy-3.jpg);
+    }
+  }
+}

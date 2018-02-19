@@ -6,7 +6,7 @@ import Test from "./test";
 import { AboutUsPage, PeoplePage } from "./companyPage";
 import { SuakitPage, SupportPage, HowToPage } from "./productPage";
 import { MediaPage, NewsDetail, EventPage, EventDetail } from "./newsPage";
-import { RecruitPage } from "./careerPage";
+import { RecruitPage, PhilosophyPage } from "./careerPage";
 import { OfficePage, NetworkPage } from "./contactPage";
 
 import Header from "./commons/header";
@@ -40,8 +40,9 @@ class App extends React.PureComponent {
             <Route exact path="/news/event/:number" component={EventDetail} />
             <Redirect from="/news" to="/news/media" />
 
+            <Route exact path="/career/philosophy" component={PhilosophyPage} />
             <Route exact path="/career/recruit" component={RecruitPage} />
-            <Redirect from="/career" to="/career/recruit" />
+            <Redirect from="/career" to="/career/philosophy" />
 
             <Route exact path="/contact/office" component={OfficePage} />
             <Route exact path="/contact/global-sales-network" component={NetworkPage} />
