@@ -3,9 +3,6 @@ import sqlite3 from "sqlite3";
 /*
   get / : artilce list
   get /id : article
-  post / : add article
-  put /id : update article
-  delete /id : delete article
 */
 const router = express.Router();
 
@@ -55,7 +52,6 @@ router.get("/:id", (req, res) => {
         res.status(404);
       } else {
         result = { ...row };
-        // res.json(row);
       }
     });
 
@@ -87,55 +83,55 @@ router.get("/:id", (req, res) => {
   });
 });
 
-router.post("/", (req, res) => {
-  const db = new sqlite3.Database("./sualabdb.sqlite3");
-  const { title, date, media, link, image, content } = req.query;
-  let stmt = db
-    .prepare("INSERT INTO media (title, date, media, link, image, content) \
-  VALUES (?, ?, ?, ?, ?, ?)", [
-      title,
-      date,
-      media,
-      link,
-      image,
-      content,
-    ])
-    .run(err => {
-      if (err) {
-        console.error(err);
-      }
-      res.status(204).json(stmt.lastID);
-    });
-  stmt.finalize();
+// router.post("/", (req, res) => {
+//   const db = new sqlite3.Database("./sualabdb.sqlite3");
+//   const { title, date, media, link, image, content } = req.query;
+//   let stmt = db
+//     .prepare("INSERT INTO media (title, date, media, link, image, content) \
+//   VALUES (?, ?, ?, ?, ?, ?)", [
+//       title,
+//       date,
+//       media,
+//       link,
+//       image,
+//       content,
+//     ])
+//     .run(err => {
+//       if (err) {
+//         console.error(err);
+//       }
+//       res.status(204).json(stmt.lastID);
+//     });
+//   stmt.finalize();
 
-  db.close();
-});
+//   db.close();
+// });
 
-router.put("/:id", (req, res) => {
-  const db = new sqlite3.Database("./sualabdb.sqlite3");
-  const { title, date, media, link, image, content } = req.query;
-  db.run(
-    "UPDATE media SET title=?, date=?, media=?, link=?, image=?, content=? \
-    WHERE id = ?",
-    [title, date, media, link, image, content, req.params.id],
-    err => {
-      if (err) {
-        console.error(err);
-      }
-      res.status(204).json({});
-    },
-  );
+// router.put("/:id", (req, res) => {
+//   const db = new sqlite3.Database("./sualabdb.sqlite3");
+//   const { title, date, media, link, image, content } = req.query;
+//   db.run(
+//     "UPDATE media SET title=?, date=?, media=?, link=?, image=?, content=? \
+//     WHERE id = ?",
+//     [title, date, media, link, image, content, req.params.id],
+//     err => {
+//       if (err) {
+//         console.error(err);
+//       }
+//       res.status(204).json({});
+//     },
+//   );
 
-  db.close();
-});
+//   db.close();
+// });
 
-router.delete("/:id", (req, res) => {
-  const db = new sqlite3.Database("./sualabdb.sqlite3");
-  db.run("DELETE FROM media WHERE id = ?", [req.params.id], err => {
-    if (err) {
-      console.error(err);
-    }
-    res.status(204).json({});
-  });
-});
+// router.delete("/:id", (req, res) => {
+//   const db = new sqlite3.Database("./sualabdb.sqlite3");
+//   db.run("DELETE FROM media WHERE id = ?", [req.params.id], err => {
+//     if (err) {
+//       console.error(err);
+//     }
+//     res.status(204).json({});
+//   });
+// });
 export default router;
