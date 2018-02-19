@@ -14,7 +14,7 @@ const linkItem = {
     { name: "SuaKIT", link: "suakit" },
     { name: "How to apply SuaKIT", link: "how-to-apply" },
     { name: "제품문의", link: "support" },
-    { name: "Download", link: "downaload" },
+    // { name: "Download", link: "downaload" },
   ],
   news: [{ name: "SUALAB in media", link: "media" }],
   career: [{ name: "채용 절차", link: "recruit" }],

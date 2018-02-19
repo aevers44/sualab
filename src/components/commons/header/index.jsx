@@ -29,9 +29,9 @@ const Header = () => {
           <Link className={`${styles.menuItem} ${curPath === "career" ? styles.active : ""}`} to="/career">
             Career
           </Link>
-          <Link className={`${styles.menuItem} ${curPath === "blog" ? styles.active : ""}`} to="/">
+          <a className={styles.menuItem} href="http://research.sualab.com/" target="_blank">
             Blog
-          </Link>
+          </a>
           <Link className={`${styles.menuItem} ${curPath === "contact" ? styles.active : ""}`} to="/contact">
             Contact
           </Link>

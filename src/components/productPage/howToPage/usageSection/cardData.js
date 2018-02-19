@@ -73,7 +73,7 @@ const detectionList = [
   {
     title: "이미지 분류",
     content: "불러온 이미지들을 학습용/검증용/테스트용 이미지로 분류합니다.",
-    imgUrl: "https://d3rqapinkc8b8p.cloudfront.net/productPage/process-segmentation-2@2x.png",
+    imgUrl: "https://d3rqapinkc8b8p.cloudfront.net/productPage/process-detection-2@2x.png",
   },
   {
     title: "라벨링",
