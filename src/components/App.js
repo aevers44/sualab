@@ -5,7 +5,7 @@ import MainPage from "./mainPage";
 import Test from "./test";
 import { AboutUsPage, PeoplePage } from "./companyPage";
 import { SuakitPage, SupportPage, HowToPage } from "./productPage";
-import { MediaPage, NewsDetail } from "./newsPage";
+import { MediaPage, NewsDetail, EventPage, EventDetail } from "./newsPage";
 import { RecruitPage } from "./careerPage";
 import { OfficePage, NetworkPage } from "./contactPage";
 
@@ -36,6 +36,8 @@ class App extends React.PureComponent {
 
             <Route exact path="/news/media" component={MediaPage} />
             <Route exact path="/news/media/:number" component={NewsDetail} />
+            <Route exact path="/news/event" component={EventPage} />
+            <Route exact path="/news/event/:number" component={EventDetail} />
             <Redirect from="/news" to="/news/media" />
 
             <Route exact path="/career/recruit" component={RecruitPage} />
