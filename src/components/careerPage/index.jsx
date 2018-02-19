@@ -1,3 +1,3 @@
-import RecruitPage from './recruitPage';
-
-export { RecruitPage };
+import RecruitPage from "./recruitPage";
+import PhilosophyPage from "./philosophyPage";
+export { RecruitPage, PhilosophyPage };
