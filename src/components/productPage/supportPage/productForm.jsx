@@ -24,21 +24,21 @@ const ProductForm = () => (
 
     <div className={styles.inputWrapper}>
       <label htmlFor="productType" className={styles.label}>
-        제품 유형*
+        제품 유형
       </label>
       <input type="text" className={styles.textForm} id="productType" name="productType" />
     </div>
 
     <div className={styles.inputWrapper}>
       <label htmlFor="faultType" className={styles.label}>
-        불량 유형*
+        불량 유형
       </label>
       <input type="text" className={styles.textForm} id="faultType" name="faultType" />
     </div>
 
     <div className={styles.inputWrapper}>
       <label htmlFor="numOfLine" className={styles.label}>
-        생산라인 수*
+        생산라인 수
       </label>
       <input type="text" className={styles.textForm} id="numOfLine" name="numOfLine" />
     </div>
@@ -51,9 +51,11 @@ const ProductForm = () => (
         <option defaultValue disabled>
           알게 된 경로를 선택하세요.
         </option>
-        <option value="0">예시 1</option>
-        <option value="1">예시 2</option>
-        <option value="2">예시 3</option>
+        <option value="0">전시회/세미나</option>
+        <option value="1">주변인 소개</option>
+        <option value="2">매체(기사/방송 등)</option>
+        <option value="3">검색(포탈/홈페이지 등) </option>
+        <option value="4">기타</option>
       </select>
     </div>
 

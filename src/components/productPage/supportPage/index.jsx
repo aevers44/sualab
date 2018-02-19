@@ -69,7 +69,7 @@ class SupportPage extends React.PureComponent {
 
             <div className={styles.inputWrapper}>
               <label htmlFor="status" className={styles.label}>
-                직급*
+                직급
               </label>
               <input type="text" className={styles.textForm} id="status" name="status" />
             </div>
@@ -83,7 +83,7 @@ class SupportPage extends React.PureComponent {
 
             <div className={styles.inputWrapper}>
               <label htmlFor="country" className={styles.label}>
-                국가*
+                국가
               </label>
               <input type="text" className={styles.textForm} id="country" name="country" />
             </div>

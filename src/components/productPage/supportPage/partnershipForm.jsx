@@ -12,9 +12,11 @@ const PartnershipForm = () => (
         <option defaultValue disabled>
           알게 된 경로를 선택하세요.
         </option>
-        <option value="0">예시 1</option>
-        <option value="1">예시 2</option>
-        <option value="2">예시 3</option>
+        <option value="0">전시회/세미나</option>
+        <option value="1">주변인 소개</option>
+        <option value="2">매체(기사/방송 등)</option>
+        <option value="3">검색(포탈/홈페이지 등) </option>
+        <option value="4">기타</option>
       </select>
     </div>
 
