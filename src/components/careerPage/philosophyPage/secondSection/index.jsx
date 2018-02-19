@@ -4,7 +4,6 @@ import styles from "./secondSection.scss";
 
 const SecondSection = () => (
   <section className={styles.secondSection}>
-    {" "}
     <div className={styles.innerContainer}>
       <div className={styles.line} />
       <div className={styles.subTitle}>인재상</div>
@@ -23,7 +22,7 @@ const SecondSection = () => (
 
         <div className={styles.contentItem}>
           <div className={styles.imgWrapper}>
-            <img src="https://d3rqapinkc8b8p.cloudfront.net/careerPage/old-machine-vision-1@2x.png" alt="" />
+            <img src="https://d3rqapinkc8b8p.cloudfront.net/careerPage/old-machine-vision-2@2x.png" alt="" />
           </div>
           <div className={styles.itemTitle}>성장을 위한 열정</div>
           <div className={styles.itemContent}>
