@@ -30,13 +30,19 @@ $header-height: 80px;
     font-size: 14px;
     line-height: normal;
     letter-spacing: normal;
-    color: #ffffff;
+    color: #5f7591;
     margin-left: 16px;
     margin-right: 16px;
     padding: 5px 0;
 
     &.active {
       border-bottom: solid 2px #1ae8c9;
+      transition: 0.3s ease-in-out;
+      color: #ffffff;
+    }
+    &:hover {
+      color: #ffffff;
+      transition: 0.3s ease-in-out;
     }
   }
 }

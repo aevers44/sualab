@@ -87,6 +87,7 @@ $container-width: 1080px;
   }
 
   &:hover {
-    box-shadow: 0 2px 17px 0 #e7eaf2;
+    box-shadow: 0 7px 17px 0 #e7eaf2;
+    transition: 0.3s ease-in-out;
   }
 }
