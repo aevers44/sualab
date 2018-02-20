@@ -3,11 +3,16 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-map
 
 const NetworkMapComponent = withScriptjs(
   withGoogleMap(props => (
-    <GoogleMap defaultZoom={10} defaultCenter={{ lat: 37.465518, lng: 126.95989 }}>
-      <Marker position={{ lat: 37.465518, lng: 126.95989 }} />
-      <Marker position={{ lat: 37.565518, lng: 126.95989 }} />
-      <Marker position={{ lat: 37.565518, lng: 126.85989 }} />
-      <Marker position={{ lat: 37.465518, lng: 126.85989 }} />
+    <GoogleMap
+      defaultZoom={3}
+      defaultCenter={{
+        lat: 16.94684033,
+        lng: 114.812421,
+      }}
+    >
+      <Marker position={{ lat: 35.705878, lng: 139.95983 }} />
+      <Marker position={{ lat: 1.334551, lng: 103.90098 }} />
+      <Marker position={{ lat: 13.800092, lng: 100.576453 }} />
     </GoogleMap>
   )),
 );

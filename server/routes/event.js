@@ -3,9 +3,6 @@ import sqlite3 from "sqlite3";
 /*
   get / : event list
   get /id : event
-  post / : add event
-  put /id : update event
-  delete /id : delete event
 */
 const router = express.Router();
 
@@ -87,54 +84,54 @@ router.get("/:id", (req, res) => {
   });
 });
 
-router.post("/", (req, res) => {
-  const db = new sqlite3.Database("./sualabdb.sqlite3");
-  const { title, date, place, image, content } = req.query;
-  let stmt = db
-    .prepare("INSERT INTO event (title, date, place, image, content) \
-  VALUES (?, ?, ?, ?, ?)", [
-      title,
-      date,
-      place,
-      image,
-      content,
-    ])
-    .run(err => {
-      if (err) {
-        console.error(err);
-      }
-      res.status(204).json(stmt.lastID);
-    });
-  stmt.finalize();
+// router.post("/", (req, res) => {
+//   const db = new sqlite3.Database("./sualabdb.sqlite3");
+//   const { title, date, place, image, content } = req.query;
+//   let stmt = db
+//     .prepare("INSERT INTO event (title, date, place, image, content) \
+//   VALUES (?, ?, ?, ?, ?)", [
+//       title,
+//       date,
+//       place,
+//       image,
+//       content,
+//     ])
+//     .run(err => {
+//       if (err) {
+//         console.error(err);
+//       }
+//       res.status(204).json(stmt.lastID);
+//     });
+//   stmt.finalize();
 
-  db.close();
-});
+//   db.close();
+// });
 
-router.put("/:id", (req, res) => {
-  const db = new sqlite3.Database("./sualabdb.sqlite3");
-  const { title, date, place, image, content } = req.query;
-  db.run(
-    "UPDATE event SET title=?, date=?, place=?, image=?, content=? \
-    WHERE id = ?",
-    [title, date, place, image, content, req.params.id],
-    err => {
-      if (err) {
-        console.error(err);
-      }
-      res.status(204).json({});
-    },
-  );
+// router.put("/:id", (req, res) => {
+//   const db = new sqlite3.Database("./sualabdb.sqlite3");
+//   const { title, date, place, image, content } = req.query;
+//   db.run(
+//     "UPDATE event SET title=?, date=?, place=?, image=?, content=? \
+//     WHERE id = ?",
+//     [title, date, place, image, content, req.params.id],
+//     err => {
+//       if (err) {
+//         console.error(err);
+//       }
+//       res.status(204).json({});
+//     },
+//   );
 
-  db.close();
-});
+//   db.close();
+// });
 
-router.delete("/:id", (req, res) => {
-  const db = new sqlite3.Database("./sualabdb.sqlite3");
-  db.run("DELETE FROM event WHERE id = ?", [req.params.id], err => {
-    if (err) {
-      console.error(err);
-    }
-    res.status(204).json({});
-  });
-});
+// router.delete("/:id", (req, res) => {
+//   const db = new sqlite3.Database("./sualabdb.sqlite3");
+//   db.run("DELETE FROM event WHERE id = ?", [req.params.id], err => {
+//     if (err) {
+//       console.error(err);
+//     }
+//     res.status(204).json({});
+//   });
+// });
 export default router;
