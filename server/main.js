@@ -1,4 +1,5 @@
 import express from "express";
+import bodyParser from "body-parser";
 import xAdmin from "express-admin";
 import path from "path";
 import WebpackDevServer from "webpack-dev-server";
@@ -22,6 +23,9 @@ xAdmin.init(adminConfig, (err, admin) => {
   const app = express();
   let port = process.env.PORT || 3000;
   let devPort = 8080;
+
+  app.use(bodyParser.urlencoded({ extended: false }));
+  app.use(bodyParser.json());
 
   if (process.env.NODE_ENV === "development") {
     console.log("Server is running on development mode");

@@ -4,6 +4,10 @@ var _express = require("express");
 
 var _express2 = _interopRequireDefault(_express);
 
+var _bodyParser = require("body-parser");
+
+var _bodyParser2 = _interopRequireDefault(_bodyParser);
+
 var _expressAdmin = require("express-admin");
 
 var _expressAdmin2 = _interopRequireDefault(_expressAdmin);
@@ -42,6 +46,9 @@ _expressAdmin2.default.init(adminConfig, function (err, admin) {
   var app = (0, _express2.default)();
   var port = process.env.PORT || 3000;
   var devPort = 8080;
+
+  app.use(_bodyParser2.default.urlencoded({ extended: false }));
+  app.use(_bodyParser2.default.json());
 
   if (process.env.NODE_ENV === "development") {
     console.log("Server is running on development mode");

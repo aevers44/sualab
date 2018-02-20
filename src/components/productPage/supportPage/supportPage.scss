@@ -197,10 +197,9 @@ $container-width: 1080px;
     letter-spacing: normal;
     text-align: center;
     color: #5f7591;
-    cursor: pointer;
 
-    &:hover,
     &.active {
+      cursor: pointer;
       border-color: #34495e;
       background-color: #34495e;
       color: #1ae8c9;

@@ -20,6 +20,24 @@ db.serialize(() => {
     place TEXT,  \
     image TEXT, content TEXT)",
   );
+
+  db.run(
+    "CREATE TABLE IF NOT EXISTS inquiry \
+    (id INTEGER PRIMARY KEY, \
+      name TEXT NOT NULL, phone TEXT NOT NULL, \
+      company TEXT NOT NULL, status TEXT, \
+      email TEXT NOT NULL, country TEXT, \
+      reason TEXT, \
+      has_vision INTEGER DEFAULT -1, \
+      industry TEXT NOT NULL DEFAULT 'NOT_RELATED', \
+      product_type TEXT, \
+      fault_type TEXT, \
+      num_of_line TEXT, \
+      path INTEGER NOT NULL DEFAULT -1, \
+      content TEXT NOT NULL, \
+      ad_agree INTEGER NOT NULL DEFAULT 0\
+    )",
+  );
 });
 
 db.close();

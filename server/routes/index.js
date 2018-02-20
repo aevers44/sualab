@@ -9,4 +9,7 @@ router.use("/media", mediaRouter);
 import eventRouter from "./event";
 router.use("/event", eventRouter);
 
+import inquiryRouter from "./inquiry";
+router.use("/inquiry", inquiryRouter);
+
 export default router;
