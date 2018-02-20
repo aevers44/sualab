@@ -11,14 +11,19 @@ const SixthSection = () => (
       <div className={styles.brochureWrapper}>
         <img src="https://d3rqapinkc8b8p.cloudfront.net/productPage/whitepaper@2x.png" alt="" />
         <div className={styles.buttonWrapper}>
-          <a href="#" className={styles.downloadBtn}>
+          <a
+            target="_blank"
+            href="http://d3rqapinkc8b8p.cloudfront.net/SuaKIT_brochure_v1.2_ko.pdf"
+            className={styles.downloadBtn}
+          >
             KOREAN
           </a>
-          <a href="#" className={styles.downloadBtn}>
+          <a
+            target="_blank"
+            href="http://d3rqapinkc8b8p.cloudfront.net/SuaKIT_brochure_v1.2_en.pdf"
+            className={styles.downloadBtn}
+          >
             ENGLISH
-          </a>
-          <a href="#" className={styles.downloadBtn}>
-            CHINESE
           </a>
         </div>
       </div>
