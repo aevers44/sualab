@@ -32,12 +32,12 @@ $container-width: 1080px;
 .awardWrapper {
   text-align: center;
   white-space: nowrap;
+  display: flex;
+  justify-content: space-between;
 
   .award {
-    float: left;
-    min-width: 300px;
-    padding-left: 40px;
-    padding-right: 40px;
+    flex: 1 auto;
+    max-width: 30%;
 
     .awardImage {
       display: inline-block;
