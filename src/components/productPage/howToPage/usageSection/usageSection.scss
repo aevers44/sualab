@@ -31,7 +31,7 @@ $container-width: 1080px;
   line-height: normal;
   letter-spacing: normal;
   color: #666d7c;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .tabButtons {
@@ -40,16 +40,16 @@ $container-width: 1080px;
 
   .button {
     cursor: pointer;
-    height: 90px;
-    line-height: 90px;
+    height: 70px;
+    line-height: 70px;
     flex: 1 100%;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     letter-spacing: normal;
     text-align: center;
     color: #9aa3b5;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 
     &.active {
       background-color: #f5f7fb;
@@ -61,7 +61,7 @@ $container-width: 1080px;
 .tabSection {
   background-color: #f5f7fb;
   padding-top: 35px;
-  padding-bottom: 16px;
+  padding-bottom: 10px;
 
   .innerContainer {
     display: flex;
@@ -73,7 +73,7 @@ $container-width: 1080px;
 .cardItem {
   flex: 1 33%;
   max-width: 340px;
-  height: 390px;
+  height: 330px;
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 5px 0 rgba(181, 186, 197, 0.44);
@@ -81,7 +81,7 @@ $container-width: 1080px;
   margin-bottom: 40px;
 
   .cardTitle {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
     line-height: normal;
     letter-spacing: normal;
@@ -89,22 +89,34 @@ $container-width: 1080px;
     margin-bottom: 8px;
   }
   .cardContent {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 300;
     line-height: normal;
     letter-spacing: normal;
     color: #000000;
-    margin-bottom: 55px;
+    margin-bottom: 36px;
   }
 
   .imgWrapper {
     text-align: center;
     width: 100%;
-    height: 160px;
+    height: 140px;
     img {
       width: 100%;
       height: 100%;
       object-fit: contain;
+    }
+  }
+  &:nth-child(4) {
+    .imgWrapper {
+      padding-top: 10px;
+      height: 130px;
+    }
+  }
+  &:nth-child(6) {
+    .imgWrapper {
+      padding-top: 10px;
+      height: 120px;
     }
   }
 }

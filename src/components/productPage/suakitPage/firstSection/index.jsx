@@ -27,8 +27,8 @@ const FirstSection = () => (
             <p>제조현장에서 발생하는 다양한 불량들을 이미지 분석을 통해 정확한 영역 형태로 검출해냅니다. </p>
 
             <p>
-              디양한 표면 형태를 가지고 있는 태양광 패널, 카메라 렌즈 등에서 여러 불량 유형을 검출하고, 이를 유형별로
-              정리할 수 있습니다.
+              디양한 표면 형태를 가지고 있는 태양광 패널, <br />카메라 렌즈 등에서 여러 불량 유형을 검출하고,<br />이를
+              유형별로 정리할 수 있습니다.
             </p>
           </div>
         </div>
@@ -39,10 +39,12 @@ const FirstSection = () => (
           </div>
           <div className={styles.cardTitle}>Classification</div>
           <div className={styles.cardContent}>
-            <p>정의한 Feature/Class에 맞춰 Image Set을 분류합니다.</p>
+            <p>
+              정의한 Feature/Class에 맞춰<br />Image Set을 분류합니다.
+            </p>
 
             <p>
-              다양한 불량 유형을 갖는 디스플레이, 필름 등에서 제품/불량 이미지를 취득한 뒤, 이를 분류하는데 사용
+              다양한 불량 유형을 갖는 디스플레이, 필름 등에서 <br />제품/불량 이미지를 취득한 뒤, 이를 분류하는데 <br />사용
               가능합니다.{" "}
             </p>
           </div>
@@ -54,10 +56,13 @@ const FirstSection = () => (
           </div>
           <div className={styles.cardTitle}>Detection</div>
           <div className={styles.cardContent}>
-            <p>정의한 Feature/Class에 맞춰 이미지 상에서 물체를 박스 형태로 검출합니다.</p>
+            <p>
+              정의한 Feature/Class에 맞춰 이미지 상에서<br />물체를 박스 형태로 검출합니다.
+            </p>
 
             <p>
-              기계/부품류 등의 제조 라인에서 여러 물체가 촬영된 하나의 사진을 분석해 각각의 물체를 검출해낼 수 있습니다.
+              기계/부품류 등의 제조 라인에서 <br />여러 물체가 촬영된 하나의 사진을 분석해 <br />각각의 물체를 검출해낼
+              수 있습니다.
             </p>
           </div>
         </div>

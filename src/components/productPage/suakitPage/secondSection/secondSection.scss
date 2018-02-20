@@ -26,7 +26,7 @@ $container-width: 1080px;
   letter-spacing: normal;
   color: #fff;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 65px;
 }
 
 .contentWrapper {
@@ -40,14 +40,19 @@ $container-width: 1080px;
     .imgWrapper {
       img {
         border-radius: 50%;
-        width: 166px;
-        height: 166px;
+        width: 150px;
+        height: 150px;
+        filter: grayscale(70%);
+        &:hover {
+          filter: grayscale(0%);
+          transition: 0.3s ease-in-out;
+        }
       }
     }
 
     .imgCaption {
-      font-size: 20px;
-      font-weight: normal;
+      font-size: 18px;
+      font-weight: 300;
       line-height: normal;
       letter-spacing: normal;
       text-align: center;
@@ -58,7 +63,7 @@ $container-width: 1080px;
 
 .etcContent {
   font-size: 16px;
-  font-weight: normal;
+  font-weight: 300;
   line-height: normal;
   letter-spacing: normal;
   text-align: center;
