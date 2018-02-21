@@ -12,10 +12,10 @@ const ThirdContainer = () => (
           훌륭한 기술력을 입증 받아 다양한 솔루션을 납품해 왔습니다.
         </div>
 
-        <a href="#" className={styles.readmoreBtn}>
+        {/* <a href="#" className={styles.readmoreBtn}>
           Read More
           <img src="https://d3rqapinkc8b8p.cloudfront.net/mainPage/combined-shape@2x.png" alt="" />
-        </a>
+        </a> */}
       </div>
 
       <div className={styles.imageWrapper}>

@@ -1,4 +1,8 @@
 import React from "react";
+<<<<<<< Updated upstream
+=======
+import { Link } from "react-router-dom";
+>>>>>>> Stashed changes
 import styles from "./firstContainer.scss";
 
 const FirstContainer = () => (
@@ -12,9 +16,9 @@ const FirstContainer = () => (
         SUALAB은 인공지능을 기반으로 기계대신 사람이 하던 일을 자동화함으로써<br />
         세상에 기여할 수 있다고 믿습니다.
       </div>
-      <a className={styles.tourBtn} href="#">
+      <Link className={styles.tourBtn} to="/product/suakit">
         Get a Tour
-      </a>
+      </Link>
     </div>
   </section>
 );
