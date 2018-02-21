@@ -1,8 +1,5 @@
 import React from "react";
-<<<<<<< Updated upstream
-=======
 import { Link } from "react-router-dom";
->>>>>>> Stashed changes
 import styles from "./firstContainer.scss";
 
 const FirstContainer = () => (
