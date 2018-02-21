@@ -1,5 +1,6 @@
 $container-width: 1080px;
 .thirdSection {
+  word-break: keep-all;
   .innerContainer {
     max-width: $container-width;
     margin: 0 auto;

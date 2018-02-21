@@ -90,8 +90,8 @@ const ApplySection = () => (
             <div className={styles.contentWrapper}>
               <div className={styles.itemTitle}>맞춤형 솔루션이 필요한 경우</div>
               <div className={styles.itemContent}>
-                딥러닝 알고리즘에 익숙하지 않은 고객을 위해 SUALAB은 응용개발팀을 운영하여 맞춤형 모델 생성, 현장 기술
-                지원 등 유형별 솔루션을 제공하고 있습니다.
+                딥러닝 알고리즘에 익숙하지 않은 고객을 위해 SUALAB은 응용개발팀을 운영하여 맞춤형 모델 생성, <br />현장
+                기술 지원 등 유형별 솔루션을 제공하고 있습니다.
               </div>
             </div>
           </div>
