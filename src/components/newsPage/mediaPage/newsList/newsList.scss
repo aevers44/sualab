@@ -17,6 +17,11 @@ $container-width: 1080px;
   align-items: center;
   text-decoration: none;
 
+  &:hover {
+    background-color: #e7eaf2;
+    transition: 0.2s, ease-in-out;
+  }
+
   .imgWrapper {
     flex: 1 0px;
     max-width: 220px;

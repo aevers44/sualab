@@ -47,7 +47,7 @@ $container-width: 1080px;
 
     font-family: NotoSansCJKkr;
     font-size: 19px;
-    font-weight: 500;
+    font-weight: normal;
     letter-spacing: normal;
     text-align: center;
     color: #ffffff;
@@ -59,14 +59,14 @@ $container-width: 1080px;
   left: 0;
   top: 150px;
 
-  font-size: 11.5px;
-  font-weight: normal;
+  font-size: 12px;
+  font-weight: 300;
   line-height: normal;
-  letter-spacing: normal;
+  letter-spacing: -0.2px;
   text-align: left;
-  color: #f5f9fb;
+  color: #b5bac5;
 
   span {
-    font-weight: bold;
+    font-size: 15px;
   }
 }

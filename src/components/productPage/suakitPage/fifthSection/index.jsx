@@ -40,14 +40,12 @@ const FifthSection = () => (
 
       <QuestionItem
         question="SuaKIT과 기존 검사 알고리즘이 연동 가능한가요? 가능하다면 어떤 방식으로 진행되나요?"
-        answer={`SuaKIT은 C++, C# API를 제공하고 있습니다.
-        기존 검사 알고리즘이 C++, C#으로 개발되어 있다면 API를 통해 쉽게 연동할 수 있습니다.`}
+        answer={`SuaKIT은 C++, C# API를 제공하고 있습니다. 기존 검사 알고리즘이 C++, C#으로 개발되어 있다면 API를 통해 쉽게 연동할 수 있습니다.`}
       />
 
       <QuestionItem
         question="SuaKIT 데모 버전이 있나요?"
-        answer={`없습니다. 대신 영업일 기준 20일 동안 SuaKIT을 대여할 수 있으며,
-        필요시 추가 계약을 통해 1회 연장할 수 있습니다.`}
+        answer={`없습니다. 대신 영업일 기준 20일 동안 SuaKIT을 대여할 수 있으며, 필요시 추가 계약을 통해 1회 연장할 수 있습니다.`}
       />
     </div>
   </section>

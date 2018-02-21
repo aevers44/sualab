@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 import styles from "./navbar.scss";
 
 const marginList = {
-  company: 275,
-  news: 160,
-  career: 120,
+  company: 313,
+  product: 80,
+  news: 127,
+  career: 70,
 };
 
 const linkItem = {

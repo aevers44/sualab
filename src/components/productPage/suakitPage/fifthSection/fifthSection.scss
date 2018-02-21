@@ -6,7 +6,7 @@ $container-width: 1080px;
     max-width: $container-width;
     margin: 0 auto;
     padding-top: 48px;
-    padding-bottom: 60px;
+    padding-bottom: 40px;
   }
 }
 
@@ -15,7 +15,7 @@ $container-width: 1080px;
   height: 1px;
   border-bottom: solid 2px #1ae8c9;
   margin: 0 auto;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .subTitle {
@@ -29,7 +29,7 @@ $container-width: 1080px;
 }
 
 .questionItem {
-  margin-bottom: 21px;
+  margin-bottom: 32px;
   .question {
     font-size: 20px;
     font-weight: 500;
