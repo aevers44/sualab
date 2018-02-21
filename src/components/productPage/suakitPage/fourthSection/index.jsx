@@ -51,7 +51,7 @@ const FourthSection = () => (
         </div>
         <div className={styles.contentItem}>
           <div className={styles.imgWrapper}>
-            <img src="https://d3rqapinkc8b8p.cloudfront.net/productPage/benefit-1@2x.png" alt="" />
+            <img src="https://d3rqapinkc8b8p.cloudfront.net/productPage/benefit-5@2x.png" alt="" />
           </div>
           <div className={styles.itemTitle}>높은 호환성</div>
           <div className={styles.itemContent}>

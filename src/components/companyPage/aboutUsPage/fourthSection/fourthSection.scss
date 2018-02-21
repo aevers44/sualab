@@ -55,7 +55,8 @@ $container-width: 1080px;
   justify-content: space-between;
 
   .contentItem {
-    width: 240px;
+    width: 280px;
+    word-break: keep-all;
 
     .icon {
       height: 180px;

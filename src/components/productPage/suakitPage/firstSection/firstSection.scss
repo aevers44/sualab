@@ -84,6 +84,7 @@ $container-width: 1080px;
     letter-spacing: normal;
     text-align: center;
     color: #666d7c;
+    word-break: keep-all;
   }
 
   &:hover {

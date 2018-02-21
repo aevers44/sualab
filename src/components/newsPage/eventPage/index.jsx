@@ -9,7 +9,7 @@ const EventPage = props => (
   <section>
     <TitleSection
       subTitle="EVENTS"
-      title="*언론*에 보도된 *SUALAB*을 확인해 보세요"
+      title="다양한 *행사* 및 *활동*을 통해 SUALAB과 만나보세요"
       bgImage="https://d3rqapinkc8b8p.cloudfront.net/newsPage/media-background%402x.png"
     />
     <EventList {...props} />

@@ -45,12 +45,14 @@ $container-width: 1080px;
   .infoWrapper {
     flex: 0 auto;
     .infoLine {
+      display: flex;
+      justify-content: flex-start;
       .label {
         display: inline-block;
         width: 130px;
         font-size: 18px;
         font-weight: 600;
-        line-height: 2;
+        line-height: 1.8;
         letter-spacing: normal;
         text-align: left;
         color: #34495e;
@@ -60,10 +62,11 @@ $container-width: 1080px;
         display: inline-block;
         font-size: 18px;
         font-weight: normal;
-        line-height: 2;
+        line-height: 1.8;
         letter-spacing: normal;
         text-align: left;
         color: #000000;
+        width: 460px;
       }
     }
   }

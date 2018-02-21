@@ -8,7 +8,7 @@ const RecruitPage = () => (
   <section className={styles.recruitPage}>
     <TitleSection
       subTitle="RECRUIT"
-      title="함께 *즐겁게* 일할 *최고의 인재*를 기다립니다."
+      title="함께 *즐겁게* 일할 *최고의 인재*를 기다립니다"
       bgImage="https://d3rqapinkc8b8p.cloudfront.net/careerPage/background@2x.jpg"
     />
     <div className={styles.innerContainer}>
@@ -16,7 +16,7 @@ const RecruitPage = () => (
       <div className={styles.subTitle}>연구소</div>
       <div className={styles.rndGroupWrapper}>
         <div className={styles.infoTextBox1}>
-          연구 인력 채용은 각 직무별로 상이 할 수 있으니, <br />
+          연구 인력 채용은 각 직무 별로 상이 할 수 있으니, <br />
           자세한 내용은 <span className={styles.highlight}>채용공고</span>를 통해 확인 바랍니다.
         </div>
 

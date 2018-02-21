@@ -15,7 +15,7 @@ const ThirdSection = () => (
           선택적 복지 제도
           <div className={styles.info}>
             <span>*선택적 복지란?</span> <br />
-            교육비, 도서비, Gym 이용비등 자기계발에 필요한 비용을 일정 지원금액 내에서 선택하여 사용하는 제도
+            교육비, 도서비, Gym 이용비 등 자기계발에 필요한 비용을 일정 지원금액 내에서 선택하여 사용하는 제도
           </div>
         </div>
         <div className={styles.contentItem}>중/석식 및 간식 제공</div>
