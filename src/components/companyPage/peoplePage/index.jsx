@@ -39,7 +39,7 @@ const PeoplePage = () => {
         <div className={styles.cardWrapper}>{makePeopleCards(salesList)}</div>
 
         <div className={styles.line} />
-        <div className={styles.subTitle}>경영 관리 본부</div>
+        <div className={styles.subTitle}>경영관리 본부</div>
 
         <div className={styles.cardWrapper}>{makePeopleCards(manageList)}</div>
       </div>
