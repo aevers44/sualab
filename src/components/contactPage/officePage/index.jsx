@@ -9,7 +9,7 @@ const OfficePage = () => (
     <TitleSection
       subTitle="SUALAB OFFICE"
       title="SUALAB은 언제나 여러분을 향해 열려 있습니다"
-      bgImage="https://d3rqapinkc8b8p.cloudfront.net/contactPage/sualab-office-background@2x.jpg"
+      bgImage="https://d2ivzy5c3eic08.cloudfront.net/contactPage/sualab-office-background@2x.jpg"
     />
 
     <div className={styles.innerContainer}>

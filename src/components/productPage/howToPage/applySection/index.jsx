@@ -19,12 +19,12 @@ const ApplySection = () => (
               <div className={styles.itemContent}>기존에 설치된 머신 비전 장비를 통해 이미지를 취득합니다.</div>
             </div>
             <div className={styles.imgWrapper}>
-              <img src="https://d3rqapinkc8b8p.cloudfront.net/productPage/process-1@2x.png" alt="" />
+              <img src="https://d2ivzy5c3eic08.cloudfront.net/productPage/process-1@2x.png" alt="" />
             </div>
           </div>
 
           <img
-            src="https://d3rqapinkc8b8p.cloudfront.net/productPage/arrow-point-to-down@2x.png"
+            src="https://d2ivzy5c3eic08.cloudfront.net/productPage/arrow-point-to-down@2x.png"
             className={styles.downArrow}
             alt=""
           />
@@ -38,12 +38,12 @@ const ApplySection = () => (
               </div>
             </div>
             <div className={styles.imgWrapper}>
-              <img src="https://d3rqapinkc8b8p.cloudfront.net/productPage/process-2@2x.png" alt="" />
+              <img src="https://d2ivzy5c3eic08.cloudfront.net/productPage/process-2@2x.png" alt="" />
             </div>
           </div>
 
           <img
-            src="https://d3rqapinkc8b8p.cloudfront.net/productPage/arrow-point-to-down@2x.png"
+            src="https://d2ivzy5c3eic08.cloudfront.net/productPage/arrow-point-to-down@2x.png"
             className={styles.downArrow}
             alt=""
           />
@@ -56,12 +56,12 @@ const ApplySection = () => (
               </div>
             </div>
             <div className={styles.imgWrapper}>
-              <img src="https://d3rqapinkc8b8p.cloudfront.net/productPage/process-3@2x.png" alt="" />
+              <img src="https://d2ivzy5c3eic08.cloudfront.net/productPage/process-3@2x.png" alt="" />
             </div>
           </div>
 
           <img
-            src="https://d3rqapinkc8b8p.cloudfront.net/productPage/arrow-point-to-down@2x.png"
+            src="https://d2ivzy5c3eic08.cloudfront.net/productPage/arrow-point-to-down@2x.png"
             className={styles.downArrow}
             alt=""
           />
@@ -72,7 +72,7 @@ const ApplySection = () => (
               <div className={styles.itemContent}>완성된 모델을 라인에 적용합니다.</div>
             </div>
             <div className={styles.imgWrapper}>
-              <img src="https://d3rqapinkc8b8p.cloudfront.net/productPage/process-4@2x.png" alt="" />
+              <img src="https://d2ivzy5c3eic08.cloudfront.net/productPage/process-4@2x.png" alt="" />
             </div>
           </div>
         </div>
@@ -85,7 +85,7 @@ const ApplySection = () => (
           </div>
           <div className={styles.processItem}>
             <div className={styles.imgWrapper}>
-              <img src="https://d3rqapinkc8b8p.cloudfront.net/productPage/process-5@2x.png" alt="" />
+              <img src="https://d2ivzy5c3eic08.cloudfront.net/productPage/process-5@2x.png" alt="" />
             </div>
             <div className={styles.contentWrapper}>
               <div className={styles.itemTitle}>맞춤형 솔루션이 필요한 경우</div>

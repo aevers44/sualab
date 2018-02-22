@@ -9,7 +9,7 @@ const RecruitPage = () => (
     <TitleSection
       subTitle="RECRUIT"
       title="함께 *즐겁게* 일할 *최고의 인재*를 기다립니다"
-      bgImage="https://d3rqapinkc8b8p.cloudfront.net/careerPage/background@2x.jpg"
+      bgImage="https://d2ivzy5c3eic08.cloudfront.net/careerPage/background@2x.jpg"
     />
     <div className={styles.innerContainer}>
       <div className={styles.line} />

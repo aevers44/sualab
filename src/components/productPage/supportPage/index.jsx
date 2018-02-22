@@ -106,7 +106,7 @@ class SupportPage extends React.PureComponent {
         <TitleSection
           subTitle="COUSTOMER SUPPORT"
           title="SUALAB의 딥러닝 검사 솔루션에 대한 고객분들의 *문의*를 기다립니다"
-          bgImage="https://d3rqapinkc8b8p.cloudfront.net/productPage/support-background%402x.jpg"
+          bgImage="https://d2ivzy5c3eic08.cloudfront.net/productPage/support-background%402x.jpg"
         />
 
         <div className={styles.innerContainer}>

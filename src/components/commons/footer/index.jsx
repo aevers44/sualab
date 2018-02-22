@@ -8,7 +8,7 @@ const Footer = () => (
     <div className={styles.innerContainer}>
       <div className={styles.leftSection}>
         <div className={styles.logoImage}>
-          <img src="https://d3rqapinkc8b8p.cloudfront.net/mainPage/logo-mono%402x.png" alt="" />
+          <img src="https://d2ivzy5c3eic08.cloudfront.net/mainPage/logo-mono%402x.png" alt="" />
         </div>
 
         <div className={styles.sualabInfo}>

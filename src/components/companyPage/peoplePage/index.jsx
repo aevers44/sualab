@@ -22,7 +22,7 @@ const PeoplePage = () => {
       <TitleSection
         subTitle="PEOPLE"
         title="SUALAB은 *최고의 사람들*과 함께 합니다"
-        bgImage="https://d3rqapinkc8b8p.cloudfront.net/companyPage/people-background%402x.jpg"
+        bgImage="https://d2ivzy5c3eic08.cloudfront.net/companyPage/people-background%402x.jpg"
       />
 
       <div className={styles.innerContainer}>

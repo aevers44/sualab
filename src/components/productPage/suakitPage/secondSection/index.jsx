@@ -11,31 +11,31 @@ const SecondSection = () => (
       <div className={styles.contentWrapper}>
         <div className={styles.contentItem}>
           <div className={styles.imgWrapper}>
-            <img src="https://d3rqapinkc8b8p.cloudfront.net/productPage/pcb@2x.png" alt="" />
+            <img src="https://d2ivzy5c3eic08.cloudfront.net/productPage/pcb@2x.png" alt="" />
           </div>
           <p className={styles.imgCaption}>PCB</p>
         </div>
         <div className={styles.contentItem}>
           <div className={styles.imgWrapper}>
-            <img src="https://d3rqapinkc8b8p.cloudfront.net/productPage/display@2x.png" alt="" />
+            <img src="https://d2ivzy5c3eic08.cloudfront.net/productPage/display@2x.png" alt="" />
           </div>
           <p className={styles.imgCaption}>디스플레이</p>
         </div>
         <div className={styles.contentItem}>
           <div className={styles.imgWrapper}>
-            <img src="https://d3rqapinkc8b8p.cloudfront.net/productPage/conduct@2x.png" alt="" />
+            <img src="https://d2ivzy5c3eic08.cloudfront.net/productPage/conduct@2x.png" alt="" />
           </div>
           <p className={styles.imgCaption}>반도체</p>
         </div>
         <div className={styles.contentItem}>
           <div className={styles.imgWrapper}>
-            <img src="https://d3rqapinkc8b8p.cloudfront.net/productPage/sunlight@2x.png" alt="" />
+            <img src="https://d2ivzy5c3eic08.cloudfront.net/productPage/sunlight@2x.png" alt="" />
           </div>
           <p className={styles.imgCaption}>태양광</p>
         </div>
         <div className={styles.contentItem}>
           <div className={styles.imgWrapper}>
-            <img src="https://d3rqapinkc8b8p.cloudfront.net/productPage/film@2x.png" alt="" />
+            <img src="https://d2ivzy5c3eic08.cloudfront.net/productPage/film@2x.png" alt="" />
           </div>
           <p className={styles.imgCaption}>필름</p>
         </div>

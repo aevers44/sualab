@@ -11,7 +11,7 @@ const SecondSection = () => (
       <div className={styles.contentWrapper}>
         <div className={styles.contentItem}>
           <div className={styles.imgWrapper}>
-            <img src="https://d3rqapinkc8b8p.cloudfront.net/careerPage/old-machine-vision-1@2x.png" alt="" />
+            <img src="https://d2ivzy5c3eic08.cloudfront.net/careerPage/old-machine-vision-1@2x.png" alt="" />
           </div>
           <div className={styles.itemTitle}>문제 해결 능력</div>
           <div className={styles.itemContent}>
@@ -22,7 +22,7 @@ const SecondSection = () => (
 
         <div className={styles.contentItem}>
           <div className={styles.imgWrapper}>
-            <img src="https://d3rqapinkc8b8p.cloudfront.net/careerPage/old-machine-vision-2@2x.png" alt="" />
+            <img src="https://d2ivzy5c3eic08.cloudfront.net/careerPage/old-machine-vision-2@2x.png" alt="" />
           </div>
           <div className={styles.itemTitle}>성장을 위한 열정</div>
           <div className={styles.itemContent}>

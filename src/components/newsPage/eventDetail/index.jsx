@@ -47,7 +47,7 @@ class EventDetail extends React.PureComponent {
         <TitleSection
           subTitle="EVENTS"
           title="*언론*에 보도된 *SUALAB*을 확인해 보세요"
-          bgImage="https://d3rqapinkc8b8p.cloudfront.net/newsPage/media-background%402x.png"
+          bgImage="https://d2ivzy5c3eic08.cloudfront.net/newsPage/media-background%402x.png"
         />
 
         <div className={styles.innerContainer}>
