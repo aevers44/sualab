@@ -21,7 +21,7 @@ const ThirdSection = () => (
         <div className={styles.tableRow}>
           <div className={styles.rowItem}>
             <div className={styles.imgWrapper}>
-              <img src="https://d3rqapinkc8b8p.cloudfront.net/productPage/old-machine-vision-1@2x.png" alt="" />
+              <img src="https://d2ivzy5c3eic08.cloudfront.net/productPage/old-machine-vision-1@2x.png" alt="" />
             </div>
             <div className={styles.contentWrapper}>
               <p className={styles.title}>복잡한 이미지 해석 불가</p>
@@ -34,7 +34,7 @@ const ThirdSection = () => (
 
           <div className={styles.rowItem}>
             <div className={styles.imgWrapper}>
-              <img src="https://d3rqapinkc8b8p.cloudfront.net/productPage/suakit-1@2x.png" alt="" />
+              <img src="https://d2ivzy5c3eic08.cloudfront.net/productPage/suakit-1@2x.png" alt="" />
             </div>
             <div className={styles.contentWrapper}>
               <p className={styles.title}>딥러닝 기반 고정밀 이미지 해석 가능</p>
@@ -49,7 +49,7 @@ const ThirdSection = () => (
         <div className={styles.tableRow}>
           <div className={styles.rowItem}>
             <div className={styles.imgWrapper}>
-              <img src="https://d3rqapinkc8b8p.cloudfront.net/productPage/old-machine-vision-2@2x.png" alt="" />
+              <img src="https://d2ivzy5c3eic08.cloudfront.net/productPage/old-machine-vision-2@2x.png" alt="" />
             </div>
             <div className={styles.contentWrapper}>
               <p className={styles.title}>낮은 정확도</p>
@@ -63,7 +63,7 @@ const ThirdSection = () => (
 
           <div className={styles.rowItem}>
             <div className={styles.imgWrapper}>
-              <img src="https://d3rqapinkc8b8p.cloudfront.net/productPage/suakit-2@2x.png" alt="" />
+              <img src="https://d2ivzy5c3eic08.cloudfront.net/productPage/suakit-2@2x.png" alt="" />
             </div>
             <div className={styles.contentWrapper}>
               <p className={styles.title}>높은 정확도</p>
@@ -78,7 +78,7 @@ const ThirdSection = () => (
         <div className={styles.tableRow}>
           <div className={styles.rowItem}>
             <div className={styles.imgWrapper}>
-              <img src="https://d3rqapinkc8b8p.cloudfront.net/productPage/old-machine-vision-3@2x.png" alt="" />
+              <img src="https://d2ivzy5c3eic08.cloudfront.net/productPage/old-machine-vision-3@2x.png" alt="" />
             </div>
             <div className={styles.contentWrapper}>
               <p className={styles.title}>과다한 최적화 비용</p>
@@ -90,7 +90,7 @@ const ThirdSection = () => (
 
           <div className={styles.rowItem}>
             <div className={styles.imgWrapper}>
-              <img src="https://d3rqapinkc8b8p.cloudfront.net/productPage/suakit-3@2x.png" alt="" />
+              <img src="https://d2ivzy5c3eic08.cloudfront.net/productPage/suakit-3@2x.png" alt="" />
             </div>
             <div className={styles.contentWrapper}>
               <p className={styles.title}>딥러닝 기반 자동 최적화</p>

@@ -39,7 +39,7 @@ class FifthContainer extends React.PureComponent {
 
           <Link to="/news/media" className={styles.readmoreBtn}>
             Read More
-            <img src="https://d3rqapinkc8b8p.cloudfront.net/mainPage/combined-shape@2x.png" alt="" />
+            <img src="https://d2ivzy5c3eic08.cloudfront.net/mainPage/combined-shape@2x.png" alt="" />
           </Link>
         </div>
       </section>

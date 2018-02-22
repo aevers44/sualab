@@ -3,11 +3,11 @@ var path = require("path");
 var fs = require("fs");
 var parse = require("url-parse");
 
-var CLOUDFRONT_LINK = "d3rqapinkc8b8p.cloudfront.net";
+var CLOUDFRONT_LINK = "d2ivzy5c3eic08.cloudfront.net";
 AWS.config.region = "ap-northeast-2";
 AWS.config.update({
-  accessKeyId: "AKIAJIOJ4D5IJ5AAANLA",
-  secretAccessKey: "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",
+  accessKeyId: "AKIAIXVDNG4OO7MIHTQQ",
+  secretAccessKey: "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",
 });
 
 exports.preSave = function(req, res, args, next) {
@@ -22,7 +22,7 @@ exports.preSave = function(req, res, args, next) {
       var datePath = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + "/";
 
       var s3_params = {
-        Bucket: "sualab-assets",
+        Bucket: "sualab-asset",
         Key: "upload/" + datePath + image.name,
         ACL: "public-read",
         ContentType: image.type,
@@ -37,6 +37,9 @@ exports.preSave = function(req, res, args, next) {
         })
         .send(function(err, data) {
           //S3 File URL
+          console.log("hello");
+          console.log(data);
+          console.log("hello");
           var url = data.Location;
           console.log(url);
           var parseUrl = parse(url);

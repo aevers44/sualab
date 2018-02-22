@@ -10,7 +10,7 @@ const SecondContainer = () => (
       <div className={styles.awardWrapper}>
         <div className={styles.award}>
           <img
-            src="https://d3rqapinkc8b8p.cloudfront.net/mainPage/vision-system@2x.png"
+            src="https://d2ivzy5c3eic08.cloudfront.net/mainPage/vision-system@2x.png"
             alt=""
             className={styles.awardImage}
           />
@@ -22,7 +22,7 @@ const SecondContainer = () => (
 
         <div className={styles.award}>
           <img
-            src="https://d3rqapinkc8b8p.cloudfront.net/mainPage/bitmap@2x.png"
+            src="https://d2ivzy5c3eic08.cloudfront.net/mainPage/bitmap@2x.png"
             alt=""
             className={styles.awardImage}
           />
@@ -33,7 +33,7 @@ const SecondContainer = () => (
         </div>
 
         <div className={styles.award}>
-          <img src="https://d3rqapinkc8b8p.cloudfront.net/mainPage/aia@2x.png" alt="" className={styles.awardImage} />
+          <img src="https://d2ivzy5c3eic08.cloudfront.net/mainPage/aia@2x.png" alt="" className={styles.awardImage} />
           <span className={styles.awardContent}>
             2016 AIA VIsion Show <br />
             Global Top 8 Start-up

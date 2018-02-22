@@ -12,7 +12,7 @@ const Header = () => {
       <div className={styles.innerContainer}>
         <div className={styles.logoImage}>
           <Link to="/">
-            <img src="https://d3rqapinkc8b8p.cloudfront.net/mainPage/sualab-logo@2x.png" alt="" />
+            <img src="https://d2ivzy5c3eic08.cloudfront.net/mainPage/sualab-logo@2x.png" alt="" />
           </Link>
         </div>
 

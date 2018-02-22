@@ -16,7 +16,7 @@ const SuakitPage = () => (
     <TitleSection
       subTitle="SUAKIT"
       title="*딥러닝*을 탑재한 SuaKIT, *머신비전 검사*의 스펙트럼을 넓힙니다"
-      bgImage="https://d3rqapinkc8b8p.cloudfront.net/productPage/background%402x.jpg"
+      bgImage="https://d2ivzy5c3eic08.cloudfront.net/productPage/background%402x.jpg"
     />
 
     <FirstSection />

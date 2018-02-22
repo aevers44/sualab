@@ -11,7 +11,7 @@ const FourthSection = () => (
       <div className={styles.contentWrapper}>
         <div className={styles.contentItem}>
           <div className={styles.imgWrapper}>
-            <img src="https://d3rqapinkc8b8p.cloudfront.net/productPage/benefit-1@2x.png" alt="" />
+            <img src="https://d2ivzy5c3eic08.cloudfront.net/productPage/benefit-1@2x.png" alt="" />
           </div>
           <div className={styles.itemTitle}>검사 정확도 향상</div>
           <div className={styles.itemContent}>
@@ -20,7 +20,7 @@ const FourthSection = () => (
         </div>
         <div className={styles.contentItem}>
           <div className={styles.imgWrapper}>
-            <img src="https://d3rqapinkc8b8p.cloudfront.net/productPage/benefit-2@2x.png" alt="" />
+            <img src="https://d2ivzy5c3eic08.cloudfront.net/productPage/benefit-2@2x.png" alt="" />
           </div>
           <div className={styles.itemTitle}>인력 운영 효율화</div>
           <div className={styles.itemContent}>
@@ -30,7 +30,7 @@ const FourthSection = () => (
         </div>
         <div className={styles.contentItem}>
           <div className={styles.imgWrapper}>
-            <img src="https://d3rqapinkc8b8p.cloudfront.net/productPage/benefit-3@2x.png" alt="" />
+            <img src="https://d2ivzy5c3eic08.cloudfront.net/productPage/benefit-3@2x.png" alt="" />
           </div>
           <div className={styles.itemTitle}>최적화 비용 절감</div>
           <div className={styles.itemContent}>
@@ -41,7 +41,7 @@ const FourthSection = () => (
 
         <div className={styles.contentItem}>
           <div className={styles.imgWrapper}>
-            <img src="https://d3rqapinkc8b8p.cloudfront.net/productPage/benefit-4@2x.png" alt="" />
+            <img src="https://d2ivzy5c3eic08.cloudfront.net/productPage/benefit-4@2x.png" alt="" />
           </div>
           <div className={styles.itemTitle}>극대화된 처리 속도</div>
           <div className={styles.itemContent}>
@@ -51,7 +51,7 @@ const FourthSection = () => (
         </div>
         <div className={styles.contentItem}>
           <div className={styles.imgWrapper}>
-            <img src="https://d3rqapinkc8b8p.cloudfront.net/productPage/benefit-5@2x.png" alt="" />
+            <img src="https://d2ivzy5c3eic08.cloudfront.net/productPage/benefit-5@2x.png" alt="" />
           </div>
           <div className={styles.itemTitle}>높은 호환성</div>
           <div className={styles.itemContent}>
@@ -61,7 +61,7 @@ const FourthSection = () => (
         </div>
         <div className={styles.contentItem}>
           <div className={styles.imgWrapper}>
-            <img src="https://d3rqapinkc8b8p.cloudfront.net/productPage/benefit-6@2x.png" alt="" />
+            <img src="https://d2ivzy5c3eic08.cloudfront.net/productPage/benefit-6@2x.png" alt="" />
           </div>
           <div className={styles.itemTitle}>사용자 친화적 UI</div>
           <div className={styles.itemContent}>
