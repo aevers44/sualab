@@ -8,8 +8,7 @@ const ThirdContainer = () => (
         <div className={styles.title}>CUSTOMER</div>
         <div className={styles.bigTitle}>고객사</div>
         <div className={styles.content}>
-          SUALAB은 유수의 대기업들로 부터 <br />
-          훌륭한 기술력을 입증 받아 다양한 솔루션을 납품해 왔습니다.
+          SUALAB은 훌륭한 기술력을 입증 받아 <br /> 유수의 대기업들에 다양한 솔루션을 제공하고 있습니다.
         </div>
 
         {/* <a href="#" className={styles.readmoreBtn}>

@@ -40,12 +40,9 @@ const Footer = () => (
         </div>
 
         <div className={styles.otherMenuWrapper}>
-          <Link className={styles.menuItem} to="/">
+          <a className={styles.menuItem} href="https://www.facebook.com/sualab/" target="_blank">
             Facebook
-          </Link>
-          <Link className={styles.menuItem} to="/">
-            Blog
-          </Link>
+          </a>
           <Link className={styles.menuItem} to="/">
             개인정보처리방침
           </Link>

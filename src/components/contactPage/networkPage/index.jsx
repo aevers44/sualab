@@ -16,7 +16,7 @@ const asiaCompanyList = [
   {
     country: "Singapore",
     company: "JM Vistec System",
-    address: "9 Kaki Bukit Road 1, Eunos Technolink #03-07, Singapore 415938",
+    address: "9 Kaki Bukit Road 1, Eunos Technolink #03-07,Singapore 415938",
     phone: "+65 6748 5517",
     email: "info@jm-vistec.com",
   },
@@ -69,7 +69,7 @@ const CompanyItem = ({ country, company, address, phone, email }) => {
 const NetworkPage = () => (
   <section className={styles.networkPage}>
     <TitleSection
-      subTitle="GLOBAL SALES NETWORK"
+      subTitle="GLOBAL SALES NETWORKS"
       title="SUALAB은 *비즈니스 파트너*들과 함께 *세계*로 나아가고 있습니다"
       bgImage="https://d3rqapinkc8b8p.cloudfront.net/contactPage/media-background@2x.jpg"
     />

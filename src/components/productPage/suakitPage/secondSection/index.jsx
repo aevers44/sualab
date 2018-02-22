@@ -6,7 +6,7 @@ const SecondSection = () => (
   <section className={styles.secondSection}>
     <div className={styles.innerContainer}>
       <div className={styles.line} />
-      <div className={styles.subTitle}>적용 가능 산업</div>
+      <div className={styles.subTitle}>적용 사례</div>
 
       <div className={styles.contentWrapper}>
         <div className={styles.contentItem}>
@@ -42,8 +42,7 @@ const SecondSection = () => (
       </div>
 
       <div className={styles.etcContent}>
-        그 외 자동차 부품, 전기·전자 제품 등<br />
-        다양한 제조업 분야에 적용 가능합니다.
+        그 외 자동차 부품, 전기/전자 제품 등 <br />다양한 제조업 현장에서 실제 적용 중입니다.
       </div>
     </div>
   </section>

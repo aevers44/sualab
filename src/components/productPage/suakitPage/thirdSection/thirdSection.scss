@@ -1,5 +1,6 @@
 $container-width: 1080px;
 .thirdSection {
+  word-break: keep-all;
   .innerContainer {
     max-width: $container-width;
     margin: 0 auto;
@@ -47,7 +48,7 @@ $container-width: 1080px;
   .headItem {
     display: block;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 300;
     letter-spacing: normal;
     text-align: center;
     color: #6f7787;

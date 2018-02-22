@@ -44,8 +44,8 @@ const FirstSection = () => (
             </p>
 
             <p>
-              다양한 불량 유형을 갖는 디스플레이, 필름 등에서 <br />제품/불량 이미지를 취득한 뒤, 이를 분류하는데 <br />사용
-              가능합니다.{" "}
+              다양한 표면 형태를 가지고 있는 태양광 패널, 카메라 렌즈 등에서 여러 불량 영역을 정확히 검출하고 <br />유형
+              별로 분류할 수 있습니다.
             </p>
           </div>
         </div>
@@ -57,7 +57,7 @@ const FirstSection = () => (
           <div className={styles.cardTitle}>Detection</div>
           <div className={styles.cardContent}>
             <p>
-              정의한 Feature/Class에 맞춰 이미지 상에서<br />물체를 박스 형태로 검출합니다.
+              정의한 Feature/Class에 맞춰 한 이미지 상의 <br /> 여러 물체들을 박스 형태로 검출합니다.
             </p>
 
             <p>

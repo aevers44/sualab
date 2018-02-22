@@ -70,7 +70,9 @@ const OfficePage = () => (
         <div className={`${styles.contentWrapper} ${styles.blankBox}`}>
           <div className={styles.infoLine}>
             <div className={styles.label}>주소</div>
-            <div className={styles.info}>4-B801,Creative Industrial Park.328 Xinghu Street, Suzhou Industrial Park</div>
+            <div className={styles.info}>
+              4-B801, Creative Industrial Park, 328 Xinghu Street, Suzhou Industrial Park
+            </div>
           </div>
 
           <div className={styles.infoLine}>

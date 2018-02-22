@@ -10,16 +10,16 @@ const marginList = {
 };
 
 const linkItem = {
-  company: [{ name: "About us", link: "about-us" }, { name: "People", link: "people" }],
+  company: [{ name: "About Us", link: "about-us" }, { name: "People", link: "people" }],
   product: [
     { name: "SuaKIT", link: "suakit" },
-    { name: "How to apply SuaKIT", link: "how-to-apply" },
+    { name: "How to Apply SuaKIT", link: "how-to-apply" },
     { name: "제품문의", link: "support" },
     // { name: "Download", link: "downaload" },
   ],
-  news: [{ name: "SUALAB in media", link: "media" }, { name: "Events", link: "event" }],
+  news: [{ name: "SUALAB in Media", link: "media" }, { name: "Events", link: "event" }],
   career: [{ name: "인사 철학", link: "philosophy" }, { name: "채용 절차", link: "recruit" }],
-  contact: [{ name: "Office", link: "office" }, { name: "Global Sales Network", link: "global-sales-network" }],
+  contact: [{ name: "Office", link: "office" }, { name: "Global Sales Networks", link: "global-sales-network" }],
 };
 
 const makeLinks = (curPath, subPath) => {

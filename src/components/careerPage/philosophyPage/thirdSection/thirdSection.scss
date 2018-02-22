@@ -58,11 +58,11 @@ $container-width: 1080px;
   position: absolute;
   left: 0;
   top: 150px;
-
-  font-size: 12px;
+  word-break: keep-all;
+  font-size: 13px;
   font-weight: 300;
   line-height: normal;
-  letter-spacing: -0.2px;
+  letter-spacing: -0.3px;
   text-align: left;
   color: #b5bac5;
 
