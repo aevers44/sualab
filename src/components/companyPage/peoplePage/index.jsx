@@ -7,6 +7,12 @@ import styles from "./peoplePage.scss";
 
 import { ceoList, researchList, salesList, manageList } from "./peopleList";
 
+const sortFunc = (a, b) => {
+  if (a.name > b.name) return 1;
+  if (a.name < b.name) return -1;
+  return 0;
+};
+
 const makePeopleCards = peopleList => {
   let result = [];
   for (let idx in peopleList) {
@@ -31,17 +37,17 @@ const PeoplePage = () => {
         <div className={styles.line} />
         <div className={styles.subTitle}>연구소</div>
 
-        <div className={styles.cardWrapper}>{makePeopleCards(researchList)}</div>
+        <div className={styles.cardWrapper}>{makePeopleCards(researchList.sort(sortFunc))}</div>
 
         <div className={styles.line} />
         <div className={styles.subTitle}>영업 본부</div>
 
-        <div className={styles.cardWrapper}>{makePeopleCards(salesList)}</div>
+        <div className={styles.cardWrapper}>{makePeopleCards(salesList.sort(sortFunc))}</div>
 
         <div className={styles.line} />
         <div className={styles.subTitle}>경영관리 본부</div>
 
-        <div className={styles.cardWrapper}>{makePeopleCards(manageList)}</div>
+        <div className={styles.cardWrapper}>{makePeopleCards(manageList.sort(sortFunc))}</div>
       </div>
     </section>
   );
