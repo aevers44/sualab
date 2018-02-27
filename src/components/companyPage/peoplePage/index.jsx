@@ -1,4 +1,5 @@
 import React from "react";
+import { injectIntl } from "react-intl";
 
 import TitleSection from "../../commons/titleSection";
 import PeopleCard from "./PeopleCard";
@@ -22,7 +23,7 @@ const makePeopleCards = peopleList => {
   return result;
 };
 
-const PeoplePage = () => {
+const PeoplePage = ({ intl }) => {
   return (
     <section className={styles.peoplePage}>
       <TitleSection
@@ -53,4 +54,4 @@ const PeoplePage = () => {
   );
 };
 
-export default PeoplePage;
+export default injectIntl(PeoplePage);

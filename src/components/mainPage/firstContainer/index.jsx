@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./firstContainer.scss";
 
-const FirstContainer = () => (
+const FirstContainer = ({ intl }) => (
   <section className={styles.firstContainer}>
     <div className={styles.innerContainer}>
       <div className={styles.title}>

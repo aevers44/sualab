@@ -1,4 +1,5 @@
 import React from "react";
+import { injectIntl } from "react-intl";
 import axios from "axios";
 import qs from "qs";
 
@@ -103,6 +104,7 @@ class SupportPage extends React.PureComponent {
     this.validateSubmit();
   }
   render() {
+    const { intl } = this.props;
     const { formType, showModal, modalContentType, canSubmit } = this.state;
     console.log(termsText);
     return (
@@ -492,4 +494,4 @@ class SupportPage extends React.PureComponent {
     });
   }
 }
-export default SupportPage;
+export default injectIntl(SupportPage);

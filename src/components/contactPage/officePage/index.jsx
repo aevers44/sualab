@@ -1,15 +1,17 @@
 import React from "react";
+import { injectIntl } from "react-intl";
 
 import TitleSection from "../../commons/titleSection";
 import OfficeMapComponent from "./googleMap";
 import styles from "./officePage.scss";
 
-const OfficePage = () => (
+const OfficePage = ({ intl }) => (
   <section className={styles.officePage}>
     <TitleSection
       subTitle="SUALAB OFFICE"
       title="SUALAB은 언제나 여러분을 향해 열려 있습니다"
       bgImage="https://d2ivzy5c3eic08.cloudfront.net/contactPage/sualab-office-background@2x.jpg"
+      intl={intl}
     />
 
     <div className={styles.innerContainer}>
@@ -87,4 +89,4 @@ const OfficePage = () => (
   </section>
 );
 
-export default OfficePage;
+export default injectIntl(OfficePage);

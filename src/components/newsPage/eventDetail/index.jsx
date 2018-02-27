@@ -1,4 +1,5 @@
 import React from "react";
+import { injectIntl } from "react-intl";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -38,6 +39,7 @@ class EventDetail extends React.PureComponent {
   }
 
   render() {
+    const { intl } = this.props;
     const match = this.props.match;
     const number = parseInt(match.params.number);
     const article = this.state;
@@ -121,4 +123,4 @@ class EventDetail extends React.PureComponent {
   }
 }
 
-export default EventDetail;
+export default injectIntl(EventDetail);

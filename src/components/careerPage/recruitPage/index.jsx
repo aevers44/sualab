@@ -1,15 +1,17 @@
 import React from "react";
+import { injectIntl } from "react-intl";
 
 import TitleSection from "../../commons/titleSection";
 
 import styles from "./recruitPage.scss";
 
-const RecruitPage = () => (
+const RecruitPage = ({ intl }) => (
   <section className={styles.recruitPage}>
     <TitleSection
       subTitle="RECRUIT"
       title="함께 *즐겁게* 일할 *최고의 인재*를 기다립니다"
       bgImage="https://d2ivzy5c3eic08.cloudfront.net/careerPage/background@2x.jpg"
+      intl={intl}
     />
     <div className={styles.innerContainer}>
       <div className={styles.line} />
@@ -81,4 +83,4 @@ const RecruitPage = () => (
   </section>
 );
 
-export default RecruitPage;
+export default injectIntl(RecruitPage);
