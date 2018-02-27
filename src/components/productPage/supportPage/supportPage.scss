@@ -243,6 +243,10 @@ $container-width: 1080px;
   color: #16212f;
   margin-bottom: 50px;
 
+  white-space: pre-wrap;
+  max-height: 70vh;
+  overflow-y: auto;
+
   h1 {
     font-size: 24px;
     font-weight: bold;
