@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./secondContainer.scss";
 
-const SecondContainer = () => (
+const SecondContainer = ({ intl }) => (
   <section className={styles.secondContainer}>
     <div className={styles.innerContainer}>
       <div className={styles.title}>AWARDS</div>
@@ -14,10 +14,7 @@ const SecondContainer = () => (
             alt=""
             className={styles.awardImage}
           />
-          <span className={styles.awardContent}>
-            2017 Innovators Awards <br />
-            PLATINUM 수상
-          </span>
+          <span className={styles.awardContent}>{intl.formatMessage({ id: "MAIN.SECOND.awardContent_1" })}</span>
         </div>
 
         <div className={styles.award}>
@@ -26,18 +23,12 @@ const SecondContainer = () => (
             alt=""
             className={styles.awardImage}
           />
-          <span className={styles.awardContent}>
-            2017 KGCCI Innovation Awards <br />
-            디지털혁신 부문 수상
-          </span>
+          <span className={styles.awardContent}>{intl.formatMessage({ id: "MAIN.SECOND.awardContent_2" })}</span>
         </div>
 
         <div className={styles.award}>
           <img src="https://d2ivzy5c3eic08.cloudfront.net/mainPage/aia@2x.png" alt="" className={styles.awardImage} />
-          <span className={styles.awardContent}>
-            2016 AIA VIsion Show <br />
-            Global Top 8 Start-up
-          </span>
+          <span className={styles.awardContent}>{intl.formatMessage({ id: "MAIN.SECOND.awardContent_3" })}</span>
         </div>
       </div>
     </div>
