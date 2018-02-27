@@ -20,4 +20,9 @@ export default {
   "ABOUT.FOURTH.itemContent_1": `딥러닝 학습 최적화를 위해 머신비전 알고리즘 등 다양한 기술을 활용하여 이미지 전처리를 수행합니다.`,
   "ABOUT.FOURTH.itemContent_2": `SUALAB이 자체 개발한 학습망과 GPU 컴퓨팅 기술을 활용하여 1000분의 1초 단위의 실시간 분석을 진행합니다.`,
   "ABOUT.FOURTH.itemContent_3": `검사 리포트 생성, 검사 결과 Database화, 불량 지점 마킹 등이 가능한 S/W를 제공합니다.`,
+
+  "PEOPLE.title": `SUALAB은 *최고의 사람들*과 함께 합니다`,
+  "PEOPLE.laboratory": `연구소`,
+  "PEOPLE.business": `영업 본부`,
+  "PEOPLE.manage": `경영관리 본부`,
 };
