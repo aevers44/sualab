@@ -118,8 +118,9 @@ $container-width: 1080px;
   text-align: left;
   color: #34495e;
   padding-left: 80px;
+  white-space: pre-wrap;
 
-  .highlight {
+  span {
     font-weight: bold;
     text-decoration: underline;
   }
@@ -142,7 +143,7 @@ $container-width: 1080px;
     top: 160px;
     left: 65px;
 
-    white-space: nowrap;
+    white-space: pre;
     overflow: hidden;
     font-size: 16px;
     font-weight: normal;
@@ -150,7 +151,7 @@ $container-width: 1080px;
     letter-spacing: normal;
     color: #34495e;
 
-    .red {
+    span {
       color: #f54b5e;
     }
 
