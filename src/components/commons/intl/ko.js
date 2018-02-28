@@ -140,7 +140,7 @@ export default {
   "SUPPORT.path.item_info": `알게 된 경로를 선택하세요`,
   "SUPPORT.path.item_0": `전시회/세미나`,
   "SUPPORT.path.item_1": `주변인 소개`,
-  "SUPPORT.path.item_2": `매체(기사/방송 등`,
+  "SUPPORT.path.item_2": `매체(기사/방송 등)`,
   "SUPPORT.path.item_3": `검색(포탈/홈페이지 등) `,
   "SUPPORT.path.item_4": `기타`,
   "SUPPORT.supportContent": `문의 내용`,

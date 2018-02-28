@@ -11,7 +11,7 @@ import App from "./components/App";
 import locale from "./components/commons/intl/locale";
 
 addLocaleData([...en, ...ko]);
-const defaultLang = "ko";
+const defaultLang = "en";
 
 ReactModal.setAppElement("#root");
 

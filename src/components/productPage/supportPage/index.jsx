@@ -375,7 +375,7 @@ class SupportPage extends React.PureComponent {
               <label htmlFor="termsAgree">
                 {intl.formatMessage({ id: "SUPPORT.termsAgree" })}
                 <span className={styles.modalBtn} onClick={() => this.handleOpenModal(TERMS_AGREE_MODAL)}>
-                  {intl.formatMessage({ id: "SUPPORT.supportContent" })}
+                  {intl.formatMessage({ id: "SUPPORT.modalBtn" })}
                 </span>
               </label>
             </div>
