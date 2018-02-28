@@ -84,7 +84,6 @@ export default {
   "SUAKIT.FIFTH.answer_6": `No. But SuaKIT rental is available for 20 business days and can be extended once with an additional contract. `,
   "SUAKIT.SIXTH.subTitle": "SuaKIT Brochure",
 
-  "HOWTO.title": `*누구나* 손쉽게 *딥러닝 모델을* 생성하고 *제조 현장에 적용*할 수 있습니다`,
   "HOWTO.title": `*Anyone* can easily create a *deep learning model* and apply it to *manufacturing sites*`,
   "HOWTO.USAGE.subTitle": `SuaKIT Usage Process`,
   "HOWTO.USAGE.content": `With SuaKIT's intuitive UI, anyone can easily create and test deep learning models.`,
@@ -100,7 +99,10 @@ export default {
   "HOWTO.USAGE.segmentation.content_5": `Verify the defective areas that were detected by the model.`,
   "HOWTO.USAGE.segmentation.title_6": `06. Export Model`,
   "HOWTO.USAGE.segmentation.content_6": `Export the generated model and use it in conjunction with existing C ++ / C # software.`,
+  "HOWTO.USAGE.classification.content_3": `Label images according to product / defect type.`,
+  "HOWTO.USAGE.detection.content_3": `Label the defects found on the images in boxes according to type.`,
   "HOWTO.USAGE.classification.content_5": `Verify the images that were classified by type.`,
+  "HOWTO.USAGE.detection.content_5": `Test and confirm the product / defect areas detected by the model.`,
   "HOWTO.APPLY.subTitle": `SuaKIT Application Process`,
   "HOWTO.APPLY.content": `You can apply SuaKIT in the following procedures:`,
   "HOWTO.APPLY.itemTitle_1": `Image Acquisition`,
