@@ -188,4 +188,19 @@ export default {
   "RECRUIT.MANAGE.step_2": `1차 면접`,
   "RECRUIT.MANAGE.step_3": `2차 면접`,
   "RECRUIT.MANAGE.step_4": `채용 확정`,
+
+  "OFFICE.title": `SUALAB은 언제나 여러분을 향해 열려 있습니다`,
+  "OFFICE.address": `주소`,
+  "OFFICE.phone": `전화`,
+  "OFFICE.fax": `팩스`,
+  "OFFICE.email": `메일`,
+  "OFFICE.question.common": `일반 문의`,
+  "OFFICE.question.sales": `영업 문의`,
+  "OFFICE.question.recruit": `채용 문의`,
+  "OFFICE.phone.represent": `대표 번호`,
+  "OFFICE.base": `본사`,
+  "OFFICE.base.address": `서울시 관악구 관악로1 서울대학교 연구공원 본관 511호`,
+  "OFFICE.china": `중국 법인`,
+
+  "NETWORK.title": `SUALAB은 *비즈니스 파트너*들과 함께 *세계*로 나아가고 있습니다`,
 };
