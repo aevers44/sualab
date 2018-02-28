@@ -3,7 +3,7 @@ import React from "react";
 import Icon from "../../../commons/icons";
 import styles from "./firstSection.scss";
 
-const FirstSection = () => (
+const FirstSection = ({ intl }) => (
   <section className={styles.firstSection}>
     <div className={styles.innerContainer}>
       <div className={styles.titleWrapper}>
@@ -11,10 +11,7 @@ const FirstSection = () => (
           <div className={styles.line} />
           <div className={styles.title}>SuaKIT</div>
         </div>
-        <div className={styles.content}>
-          SuaKIT은 디스플레이, 태양광, PCB, 필름, 반도체 등 다양한 제조업 현장에서 사용할 수 있는 딥러닝 머신비전 검사
-          소프트웨어입니다.
-        </div>
+        <div className={styles.content}>{intl.formatMessage({ id: "SUAKIT.FIRST.content" })}</div>
       </div>
 
       <div className={styles.itemWrapper}>
@@ -23,14 +20,7 @@ const FirstSection = () => (
             <Icon icon="SUAKIT_FEATURE_2" />
           </div>
           <div className={styles.cardTitle}>Segmentation</div>
-          <div className={styles.cardContent}>
-            <p>제조현장에서 발생하는 다양한 불량들을 이미지 분석을 통해 정확한 영역 형태로 검출해냅니다. </p>
-
-            <p>
-              디양한 표면 형태를 가지고 있는 태양광 패널, <br />카메라 렌즈 등에서 여러 불량 유형을 검출하고,<br />이를
-              유형별로 정리할 수 있습니다.
-            </p>
-          </div>
+          <div className={styles.cardContent}>{intl.formatMessage({ id: "SUAKIT.FIRST.cardContent_1" })}</div>
         </div>
 
         <div className={styles.itemCard}>
@@ -38,16 +28,7 @@ const FirstSection = () => (
             <Icon icon="SUAKIT_FEATURE_3" />
           </div>
           <div className={styles.cardTitle}>Classification</div>
-          <div className={styles.cardContent}>
-            <p>
-              정의한 Feature/Class에 맞춰<br />Image Set을 분류합니다.
-            </p>
-
-            <p>
-              다양한 표면 형태를 가지고 있는 태양광 패널, 카메라 렌즈 등에서 여러 불량 영역을 정확히 검출하고 <br />유형
-              별로 분류할 수 있습니다.
-            </p>
-          </div>
+          <div className={styles.cardContent}>{intl.formatMessage({ id: "SUAKIT.FIRST.cardContent_2" })}</div>
         </div>
 
         <div className={styles.itemCard}>
@@ -55,16 +36,7 @@ const FirstSection = () => (
             <Icon icon="SUAKIT_FEATURE_1" />
           </div>
           <div className={styles.cardTitle}>Detection</div>
-          <div className={styles.cardContent}>
-            <p>
-              정의한 Feature/Class에 맞춰 한 이미지 상의 <br /> 여러 물체들을 박스 형태로 검출합니다.
-            </p>
-
-            <p>
-              기계/부품류 등의 제조 라인에서 <br />여러 물체가 촬영된 하나의 사진을 분석해 <br />각각의 물체를 검출해낼
-              수 있습니다.
-            </p>
-          </div>
+          <div className={styles.cardContent}>{intl.formatMessage({ id: "SUAKIT.FIRST.cardContent_3" })}</div>
         </div>
       </div>
     </div>

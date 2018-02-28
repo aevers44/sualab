@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter, Route, Link, Switch, Redirect } from "react-router-dom";
 
 import MainPage from "./mainPage";
-import Test from "./test";
 import { AboutUsPage, PeoplePage } from "./companyPage";
 import { SuakitPage, SupportPage, HowToPage } from "./productPage";
 import { MediaPage, NewsDetail, EventPage, EventDetail } from "./newsPage";
@@ -47,8 +46,6 @@ class App extends React.PureComponent {
             <Route exact path="/contact/office" component={OfficePage} />
             <Route exact path="/contact/global-sales-network" component={NetworkPage} />
             <Redirect from="/contact" to="/contact/office" />
-
-            <Route path="/test" component={Test} />
           </Switch>
 
           <Footer />

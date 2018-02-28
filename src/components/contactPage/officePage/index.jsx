@@ -1,14 +1,15 @@
 import React from "react";
+import { injectIntl } from "react-intl";
 
 import TitleSection from "../../commons/titleSection";
 import OfficeMapComponent from "./googleMap";
 import styles from "./officePage.scss";
 
-const OfficePage = () => (
+const OfficePage = ({ intl }) => (
   <section className={styles.officePage}>
     <TitleSection
       subTitle="SUALAB OFFICE"
-      title="SUALAB은 언제나 여러분을 향해 열려 있습니다"
+      title={intl.formatMessage({ id: "OFFICE.title" })}
       bgImage="https://d2ivzy5c3eic08.cloudfront.net/contactPage/sualab-office-background@2x.jpg"
     />
 
@@ -16,7 +17,7 @@ const OfficePage = () => (
       <div className={styles.officeWrapper}>
         <div className={styles.titleWrapper}>
           <div className={styles.line} />
-          <div className={styles.subTitle}>본사</div>
+          <div className={styles.subTitle}>{intl.formatMessage({ id: "OFFICE.base" })}</div>
         </div>
 
         <div className={styles.contentWrapper}>
@@ -31,30 +32,30 @@ const OfficePage = () => (
           </div>
 
           <div className={styles.infoLine}>
-            <div className={styles.label}>주소</div>
-            <div className={styles.info}>서울시 관악구 관악로1 서울대학교 연구공원 본관 511호</div>
+            <div className={styles.label}>{intl.formatMessage({ id: "OFFICE.address" })}</div>
+            <div className={styles.info}>{intl.formatMessage({ id: "OFFICE.base.address" })}</div>
           </div>
 
           <div className={styles.infoLine}>
-            <div className={styles.label}>전화</div>
+            <div className={styles.label}>{intl.formatMessage({ id: "OFFICE.phone" })}</div>
             <div className={styles.info}>
-              <span>일반 문의 | </span>+82 2-6264-0366<br />
-              <span>영업 문의 | </span>+82 2-6264-0362
+              <span>{intl.formatMessage({ id: "OFFICE.question.common" })} | </span>+82 2-6264-0366<br />
+              <span>{intl.formatMessage({ id: "OFFICE.question.sales" })} | </span>+82 2-6264-0362
             </div>
           </div>
 
           <div className={styles.infoLine}>
-            <div className={styles.label}>팩스</div>
+            <div className={styles.label}>{intl.formatMessage({ id: "OFFICE.fax" })}</div>
             <div className={styles.info}>+82 2-6264-0363</div>
           </div>
 
           <div className={styles.infoLine}>
-            <div className={styles.label}>메일</div>
+            <div className={styles.label}>{intl.formatMessage({ id: "OFFICE.email" })}</div>
             <div className={styles.info}>
-              <span>채용 문의 | </span>
+              <span>{intl.formatMessage({ id: "OFFICE.question.recruit" })} | </span>
               <a href="mailto:recruit@sualab.com">recruit@sualab.com</a>
               <br />
-              <span>영업 문의 | </span>
+              <span>{intl.formatMessage({ id: "OFFICE.question.sales" })} | </span>
               <a href="mailto:sales@sualab.com">sales@sualab.com</a>
             </div>
           </div>
@@ -64,21 +65,21 @@ const OfficePage = () => (
       <div className={styles.officeWrapper}>
         <div className={styles.titleWrapper}>
           <div className={styles.line} />
-          <div className={styles.subTitle}>중국 법인</div>
+          <div className={styles.subTitle}>{intl.formatMessage({ id: "OFFICE.china" })}</div>
         </div>
 
         <div className={`${styles.contentWrapper} ${styles.blankBox}`}>
           <div className={styles.infoLine}>
-            <div className={styles.label}>주소</div>
+            <div className={styles.label}>{intl.formatMessage({ id: "OFFICE.address" })}</div>
             <div className={styles.info}>
               4-B801, Creative Industrial Park, 328 Xinghu Street, Suzhou Industrial Park
             </div>
           </div>
 
           <div className={styles.infoLine}>
-            <div className={styles.label}>전화</div>
+            <div className={styles.label}>{intl.formatMessage({ id: "OFFICE.phone" })}</div>
             <div className={styles.info}>
-              <span>대표 번호 | </span>+86 0512 62650852
+              <span>{intl.formatMessage({ id: "OFFICE.phone.represent" })} | </span>+86 0512 62650852
             </div>
           </div>
         </div>
@@ -87,4 +88,4 @@ const OfficePage = () => (
   </section>
 );
 
-export default OfficePage;
+export default injectIntl(OfficePage);

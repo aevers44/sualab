@@ -2,11 +2,11 @@ import React from "react";
 
 import styles from "./sixthSection.scss";
 
-const SixthSection = () => (
+const SixthSection = ({ intl }) => (
   <section className={styles.sixthSection}>
     <div className={styles.innerContainer}>
       <div className={styles.line} />
-      <div className={styles.subTitle}>SuaKIT 브로셔</div>
+      <div className={styles.subTitle}>{intl.formatMessage({ id: "SUAKIT.SIXTH.subTitle" })}</div>
 
       <div className={styles.brochureWrapper}>
         <img src="https://d2ivzy5c3eic08.cloudfront.net/productPage/whitepaper@2x.png" alt="" />

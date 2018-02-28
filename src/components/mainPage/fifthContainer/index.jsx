@@ -28,12 +28,13 @@ class FifthContainer extends React.PureComponent {
   }
 
   render() {
+    const { intl } = this.props;
     const { recentArticles } = this.state;
     return (
       <section className={styles.fifthContainer}>
         <div className={styles.innerContainer}>
           <div className={styles.title}>NEWS</div>
-          <div className={styles.bigTitle}>최신 소식</div>
+          <div className={styles.bigTitle}>{intl.formatMessage({ id: "MAIN.FIFTH.bigTitle" })}</div>
 
           <div className={styles.newsWrapper}>{recentArticles.map(elem => <RecentItem {...elem} />)}</div>
 

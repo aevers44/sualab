@@ -1,4 +1,5 @@
 import React from "react";
+import { injectIntl } from "react-intl";
 
 import TitleSection from "../../commons/titleSection";
 import PeopleCard from "./PeopleCard";
@@ -22,12 +23,12 @@ const makePeopleCards = peopleList => {
   return result;
 };
 
-const PeoplePage = () => {
+const PeoplePage = ({ intl }) => {
   return (
     <section className={styles.peoplePage}>
       <TitleSection
         subTitle="PEOPLE"
-        title="SUALAB은 *최고의 사람들*과 함께 합니다"
+        title={intl.formatMessage({ id: "PEOPLE.title" })}
         bgImage="https://d2ivzy5c3eic08.cloudfront.net/companyPage/people-background%402x.jpg"
       />
 
@@ -35,17 +36,17 @@ const PeoplePage = () => {
         <div className={styles.cardWrapper}>{makePeopleCards(ceoList)}</div>
 
         <div className={styles.line} />
-        <div className={styles.subTitle}>연구소</div>
+        <div className={styles.subTitle}>{intl.formatMessage({ id: "PEOPLE.laboratory" })}</div>
 
         <div className={styles.cardWrapper}>{makePeopleCards(researchList.sort(sortFunc))}</div>
 
         <div className={styles.line} />
-        <div className={styles.subTitle}>영업 본부</div>
+        <div className={styles.subTitle}>{intl.formatMessage({ id: "PEOPLE.business" })}</div>
 
         <div className={styles.cardWrapper}>{makePeopleCards(salesList.sort(sortFunc))}</div>
 
         <div className={styles.line} />
-        <div className={styles.subTitle}>경영관리 본부</div>
+        <div className={styles.subTitle}>{intl.formatMessage({ id: "PEOPLE.manage" })}</div>
 
         <div className={styles.cardWrapper}>{makePeopleCards(manageList.sort(sortFunc))}</div>
       </div>
@@ -53,4 +54,4 @@ const PeoplePage = () => {
   );
 };
 
-export default PeoplePage;
+export default injectIntl(PeoplePage);

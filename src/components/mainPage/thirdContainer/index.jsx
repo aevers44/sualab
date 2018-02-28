@@ -1,15 +1,13 @@
 import React from "react";
 import styles from "./thirdContainer.scss";
 
-const ThirdContainer = () => (
+const ThirdContainer = ({ intl }) => (
   <section className={styles.thirdContainer}>
     <div className={styles.innerContainer}>
       <div className={styles.contentWrapper}>
         <div className={styles.title}>CUSTOMER</div>
-        <div className={styles.bigTitle}>고객사</div>
-        <div className={styles.content}>
-          SUALAB은 훌륭한 기술력을 입증 받아 <br /> 유수의 대기업들에 다양한 솔루션을 제공하고 있습니다.
-        </div>
+        <div className={styles.bigTitle}>{intl.formatMessage({ id: "MAIN.THIRD.bigTitle" })}</div>
+        <div className={styles.content}>{intl.formatMessage({ id: "MAIN.THIRD.content" })}</div>
 
         {/* <a href="#" className={styles.readmoreBtn}>
           Read More

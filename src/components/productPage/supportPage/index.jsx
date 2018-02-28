@@ -1,4 +1,5 @@
 import React from "react";
+import { injectIntl } from "react-intl";
 import axios from "axios";
 import qs from "qs";
 
@@ -103,24 +104,24 @@ class SupportPage extends React.PureComponent {
     this.validateSubmit();
   }
   render() {
+    const { intl } = this.props;
     const { formType, showModal, modalContentType, canSubmit } = this.state;
-    console.log(termsText);
     return (
       <section className={styles.supportPage}>
         <TitleSection
           subTitle="COUSTOMER SUPPORT"
-          title="SUALAB의 딥러닝 검사 솔루션에 대한 고객분들의 *문의*를 기다립니다"
+          title={intl.formatMessage({ id: "SUPPORT.title" })}
           bgImage="https://d2ivzy5c3eic08.cloudfront.net/productPage/support-background%402x.jpg"
         />
 
         <div className={styles.innerContainer}>
           <div className={styles.line} />
-          <div className={styles.subTitle}>제품 문의</div>
+          <div className={styles.subTitle}>{intl.formatMessage({ id: "SUPPORT.subTitle" })}</div>
 
           <div className={styles.formWrapper}>
             <div className={styles.inputWrapper}>
               <label htmlFor="name" className={styles.label}>
-                이름*
+                {intl.formatMessage({ id: "SUPPORT.name" })}*
               </label>
               <input
                 type="text"
@@ -134,7 +135,7 @@ class SupportPage extends React.PureComponent {
 
             <div className={styles.inputWrapper}>
               <label htmlFor="phone" className={styles.label}>
-                전화번호*
+                {intl.formatMessage({ id: "SUPPORT.phone" })}*
               </label>
               <input
                 type="text"
@@ -148,7 +149,7 @@ class SupportPage extends React.PureComponent {
 
             <div className={styles.inputWrapper}>
               <label htmlFor="company" className={styles.label}>
-                회사*
+                {intl.formatMessage({ id: "SUPPORT.company" })}*
               </label>
               <input
                 type="text"
@@ -162,7 +163,7 @@ class SupportPage extends React.PureComponent {
 
             <div className={styles.inputWrapper}>
               <label htmlFor="status" className={styles.label}>
-                직급
+                {intl.formatMessage({ id: "SUPPORT.status" })}
               </label>
               <input
                 type="text"
@@ -176,7 +177,7 @@ class SupportPage extends React.PureComponent {
 
             <div className={styles.inputWrapper}>
               <label htmlFor="email" className={styles.label}>
-                Email*
+                {intl.formatMessage({ id: "SUPPORT.email" })}*
               </label>
               <input
                 type="email"
@@ -190,7 +191,7 @@ class SupportPage extends React.PureComponent {
 
             <div className={styles.inputWrapper}>
               <label htmlFor="country" className={styles.label}>
-                국가
+                {intl.formatMessage({ id: "SUPPORT.country" })}
               </label>
               <input
                 type="text"
@@ -204,7 +205,7 @@ class SupportPage extends React.PureComponent {
           </div>
           <div className={`${styles.selectWrapper} ${styles.reasonSelect}`}>
             <label htmlFor="reason" className={styles.label}>
-              문의이유*
+              {intl.formatMessage({ id: "SUPPORT.reason" })}*
             </label>
             <select
               id="reason"
@@ -217,23 +218,23 @@ class SupportPage extends React.PureComponent {
               className={styles.selectForm}
             >
               <option defaultValue disabled>
-                문의 이유를 선택하세요.
+                {intl.formatMessage({ id: "SUPPORT.reason.item_0" })}
               </option>
-              <option value={PRODUCT_FORM}>제품 문의</option>
-              <option value={PARTNERSHIP_FORM}>Partnership</option>
-              <option value={ETC_FORM}>기타</option>
+              <option value={PRODUCT_FORM}>{intl.formatMessage({ id: "SUPPORT.reason.item_1" })}</option>
+              <option value={PARTNERSHIP_FORM}>{intl.formatMessage({ id: "SUPPORT.reason.item_2" })}</option>
+              <option value={ETC_FORM}>{intl.formatMessage({ id: "SUPPORT.reason.item_3" })}</option>
             </select>
           </div>
 
-          <div className={styles.info}>
-            제품 사용 중 생긴 문의 사항은 현재 페이지가 아닌<br />
-            <a href="mailto:support@sualab.com">support@sualab.com</a>으로 메일을 보내시길 바랍니다.
-          </div>
+          <div
+            className={styles.info}
+            dangerouslySetInnerHTML={{ __html: intl.formatMessage({ id: "SUPPORT.info" }) }}
+          />
           <div className={styles.productForm}>
             {formType === PRODUCT_FORM ? (
               <div>
                 <div className={styles.inputWrapper}>
-                  <label className={styles.label}>Vision 검사 장비 보유 유/무*</label>
+                  <label className={styles.label}>{intl.formatMessage({ id: "SUPPORT.vision" })}*</label>
 
                   <input
                     className={styles.radioBtn}
@@ -243,7 +244,7 @@ class SupportPage extends React.PureComponent {
                     name="hasVision"
                     id="visionYes"
                   />
-                  <label htmlFor="visionYes">유</label>
+                  <label htmlFor="visionYes">{intl.formatMessage({ id: "SUPPORT.vision.yes" })}</label>
                   <input
                     className={styles.radioBtn}
                     type="radio"
@@ -252,7 +253,7 @@ class SupportPage extends React.PureComponent {
                     name="hasVision"
                     id="visionNo"
                   />
-                  <label htmlFor="visionNo">무</label>
+                  <label htmlFor="visionNo">{intl.formatMessage({ id: "SUPPORT.vision.no" })}</label>
                   <input
                     className={styles.radioBtn}
                     type="radio"
@@ -261,12 +262,12 @@ class SupportPage extends React.PureComponent {
                     name="hasVision"
                     id="visionDontKnow"
                   />
-                  <label htmlFor="visionDontKnow">모름</label>
+                  <label htmlFor="visionDontKnow">{intl.formatMessage({ id: "SUPPORT.vision.dontknow" })}</label>
                 </div>
 
                 <div className={styles.inputWrapper}>
                   <label htmlFor="industry" className={styles.label}>
-                    산업*
+                    {intl.formatMessage({ id: "SUPPORT.industry" })}*
                   </label>
                   <input
                     type="text"
@@ -280,7 +281,7 @@ class SupportPage extends React.PureComponent {
 
                 <div className={styles.inputWrapper}>
                   <label htmlFor="productType" className={styles.label}>
-                    제품 유형
+                    {intl.formatMessage({ id: "SUPPORT.productType" })}
                   </label>
                   <input
                     type="text"
@@ -294,7 +295,7 @@ class SupportPage extends React.PureComponent {
 
                 <div className={styles.inputWrapper}>
                   <label htmlFor="faultType" className={styles.label}>
-                    불량 유형
+                    {intl.formatMessage({ id: "SUPPORT.faultType" })}
                   </label>
                   <input
                     type="text"
@@ -308,7 +309,7 @@ class SupportPage extends React.PureComponent {
 
                 <div className={styles.inputWrapper}>
                   <label htmlFor="numOfLine" className={styles.label}>
-                    생산라인 수
+                    {intl.formatMessage({ id: "SUPPORT.numOfLine" })}
                   </label>
                   <input
                     type="text"
@@ -327,7 +328,7 @@ class SupportPage extends React.PureComponent {
             {formType !== ETC_FORM ? (
               <div className={styles.selectWrapper}>
                 <label htmlFor="path" className={styles.label}>
-                  알게 된 경로*
+                  {intl.formatMessage({ id: "SUPPORT.path" })}*
                 </label>
                 <select
                   id="path"
@@ -337,13 +338,13 @@ class SupportPage extends React.PureComponent {
                   className={styles.selectForm}
                 >
                   <option defaultValue disabled>
-                    알게 된 경로를 선택하세요.
+                    {intl.formatMessage({ id: "SUPPORT.path.item_info" })}
                   </option>
-                  <option value="0">전시회/세미나</option>
-                  <option value="1">주변인 소개</option>
-                  <option value="2">매체(기사/방송 등)</option>
-                  <option value="3">검색(포탈/홈페이지 등) </option>
-                  <option value="4">기타</option>
+                  <option value="0">{intl.formatMessage({ id: "SUPPORT.path.item_0" })}</option>
+                  <option value="1">{intl.formatMessage({ id: "SUPPORT.path.item_1" })}</option>
+                  <option value="2">{intl.formatMessage({ id: "SUPPORT.path.item_2" })})</option>
+                  <option value="3">{intl.formatMessage({ id: "SUPPORT.path.item_3" })}</option>
+                  <option value="4">{intl.formatMessage({ id: "SUPPORT.path.item_4" })}</option>
                 </select>
               </div>
             ) : (
@@ -352,7 +353,7 @@ class SupportPage extends React.PureComponent {
 
             <div className={styles.textWrapper}>
               <label htmlFor="content" className={styles.label}>
-                문의 내용*
+                {intl.formatMessage({ id: "SUPPORT.supportContent" })}*
               </label>
               <textarea
                 onChange={ev => this.handleChange(ev, "content")}
@@ -372,22 +373,18 @@ class SupportPage extends React.PureComponent {
                 id="termsAgree"
               />
               <label htmlFor="termsAgree">
-                서비스 약관, 개인정보 수집 및 이용 동의 (필수)<span
-                  className={styles.modalBtn}
-                  onClick={() => this.handleOpenModal(TERMS_AGREE_MODAL)}
-                >
-                  자세히 보기
+                {intl.formatMessage({ id: "SUPPORT.termsAgree" })}
+                <span className={styles.modalBtn} onClick={() => this.handleOpenModal(TERMS_AGREE_MODAL)}>
+                  {intl.formatMessage({ id: "SUPPORT.supportContent" })}
                 </span>
               </label>
             </div>
             <div className={styles.checkboxWrapper}>
               <input type="checkbox" onChange={ev => this.handleChange(ev, "adAgree")} name="adAgree" id="adAgree" />
               <label htmlFor="adAgree">
-                광고성 정보수신 동의 (선택)<span
-                  className={styles.modalBtn}
-                  onClick={() => this.handleOpenModal(AD_AGREE_MODAL)}
-                >
-                  자세히 보기
+                {intl.formatMessage({ id: "SUPPORT.adAgree" })}
+                <span className={styles.modalBtn} onClick={() => this.handleOpenModal(AD_AGREE_MODAL)}>
+                  {intl.formatMessage({ id: "SUPPORT.modalBtn" })}
                 </span>
               </label>
             </div>
@@ -396,7 +393,7 @@ class SupportPage extends React.PureComponent {
               onClick={this.submitInquiry}
               className={`${styles.submitBtn} ${canSubmit ? styles.active : ""}`}
             >
-              문의 제출 하기
+              {intl.formatMessage({ id: "SUPPORT.submitBtn" })}
             </button>
           </div>
         </div>
@@ -409,7 +406,7 @@ class SupportPage extends React.PureComponent {
         >
           {modalContentType === TERMS_AGREE_MODAL ? <TermsModalBody /> : <AdModalBody />}
           <button onClick={this.handleCloseModal} className={styles.closeBtn}>
-            확인
+            {intl.formatMessage({ id: "SUPPORT.modal.ok" })}
           </button>
         </Modal>
       </section>
@@ -459,6 +456,7 @@ class SupportPage extends React.PureComponent {
   submitInquiry(ev) {
     ev.preventDefault();
 
+    const { intl } = this.props;
     const { canSubmit } = this.state;
     if (!canSubmit) {
       return;
@@ -481,15 +479,14 @@ class SupportPage extends React.PureComponent {
     data["content"] = this.state.content;
     data["adAgree"] = this.state.adAgree;
 
-    console.log(data);
     axios.post("/api/inquiry", data).then(res => {
       if (res.status === 204) {
-        alert("문의가 접수되었습니다.");
+        alert(intl.formatMessage({ id: "SUPPORT.alert.success" }));
         window.location.reload();
       } else {
-        alert("오류가 발생했습니다.");
+        alert(intl.formatMessage({ id: "SUPPORT.alert.error" }));
       }
     });
   }
 }
-export default SupportPage;
+export default injectIntl(SupportPage);

@@ -21,6 +21,7 @@ class UsageSection extends React.PureComponent {
   }
 
   render() {
+    const { intl } = this.props;
     const { curTab } = this.state;
     let cardList = segmentationList;
     if (curTab === CLASSIFICATION) {
@@ -33,10 +34,8 @@ class UsageSection extends React.PureComponent {
       <section className={styles.usageSection}>
         <div className={styles.innerContainer}>
           <div className={styles.line} />
-          <div className={styles.subTitle}>SuaKIT 사용 Process</div>
-          <div className={styles.content}>
-            직관적인 UI의 SuaKIT을 사용하면 누구나 쉽게 딥러닝 모델을 생성하고 테스트 할 수 있습니다.
-          </div>
+          <div className={styles.subTitle}>{intl.formatMessage({ id: "HOWTO.USAGE.subTitle" })}</div>
+          <div className={styles.content}>{intl.formatMessage({ id: "HOWTO.USAGE.content" })}</div>
           <div className={styles.tabButtons}>
             <div
               onClick={() => this.handleChangeTab(SEGMENTATION)}
@@ -60,7 +59,7 @@ class UsageSection extends React.PureComponent {
         </div>
 
         <div className={styles.tabSection}>
-          <div className={styles.innerContainer}>{cardList.map(elem => <CardItem {...elem} />)}</div>
+          <div className={styles.innerContainer}>{cardList.map(elem => <CardItem {...elem} intl={intl} />)}</div>
         </div>
       </section>
     );

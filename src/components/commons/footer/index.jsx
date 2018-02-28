@@ -1,55 +1,94 @@
 import React from "react";
+import Modal from "react-modal";
+import { injectIntl } from "react-intl";
 import { Link } from "react-router-dom";
 
 import styles from "./footer.scss";
 
-const Footer = () => (
-  <footer className={styles.footer}>
-    <div className={styles.innerContainer}>
-      <div className={styles.leftSection}>
-        <div className={styles.logoImage}>
-          <img src="https://d2ivzy5c3eic08.cloudfront.net/mainPage/logo-mono%402x.png" alt="" />
+import termsText from "../../productPage/supportPage/terms";
+
+class Footer extends React.PureComponent {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      showModal: false,
+    };
+
+    this.handleCloseModal = this.handleCloseModal.bind(this);
+    this.handleOpenModal = this.handleOpenModal.bind(this);
+  }
+
+  render() {
+    const { intl } = this.props;
+    const { showModal } = this.state;
+    return (
+      <footer className={styles.footer}>
+        <div className={styles.innerContainer}>
+          <div className={styles.leftSection}>
+            <div className={styles.logoImage}>
+              <img src="https://d2ivzy5c3eic08.cloudfront.net/mainPage/logo-mono%402x.png" alt="" />
+            </div>
+
+            <div className={styles.sualabInfo}>{intl.formatMessage({ id: "FOOTER.sualabInfo" })}</div>
+          </div>
+          <div className={styles.rightSection}>
+            <div className={styles.menuWrapper}>
+              <Link className={styles.menuItem} to="/company">
+                Company
+              </Link>
+              <Link className={styles.menuItem} to="/product">
+                Product
+              </Link>
+              <Link className={styles.menuItem} to="/news">
+                News
+              </Link>
+              <Link className={styles.menuItem} to="/career">
+                Career
+              </Link>
+              <a className={styles.menuItem} href="http://research.sualab.com/" target="_blank">
+                Blog
+              </a>
+              <Link className={styles.menuItem} to="/contact">
+                Contact
+              </Link>
+            </div>
+
+            <div className={styles.otherMenuWrapper}>
+              <a className={styles.menuItem} href="https://www.facebook.com/sualab/" target="_blank">
+                Facebook
+              </a>
+              <a className={styles.menuItem} href="#" onClick={this.handleOpenModal}>
+                {intl.formatMessage({ id: "FOOTER.privateTerms" })}
+              </a>
+            </div>
+          </div>
         </div>
 
-        <div className={styles.sualabInfo}>
-          사업자등록번호 : 220-88-55558 l 일반문의 : 02-6264-0366 | 영업문의 : 02-6264-0362 <br />
-          대표이사 : 송기영 l 주소 : 서울시 관악구 관악로 1 서울대학교 연구공원 본관 511호<br />
-          Copyright ⓒSualab. All Rights Reserved.
-        </div>
-      </div>
-      <div className={styles.rightSection}>
-        <div className={styles.menuWrapper}>
-          <Link className={styles.menuItem} to="/company">
-            Company
-          </Link>
-          <Link className={styles.menuItem} to="/product">
-            Product
-          </Link>
-          <Link className={styles.menuItem} to="/news">
-            News
-          </Link>
-          <Link className={styles.menuItem} to="/career">
-            Career
-          </Link>
-          <a className={styles.menuItem} href="http://research.sualab.com/" target="_blank">
-            Blog
-          </a>
-          <Link className={styles.menuItem} to="/contact">
-            Contact
-          </Link>
-        </div>
+        <Modal
+          isOpen={showModal}
+          bodyOpenClassName={styles.infoModalBody}
+          className={styles.infoModal}
+          overlayClassName={styles.infoModalOverlay}
+          onRequestClose={this.handleCloseModal}
+        >
+          <div className={styles.modalContent}>{termsText}</div>
+          <button onClick={this.handleCloseModal} className={styles.closeBtn}>
+            {intl.formatMessage({ id: "SUPPORT.modal.ok" })}
+          </button>
+        </Modal>
+      </footer>
+    );
+  }
 
-        <div className={styles.otherMenuWrapper}>
-          <a className={styles.menuItem} href="https://www.facebook.com/sualab/" target="_blank">
-            Facebook
-          </a>
-          <Link className={styles.menuItem} to="/">
-            개인정보처리방침
-          </Link>
-        </div>
-      </div>
-    </div>
-  </footer>
-);
+  handleOpenModal(ev) {
+    ev.preventDefault();
+    this.setState({ showModal: true });
+  }
 
-export default Footer;
+  handleCloseModal() {
+    this.setState({ showModal: false });
+  }
+}
+
+export default injectIntl(Footer);

@@ -1,4 +1,5 @@
 import React from "react";
+import { injectIntl } from "react-intl";
 
 import TitleSection from "../../commons/titleSection";
 import NetworkMapComponent from "./googleMap";
@@ -66,11 +67,11 @@ const CompanyItem = ({ country, company, address, phone, email }) => {
   );
 };
 
-const NetworkPage = () => (
+const NetworkPage = ({ intl }) => (
   <section className={styles.networkPage}>
     <TitleSection
       subTitle="GLOBAL SALES NETWORKS"
-      title="SUALAB은 *비즈니스 파트너*들과 함께 *세계*로 나아가고 있습니다"
+      title={intl.formatMessage({ id: "NETWORK.title" })}
       bgImage="https://d2ivzy5c3eic08.cloudfront.net/contactPage/media-background@2x.jpg"
     />
 
@@ -93,4 +94,4 @@ const NetworkPage = () => (
   </section>
 );
 
-export default NetworkPage;
+export default injectIntl(NetworkPage);

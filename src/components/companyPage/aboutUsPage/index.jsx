@@ -1,16 +1,18 @@
-import React from 'react';
+import React from "react";
+import { injectIntl } from "react-intl";
 
-import FirstSection from './firstSection';
-import SecondSection from './secondSection';
-import ThirdSection from './thirdSection';
-import FourthSection from './fourthSection';
+import FirstSection from "./firstSection";
+import SecondSection from "./secondSection";
+import ThirdSection from "./thirdSection";
+import FourthSection from "./fourthSection";
 
-const AboutUsPage = () =>
-    <div>
-        <FirstSection />
-        <SecondSection />
-        <ThirdSection />
-        <FourthSection />
-    </div>
+const AboutUsPage = ({ intl }) => (
+  <div>
+    <FirstSection intl={intl} />
+    <SecondSection intl={intl} />
+    <ThirdSection intl={intl} />
+    <FourthSection intl={intl} />
+  </div>
+);
 
-export default AboutUsPage;
+export default injectIntl(AboutUsPage);
