@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { parse } from "query-string";
 import { IntlProvider, addLocaleData } from "react-intl";
 import en from "react-intl/locale-data/en";
@@ -11,25 +12,23 @@ let defaultLang = navigator.languages ? navigator.languages[0] : navigator.langu
 defaultLang = defaultLang.split("-")[0];
 
 class MyIntlProvider extends React.Component {
+  getChildContext() {
+    return {
+      changeLocale: this.changeLocale,
+    };
+  }
+
   constructor(props) {
     super(props);
 
-    const lang = parse(location.search)["lang"];
-    let newLang = "ko";
-    if (lang !== undefined) {
-      if (lang !== "ko" && lang !== "en") {
-        newLang = "en";
-      } else {
-        newLang = lang;
-      }
-    } else {
-      newLang = defaultLang;
-    }
     this.state = {
-      currentLang: newLang,
+      currentLang: defaultLang,
     };
-
     this.changeLocale = this.changeLocale.bind(this);
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return this.state.currentLang !== nextState.currentLang;
   }
 
   render() {
@@ -38,16 +37,20 @@ class MyIntlProvider extends React.Component {
 
     return (
       <IntlProvider locale={currentLang} messages={locale[currentLang]}>
-        {children}
+        {React.Children.only(children)}
       </IntlProvider>
     );
   }
 
-  changeLocale(lang) {
+  changeLocale(lang = defaultLang) {
     this.setState({
       currentLang: lang,
     });
   }
 }
+
+MyIntlProvider.childContextTypes = {
+  changeLocale: PropTypes.func,
+};
 
 export default MyIntlProvider;

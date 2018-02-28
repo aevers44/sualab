@@ -1,10 +1,12 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import { Link, Route } from "react-router-dom";
 
 import Navbar from "./navbar";
 import styles from "./header.scss";
 
-const Header = () => {
+const Header = (props, context) => {
   const curPath = window.location.pathname.split("/")[1];
   return (
     <header className={styles.header}>
@@ -40,6 +42,10 @@ const Header = () => {
       <Route path="/:page/:subpage" component={Navbar} />
     </header>
   );
+};
+
+Header.contextTypes = {
+  changeLocale: PropTypes.func,
 };
 
 export default Header;

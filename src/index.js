@@ -9,19 +9,6 @@ import MyIntlProvider from "./components/commons/intl";
 
 ReactModal.setAppElement("#root");
 
-// const render = Component => {
-//   ReactDOM.render(
-//     <AppContainer>
-//       <MyIntlProvider>
-//         <Component />
-//       </MyIntlProvider>
-//     </AppContainer>,
-//     document.getElementById("root"),
-//   );
-// };
-
-// render(App);
-
 ReactDOM.render(
   <AppContainer>
     <MyIntlProvider>

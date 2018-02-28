@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import Modal from "react-modal";
 import { injectIntl } from "react-intl";
 import { Link } from "react-router-dom";
@@ -22,6 +24,7 @@ class Footer extends React.PureComponent {
   render() {
     const { intl } = this.props;
     const { showModal } = this.state;
+    const { changeLocale } = this.context;
     return (
       <footer className={styles.footer}>
         <div className={styles.innerContainer}>
@@ -90,5 +93,9 @@ class Footer extends React.PureComponent {
     this.setState({ showModal: false });
   }
 }
+
+Footer.contextTypes = {
+  changeLocale: PropTypes.func,
+};
 
 export default injectIntl(Footer);
