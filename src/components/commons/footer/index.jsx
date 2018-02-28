@@ -1,9 +1,10 @@
 import React from "react";
+import { injectIntl } from "react-intl";
 import { Link } from "react-router-dom";
 
 import styles from "./footer.scss";
 
-const Footer = () => (
+const Footer = ({ intl }) => (
   <footer className={styles.footer}>
     <div className={styles.innerContainer}>
       <div className={styles.leftSection}>
@@ -11,11 +12,7 @@ const Footer = () => (
           <img src="https://d2ivzy5c3eic08.cloudfront.net/mainPage/logo-mono%402x.png" alt="" />
         </div>
 
-        <div className={styles.sualabInfo}>
-          사업자등록번호 : 220-88-55558 l 일반문의 : 02-6264-0366 | 영업문의 : 02-6264-0362 <br />
-          대표이사 : 송기영 l 주소 : 서울시 관악구 관악로 1 서울대학교 연구공원 본관 511호<br />
-          Copyright ⓒSualab. All Rights Reserved.
-        </div>
+        <div className={styles.sualabInfo}>{intl.formatMessage({ id: "FOOTER.sualabInfo" })}</div>
       </div>
       <div className={styles.rightSection}>
         <div className={styles.menuWrapper}>
@@ -44,7 +41,7 @@ const Footer = () => (
             Facebook
           </a>
           <Link className={styles.menuItem} to="/">
-            개인정보처리방침
+            {intl.formatMessage({ id: "FOOTER.privateTerms" })}
           </Link>
         </div>
       </div>
@@ -52,4 +49,4 @@ const Footer = () => (
   </footer>
 );
 
-export default Footer;
+export default injectIntl(Footer);

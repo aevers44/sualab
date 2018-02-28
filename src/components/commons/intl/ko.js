@@ -3,6 +3,9 @@ export default {
   "NAVBAR.career.philosophy": `인사 철학`,
   "NAVBAR.career.recruit": `채용 절차`,
 
+  "FOOTER.sualabInfo": `사업자등록번호 : 220-88-55558 l 일반문의 : 02-6264-0366 | 영업문의 : 02-6264-0362\n대표이사 : 송기영 l 주소 : 서울시 관악구 관악로 1 서울대학교 연구공원 본관 511호\nCopyright ⓒSualab. All Rights Reserved.`,
+  "FOOTER.privateTerms": `개인정보처리방침`,
+
   "MAIN.FIRST.subTitle": `SUALAB은 인공지능을 기반으로 기계 대신 사람이 하던 일을 자동화함으로써\n세상에 기여할 수 있다고 믿습니다.`,
   "MAIN.SECOND.awardContent_1": `2017 Innovators Awards\nPLATINUM 수상`,
   "MAIN.SECOND.awardContent_2": `2017 KGCCI Innovation Awards\n디지털혁신 부문 수상`,
