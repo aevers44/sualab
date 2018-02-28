@@ -16,9 +16,8 @@ const SuakitPage = ({ intl }) => (
   <section className={styles.suakitPage}>
     <TitleSection
       subTitle="SUAKIT"
-      title="*딥러닝*을 탑재한 SuaKIT, *머신비전 검사*의 스펙트럼을 넓힙니다"
+      title={intl.formatMessage({ id: "SUAKIT.title" })}
       bgImage="https://d2ivzy5c3eic08.cloudfront.net/productPage/background%402x.jpg"
-      intl={intl}
     />
 
     <FirstSection intl={intl} />
