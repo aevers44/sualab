@@ -77,3 +77,81 @@ $container-width: 1080px;
     margin-right: 10px;
   }
 }
+
+/* modal */
+
+.infoModalBody {
+  overflow: hidden;
+}
+
+.infoModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.41);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.infoModal {
+  outline: none;
+  max-width: 960px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #ffffff;
+  overflow: auto;
+  padding: 50px 50px 30px 50px;
+}
+
+.modalContent {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #16212f;
+  margin-bottom: 50px;
+
+  white-space: pre-wrap;
+  max-height: 70vh;
+  overflow-y: auto;
+
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 0;
+  }
+
+  .lead {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  a {
+    color: #1ae8c9;
+  }
+}
+
+.closeBtn {
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+
+  width: 183px;
+  height: 57px;
+  line-height: 57px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  border: solid 1px #d8dde7;
+
+  font-size: 18px;
+  font-weight: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #5f7591;
+}

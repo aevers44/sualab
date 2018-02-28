@@ -106,7 +106,6 @@ class SupportPage extends React.PureComponent {
   render() {
     const { intl } = this.props;
     const { formType, showModal, modalContentType, canSubmit } = this.state;
-    console.log(termsText);
     return (
       <section className={styles.supportPage}>
         <TitleSection
