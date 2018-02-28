@@ -6,7 +6,6 @@ import styles from "./header.scss";
 
 const Header = () => {
   const curPath = window.location.pathname.split("/")[1];
-
   return (
     <header className={styles.header}>
       <div className={styles.innerContainer}>
