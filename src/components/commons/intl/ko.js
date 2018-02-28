@@ -1,5 +1,8 @@
 export default {
-  hello: "안녕하세요",
+  "NAVBAR.product.support": `제품문의`,
+  "NAVBAR.career.philosophy": `인사 철학`,
+  "NAVBAR.career.recruit": `채용 절차`,
+
   "MAIN.FIRST.subTitle": `SUALAB은 인공지능을 기반으로 기계 대신 사람이 하던 일을 자동화함으로써\n세상에 기여할 수 있다고 믿습니다.`,
   "MAIN.SECOND.awardContent_1": `2017 Innovators Awards\nPLATINUM 수상`,
   "MAIN.SECOND.awardContent_2": `2017 KGCCI Innovation Awards\n디지털혁신 부문 수상`,

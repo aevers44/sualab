@@ -1,4 +1,5 @@
 import React from "react";
+import { injectIntl } from "react-intl";
 import { Link } from "react-router-dom";
 import styles from "./navbar.scss";
 
@@ -9,20 +10,23 @@ const marginList = {
   career: 70,
 };
 
-const linkItem = {
-  company: [{ name: "About Us", link: "about-us" }, { name: "People", link: "people" }],
-  product: [
-    { name: "SuaKIT", link: "suakit" },
-    { name: "How to Apply SuaKIT", link: "how-to-apply" },
-    { name: "제품문의", link: "support" },
-    // { name: "Download", link: "downaload" },
-  ],
-  news: [{ name: "SUALAB in Media", link: "media" }, { name: "Events", link: "event" }],
-  career: [{ name: "인사 철학", link: "philosophy" }, { name: "채용 절차", link: "recruit" }],
-  contact: [{ name: "Office", link: "office" }, { name: "Global Sales Networks", link: "global-sales-network" }],
-};
+const makeLinks = (curPath, subPath, intl) => {
+  const linkItem = {
+    company: [{ name: "About Us", link: "about-us" }, { name: "People", link: "people" }],
+    product: [
+      { name: "SuaKIT", link: "suakit" },
+      { name: "How to Apply SuaKIT", link: "how-to-apply" },
+      { name: intl.formatMessage({ id: "NAVBAR.product.support" }), link: "support" },
+      // { name: "Download", link: "downaload" },
+    ],
+    news: [{ name: "SUALAB in Media", link: "media" }, { name: "Events", link: "event" }],
+    career: [
+      { name: intl.formatMessage({ id: "NAVBAR.career.philosophy" }), link: "philosophy" },
+      { name: intl.formatMessage({ id: "NAVBAR.career.recruit" }), link: "recruit" },
+    ],
+    contact: [{ name: "Office", link: "office" }, { name: "Global Sales Networks", link: "global-sales-network" }],
+  };
 
-const makeLinks = (curPath, subPath) => {
   let result = [];
 
   for (let idx in linkItem[curPath]) {
@@ -42,10 +46,10 @@ const makeLinks = (curPath, subPath) => {
   return result;
 };
 
-const Navbar = ({ match }) => {
+const Navbar = ({ match, intl }) => {
   const curPath = match.params.page;
   const subPath = match.params.subpage;
-  const linkItems = makeLinks(curPath, subPath);
+  const linkItems = makeLinks(curPath, subPath, intl);
 
   return (
     <nav className={styles.navbar}>
@@ -58,4 +62,4 @@ const Navbar = ({ match }) => {
   );
 };
 
-export default Navbar;
+export default injectIntl(Navbar);
