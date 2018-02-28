@@ -145,4 +145,10 @@ export default {
   "SUPPORT.modal.ok": `확인`,
   "SUPPORT.alert.success": `문의가 접수되었습니다.`,
   "SUPPORT.alert.error": `오류가 발생했습니다.`,
+
+  "MEDIA.title": `*언론*에 보도된 *SUALAB*을 확인해 보세요`,
+  "MEDIA.newsDetail.prev": `이전 글`,
+  "MEDIA.newsDetail.next": `다음 글`,
+  "MEDIA.newsDetail.listBtn": `목록으로 돌아가기`,
+  "EVENT.title": `다양한 *행사* 및 *활동*을 통해 SUALAB과 만나보세요`,
 };

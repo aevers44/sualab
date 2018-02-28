@@ -49,7 +49,7 @@ class NewsDetail extends React.PureComponent {
       <section className={styles.newsDetail}>
         <TitleSection
           subTitle="SUALAB IN MEDIA"
-          title="*언론*에 보도된 *SUALAB*을 확인해 보세요"
+          title={intl.formatMessage({ id: "MEDIA.title" })}
           bgImage="https://d2ivzy5c3eic08.cloudfront.net/newsPage/media-background%402x.png"
         />
 
@@ -79,7 +79,7 @@ class NewsDetail extends React.PureComponent {
             >
               <div className={styles.iconWrapper}>
                 <Icon icon="ARROW_UP" />
-                <span className={styles.label}>이전 글</span>
+                <span className={styles.label}>{intl.formatMessage({ id: "MEDIA.newsDetail.prev" })}</span>
               </div>
               <div className={styles.article}>{article.prevTitle}</div>
             </Link>
@@ -89,14 +89,14 @@ class NewsDetail extends React.PureComponent {
             >
               <div className={styles.iconWrapper}>
                 <Icon icon="ARROW_DOWN" />
-                <span className={styles.label}>다음 글</span>
+                <span className={styles.label}>{intl.formatMessage({ id: "MEDIA.newsDetail.next" })}</span>
               </div>
               <div className={styles.article}>{article.nextTitle}</div>
             </Link>
           </div>
 
           <Link to="/news/media" className={styles.listBtn}>
-            목록으로 돌아가기
+            {intl.formatMessage({ id: "MEDIA.newsDetail.listBtn" })}
           </Link>
         </div>
       </section>
