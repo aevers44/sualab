@@ -50,7 +50,6 @@ class FifthContainer extends React.PureComponent {
   getRecentArticles() {
     axios.get("/api/media").then(res => {
       const result = res.data.slice(0, 3);
-      console.log(result);
       this.setState({
         recentArticles: result,
       });

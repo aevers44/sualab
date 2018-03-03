@@ -40,7 +40,6 @@ $container-width: 1080px;
     flex: 1 0px;
     max-width: 255px;
     height: 131px;
-    line-height: 131px;
     border-radius: 8px;
     background-color: #34495e;
     border: solid 1px #5f7591;
@@ -51,6 +50,10 @@ $container-width: 1080px;
     letter-spacing: normal;
     text-align: center;
     color: #ffffff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 

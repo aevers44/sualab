@@ -1,8 +1,7 @@
 import ko from "./ko";
+import en from "./en";
 
 export default {
-  en: {
-    hello: "Hello",
-  },
+  en: en,
   ko: ko,
 };
