@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { injectIntl } from "react-intl";
 
 import { Link, Route } from "react-router-dom";
 
@@ -7,7 +8,11 @@ import Navbar from "./navbar";
 import styles from "./header.scss";
 
 const Header = (props, context) => {
-  const curPath = window.location.pathname.split("/")[1];
+  const curFullPath = window.location.pathname || "/";
+  const curPath = curFullPath.split("/")[1];
+  const { changeLocale } = context;
+  const { locale } = props.intl;
+
   return (
     <header className={styles.header}>
       <div className={styles.innerContainer}>
@@ -36,6 +41,11 @@ const Header = (props, context) => {
           <Link className={`${styles.menuItem} ${curPath === "contact" ? styles.active : ""}`} to="/contact">
             Contact
           </Link>
+          <Link className={styles.menuItem} to={curFullPath} onClick={changeLocale}>
+            <span className={`${locale === "ko" ? styles.activeLocale : ""}`}>KO </span>
+            |
+            <span className={`${locale === "en" ? styles.activeLocale : ""}`}> EN</span>
+          </Link>
         </div>
       </div>
 
@@ -48,4 +58,4 @@ Header.contextTypes = {
   changeLocale: PropTypes.func,
 };
 
-export default Header;
+export default injectIntl(Header);

@@ -25,6 +25,7 @@ class Footer extends React.PureComponent {
     const { intl } = this.props;
     const { showModal } = this.state;
     const { changeLocale } = this.context;
+    const currentPath = window.location.pathname || "/";
     return (
       <footer className={styles.footer}>
         <div className={styles.innerContainer}>

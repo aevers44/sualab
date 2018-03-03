@@ -28,9 +28,8 @@ class MyIntlProvider extends React.Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    return this.state.currentLang !== nextState.currentLang;
+    return true;
   }
-
   render() {
     const { currentLang } = this.state;
     const { children } = this.props;
@@ -42,10 +41,18 @@ class MyIntlProvider extends React.Component {
     );
   }
 
-  changeLocale(lang = defaultLang) {
-    this.setState({
-      currentLang: lang,
-    });
+  changeLocale() {
+    const { currentLang } = this.state;
+
+    if (currentLang !== "ko") {
+      this.setState({
+        currentLang: "ko",
+      });
+    } else {
+      this.setState({
+        currentLang: "en",
+      });
+    }
   }
 }
 
