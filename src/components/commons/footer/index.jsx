@@ -76,7 +76,7 @@ class Footer extends React.PureComponent {
           overlayClassName={styles.infoModalOverlay}
           onRequestClose={this.handleCloseModal}
         >
-          <div className={styles.modalContent}>{termsText}</div>
+          <div className={styles.modalContent}>{termsText[intl.locale]}</div>
           <button onClick={this.handleCloseModal} className={styles.closeBtn}>
             {intl.formatMessage({ id: "SUPPORT.modal.ok" })}
           </button>

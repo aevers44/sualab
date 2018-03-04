@@ -1,4 +1,5 @@
-const terms = `㈜수아랩 개인정보 처리방침
+const terms = {
+  ko: `㈜수아랩 개인정보 처리방침
 ㈜수아랩은 (이하 ‘당사’ 는) 고객님의 개인정보를 중요시하며, “정보통신망 이용촉진 및 정보보호”에 관한 법률을 준수하고 있습니다. 당사는 개인정보취급방침을 통하여 고객님께서 제공하시는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며, 개인정보보호를 위해 어떠한 조치가 취해지고 있는지 알려드립니다.
 
 
@@ -85,6 +86,58 @@ const terms = `㈜수아랩 개인정보 처리방침
 3. 경찰청 사이버안전국 (www.ctrc.go.kr / ☎ 국번없이 182)
 
 4. 개인정보분쟁조정위원회 (http://kopico.go.kr / ☎ 02-2100-2499)
-`;
+`,
+  en: `
+SUALAB Privacy Statement
+SUALAB thinks your privacy is important and we follow the law regarding the promotion of information and communication network use and protection of information. SUALAB informs you the way we collect information, purposes and measures taken to protect personal information.
 
+SUALAB will announce through website notice (or individual notice) if the privacy statement is to be revised.
+
+Personal Information collection
+	The purpose of collection and using of personal information: SuaKIT demo account guide and notification
+	Personal Information collection item: name, email address, phone number, country, working place, position, company, industry, product type, detect type, number of product lines
+	Period of possession and use: three years from the date of SuaKIT demo account receipt
+
+Personal Information destruction
+
+SUALAB promptly destroy information after the accomplishment of the purpose of collection and using. The process of destruction is as in the following.
+
+(1)	Destruction process
+	The information users provided to apply for SuaKIT demo is destroyed after a certain period of time accomplishing the purpose by inside policy and information security related laws.
+(2)	Destruction method
+	We use technical method that cannot replay documents for personal information stored in an electronic file.
+	We pulverize or incinerate personal information in writing.
+Personal Information provision and deputation
+SUALAB uses personal information only in the area informed at ‘Personal Information Collection’ and do not provide or depute personal information without permission. We receive an agreement when personal information needs to be provided to a third party. However, cases below are considered as an exception.
+
+	Based on law regulation or asked by investigation agencies
+	Contain Particular rules in other laws
+
+Users and legal representatives’ rights and the way to exercise
+	Basically we do not allow child under 14 to question and if the child does it will be deleted immediately
+	Users and legal representatives can view, modify or ask for a deletion of their own or the child’s information when the information about the child under 14 is registered.
+	Information deleted by the users or legal representatives are handled by the ‘Personal Information Collection’ and cannot be opened or used by another purpose.
+
+We do not install or operate any equipment that automatically collects personal information like internet access information file.
+
+Person in charge of personal information and contact of the department in charge of personal information protection
+
+SUALAB designated following department and person to protect our clients’ personal information and to deal with complaints related to personal information.
+	The person in charge of personal information protection: Kiyoung, Song
+	Phone number: +82-2-3678-0362
+	Email: sualab@sualab.com
+	The department in charge of personal information protection: SUALAB Business Support Team
+	Phone number: +82-2-3678-0362
+	Email: sualab@sualab.com
+
+Users can report any personal information related civil complaint that was caused during using out service to the person or department in charge of personal information protection. We will provide you with sufficient response for your report matters.
+
+If you need to report or to get some advice regarding personal information violation please contact institutions below.
+
+1.	KISA
+2.	Supreme Prosecutors’ Office, Cybercrime Investigation Division
+3.	Korean national cyber police agency
+4.	Personal Information Dispute Mediation Committee
+`,
+};
 export default terms;

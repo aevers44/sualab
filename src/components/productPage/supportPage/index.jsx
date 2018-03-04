@@ -18,8 +18,8 @@ const ETC_FORM = "etc";
 const TERMS_AGREE_MODAL = 0;
 const AD_AGREE_MODAL = 1;
 
-const TermsModalBody = () => (
-  <div className={styles.modalContent}>{termsText}</div>
+const TermsModalBody = ({ locale }) => (
+  <div className={styles.modalContent}>{termsText[locale]}</div>
 
   // <div className={styles.modalContent}>
   //   <h1>서비스 이용약관 (필수)</h1>
@@ -404,7 +404,7 @@ class SupportPage extends React.PureComponent {
           overlayClassName={styles.infoModalOverlay}
           onRequestClose={this.handleCloseModal}
         >
-          {modalContentType === TERMS_AGREE_MODAL ? <TermsModalBody /> : <AdModalBody />}
+          {modalContentType === TERMS_AGREE_MODAL ? <TermsModalBody locale={intl.locale} /> : <AdModalBody />}
           <button onClick={this.handleCloseModal} className={styles.closeBtn}>
             {intl.formatMessage({ id: "SUPPORT.modal.ok" })}
           </button>
