@@ -12,4 +12,7 @@ router.use("/event", eventRouter);
 import inquiryRouter from "./inquiry";
 router.use("/inquiry", inquiryRouter);
 
+import peopleRouter from "./people";
+router.use("/people", peopleRouter);
+
 export default router;

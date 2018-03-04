@@ -24,6 +24,7 @@ const makePeopleCards = peopleList => {
 };
 
 const PeoplePage = ({ intl }) => {
+  console.log(JSON.stringify([...ceoList, ...researchList, ...salesList, ...manageList]));
   return (
     <section className={styles.peoplePage}>
       <TitleSection

@@ -38,6 +38,19 @@ db.serialize(() => {
       ad_agree INTEGER NOT NULL DEFAULT 0\
     )",
   );
+
+  db.run(
+    "CREATE TABLE IF NOT EXISTS people \
+      ( \
+        id INTEGER PRIMARY KEY, \
+        department TEXT NOT NULL, \
+        name TEXT NOT NULL, eng_name TEXT NOT NULL, \
+        position TEXT, \
+        detail TEXT, eng_detail TEXT, \
+        imgUrl TEXT \
+      ) \
+    ",
+  );
 });
 
 db.close();

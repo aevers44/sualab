@@ -503,7 +503,7 @@
                 "name": "content",
                 "verbose": "content",
                 "control": {
-                    "text": true
+                    "textarea": true
                 },
                 "type": "TEXT",
                 "allowNull": false,
@@ -539,6 +539,154 @@
                 },
                 "type": "TEXT",
                 "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "people": {
+        "slug": "people",
+        "table": {
+            "name": "people",
+            "pk": "id",
+            "verbose": "people"
+        },
+        "columns": [
+            {
+                "name": "id",
+                "verbose": "id",
+                "control": {
+                    "text": true
+                },
+                "type": "INTEGER",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "name",
+                "verbose": "name",
+                "control": {
+                    "text": true
+                },
+                "type": "TEXT",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "eng_name",
+                "verbose": "eng_name",
+                "control": {
+                    "text": true
+                },
+                "type": "TEXT",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "position",
+                "verbose": "position",
+                "control": {
+                    "text": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "detail",
+                "verbose": "detail",
+                "control": {
+                    "textarea": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "eng_detail",
+                "verbose": "eng_detail",
+                "control": {
+                    "textarea": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "imgUrl",
+                "verbose": "imgUrl",
+                "control": {
+                    "text": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "department",
+                "verbose": "department",
+                "control": {
+                    "text": true
+                },
+                "type": "TEXT",
+                "allowNull": false,
                 "defaultValue": null,
                 "listview": {
                     "show": true
