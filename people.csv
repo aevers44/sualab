@@ -1,0 +1,142 @@
+﻿id,department,name,eng_name,position,detail,eng_detail,imgUrl
+1,c-level,송기영,"Kiyoung, Song","CEO, Co-Founder","인텔코리아 MCG VIED
+에스엔유프리시젼 연구팀
+서울대학교 기계항공공학부
+서울대학교 컴퓨터공학부(부)","Mechanical and Aerospace Engineering, Seoul National Univ.
+Computer Science and Engineering, Seoul National Univ.
+Intel Korea, MCG VIED
+SNU Precision, Reaserch Team ",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Song_Kiyoung.jpg
+2,c-level,윤관우,"Kwanwoo, Yoon","CTO, Co-Founder","삼성 에스원 디바이스 개발그룹
+에스엔유프리시젼 연구팀
+한양대학교 기계공학 석사","Master in Mechanical Engineering, Hanyang Univ.
+Samgsung S1 Corporation, Device Development Group
+SNU Precision, Reaserch Team",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Yoon_Kwanwoo.jpg
+3,c-level,문태연,"Taeyeon, Moon",CSO,"두산밥캣 오퍼레이션 전략
+두산 지주사 전략기획실(Tri-C)
+서울대학교 기계항공공학부
+서울대학교 경영학과(부)","Mechanical and Aerospace Engineering, Seoul National Univ.
+Minor in Business Administration, Seoul National Univ.
+Doosan bobcat, Operation Strategy",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Moon_Taeyeon.jpg
+4,research,강형신,"Hyeongshin, Kang",,연세대학교 컴퓨터과학과,"Computer Science, Yonsei Univ.",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Kang_Hyeongshin1.jpg
+5,research,이동호,"Donghoe, Lee",,연세대학교 컴퓨터과학과,"Computer Science, Yonsei Univ.",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Lee_Donghoe.jpg
+6,research,김광민,"Gwangmin, Kim",,가톨릭대학교 정보통신전자공학과,"Information, Communications and Electronic Engineering, The Catholic Univ. of Korea",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Kim_Gwangmin.jpg
+7,research,김길호,"Kilho, Kim",,서울대학교 산업공학과 석사,"Master in Industrial Engineering, Seoul National Univ.",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Kim_Kilho.jpg
+8,research,신연식,"Yeonsik, Shin",,"고려대학교 컴퓨터통신공학부
+안랩 소프트웨어 개발실
+해피나믹","Computer Communication Engineering, Korea Univ.
+Ahnlab, Software Development Team
+Happynamic",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Shin_Yeonsik.jpg
+9,research,기홍도,"Hongdo, Ki",,서울대학교 산업공학과 석사,"Master in Industrial Engineering, Seoul National Univ.",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Ki_Hongdo.jpg
+10,research,이남구,"Namgoo, Lee",,서울대학교 컴퓨터공학과 석사,"Master in Computer Science and Engineering, Seoul National Univ.",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Lee_Namgoo.jpg
+11,research,강정훈,"Junghoon, Kang",,"듀크대 컴퓨터과학부 석사
+버클리대 전기컴퓨터과학부 학사","Computer Science, Duke Univ.
+Electronic Computer Science, Berkeley ",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Kang_Junghoon.jpg
+12,research,이재환,"Jaehwan, Lee",,"삼성전자 서비스 인텔리전스팀
+상명대학교 컴퓨터과학과","Computer Science, Sangmyung Univ.
+Samsung Electronics, Department of Service Intelligence",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Lee_Jaehwan.jpg
+13,research,김현준,"Hyunjun, Kim",,서울대학교 전기정보공학과 석사,"Master in Electrical and Computer Engineering, Seoul National Univ.",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Kim_Hyunjun.jpg
+14,research,금종수,"Jongsoo, Keum",,광주과학기술원 전기전자컴퓨터공학부 석사,"Master in Electrical Engineering and Computer Science, Gwangju Institute of Science and Technology",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Keum_Jongsoo.jpg
+15,research,박종호,"Jongho, Park",,서울대학교 컴퓨터공학부 석사,"Master in Computer Science and Engineering, Seoul National Univ.",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Park_Jongho.jpg
+16,research,주민규,"Mingyu, Joo",,"고려대학교 전기전자공학과 석사
+고려대학교 전기전자공학과",Master of Engineering in Electrical and Computer Engineering,https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Joo_Mingyu.jpg
+17,research,백호식,"Hosik, Baek",,"건국대학교 벤처경영공학 석박사(통)
+동국대학교 산업시스템공학과
+기상청 국가기상위성센터 연구팀","Industrial and Systems Engineering, Dongguk Univ.
+Master in Venture Industrial Engineering, Konkuk Univ.
+Korea Meteorological Administration(KMA), National Weather Satellite Center Research Team",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Baek_Hosik.jpg
+18,research,박종관,"Jongkwan, Park",,"한양대학교 전자공학전공
+에스엔유프리시젼 연구팀","Electronics Engineering, Hanyang Univ
+SNU Precision, Reaserch Team",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Park_Jongkwan.jpg
+19,research,최익현,"Ickhyun, Choi",,"인하대학교 전자공학과 석사
+인하대학교 전자공학전공
+고영테크놀러지 Vision팀 LG전자 VC사업부","Electronic Engineering, Inha Univ.
+Master in Electronic Engineering, Inha Univ.
+Kohyong Technology, Vision Team
+LG Electronics, VC Division",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Choi_Ickhyun.jpg
+20,research,송하덕,"Hadeok, Song",,명지대학교 정보통신공학 석사,"Master in Telecommunication Engineering, Myongji Univ.",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Song_Hadeok.jpg
+21,research,조훈민,"Hoonmin, Cho",,"서울대학교 전기컴퓨터공학부 석사
+고영테크놀러지 머신비전 연구소","Master in Electrical and Computer Engineering, Seoul National Univ.
+Kohyong Technology, Machine Vision Team",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Cho_Hunmin.jpg
+22,research,김남훈,"Namhoon, Kim",,중앙대학교 경영학부,"Business Administration, Chung Ang Univ",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Kim_Namhoon.jpg
+23,research,신찬우,"Chanwoo, Shin",,건국대학교 융합인재학부,"Interdisciplinary Studies, Konkuk Univ.",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Shin_Chanwoo.jpg
+24,research,권순욱,"Soonwook, Kwon",,삼성전자 SmartTV 외 다수 프로젝트 참여,Participated in various projects including Samgsung Smart TV ,https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Kwon_Soonwook.jpg
+25,research,강승연,"Seungyeun, Kang",,"선문대학교 정보통신공학과
+넥스트아이 소프트웨어개발팀","Information and Communication Engineering, Sunmoon Univ.
+NextEye, Software Development Team ",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Kang_Seungyeun.jpg
+26,research,류덕상,"Deoksang, Ryu",,"건양대학교 의공학과
+맥사이언스 소프트웨어개발팀","Biomedical Engineering, Konyang Univ.
+McScience, Software Development Team",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Ryu_Deoksang.jpg
+27,research,오용철,"yongchul, Oh",,"에스엔유프리시젼 설계팀
+미래컴퍼니 설계팀","SNU Precision, Design Team
+Meere company, Design Team ",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Oh_Yongchul.jpg
+28,research,유승균,"Seunggyun, Yoo",,"선문대학교 신소재공학과
+에스엔유프리시젼 설계팀","Advanced Materials Engineering, Sunmoon Univ.
+SNU Precision, Design Team",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Yoo_Seunggyun.jpg
+29,research,나종헌,"Jongheon, Na",,"인천대학교 컴퓨터공학과
+다산뉴텍 개발팀","Computer Engineering, Incheon National Univ.
+Dasan Newtech, Development Team ",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Na_Jongheon.jpg
+30,research,박지훈,"Jihoon, Park",,인천대학교 컴퓨터공학과,"Computer Science and Engineering, Incheon National Univ.",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Park_Jihoon.jpg
+31,research,장현진,"Hyunjin, Jang",,인천대학교 컴퓨터공학과,"Computer Science and Engineering, Incheon National Univ.",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Jang_Hyunjin.jpg
+32,research,송준석,"Junseok, Song",,인천대학교 컴퓨터공학과,"Computer Science and Engineering, Incheon National Univ.",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Song_Junseok.jpg
+33,research,김정훈,"Jeonghoon, Kim",,"전북대학교 정밀기계공학과
+구네보코리아 기술팀","Mechanical Engineering, Chonbuk National Univ.
+Gunnebo Korea, Technical Team",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Kim_Jeonghoon.jpg
+34,research,김철훈,"Chulhoon, kim",,"연성대학교 디지털전자과
+넥스트아이 개발팀","Dept. of Electronics, Yeonsung Univ.",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Kim_Chulhoon.jpg
+35,sales,이동희,"Donghee, Lee",,"서울대학교 경영학과
+두산 지주사 전략기획실(Tri-C)","Business Administration, Seoul National Univ.
+Doosan, Strategy and Planning Team (Tri-C)",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Lee_Donghee.jpg
+36,sales,김왕수,"Wangsoo, Kim",,"서울대학교 심리학과
+삼성물산 화학팀","Psychology, Seoul National Univ.
+Samsung C&T Corporation, Chemical Team",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Kim_Wangsoo.jpg
+37,sales,이홍석,"Hongsuk, Lee",,"서울대학교 경영학과
+LG디스플레이 전략마케팅그룹","Business Administration, Seoul National Univ.
+LG Display, Corporate Strategy and Marketing Group",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Lee_Hongsuk.jpg
+38,sales,김민석,"Minseok, Kim",,"서울대학교 산업공학과
+현대자동차 R&D 전략팀
+컴투스 퍼블리싱팀","Industrial Engineering, Seoul National Univ.
+Hyundai Motor Company, R&D Strategy Team
+com2us, Publishing Team",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Kim_Minseok.jpg
+39,sales,정희재,"Heejae, Jung",,"서울대학교 경영학과
+현대자동차 수출기획팀","Business Administration, Seoul National Univ.
+Hyundai Motor Company, Export Planning Team
+LG International Green Business Department",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Jung_Heejae.jpg
+40,sales,조용훈,"Yonghoon, Cho",,서울대학교 산업인력개발학과,"Vocational Education and Workforce Development, Seoul National Univ.",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Cho_Yonghoon.jpg
+41,sales,김한준,"Hanjun, Kim",,"서울대학교 경영학과
+제일기획 캠페인기획팀","Business Administration, Seoul National Univ.
+Cheil Worldwide Inc., Campaign Planning Team",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Kim_Hanjun.jpg
+42,sales,홍철진,"Cheoljin, Hong",,"한국산업기술대학교 전자공학과
+TDK Korea 기술영업팀","Electronics Engineering, Korea Polytechnic Univ.
+TDK Korea, Technical Sales Team",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Hong_Cheoljin.jpg
+43,sales,노광용,"Kwangyong, Noh",,"경기대학교 스포츠경영학 전공
+한국후지제록스 B2B 영업","Sport Management, Kyonggi Univ.
+FUJI xerox Korea, B2B Sales Team",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Noh_Kwangyong.jpg
+44,sales,문선호,"Seonho, Mun",,경희대학교 컨벤션경영학과,"Convention Management, Kyunghee University",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Mun_Seonho.jpg
+45,management,윤영훈,"Younghoon, Yun",,"서울대학교 기술경영?경제?정책전공 석사
+고려대학교 공과대학 산업시스템정보공학과
+두산 지주사 전략기획실(Tri-C)
+ST Unitas 신사업전략팀","Master in Technology Management, Economics And Policy, Seoul National Univ.
+Industrial System Information Engineering, Korea Univ.
+Doosan, Strategy and Planning Team (Tri-C)
+ST Unitas, New Business Strategy Team",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Yun_Younghoon.jpg
+46,management,이보라,"Bora, Lee",,"숙명여자대학교 문화관광학과
+숙명여자대학교 일본학과(부)
+하이트론시스템즈 해외영업팀","Japanese Studies, Sookmyung Women's Univ.
+Culture&Tourism, Sookmyung Women's Univ.
+HiTRON Systems Inc., Overseas Sales Team",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Lee_Bora.jpg
+47,management,손기호,"Kiho, Son",,"고려대학교 사학과
+고려대학교 과학기술학융합학과
+고려대학교 경제학과(부)","History, Korea Univ.
+Science & Technology Studies, Korea Univ.
+Minor in Economics, Korea Univ. ",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Son_Kiho.jpg
+48,management,신솔빈,"Solbin, Shin",,"한신대학교 정보통신학과
+나래회계법인 기장팀
+socar 경영관리팀","Information and Telecommunications, Hanshin Univ.
+Narae Accounting Firm
+socar, Management Team",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Shin_Solbin.jpg
+49,management,오승진,"Seungjin, Oh",,"동원대학교 e비즈니스학과
+한국폴리텍대학 CAD&모델링과
+
+
+","e-business, Tongwon Univ.
+CAD&Modeling, Korea Polytechnic Univ.",https://d2ivzy5c3eic08.cloudfront.net/companyPage/people/Oh_Seungjin.jpg
