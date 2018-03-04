@@ -25,6 +25,8 @@ const RecruitPage = ({ intl }) => {
           />
 
           <div className={styles.stepCircleWrapper}>
+            <div className={styles.bgLine} />
+
             <div className={`${styles.stepCircle} ${styles.step1}`}>
               <span className={styles.step}>STEP 01</span>
               <span className={styles.text}>{intl.formatMessage({ id: "RECRUIT.LAB.step_1" })}</span>
@@ -56,8 +58,6 @@ const RecruitPage = ({ intl }) => {
               <span className={styles.step}>STEP 06</span>
               <span className={styles.text}>{intl.formatMessage({ id: "RECRUIT.LAB.step_6" })}</span>
             </div>
-
-            <div className={styles.bgLine} />
           </div>
         </div>
 
