@@ -31,12 +31,12 @@ class NewsDetail extends React.PureComponent {
   componentDidMount() {
     const match = this.props.match;
     const articleId = parseInt(match.params.number);
-    this.getArticleData(articleId);
+    this.getArticleData(articleId, this.props.intl.locale);
   }
 
   componentWillReceiveProps(nextProps) {
     const articleId = nextProps.match.params.number;
-    this.getArticleData(articleId);
+    this.getArticleData(articleId, nextProps.intl.locale);
   }
 
   render() {
@@ -103,9 +103,10 @@ class NewsDetail extends React.PureComponent {
     );
   }
 
-  getArticleData(id) {
+  getArticleData(id, locale) {
+    const apiUrl = `/api/media${locale !== "ko" ? "-en" : ""}/`;
     axios
-      .get("/api/media/" + id)
+      .get(apiUrl + id)
       .then(res => {
         this.setState({
           title: res.data.title,
