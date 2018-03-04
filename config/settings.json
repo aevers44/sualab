@@ -667,7 +667,7 @@
                 "name": "imgUrl",
                 "verbose": "imgUrl",
                 "control": {
-                    "text": true
+                    "file": true
                 },
                 "type": "TEXT",
                 "allowNull": true,
@@ -683,7 +683,13 @@
                 "name": "department",
                 "verbose": "department",
                 "control": {
-                    "text": true
+                    "select": true,
+                    "options": [
+                        "c-level",
+                        "research",
+                        "management",
+                        "sales"
+                    ]
                 },
                 "type": "TEXT",
                 "allowNull": false,
