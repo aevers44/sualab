@@ -43,13 +43,13 @@ class EventList extends React.PureComponent {
   componentDidMount() {
     const pageNo = parse(this.props.location.search)["pageNo"] || 1;
     this.setState({ curPageNum: pageNo });
-    this.getArticleList(pageNo);
+    this.getArticleList(pageNo, this.props.intl.locale);
   }
 
   componentWillReceiveProps(nextProps) {
     const pageNo = parse(nextProps.location.search)["pageNo"] || 1;
     this.setState({ curPageNum: pageNo });
-    this.getArticleList(pageNo);
+    this.getArticleList(pageNo, nextProps.intl.locale);
   }
 
   render() {
@@ -91,8 +91,9 @@ class EventList extends React.PureComponent {
     );
   }
 
-  getArticleList(pageNo) {
-    axios.get("/api/event?pageNo=" + pageNo).then(res => {
+  getArticleList(pageNo, locale) {
+    const apiUrl = `/api/event${locale !== "ko" ? "-en" : ""}`;
+    axios.get(apiUrl + "?pageNo=" + pageNo).then(res => {
       this.setState({
         totalArticleNum: res.headers["x-total-count"],
         newsItemList: res.data,

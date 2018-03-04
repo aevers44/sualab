@@ -24,7 +24,11 @@ class FifthContainer extends React.PureComponent {
   }
 
   componentDidMount() {
-    this.getRecentArticles();
+    this.getRecentArticles(this.props.intl.locale);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.getRecentArticles(nextProps.intl.locale);
   }
 
   render() {
@@ -47,8 +51,9 @@ class FifthContainer extends React.PureComponent {
     );
   }
 
-  getRecentArticles() {
-    axios.get("/api/media").then(res => {
+  getRecentArticles(locale) {
+    const apiUrl = `/api/media${locale !== "ko" ? "-en" : ""}`;
+    axios.get(apiUrl).then(res => {
       const result = res.data.slice(0, 3);
       this.setState({
         recentArticles: result,
