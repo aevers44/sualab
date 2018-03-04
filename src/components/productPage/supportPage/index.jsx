@@ -57,10 +57,10 @@ const TermsModalBody = ({ locale }) => (
   // </div>
 );
 
-const AdModalBody = () => (
+const AdModalBody = ({ intl }) => (
   <div className={styles.modalContent}>
-    <h1>마케팅 정보수신 동의</h1>
-    <p>마케팅 정보 수신에 동의하실 경우 수아랩 제품·서비스와 관련된 각종 소식 등을 받으실 수 있습니다.</p>
+    <h1>{intl.formatMessage({ id: "SUPPORT.adAgree.head" })}</h1>
+    <p>{intl.formatMessage({ id: "SUPPORT.adAgree.content" })}</p>
   </div>
 );
 
@@ -342,7 +342,7 @@ class SupportPage extends React.PureComponent {
                   </option>
                   <option value="0">{intl.formatMessage({ id: "SUPPORT.path.item_0" })}</option>
                   <option value="1">{intl.formatMessage({ id: "SUPPORT.path.item_1" })}</option>
-                  <option value="2">{intl.formatMessage({ id: "SUPPORT.path.item_2" })})</option>
+                  <option value="2">{intl.formatMessage({ id: "SUPPORT.path.item_2" })}</option>
                   <option value="3">{intl.formatMessage({ id: "SUPPORT.path.item_3" })}</option>
                   <option value="4">{intl.formatMessage({ id: "SUPPORT.path.item_4" })}</option>
                 </select>
@@ -404,7 +404,11 @@ class SupportPage extends React.PureComponent {
           overlayClassName={styles.infoModalOverlay}
           onRequestClose={this.handleCloseModal}
         >
-          {modalContentType === TERMS_AGREE_MODAL ? <TermsModalBody locale={intl.locale} /> : <AdModalBody />}
+          {modalContentType === TERMS_AGREE_MODAL ? (
+            <TermsModalBody locale={intl.locale} />
+          ) : (
+            <AdModalBody intl={intl} />
+          )}
           <button onClick={this.handleCloseModal} className={styles.closeBtn}>
             {intl.formatMessage({ id: "SUPPORT.modal.ok" })}
           </button>

@@ -149,6 +149,8 @@ export default {
   "SUPPORT.supportContent": `문의 내용`,
   "SUPPORT.termsAgree": `서비스 약관, 개인정보 수집 및 이용 동의 (필수)`,
   "SUPPORT.adAgree": `광고성 정보수신 동의 (선택)`,
+  "SUPPORT.adAgree.head": `마케팅 정보수신 동의`,
+  "SUPPORT.adAgree.content": `마케팅 정보 수신에 동의하실 경우 수아랩 제품·서비스와 관련된 각종 소식 등을 받으실 수 있습니다.`,
   "SUPPORT.modalBtn": `자세히 보기`,
   "SUPPORT.submitBtn": `문의 제출 하기`,
   "SUPPORT.modal.ok": `확인`,
