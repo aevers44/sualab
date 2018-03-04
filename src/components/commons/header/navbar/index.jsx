@@ -5,15 +5,15 @@ import styles from "./navbar.scss";
 
 const marginList = {
   ko: {
-    company: 313,
-    product: 80,
-    news: 127,
-    career: 70,
+    company: 393,
+    product: 160,
+    news: 207,
+    career: 150,
   },
   en: {
-    company: 313,
-    product: 80,
-    news: 127,
+    company: 393,
+    product: 119,
+    news: 207,
     career: 70,
   },
 };
