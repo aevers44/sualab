@@ -10,6 +10,10 @@ import styles from "./header.scss";
 const Header = (props, context) => {
   const curFullPath = window.location.pathname || "/";
   const curPath = curFullPath.split("/")[1];
+  let localeBtnPath = `/` + curPath;
+  if (curFullPath.split("/")[2] !== undefined) {
+    localeBtnPath += "/" + curFullPath.split("/")[2];
+  }
   const { changeLocale } = context;
   const { locale } = props.intl;
 
@@ -41,7 +45,7 @@ const Header = (props, context) => {
           <Link className={`${styles.menuItem} ${curPath === "contact" ? styles.active : ""}`} to="/contact">
             Contact
           </Link>
-          <Link className={styles.menuItem} to={curFullPath} onClick={changeLocale}>
+          <Link className={styles.menuItem} to={localeBtnPath} onClick={changeLocale}>
             <span className={`${locale === "ko" ? styles.activeLocale : ""}`}>KO </span>
             |
             <span className={`${locale === "en" ? styles.activeLocale : ""}`}> EN</span>
