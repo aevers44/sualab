@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import { injectIntl } from "react-intl";
 
 import TitleSection from "../../commons/titleSection";
@@ -6,52 +7,83 @@ import PeopleCard from "./PeopleCard";
 
 import styles from "./peoplePage.scss";
 
-import { ceoList, researchList, salesList, manageList } from "./peopleList";
-
 const sortFunc = (a, b) => {
   if (a.name > b.name) return 1;
   if (a.name < b.name) return -1;
   return 0;
 };
 
-const makePeopleCards = peopleList => {
+const makePeopleCards = (peopleList, locale) => {
   let result = [];
+  console.log(locale);
   for (let idx in peopleList) {
     const people = peopleList[idx];
-    result.push(<PeopleCard key={idx} {...people} />);
+    result.push(<PeopleCard locale={locale} key={idx} {...people} />);
   }
   return result;
 };
 
-const PeoplePage = ({ intl }) => {
-  return (
-    <section className={styles.peoplePage}>
-      <TitleSection
-        subTitle="PEOPLE"
-        title={intl.formatMessage({ id: "PEOPLE.title" })}
-        bgImage="https://d2ivzy5c3eic08.cloudfront.net/companyPage/people-background%402x.jpg"
-      />
+class PeoplePage extends React.PureComponent {
+  constructor(props) {
+    super(props);
 
-      <div className={styles.innerContainer}>
-        <div className={styles.cardWrapper}>{makePeopleCards(ceoList)}</div>
+    this.state = {
+      ceoList: [],
+      researchList: [],
+      salesList: [],
+      manageList: [],
+    };
 
-        <div className={styles.line} />
-        <div className={styles.subTitle}>{intl.formatMessage({ id: "PEOPLE.laboratory" })}</div>
+    this.getPeopleList = this.getPeopleList.bind(this);
+  }
 
-        <div className={styles.cardWrapper}>{makePeopleCards(researchList.sort(sortFunc))}</div>
+  componentDidMount() {
+    this.getPeopleList();
+  }
 
-        <div className={styles.line} />
-        <div className={styles.subTitle}>{intl.formatMessage({ id: "PEOPLE.business" })}</div>
+  render() {
+    const { intl } = this.props;
+    const { ceoList, researchList, salesList, manageList } = this.state;
+    return (
+      <section className={styles.peoplePage}>
+        <TitleSection
+          subTitle="PEOPLE"
+          title={intl.formatMessage({ id: "PEOPLE.title" })}
+          bgImage="https://d2ivzy5c3eic08.cloudfront.net/companyPage/people-background%402x.jpg"
+        />
 
-        <div className={styles.cardWrapper}>{makePeopleCards(salesList.sort(sortFunc))}</div>
+        <div className={styles.innerContainer}>
+          <div className={styles.cardWrapper}>{makePeopleCards(ceoList, intl.locale)}</div>
 
-        <div className={styles.line} />
-        <div className={styles.subTitle}>{intl.formatMessage({ id: "PEOPLE.manage" })}</div>
+          <div className={styles.line} />
+          <div className={styles.subTitle}>{intl.formatMessage({ id: "PEOPLE.laboratory" })}</div>
 
-        <div className={styles.cardWrapper}>{makePeopleCards(manageList.sort(sortFunc))}</div>
-      </div>
-    </section>
-  );
-};
+          <div className={styles.cardWrapper}>{makePeopleCards(researchList.sort(sortFunc), intl.locale)}</div>
+
+          <div className={styles.line} />
+          <div className={styles.subTitle}>{intl.formatMessage({ id: "PEOPLE.business" })}</div>
+
+          <div className={styles.cardWrapper}>{makePeopleCards(salesList.sort(sortFunc), intl.locale)}</div>
+
+          <div className={styles.line} />
+          <div className={styles.subTitle}>{intl.formatMessage({ id: "PEOPLE.manage" })}</div>
+
+          <div className={styles.cardWrapper}>{makePeopleCards(manageList.sort(sortFunc), intl.locale)}</div>
+        </div>
+      </section>
+    );
+  }
+
+  getPeopleList() {
+    axios.get("/api/people").then(res => {
+      this.setState({
+        ceoList: res.data.filter(elem => elem.department === "c-level"),
+        researchList: res.data.filter(elem => elem.department === "research"),
+        salesList: res.data.filter(elem => elem.department === "sales"),
+        manageList: res.data.filter(elem => elem.department === "management"),
+      });
+    });
+  }
+}
 
 export default injectIntl(PeoplePage);

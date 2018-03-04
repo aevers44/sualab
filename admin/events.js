@@ -37,16 +37,44 @@ exports.preSave = function(req, res, args, next) {
         })
         .send(function(err, data) {
           //S3 File URL
-          console.log("hello");
-          console.log(data);
-          console.log("hello");
           var url = data.Location;
-          console.log(url);
           var parseUrl = parse(url);
           parseUrl.set("hostname", CLOUDFRONT_LINK);
-          console.log(parseUrl.href);
           // record path
           record.image = parseUrl.href;
+          next();
+        });
+    } else {
+      next();
+    }
+  } else if (args.name == "people") {
+    var image = args.upload.view[args.name].records[0].columns.imgUrl;
+
+    if (image.name) {
+      var fname = args.data.view[args.name].records[0].columns.imgUrl;
+      var record = args.data.view[args.name].records[0].columns;
+
+      var s3_params = {
+        Bucket: "sualab-asset",
+        Key: "companyPage/people/" + image.name,
+        ACL: "public-read",
+        ContentType: image.type,
+      };
+
+      var s3 = new AWS.S3({ params: s3_params });
+
+      s3
+        .upload({ Body: fs.createReadStream(image.path) })
+        .on("httpUploadProgress", function(evt) {
+          console.log(evt);
+        })
+        .send(function(err, data) {
+          //S3 File URL
+          var url = data.Location;
+          var parseUrl = parse(url);
+          parseUrl.set("hostname", CLOUDFRONT_LINK);
+          // record path
+          record.imgUrl = parseUrl.href;
           next();
         });
     } else {
