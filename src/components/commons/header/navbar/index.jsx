@@ -4,10 +4,18 @@ import { Link } from "react-router-dom";
 import styles from "./navbar.scss";
 
 const marginList = {
-  company: 313,
-  product: 80,
-  news: 127,
-  career: 70,
+  ko: {
+    company: 313,
+    product: 80,
+    news: 127,
+    career: 70,
+  },
+  en: {
+    company: 313,
+    product: 80,
+    news: 127,
+    career: 70,
+  },
 };
 
 const makeLinks = (curPath, subPath, intl) => {
@@ -50,11 +58,10 @@ const Navbar = ({ match, intl }) => {
   const curPath = match.params.page;
   const subPath = match.params.subpage;
   const linkItems = makeLinks(curPath, subPath, intl);
-
   return (
     <nav className={styles.navbar}>
       <div className={styles.innerContainer}>
-        <div className={styles.linkWrapper} style={{ marginRight: `${marginList[curPath]}px` }}>
+        <div className={styles.linkWrapper} style={{ marginRight: `${marginList[intl.locale][curPath]}px` }}>
           {linkItems}
         </div>
       </div>
