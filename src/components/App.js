@@ -46,6 +46,8 @@ class App extends React.PureComponent {
             <Route exact path="/contact/office" component={OfficePage} />
             <Route exact path="/contact/global-sales-network" component={NetworkPage} />
             <Redirect from="/contact" to="/contact/office" />
+
+            <Redirect from="*" to="/" />
           </Switch>
 
           <Footer />
