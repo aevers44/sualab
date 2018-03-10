@@ -25,7 +25,7 @@ const makeLinks = (curPath, subPath, intl) => {
       { name: "SuaKIT", link: "suakit" },
       { name: "How to Apply SuaKIT", link: "how-to-apply" },
       { name: intl.formatMessage({ id: "NAVBAR.product.support" }), link: "support" },
-      // { name: "Download", link: "downaload" },
+      { name: "Download", link: "download" },
     ],
     news: [{ name: "SUALAB in Media", link: "media" }, { name: "Events", link: "event" }],
     career: [
