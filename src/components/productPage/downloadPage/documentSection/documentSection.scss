@@ -1,0 +1,76 @@
+$container-width: 1080px;
+
+.documentSection {
+  .innerContainer {
+    max-width: $container-width;
+    margin: 0 auto;
+    padding-left: 90px;
+    padding-right: 90px;
+  }
+}
+
+.line {
+  width: 48px;
+  height: 2px;
+  border-bottom: solid 2px #1ae8c9;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #0c1020;
+
+  margin-bottom: 35px;
+}
+
+.documentTable {
+  margin-bottom: 40px;
+
+  .tableTitle {
+    font-size: 18px;
+    font-weight: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #16212f;
+    border-bottom: solid 1px #e7eaf2;
+    padding-bottom: 12px;
+  }
+
+  .tableItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 6px 0;
+
+    .version,
+    .documentName,
+    .downBtn {
+      font-size: 18px;
+      font-weight: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: center;
+      color: #16212f;
+    }
+
+    .version {
+      flex: 2 0px;
+    }
+
+    .documentName {
+      flex: 5 0px;
+      overflow: hidden;
+      text-align: left;
+    }
+
+    .downBtn {
+      flex: 2 0px;
+      text-decoration: underline;
+    }
+  }
+}
