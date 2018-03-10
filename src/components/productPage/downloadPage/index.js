@@ -1,8 +1,13 @@
 import React from "react";
 import { injectIntl } from "react-intl";
 
-import styles from "./downloadPage.scss";
 import TitleSection from "../../commons/titleSection";
+import SuakitSection from "./suakitSection";
+import FeatureSection from "./featureSection";
+import DocumentSection from "./documentSection";
+import ReleaseSection from "./releaseSection";
+
+import styles from "./downloadPage.scss";
 
 class DownloadPage extends React.PureComponent {
   render() {
@@ -10,7 +15,11 @@ class DownloadPage extends React.PureComponent {
     return (
       <section className={styles.downloadPage}>
         <TitleSection subTitle="DOWNLOAD" title={intl.formatMessage({ id: "DOWNLOAD.title" })} bgImage="" />
-        hello world
+
+        <SuakitSection intl={intl} />
+        <FeatureSection intl={intl} />
+        <DocumentSection intl={intl} />
+        <ReleaseSection intl={intl} />
       </section>
     );
   }
