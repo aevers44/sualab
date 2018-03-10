@@ -17,21 +17,21 @@ class ReleaseSection extends React.PureComponent {
               <span className={styles.version}>v2.0.2</span>
               <span className={styles.date}>01/Mar/2018</span>
               <a href="#" className={styles.content}>
-                상세 내용
+                {intl.formatMessage({ id: "DOWNLOAD.RELEASE.detail" })}
               </a>
             </div>
             <div className={styles.tableItem}>
               <span className={styles.version}>v2.0.2</span>
               <span className={styles.date}>01/Mar/2018</span>
               <a href="#" className={styles.content}>
-                상세 내용
+                {intl.formatMessage({ id: "DOWNLOAD.RELEASE.fold" })}
               </a>
             </div>
             <div className={styles.tableItem}>
               <span className={styles.version}>v2.0.2</span>
               <span className={styles.date}>01/Mar/2018</span>
               <a href="#" className={styles.content}>
-                상세 내용
+                {intl.formatMessage({ id: "DOWNLOAD.RELEASE.detail" })}
               </a>
             </div>
           </div>

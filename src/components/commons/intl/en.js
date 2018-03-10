@@ -156,6 +156,10 @@ export default {
   "SUPPORT.alert.success": `We received your inquiry.`,
   "SUPPORT.alert.error": `An error has occurred.`,
 
+  "DOWNLOAD.title": `[need eng] *Software Update*로 보다 정교해진 SuaKIT을 만나보세요`,
+  "DOWNLOAD.RELEASE.detail": `Details`,
+  "DOWNLOAD.RELEASE.fold": `Fold`,
+
   "MEDIA.title": `Check out the *Press Coverage of SUALAB*`,
   "MEDIA.newsDetail.prev": `Previous`,
   "MEDIA.newsDetail.next": `Next`,
