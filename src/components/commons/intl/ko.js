@@ -158,6 +158,7 @@ export default {
   "SUPPORT.alert.error": `오류가 발생했습니다.`,
 
   "DOWNLOAD.title": `*Software Update*로 보다 정교해진 SuaKIT을 만나보세요`,
+  "DOWNLOAD.RELEASE.date": `출시일`,
   "DOWNLOAD.RELEASE.detail": `상세 내용`,
   "DOWNLOAD.RELEASE.fold": `접기`,
 

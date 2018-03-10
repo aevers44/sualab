@@ -46,7 +46,7 @@ $container-width: 1080px;
 
   .tableItem {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     margin: 6px 0;
 
@@ -73,7 +73,12 @@ $container-width: 1080px;
       flex: 6 0px;
       overflow: hidden;
       text-align: left;
-      text-decoration: underline;
+      white-space: pre-wrap;
+
+      .openBtn {
+        display: block;
+        text-decoration: underline;
+      }
     }
   }
 }

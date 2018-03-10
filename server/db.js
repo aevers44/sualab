@@ -103,6 +103,17 @@ db.serialize(() => {
       type TEXT
     )
   `);
+
+  db.run(`
+    CREATE TABLE IF NOT EXISTS release_note
+    (
+      id INTEGER PRIMARY KEY,
+      version TEXT,
+      date TEXT,
+      content TEXT,
+      en_content TEXT
+    )
+  `);
 });
 
 db.close();

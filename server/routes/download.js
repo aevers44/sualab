@@ -24,4 +24,23 @@ router.get("/documentation", (req, res) => {
   });
 });
 
+router.get("/release", (req, res) => {
+  const db = new sqlite3.Database("./sualabdb.sqlite3");
+
+  let result = [];
+
+  db.all("SELECT * FROM release_note ORDER BY id DESC", (err, rows) => {
+    if (err) {
+      console.error(err);
+      res.status(500);
+    } else {
+      result = rows;
+    }
+  });
+
+  db.close(err => {
+    res.json(result);
+  });
+});
+
 export default router;

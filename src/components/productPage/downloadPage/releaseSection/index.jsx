@@ -1,10 +1,28 @@
 import React from "react";
+import axios from "axios";
 
 import styles from "./releaseSection.scss";
 
+import TableItem from "./tableItem";
+
 class ReleaseSection extends React.PureComponent {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      noteList: [],
+    };
+    this.getReleaseNotes = this.getReleaseNotes.bind(this);
+  }
+
+  componentDidMount() {
+    this.getReleaseNotes();
+  }
+
   render() {
     const { intl } = this.props;
+    const { noteList } = this.state;
+
     return (
       <section className={styles.releaseSection}>
         <div className={styles.innerContainer}>
@@ -12,32 +30,27 @@ class ReleaseSection extends React.PureComponent {
           <div className={styles.title}>Release Note</div>
 
           <div className={styles.releaseTable}>
-            <div className={styles.tableTitle}>Basics</div>
-            <div className={styles.tableItem}>
-              <span className={styles.version}>v2.0.2</span>
-              <span className={styles.date}>01/Mar/2018</span>
-              <a href="#" className={styles.content}>
-                {intl.formatMessage({ id: "DOWNLOAD.RELEASE.detail" })}
-              </a>
+            <div className={`${styles.tableTitle} ${styles.tableItem}`}>
+              <span className={styles.version}>Version</span>
+              <span className={styles.date}>{intl.formatMessage({ id: "DOWNLOAD.RELEASE.date" })}</span>
+              <span className={styles.content}>
+                <span className={styles.openBtn}>Release Note</span>
+              </span>
             </div>
-            <div className={styles.tableItem}>
-              <span className={styles.version}>v2.0.2</span>
-              <span className={styles.date}>01/Mar/2018</span>
-              <a href="#" className={styles.content}>
-                {intl.formatMessage({ id: "DOWNLOAD.RELEASE.fold" })}
-              </a>
-            </div>
-            <div className={styles.tableItem}>
-              <span className={styles.version}>v2.0.2</span>
-              <span className={styles.date}>01/Mar/2018</span>
-              <a href="#" className={styles.content}>
-                {intl.formatMessage({ id: "DOWNLOAD.RELEASE.detail" })}
-              </a>
-            </div>
+
+            {noteList.map(elem => <TableItem {...elem} intl={intl} />)}
           </div>
         </div>
       </section>
     );
+  }
+
+  getReleaseNotes() {
+    axios.get("/api/download/release").then(res => {
+      this.setState({
+        noteList: res.data,
+      });
+    });
   }
 }
 
