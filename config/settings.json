@@ -960,5 +960,216 @@
         "editview": {
             "readonly": false
         }
+    },
+    "feature": {
+        "slug": "feature",
+        "table": {
+            "name": "feature",
+            "pk": "id",
+            "verbose": "feature"
+        },
+        "columns": [
+            {
+                "name": "id",
+                "verbose": "id",
+                "control": {
+                    "text": true
+                },
+                "type": "INTEGER",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "version",
+                "verbose": "version",
+                "control": {
+                    "text": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "comment",
+                "verbose": "comment",
+                "control": {
+                    "text": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false,
+            "manyToOne": {
+                "feature_item": "feature_id"
+            }
+        }
+    },
+    "feature_item": {
+        "slug": "feature_item",
+        "table": {
+            "name": "feature_item",
+            "pk": "id",
+            "verbose": "feature_item"
+        },
+        "columns": [
+            {
+                "name": "id",
+                "verbose": "id",
+                "control": {
+                    "text": true
+                },
+                "type": "INTEGER",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "feature_id",
+                "verbose": "feature_id",
+                "control": {
+                    "select": true
+                },
+                "oneToMany": {
+                    "table": "feature",
+                    "pk": "id",
+                    "columns": [
+                        "id",
+                        "comment"
+                    ]
+                },
+                "type": "INTEGER",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "image",
+                "verbose": "image",
+                "control": {
+                    "text": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "title",
+                "verbose": "title",
+                "control": {
+                    "text": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "en_title",
+                "verbose": "en_title",
+                "control": {
+                    "text": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "content",
+                "verbose": "content",
+                "control": {
+                    "textarea": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "en_content",
+                "verbose": "en_content",
+                "control": {
+                    "textarea": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": false
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
     }
 }

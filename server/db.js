@@ -67,6 +67,29 @@ db.serialize(() => {
       ) \
     ",
   );
+
+  db.run(`
+    CREATE TABLE IF NOT EXISTS feature
+    (
+      id INTEGER PRIMARY KEY,
+      version TEXT,
+      comment TEXT
+    )
+  `);
+
+  db.run(`
+    CREATE TABLE IF NOT EXISTS feature_item
+    (
+      id INTEGER PRIMARY KEY,
+      feature_id INTEGER NOT NULL,
+      image TEXT,
+      title TEXT,
+      en_title TEXT,
+      content TEXT,
+      en_content TEXT,
+      FOREIGN KEY (feature_id) REFERENCES feature(id) ON DELETE CASCADE
+    )
+  `);
 });
 
 db.close();
