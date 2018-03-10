@@ -1,6 +1,8 @@
 $container-width: 1080px;
 
 .documentSection {
+  padding-top: 70px;
+
   .innerContainer {
     max-width: $container-width;
     margin: 0 auto;
@@ -63,7 +65,7 @@ $container-width: 1080px;
     }
 
     .documentName {
-      flex: 5 0px;
+      flex: 6 0px;
       overflow: hidden;
       text-align: left;
     }
