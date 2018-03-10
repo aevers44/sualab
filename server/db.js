@@ -90,6 +90,19 @@ db.serialize(() => {
       FOREIGN KEY (feature_id) REFERENCES feature(id) ON DELETE CASCADE
     )
   `);
+
+  db.run(`
+    CREATE TABLE IF NOT EXISTS documentation
+    (
+      id INTEGER PRIMARY KEY,
+      version TEXT,
+      name TEXT,
+      en_name TEXT,
+      link TEXT,
+      en_link TEXT,
+      type TEXT
+    )
+  `);
 });
 
 db.close();

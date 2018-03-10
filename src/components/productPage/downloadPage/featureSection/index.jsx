@@ -20,7 +20,7 @@ class FeatureSection extends React.PureComponent {
   render() {
     const { intl } = this.props;
     const { featureList } = this.state;
-    console.log(featureList);
+
     return (
       <section className={styles.featureSection}>
         <div className={styles.innerContainer}>
