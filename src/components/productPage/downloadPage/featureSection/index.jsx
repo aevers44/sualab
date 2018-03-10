@@ -1,10 +1,26 @@
 import React from "react";
+import axios from "axios";
 
 import styles from "./featureSection.scss";
 
 class FeatureSection extends React.PureComponent {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      featureList: [],
+    };
+    this.getLatestFeature = this.getLatestFeature.bind(this);
+  }
+
+  componentDidMount() {
+    this.getLatestFeature();
+  }
+
   render() {
     const { intl } = this.props;
+    const { featureList } = this.state;
+    console.log(featureList);
     return (
       <section className={styles.featureSection}>
         <div className={styles.innerContainer}>
@@ -12,40 +28,27 @@ class FeatureSection extends React.PureComponent {
           <div className={styles.title}>New Features</div>
 
           <div className={styles.contentWrapper}>
-            <div className={styles.featureItem}>
-              <div className={styles.featureTitle}>Detection모드 등 딥러닝 모델 추가</div>
-              <div className={styles.featureImage}>
-                <img src="http://placehold.it/800x400" alt="" />
+            {featureList.map(elem => (
+              <div className={styles.featureItem}>
+                <div className={styles.featureTitle}>{intl.locale === "ko" ? elem.title : elem.en_title}</div>
+                <div className={styles.featureImage}>
+                  <img src={elem.image} alt="" />
+                </div>
+                <div className={styles.featureContent}>{intl.locale === "ko" ? elem.content : elem.en_content}</div>
               </div>
-              <div className={styles.featureContent}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam repellendus consectetur ab libero
-                obcaecati ducimus nemo enim temporibus in alias. Qui, praesentium dignissimos et voluptatum dolor
-                obcaecati neque esse quidem.<br />
-                <br />
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae ad corrupti corporis unde
-                exercitationem quia, libero ipsum possimus, dignissimos sed dicta omnis voluptatum ipsam ducimus aliquid
-                tempora dolores quibusdam qui.
-              </div>
-            </div>
-            <div className={styles.featureItem}>
-              <div className={styles.featureTitle}>Detection모드 등 딥러닝 모델 추가</div>
-              <div className={styles.featureImage}>
-                <img src="http://placehold.it/800x400" alt="" />
-              </div>
-              <div className={styles.featureContent}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam repellendus consectetur ab libero
-                obcaecati ducimus nemo enim temporibus in alias. Qui, praesentium dignissimos et voluptatum dolor
-                obcaecati neque esse quidem.<br />
-                <br />
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae ad corrupti corporis unde
-                exercitationem quia, libero ipsum possimus, dignissimos sed dicta omnis voluptatum ipsam ducimus aliquid
-                tempora dolores quibusdam qui.
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
     );
+  }
+
+  getLatestFeature() {
+    axios.get("/api/feature").then(res => {
+      this.setState({
+        featureList: res.data.items,
+      });
+    });
   }
 }
 
