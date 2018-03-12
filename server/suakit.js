@@ -15,6 +15,7 @@ router.post("/", (req, res) => {
 
   const name = req.body.name;
   const key = req.body.key;
+  const filename = req.body.link;
 
   let result = {};
 
@@ -30,8 +31,7 @@ router.post("/", (req, res) => {
           expireTime: new Date().getTime() + EXPIRED_TIME,
         };
 
-        const testfile = "747979929_lNi9Hs2d_1cf2932cef8f4b84a74f1ea998fc22382fee4b41.jpg";
-        const url = `${AWS_CLOUD_FRONT_URL}/${testfile}`;
+        const url = `${AWS_CLOUD_FRONT_URL}/${filename}`;
         const signedUrl = cf.getSignedUrl(url, options);
         result = { url: signedUrl };
       } else {

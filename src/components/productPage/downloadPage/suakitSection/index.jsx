@@ -14,15 +14,25 @@ class SuakitSection extends React.PureComponent {
       modalOpen: false,
       companyName: "",
       companyKey: "",
+
+      suakitName: "",
+      suakitInfo: "",
+      suakitLink: "",
     };
 
+    this.getSuakitInfo = this.getSuakitInfo.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.getDownloadLink = this.getDownloadLink.bind(this);
   }
 
+  componentDidMount() {
+    this.getSuakitInfo();
+  }
+
   render() {
+    const { suakitName, suakitInfo, suakitLink } = this.state;
     const { modalOpen, companyName, companyKey } = this.state;
     const { intl } = this.props;
     return (
@@ -31,8 +41,8 @@ class SuakitSection extends React.PureComponent {
           <div className={styles.contentWrapper}>
             <div className={styles.leftWrapper}>
               <div className={styles.tag}>Last Update</div>
-              <div className={styles.suakitName}>SuaKIT v2.0</div>
-              <div className={styles.suakitInfo}>RELEASED 5/Jan/2018</div>
+              <div className={styles.suakitName}>{suakitName}</div>
+              <div className={styles.suakitInfo}>RELEASED {suakitInfo}</div>
             </div>
 
             <div className={styles.rightWrapper}>
@@ -85,6 +95,16 @@ class SuakitSection extends React.PureComponent {
     );
   }
 
+  getSuakitInfo() {
+    axios.get("/api/download/suakit").then(res => {
+      this.setState({
+        suakitName: res.data.name,
+        suakitInfo: res.data.date,
+        suakitLink: res.data.link,
+      });
+    });
+  }
+
   handleChange(ev, type) {
     const value = ev.target.value;
     this.setState({
@@ -98,6 +118,7 @@ class SuakitSection extends React.PureComponent {
     const formData = {};
     formData["name"] = this.state.companyName;
     formData["key"] = this.state.companyKey;
+    formData["link"] = this.state.suakitLink;
 
     axios.post("/download", formData).then(res => {
       if (res.data.error) {

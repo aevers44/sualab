@@ -123,6 +123,16 @@ db.serialize(() => {
       hash TEXT
     )
   `);
+
+  db.run(`
+    CREATE TABLE IF NOT EXISTS suakit_release
+    (
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      date TEXT,
+      link TEXT
+    )
+  `);
 });
 
 db.close();
