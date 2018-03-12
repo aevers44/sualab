@@ -2,6 +2,9 @@ var AWS = require("aws-sdk");
 var path = require("path");
 var fs = require("fs");
 var parse = require("url-parse");
+var crypto = require("crypto");
+
+var SHA256_SALT = "SuAlAbIsThEbEsTMaChInElEaRnInGsOlUtIoN-+-=__";
 
 var CLOUDFRONT_LINK = "d2ivzy5c3eic08.cloudfront.net";
 AWS.config.region = "ap-northeast-2";
@@ -80,6 +83,16 @@ exports.preSave = function(req, res, args, next) {
     } else {
       next();
     }
+  } else if (args.name == "customer") {
+    var name = args.data.view[args.name].records[0].columns.name;
+    var record = args.data.view[args.name].records[0].columns;
+
+    record.hash = crypto
+      .createHash("sha256")
+      .update(name + SHA256_SALT)
+      .digest("base64")
+      .substr(0, 8);
+    next();
   } else {
     next();
   }

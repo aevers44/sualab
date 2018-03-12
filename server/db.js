@@ -114,6 +114,15 @@ db.serialize(() => {
       en_content TEXT
     )
   `);
+
+  db.run(`
+    CREATE TABLE IF NOT EXISTS customer
+    (
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      hash TEXT
+    )
+  `);
 });
 
 db.close();
