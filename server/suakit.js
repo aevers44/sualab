@@ -21,6 +21,7 @@ router.post("/", (req, res) => {
   db.get("SELECT name FROM customer WHERE name=? AND hash=?", [name, key], (err, row) => {
     if (err) {
       console.error(err);
+      res.status(500);
     } else {
       if (row !== undefined) {
         const options = {
@@ -34,8 +35,7 @@ router.post("/", (req, res) => {
         const signedUrl = cf.getSignedUrl(url, options);
         result = { url: signedUrl };
       } else {
-        res.status(500);
-        result = { error: "No user" };
+        result = { error: "Not available" };
       }
     }
   });

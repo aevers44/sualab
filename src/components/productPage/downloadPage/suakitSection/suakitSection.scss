@@ -83,3 +83,116 @@ $container-width: 1080px;
   height: 1px;
   border-bottom: solid 1px #e7eaf2;
 }
+
+/* modal */
+
+.infoModalBody {
+  overflow: hidden;
+}
+
+.infoModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.infoModal {
+  outline: none;
+  max-width: 400px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #ffffff;
+  overflow: auto;
+  padding: 50px 50px 30px 50px;
+}
+
+.modalContent {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #16212f;
+  margin-bottom: 50px;
+
+  white-space: pre-wrap;
+  max-height: 70vh;
+  overflow-y: auto;
+
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 0;
+  }
+
+  .lead {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  a {
+    color: #1ae8c9;
+  }
+}
+
+.closeBtn {
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+
+  width: 120px;
+  height: 48px;
+  line-height: 48px;
+  border-radius: 3px;
+  background-color: #ffffff;
+  border: solid 1px #d8dde7;
+
+  font-size: 14px;
+  font-weight: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #5f7591;
+}
+
+.submitBtn {
+  border-color: #34495e;
+  background-color: #34495e;
+  color: #1ae8c9;
+  margin-bottom: 16px;
+}
+
+.label {
+  display: block;
+  height: 24px;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #666d7c;
+  margin-bottom: 12px;
+}
+
+.textForm {
+  width: 100%;
+  height: 40px;
+  padding: 12px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  border: solid 1px #bbc2d0;
+
+  font-size: 16px;
+  font-weight: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #666d7c;
+
+  margin-bottom: 16px;
+}
