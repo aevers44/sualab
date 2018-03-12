@@ -28,6 +28,10 @@ var _routes = require("./routes");
 
 var _routes2 = _interopRequireDefault(_routes);
 
+var _suakit = require("./suakit");
+
+var _suakit2 = _interopRequireDefault(_suakit);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var adminConfig = {
@@ -66,6 +70,8 @@ _expressAdmin2.default.init(adminConfig, function (err, admin) {
   app.use(_express2.default.static(_path2.default.join(__dirname, "..", "public")));
 
   app.use("/api", _routes2.default);
+
+  app.use("/download", _suakit2.default);
 
   app.get("*", function (req, res) {
     res.sendFile(_path2.default.resolve(__dirname, "..", "public", "index.html"));
