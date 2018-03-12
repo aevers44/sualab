@@ -19,4 +19,10 @@ router.use("/inquiry", inquiryRouter);
 import peopleRouter from "./people";
 router.use("/people", peopleRouter);
 
+import featureRouter from "./feature";
+router.use("/feature", featureRouter);
+
+import downloadRouter from "./download";
+router.use("/download", downloadRouter);
+
 export default router;

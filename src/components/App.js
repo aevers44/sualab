@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Link, Switch, Redirect } from "react-router-dom";
 
 import MainPage from "./mainPage";
 import { AboutUsPage, PeoplePage } from "./companyPage";
-import { SuakitPage, SupportPage, HowToPage } from "./productPage";
+import { SuakitPage, SupportPage, HowToPage, DownloadPage } from "./productPage";
 import { MediaPage, NewsDetail, EventPage, EventDetail } from "./newsPage";
 import { RecruitPage, PhilosophyPage } from "./careerPage";
 import { OfficePage, NetworkPage } from "./contactPage";
@@ -31,6 +31,7 @@ class App extends React.PureComponent {
             <Route exact path="/product/suakit" component={SuakitPage} />
             <Route exact path="/product/how-to-apply" component={HowToPage} />
             <Route exact path="/product/support" component={SupportPage} />
+            <Route exact path="/product/download" component={DownloadPage} />
             <Redirect from="/product" to="/product/suakit" />
 
             <Route exact path="/news/media" component={MediaPage} />

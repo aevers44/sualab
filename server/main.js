@@ -6,6 +6,7 @@ import WebpackDevServer from "webpack-dev-server";
 import webpack from "webpack";
 
 import apiRouter from "./routes";
+import suakitRouter from "./suakit";
 
 const adminConfig = {
   dpath: __dirname + "/../config/",
@@ -43,6 +44,8 @@ xAdmin.init(adminConfig, (err, admin) => {
   app.use(express.static(path.join(__dirname, "..", "public")));
 
   app.use("/api", apiRouter);
+
+  app.use("/download", suakitRouter);
 
   app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "..", "public", "index.html"));

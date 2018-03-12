@@ -67,6 +67,72 @@ db.serialize(() => {
       ) \
     ",
   );
+
+  db.run(`
+    CREATE TABLE IF NOT EXISTS feature
+    (
+      id INTEGER PRIMARY KEY,
+      version TEXT,
+      comment TEXT
+    )
+  `);
+
+  db.run(`
+    CREATE TABLE IF NOT EXISTS feature_item
+    (
+      id INTEGER PRIMARY KEY,
+      feature_id INTEGER NOT NULL,
+      image TEXT,
+      title TEXT,
+      en_title TEXT,
+      content TEXT,
+      en_content TEXT,
+      FOREIGN KEY (feature_id) REFERENCES feature(id) ON DELETE CASCADE
+    )
+  `);
+
+  db.run(`
+    CREATE TABLE IF NOT EXISTS documentation
+    (
+      id INTEGER PRIMARY KEY,
+      version TEXT,
+      name TEXT,
+      en_name TEXT,
+      link TEXT,
+      en_link TEXT,
+      type TEXT
+    )
+  `);
+
+  db.run(`
+    CREATE TABLE IF NOT EXISTS release_note
+    (
+      id INTEGER PRIMARY KEY,
+      version TEXT,
+      date TEXT,
+      content TEXT,
+      en_content TEXT
+    )
+  `);
+
+  db.run(`
+    CREATE TABLE IF NOT EXISTS customer
+    (
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      hash TEXT
+    )
+  `);
+
+  db.run(`
+    CREATE TABLE IF NOT EXISTS suakit_release
+    (
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      date TEXT,
+      link TEXT
+    )
+  `);
 });
 
 db.close();
