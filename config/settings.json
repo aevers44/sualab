@@ -1,12 +1,28 @@
 {
-    "test": {
-        "slug": "test",
+    "people": {
+        "slug": "people",
         "table": {
-            "name": "test",
-            "pk": "",
-            "verbose": "test"
+            "name": "people",
+            "pk": "id",
+            "verbose": "Company / People 사원 테이블"
         },
         "columns": [
+            {
+                "name": "id",
+                "verbose": "id",
+                "control": {
+                    "text": true
+                },
+                "type": "INTEGER",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
             {
                 "name": "name",
                 "verbose": "name",
@@ -14,7 +30,109 @@
                     "text": true
                 },
                 "type": "TEXT",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "eng_name",
+                "verbose": "eng_name",
+                "control": {
+                    "text": true
+                },
+                "type": "TEXT",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "position",
+                "verbose": "position",
+                "control": {
+                    "text": true
+                },
+                "type": "TEXT",
                 "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "detail",
+                "verbose": "detail",
+                "control": {
+                    "textarea": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "eng_detail",
+                "verbose": "eng_detail",
+                "control": {
+                    "textarea": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "imgUrl",
+                "verbose": "imgUrl",
+                "control": {
+                    "file": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "department",
+                "verbose": "department",
+                "control": {
+                    "select": true,
+                    "options": [
+                        "c-level",
+                        "research",
+                        "management",
+                        "sales"
+                    ]
+                },
+                "type": "TEXT",
+                "allowNull": false,
                 "defaultValue": null,
                 "listview": {
                     "show": true
@@ -40,7 +158,139 @@
         "table": {
             "name": "media",
             "pk": "id",
-            "verbose": "media"
+            "verbose": "News / SuaLAB in MEDIA 한글"
+        },
+        "columns": [
+            {
+                "name": "id",
+                "verbose": "id",
+                "control": {
+                    "text": true
+                },
+                "type": "INTEGER",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "title",
+                "verbose": "title",
+                "control": {
+                    "text": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "date",
+                "verbose": "date",
+                "control": {
+                    "text": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "media",
+                "verbose": "media",
+                "control": {
+                    "text": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "link",
+                "verbose": "link",
+                "control": {
+                    "text": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "image",
+                "verbose": "image",
+                "control": {
+                    "file": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "content",
+                "verbose": "content",
+                "control": {
+                    "textarea": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": false
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "media_en": {
+        "slug": "media_en",
+        "table": {
+            "name": "media_en",
+            "pk": "id",
+            "verbose": "News / SuaLAB in MEDIA 영문"
         },
         "columns": [
             {
@@ -172,7 +422,123 @@
         "table": {
             "name": "event",
             "pk": "id",
-            "verbose": "event"
+            "verbose": "News / Events 한글"
+        },
+        "columns": [
+            {
+                "name": "id",
+                "verbose": "id",
+                "control": {
+                    "text": true
+                },
+                "type": "INTEGER",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "title",
+                "verbose": "title",
+                "control": {
+                    "text": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "date",
+                "verbose": "date",
+                "control": {
+                    "text": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "place",
+                "verbose": "place",
+                "control": {
+                    "text": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "image",
+                "verbose": "image",
+                "control": {
+                    "file": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "content",
+                "verbose": "content",
+                "control": {
+                    "textarea": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": false
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "event_en": {
+        "slug": "event_en",
+        "table": {
+            "name": "event_en",
+            "pk": "id",
+            "verbose": "News / Events 영문"
         },
         "columns": [
             {
@@ -288,7 +654,7 @@
         "table": {
             "name": "inquiry",
             "pk": "id",
-            "verbose": "inquiry"
+            "verbose": "Product / 제품문의 테이블"
         },
         "columns": [
             {
@@ -559,166 +925,12 @@
             "readonly": false
         }
     },
-    "people": {
-        "slug": "people",
+    "suakit_release": {
+        "slug": "suakit_release",
         "table": {
-            "name": "people",
+            "name": "suakit_release",
             "pk": "id",
-            "verbose": "people"
-        },
-        "columns": [
-            {
-                "name": "id",
-                "verbose": "id",
-                "control": {
-                    "text": true
-                },
-                "type": "INTEGER",
-                "allowNull": true,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "name",
-                "verbose": "name",
-                "control": {
-                    "text": true
-                },
-                "type": "TEXT",
-                "allowNull": false,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "eng_name",
-                "verbose": "eng_name",
-                "control": {
-                    "text": true
-                },
-                "type": "TEXT",
-                "allowNull": false,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "position",
-                "verbose": "position",
-                "control": {
-                    "text": true
-                },
-                "type": "TEXT",
-                "allowNull": true,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "detail",
-                "verbose": "detail",
-                "control": {
-                    "textarea": true
-                },
-                "type": "TEXT",
-                "allowNull": true,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "eng_detail",
-                "verbose": "eng_detail",
-                "control": {
-                    "textarea": true
-                },
-                "type": "TEXT",
-                "allowNull": true,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "imgUrl",
-                "verbose": "imgUrl",
-                "control": {
-                    "file": true
-                },
-                "type": "TEXT",
-                "allowNull": true,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "department",
-                "verbose": "department",
-                "control": {
-                    "select": true,
-                    "options": [
-                        "c-level",
-                        "research",
-                        "management",
-                        "sales"
-                    ]
-                },
-                "type": "TEXT",
-                "allowNull": false,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            }
-        ],
-        "mainview": {
-            "show": true
-        },
-        "listview": {
-            "order": {},
-            "page": 25
-        },
-        "editview": {
-            "readonly": false
-        }
-    },
-    "media_en": {
-        "slug": "media_en",
-        "table": {
-            "name": "media_en",
-            "pk": "id",
-            "verbose": "media_en"
+            "verbose": "Download / SuaKIT Download 파트"
         },
         "columns": [
             {
@@ -738,8 +950,8 @@
                 }
             },
             {
-                "name": "title",
-                "verbose": "title",
+                "name": "name",
+                "verbose": "name",
                 "control": {
                     "text": true
                 },
@@ -756,22 +968,6 @@
             {
                 "name": "date",
                 "verbose": "date",
-                "control": {
-                    "text": true
-                },
-                "type": "TEXT",
-                "allowNull": true,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "media",
-                "verbose": "media",
                 "control": {
                     "text": true
                 },
@@ -787,7 +983,7 @@
             },
             {
                 "name": "link",
-                "verbose": "link",
+                "verbose": "SuaKIT 다운로드 링크 (s3 직접 첨부 필요)",
                 "control": {
                     "text": true
                 },
@@ -796,154 +992,6 @@
                 "defaultValue": null,
                 "listview": {
                     "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "image",
-                "verbose": "image",
-                "control": {
-                    "file": true
-                },
-                "type": "TEXT",
-                "allowNull": true,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "content",
-                "verbose": "content",
-                "control": {
-                    "textarea": true
-                },
-                "type": "TEXT",
-                "allowNull": true,
-                "defaultValue": null,
-                "listview": {
-                    "show": false
-                },
-                "editview": {
-                    "show": true
-                }
-            }
-        ],
-        "mainview": {
-            "show": true
-        },
-        "listview": {
-            "order": {},
-            "page": 25
-        },
-        "editview": {
-            "readonly": false
-        }
-    },
-    "event_en": {
-        "slug": "event_en",
-        "table": {
-            "name": "event_en",
-            "pk": "id",
-            "verbose": "event_en"
-        },
-        "columns": [
-            {
-                "name": "id",
-                "verbose": "id",
-                "control": {
-                    "text": true
-                },
-                "type": "INTEGER",
-                "allowNull": true,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": false
-                }
-            },
-            {
-                "name": "title",
-                "verbose": "title",
-                "control": {
-                    "text": true
-                },
-                "type": "TEXT",
-                "allowNull": true,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "date",
-                "verbose": "date",
-                "control": {
-                    "text": true
-                },
-                "type": "TEXT",
-                "allowNull": true,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "place",
-                "verbose": "place",
-                "control": {
-                    "text": true
-                },
-                "type": "TEXT",
-                "allowNull": true,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "image",
-                "verbose": "image",
-                "control": {
-                    "file": true
-                },
-                "type": "TEXT",
-                "allowNull": true,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "content",
-                "verbose": "content",
-                "control": {
-                    "textarea": true
-                },
-                "type": "TEXT",
-                "allowNull": true,
-                "defaultValue": null,
-                "listview": {
-                    "show": false
                 },
                 "editview": {
                     "show": true
@@ -966,7 +1014,7 @@
         "table": {
             "name": "feature",
             "pk": "id",
-            "verbose": "feature"
+            "verbose": "Download / Feature 섹션"
         },
         "columns": [
             {
@@ -1037,7 +1085,7 @@
         "table": {
             "name": "feature_item",
             "pk": "id",
-            "verbose": "feature_item"
+            "verbose": "Download / Feature / Feature 아이템"
         },
         "columns": [
             {
@@ -1177,7 +1225,7 @@
         "table": {
             "name": "documentation",
             "pk": "id",
-            "verbose": "documentation"
+            "verbose": "Download / Documentation 섹션"
         },
         "columns": [
             {
@@ -1314,7 +1362,7 @@
         "table": {
             "name": "release_note",
             "pk": "id",
-            "verbose": "release_note"
+            "verbose": "Download / Release Notes 섹션"
         },
         "columns": [
             {
@@ -1414,7 +1462,7 @@
         "table": {
             "name": "customer",
             "pk": "id",
-            "verbose": "customer"
+            "verbose": "Download / SuaKIT 고객사 테이블 (회사명, 회사코드)"
         },
         "columns": [
             {
@@ -1477,65 +1525,17 @@
             "readonly": false
         }
     },
-    "suakit_release": {
-        "slug": "suakit_release",
+    "test": {
+        "slug": "test",
         "table": {
-            "name": "suakit_release",
-            "pk": "id",
-            "verbose": "suakit_release"
+            "name": "test",
+            "pk": "",
+            "verbose": "test"
         },
         "columns": [
             {
-                "name": "id",
-                "verbose": "id",
-                "control": {
-                    "text": true
-                },
-                "type": "INTEGER",
-                "allowNull": true,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": false
-                }
-            },
-            {
                 "name": "name",
                 "verbose": "name",
-                "control": {
-                    "text": true
-                },
-                "type": "TEXT",
-                "allowNull": true,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "date",
-                "verbose": "date",
-                "control": {
-                    "text": true
-                },
-                "type": "TEXT",
-                "allowNull": true,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "link",
-                "verbose": "link",
                 "control": {
                     "text": true
                 },
