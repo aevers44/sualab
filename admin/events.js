@@ -93,6 +93,55 @@ exports.preSave = function(req, res, args, next) {
       .digest("base64")
       .substr(0, 8);
     next();
+  } else if (args.name == "feature") {
+    var image = args.upload.manyToOne.feature_item.records[0].columns.image;
+    var imageList = args.upload.manyToOne.feature_item.records;
+
+    let promiseList = [];
+
+    for (let idx = 0; idx < imageList.length; idx++) {
+      let image = imageList[idx].columns.image;
+
+      if (image.name) {
+        let fname = args.data.manyToOne.feature_item.records[idx].columns.image;
+        let record = args.data.manyToOne.feature_item.records[idx].columns;
+
+        let date = new Date();
+        let datePath = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + "/";
+
+        var s3_params = {
+          Bucket: "sualab-asset",
+          Key: "upload/" + datePath + image.name,
+          ACL: "public-read",
+          ContentType: image.type,
+        };
+
+        var s3 = new AWS.S3({ params: s3_params });
+
+        promiseList.push(
+          new Promise(function(resolve, reject) {
+            s3
+              .upload({ Body: fs.createReadStream(image.path) })
+              .on("httpUploadProgress", function(evt) {
+                console.log(evt);
+              })
+              .send(function(err, data) {
+                //S3 File URL
+                var url = data.Location;
+                var parseUrl = parse(url);
+                parseUrl.set("hostname", CLOUDFRONT_LINK);
+                1;
+                // record path
+                record.image = parseUrl.href;
+                resolve(record);
+              });
+          }),
+        );
+      }
+    }
+    Promise.all(promiseList).then(function(vals) {
+      next();
+    });
   } else {
     next();
   }

@@ -28,9 +28,10 @@ export default {
   "ABOUT.FOURTH.itemContent_3": `The solution provides S/W that can generate inspection reports, turn test results into databases, and mark defective areas.`,
 
   "PEOPLE.title": `SUALAB works with the *best colleagues*`,
+  "PEOPLE.c-level": `Management`,
   "PEOPLE.laboratory": `Research Lab`,
   "PEOPLE.business": `Sales Team`,
-  "PEOPLE.manage": `Management Team`,
+  "PEOPLE.manage": `Management Support Team`,
 
   "SUAKIT.title": `*Deep learning-based* SuaKIT extends the spectrum of *machine vision inspection*`,
   "SUAKIT.FIRST.content": `SuaKIT is a deep learning machine vision inspection software that can be used in various manufacturing fields such as display, solar, PCB, film, and semiconductor.`,
