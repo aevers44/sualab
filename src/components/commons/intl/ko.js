@@ -28,6 +28,7 @@ export default {
   "ABOUT.FOURTH.itemContent_3": `검사 리포트 생성, 검사 결과 Database화, 불량 지점 마킹 등이 가능한 S/W를 제공합니다.`,
 
   "PEOPLE.title": `SUALAB은 *최고의 사람들*과 함께 합니다`,
+  "PEOPLE.c-level": `경영진`,
   "PEOPLE.laboratory": `연구소`,
   "PEOPLE.business": `영업 본부`,
   "PEOPLE.manage": `경영관리 본부`,

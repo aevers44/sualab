@@ -53,6 +53,8 @@ class PeoplePage extends React.PureComponent {
         />
 
         <div className={styles.innerContainer}>
+          <div className={styles.line} />
+          <div className={styles.subTitle}>{intl.formatMessage({ id: "PEOPLE.c-level" })}</div>
           <div className={styles.cardWrapper}>{makePeopleCards(ceoList, intl.locale)}</div>
 
           <div className={styles.line} />
