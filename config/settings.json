@@ -1084,7 +1084,7 @@
                 "name": "image",
                 "verbose": "image",
                 "control": {
-                    "text": true
+                    "file": true
                 },
                 "type": "TEXT",
                 "allowNull": true,
