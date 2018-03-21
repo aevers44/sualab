@@ -18,9 +18,10 @@ const ApplySection = ({ intl }) => (
               <div className={styles.itemTitle}>{intl.formatMessage({ id: "HOWTO.APPLY.itemTitle_1" })}</div>
               <div className={styles.itemContent}>{intl.formatMessage({ id: "HOWTO.APPLY.itemContent_1" })}</div>
             </div>
-            <div className={styles.imgWrapper}>
-              <img src="https://d2ivzy5c3eic08.cloudfront.net/productPage/process-1@2x.png" alt="" />
-            </div>
+            <div
+              className={styles.imgWrapper}
+              style={{ backgroundImage: `url(https://d2ivzy5c3eic08.cloudfront.net/productPage/process-1@2x.png)` }}
+            />
           </div>
 
           <img
@@ -34,9 +35,10 @@ const ApplySection = ({ intl }) => (
               <div className={styles.itemTitle}>{intl.formatMessage({ id: "HOWTO.APPLY.itemTitle_2" })}</div>
               <div className={styles.itemContent}>{intl.formatMessage({ id: "HOWTO.APPLY.itemContent_2" })}</div>
             </div>
-            <div className={styles.imgWrapper}>
-              <img src="https://d2ivzy5c3eic08.cloudfront.net/productPage/process-2@2x.png" alt="" />
-            </div>
+            <div
+              className={styles.imgWrapper}
+              style={{ backgroundImage: `url(https://d2ivzy5c3eic08.cloudfront.net/productPage/process-2@2x.png)` }}
+            />
           </div>
 
           <img
@@ -50,9 +52,10 @@ const ApplySection = ({ intl }) => (
               <div className={styles.itemTitle}>{intl.formatMessage({ id: "HOWTO.APPLY.itemTitle_3" })}</div>
               <div className={styles.itemContent}>{intl.formatMessage({ id: "HOWTO.APPLY.itemContent_3" })}</div>
             </div>
-            <div className={styles.imgWrapper}>
-              <img src="https://d2ivzy5c3eic08.cloudfront.net/productPage/process-3@2x.png" alt="" />
-            </div>
+            <div
+              className={styles.imgWrapper}
+              style={{ backgroundImage: `url(https://d2ivzy5c3eic08.cloudfront.net/productPage/process-3@2x.png)` }}
+            />
           </div>
 
           <img
@@ -66,9 +69,10 @@ const ApplySection = ({ intl }) => (
               <div className={styles.itemTitle}>{intl.formatMessage({ id: "HOWTO.APPLY.itemTitle_4" })}</div>
               <div className={styles.itemContent}>{intl.formatMessage({ id: "HOWTO.APPLY.itemContent_4" })}</div>
             </div>
-            <div className={styles.imgWrapper}>
-              <img src="https://d2ivzy5c3eic08.cloudfront.net/productPage/process-4@2x.png" alt="" />
-            </div>
+            <div
+              className={styles.imgWrapper}
+              style={{ backgroundImage: `url(https://d2ivzy5c3eic08.cloudfront.net/productPage/process-4@2x.png)` }}
+            />
           </div>
         </div>
 
@@ -79,9 +83,10 @@ const ApplySection = ({ intl }) => (
             <Icon icon="PRODUCT_LEFT_ARROW" />
           </div>
           <div className={styles.processItem}>
-            <div className={styles.imgWrapper}>
-              <img src="https://d2ivzy5c3eic08.cloudfront.net/productPage/process-5@2x.png" alt="" />
-            </div>
+            <div
+              className={styles.imgWrapper}
+              style={{ backgroundImage: `url(https://d2ivzy5c3eic08.cloudfront.net/productPage/process-5@2x.png)` }}
+            />
             <div className={styles.contentWrapper}>
               <div className={styles.itemTitle}>{intl.formatMessage({ id: "HOWTO.APPLY.itemTitle_5" })}</div>
               <div className={styles.itemContent}>{intl.formatMessage({ id: "HOWTO.APPLY.itemContent_5" })}</div>

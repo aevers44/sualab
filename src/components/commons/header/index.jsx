@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import throttle from "lodash.throttle";
 import PropTypes from "prop-types";
 import { injectIntl } from "react-intl";
@@ -8,7 +9,7 @@ import { Link, Route } from "react-router-dom";
 import Navbar from "./navbar";
 import styles from "./header.scss";
 
-class Header extends React.PureComponent {
+class Header extends React.Component {
   constructor(props) {
     super(props);
 
@@ -61,6 +62,11 @@ class Header extends React.PureComponent {
 
     return (
       <div>
+        <Helmet>
+          <meta property="og:title" content="SUALAB" />
+          <meta property="og:url" content="http://sualab.com/" />
+          <meta property="og:description" content={props.intl.formatMessage({ id: "META.description" })} />
+        </Helmet>
         <header className={`${styles.header} ${isVisible ? styles.visible : ""}`}>
           <div className={styles.innerContainer}>
             <div className={styles.logoImage}>

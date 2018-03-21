@@ -24,6 +24,10 @@ var _webpack = require("webpack");
 
 var _webpack2 = _interopRequireDefault(_webpack);
 
+var _expressRobots = require("express-robots");
+
+var _expressRobots2 = _interopRequireDefault(_expressRobots);
+
 var _routes = require("./routes");
 
 var _routes2 = _interopRequireDefault(_routes);
@@ -51,6 +55,7 @@ _expressAdmin2.default.init(adminConfig, function (err, admin) {
   var port = process.env.PORT || 3000;
   var devPort = 8080;
 
+  app.use((0, _expressRobots2.default)({ UserAgent: "*", Allow: "/" }));
   app.use(_bodyParser2.default.urlencoded({ extended: false }));
   app.use(_bodyParser2.default.json());
 

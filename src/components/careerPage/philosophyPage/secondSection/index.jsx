@@ -10,17 +10,23 @@ const SecondSection = ({ intl }) => (
 
       <div className={styles.contentWrapper}>
         <div className={styles.contentItem}>
-          <div className={styles.imgWrapper}>
-            <img src="https://d2ivzy5c3eic08.cloudfront.net/careerPage/old-machine-vision-1@2x.png" alt="" />
-          </div>
+          <div
+            className={styles.imgWrapper}
+            style={{
+              backgroundImage: `url(https://d2ivzy5c3eic08.cloudfront.net/careerPage/old-machine-vision-1@2x.png)`,
+            }}
+          />
           <div className={styles.itemTitle}>{intl.formatMessage({ id: "PHILOSOPHY.SECOND.itemTitle_1" })}</div>
           <div className={styles.itemContent}>{intl.formatMessage({ id: "PHILOSOPHY.SECOND.itemContent_1" })}</div>
         </div>
 
         <div className={styles.contentItem}>
-          <div className={styles.imgWrapper}>
-            <img src="https://d2ivzy5c3eic08.cloudfront.net/careerPage/old-machine-vision-2@2x.png" alt="" />
-          </div>
+          <div
+            className={styles.imgWrapper}
+            style={{
+              backgroundImage: `url(https://d2ivzy5c3eic08.cloudfront.net/careerPage/old-machine-vision-2@2x.png)`,
+            }}
+          />
           <div className={styles.itemTitle}>{intl.formatMessage({ id: "PHILOSOPHY.SECOND.itemTitle_2" })}</div>
           <div className={styles.itemContent}>{intl.formatMessage({ id: "PHILOSOPHY.SECOND.itemContent_2" })}</div>
         </div>

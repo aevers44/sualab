@@ -1,4 +1,5 @@
 export default {
+  "META.description": `딥러닝 머신비전 솔루션 프로바이더. 기계 대신 사람이 하던 일을 자동화함으로써 세상에 기여할 수 있다고 믿습니다.`,
   "NAVBAR.product.support": `제품문의`,
   "NAVBAR.career.philosophy": `인사 철학`,
   "NAVBAR.career.recruit": `채용 절차`,

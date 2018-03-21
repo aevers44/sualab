@@ -4,6 +4,7 @@ import xAdmin from "express-admin";
 import path from "path";
 import WebpackDevServer from "webpack-dev-server";
 import webpack from "webpack";
+import robots from "express-robots";
 
 import apiRouter from "./routes";
 import suakitRouter from "./suakit";
@@ -25,6 +26,7 @@ xAdmin.init(adminConfig, (err, admin) => {
   let port = process.env.PORT || 3000;
   let devPort = 8080;
 
+  app.use(robots({ UserAgent: "*", Allow: "/" }));
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(bodyParser.json());
 

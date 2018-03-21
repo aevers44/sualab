@@ -12,9 +12,7 @@ const NewsItem = ({ id, title, date, media, link, image, content }) => {
   return (
     <Link to={`/news/media/${id}`}>
       <div className={styles.newsItem}>
-        <div className={styles.imgWrapper}>
-          <img src={image ? image : "http://placehold.it/300x300"} alt="" />
-        </div>
+        <div className={styles.imgWrapper} style={{ backgroundImage: `url(${image})` }} />
         <div className={styles.contentWrapper}>
           <div className={styles.title}>{title}</div>
           <div className={styles.date}>
