@@ -4,6 +4,7 @@ export default {
   "NAVBAR.product.support": `Product Inquiry`,
   "NAVBAR.career.philosophy": `Philosophy of Personnel`,
   "NAVBAR.career.recruit": `Hiring Process`,
+  "NAVBAR.career.open_position": `Open Positions`,
 
   "FOOTER.sualabInfo": `Business Registration Number: 220-88-55558  |  CEO: Kiyoung Song\nAddress: Seoul National University Research Park 511, Gwanak-ro 1, Gwanak-gu, Seoul\nGeneral Inquiry: 02-6264-0366 | Sales Inquiry: 02-6264-0362\nCopyright ⓒSualab. All Rights Reserved.`,
   "FOOTER.privateTerms": `Privacy Policy`,

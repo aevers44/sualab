@@ -31,6 +31,11 @@ const makeLinks = (curPath, subPath, intl) => {
     career: [
       { name: intl.formatMessage({ id: "NAVBAR.career.philosophy" }), link: "philosophy" },
       { name: intl.formatMessage({ id: "NAVBAR.career.recruit" }), link: "recruit" },
+      {
+        name: intl.formatMessage({ id: "NAVBAR.career.open_position" }),
+        link: "https://sualab.shallwe.kr/_client/base/recruit/apply/recruit_list.asp",
+        type: "href",
+      },
     ],
     contact: [{ name: "Office", link: "office" }, { name: "Global Sales Networks", link: "global-sales-network" }],
   };
@@ -41,13 +46,19 @@ const makeLinks = (curPath, subPath, intl) => {
     const item = linkItem[curPath][idx];
 
     result.push(
-      <Link
-        key={item.link}
-        className={`${styles.linkItem} ${subPath === item.link ? styles.active : ""}`}
-        to={`/${curPath}/${item.link}`}
-      >
-        {item.name}
-      </Link>,
+      item.type === "href" ? (
+        <a href={item.link} target="_blank" className={styles.linkItem}>
+          {item.name}
+        </a>
+      ) : (
+        <Link
+          key={item.link}
+          className={`${styles.linkItem} ${subPath === item.link ? styles.active : ""}`}
+          to={`/${curPath}/${item.link}`}
+        >
+          {item.name}
+        </Link>
+      ),
     );
   }
 
