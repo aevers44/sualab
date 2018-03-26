@@ -69,3 +69,5 @@ dst.zip
 
 build/
 *.sqlite3
+
+config/custom.json
