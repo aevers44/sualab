@@ -10,6 +10,9 @@ import locale from "./locale";
 addLocaleData([...en, ...ko]);
 let defaultLang = navigator.languages ? navigator.languages[0] : navigator.language || navigator.userLanguage;
 defaultLang = defaultLang.split("-")[0];
+if (defaultLang !== "ko") {
+  defaultLang = "en";
+}
 
 class MyIntlProvider extends React.Component {
   getChildContext() {
