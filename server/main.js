@@ -9,6 +9,8 @@ import robots from "express-robots";
 import apiRouter from "./routes";
 import suakitRouter from "./suakit";
 
+require("dotenv").config();
+
 const adminConfig = {
   dpath: __dirname + "/../config/",
   config: require(__dirname + "/../config/config.json"),
