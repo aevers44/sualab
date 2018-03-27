@@ -9,7 +9,7 @@ const router = express.Router();
 
 router.post("/", (req, res) => {
   const db = new sqlite3.Database("./sualabdb.sqlite3");
-  console.log(req);
+
   const {
     name,
     phone,
@@ -83,7 +83,7 @@ router.post("/", (req, res) => {
 
   const mailOptions = {
     from: name + " <sualab@sualab.com>",
-    to: email,
+    to: process.env.GET_INQUIRY_EMAIL,
     subject: `[문의] ${name}님의 문의 (${company}, ${country})`,
     text: `이름\n${name}\n\n전화번호\n${phone}\n\n회사\n${company}\n\n직급\n${status}\n\n이메일\n${email}\n\n국가\n${country}\n\n문의이유\n${reason}\n\nVision 장비 보유 유무\n${
       hasVision == 1 ? "유" : hasVision == 0 ? "무" : hasVision == 2 ? "모름" : ""
