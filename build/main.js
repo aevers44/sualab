@@ -38,6 +38,8 @@ var _suakit2 = _interopRequireDefault(_suakit);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+require("dotenv").config();
+
 var adminConfig = {
   dpath: __dirname + "/../config/",
   config: require(__dirname + "/../config/config.json"),
