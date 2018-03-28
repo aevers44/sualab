@@ -69,8 +69,13 @@ router.post("/", (req, res) => {
   const smtpTransport = nodemailer.createTransport({
     service: "Gmail",
     auth: {
+      type: "OAuth2",
       user: process.env.GMAIL_ID,
-      pass: process.env.GMAIL_PW,
+      clientId: process.env.GMAIL_CLIENT_ID,
+      clientSecret: process.env.GMAIL_CLIENT_SECRET,
+      refreshToken: process.env.GMAIL_REFRESH_TOKEN,
+      accessToken: process.env.GMAIL_ACCESS_TOKEN,
+      expires: 3600,
     },
   });
 
