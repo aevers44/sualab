@@ -67,16 +67,7 @@ router.post("/", (req, res) => {
 
   // send email
   const smtpTransport = nodemailer.createTransport({
-    service: "Gmail",
-    auth: {
-      type: "OAuth2",
-      user: process.env.GMAIL_ID,
-      clientId: process.env.GMAIL_CLIENT_ID,
-      clientSecret: process.env.GMAIL_CLIENT_SECRET,
-      refreshToken: process.env.GMAIL_REFRESH_TOKEN,
-      accessToken: process.env.GMAIL_ACCESS_TOKEN,
-      expires: 3600,
-    },
+    sendmail: true,
   });
 
   let pathString = "";
@@ -88,7 +79,7 @@ router.post("/", (req, res) => {
 
   const mailOptions = {
     from: name + " <sualab@sualab.com>",
-    to: process.env.GET_INQUIRY_EMAIL,
+    to: "w92716w@naver.com",
     subject: `[문의] ${name}님의 문의 (${company}, ${country})`,
     text: `이름\n${name}\n\n전화번호\n${phone}\n\n회사\n${company}\n\n직급\n${status}\n\n이메일\n${email}\n\n국가\n${country}\n\n문의이유\n${reason}\n\nVision 장비 보유 유무\n${
       hasVision == 1 ? "유" : hasVision == 0 ? "무" : hasVision == 2 ? "모름" : ""
@@ -125,13 +116,13 @@ router.post("/", (req, res) => {
     <p>${adAgree}</p>`,
   };
 
-  smtpTransport.sendMail(mailOptions, (err, response) => {
+  smtpTransport.sendMail(mailOptions, (err, info) => {
     if (err) {
       console.error(err);
     } else {
+      console.log(info);
       console.log("Email sent.");
     }
-    smtpTransport.close();
   });
 });
 
