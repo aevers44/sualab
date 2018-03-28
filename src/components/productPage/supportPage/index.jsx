@@ -217,10 +217,10 @@ class SupportPage extends React.PureComponent {
               value={this.state.reason}
               className={styles.selectForm}
             >
-              <option defaultValue disabled>
-                {intl.formatMessage({ id: "SUPPORT.reason.item_0" })}
+              <option disabled>{intl.formatMessage({ id: "SUPPORT.reason.item_0" })}</option>
+              <option defaultValue value={PRODUCT_FORM}>
+                {intl.formatMessage({ id: "SUPPORT.reason.item_1" })}
               </option>
-              <option value={PRODUCT_FORM}>{intl.formatMessage({ id: "SUPPORT.reason.item_1" })}</option>
               <option value={PARTNERSHIP_FORM}>{intl.formatMessage({ id: "SUPPORT.reason.item_2" })}</option>
               <option value={ETC_FORM}>{intl.formatMessage({ id: "SUPPORT.reason.item_3" })}</option>
             </select>
@@ -337,10 +337,10 @@ class SupportPage extends React.PureComponent {
                   value={this.state.path}
                   className={styles.selectForm}
                 >
-                  <option defaultValue disabled>
-                    {intl.formatMessage({ id: "SUPPORT.path.item_info" })}
+                  <option disabled>{intl.formatMessage({ id: "SUPPORT.path.item_info" })}</option>
+                  <option defaultValue value="0">
+                    {intl.formatMessage({ id: "SUPPORT.path.item_0" })}
                   </option>
-                  <option value="0">{intl.formatMessage({ id: "SUPPORT.path.item_0" })}</option>
                   <option value="1">{intl.formatMessage({ id: "SUPPORT.path.item_1" })}</option>
                   <option value="2">{intl.formatMessage({ id: "SUPPORT.path.item_2" })}</option>
                   <option value="3">{intl.formatMessage({ id: "SUPPORT.path.item_3" })}</option>
