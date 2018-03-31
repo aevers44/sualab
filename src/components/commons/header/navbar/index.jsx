@@ -47,7 +47,7 @@ const makeLinks = (curPath, subPath, intl) => {
 
     result.push(
       item.type === "href" ? (
-        <a href={item.link} target="_blank" className={styles.linkItem}>
+        <a key={item.link} href={item.link} target="_blank" className={styles.linkItem}>
           {item.name}
         </a>
       ) : (

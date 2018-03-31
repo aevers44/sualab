@@ -63,7 +63,7 @@ class NewsList extends React.PureComponent {
     return (
       <section className={styles.newsList}>
         <div className={styles.innerContainer}>
-          {newsItemList.map(elem => <NewsItem {...elem} />)}
+          {newsItemList.map((elem, idx) => <NewsItem key={idx} {...elem} />)}
 
           <div className={styles.pageWrapper}>
             <Link
@@ -72,8 +72,12 @@ class NewsList extends React.PureComponent {
             >
               &lt;
             </Link>
-            {pageArray.map(elem => (
-              <Link className={`${styles.pageLink} ${elem == curPageNum ? styles.active : ""}`} to={`?pageNo=${elem}`}>
+            {pageArray.map((elem, idx) => (
+              <Link
+                className={`${styles.pageLink} ${elem == curPageNum ? styles.active : ""}`}
+                to={`?pageNo=${elem}`}
+                key={idx}
+              >
                 {elem}
               </Link>
             ))}
