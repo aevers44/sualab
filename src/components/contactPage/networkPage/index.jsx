@@ -1,42 +1,11 @@
 import React from "react";
+import axios from "axios";
 import { injectIntl } from "react-intl";
 
 import TitleSection from "../../commons/titleSection";
 import NetworkMapComponent from "./googleMap";
 
 import styles from "./networkPage.scss";
-
-const asiaCompanyList = [
-  {
-    country: "Japan",
-    company: "ADSTEC",
-    address: "568-1-1, Innai-cho, Funabashi-shi, Chiba pref, 273-0025",
-    phone: "+81 47 495 9070",
-    email: "yuki@ads-tec.co.jp",
-  },
-  {
-    country: "Singapore",
-    company: "JM Vistec System",
-    address: "9 Kaki Bukit Road 1, Eunos Technolink #03-07,Singapore 415938",
-    phone: "+65 6748 5517",
-    email: "info@jm-vistec.com",
-  },
-  {
-    country: "Thailand",
-    company: "JM Vistec System",
-    address:
-      "516 Pesik Building, 3rd Floor-Room 1, Ratchadaphisek Road, Samsen Nok Huay Kwang, Bangkok 10310, Thailand",
-    phone: "+66 2 541 4316",
-    email: "info@jm-vistec.com",
-  },
-  {
-    country: "Malaysia",
-    company: "JM Vistec System",
-    address: "9 Kaki Bukit Road 1, Eunos Technolink #03-07, Singapore 415938",
-    phone: "+65 6748 5517",
-    email: "info@jm-vistec.com",
-  },
-];
 
 const CompanyItem = ({ country, company, address, phone, email }) => {
   return (
@@ -67,31 +36,96 @@ const CompanyItem = ({ country, company, address, phone, email }) => {
   );
 };
 
-const NetworkPage = ({ intl }) => (
-  <section className={styles.networkPage}>
-    <TitleSection
-      subTitle="GLOBAL SALES NETWORKS"
-      title={intl.formatMessage({ id: "NETWORK.title" })}
-      bgImage="https://d2ivzy5c3eic08.cloudfront.net/contactPage/media-background@2x.jpg"
-    />
+class NetworkPage extends React.PureComponent {
+  constructor(props) {
+    super(props);
 
-    <div className={styles.innerContainer}>
-      <div className={styles.mapWrapper}>
-        <NetworkMapComponent
-          isMarkerShown
-          googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyC2l8AiJrv0oRBAQIKI60rgH16h93W98Ac"
-          loadingElement={<div style={{ height: `100%` }} />}
-          containerElement={<div style={{ height: `450px` }} />}
-          mapElement={<div style={{ height: `100%` }} />}
+    this.state = {
+      officeList: [],
+      asiaOfficeList: [],
+      americaOfficeList: [],
+      europeOfficeList: [],
+      africaOfficeList: [],
+      oceaniaOfficeList: [],
+      latlngList: [],
+    };
+
+    this.getOfficeList = this.getOfficeList.bind(this);
+  }
+
+  componentDidMount() {
+    this.getOfficeList();
+  }
+
+  render() {
+    const { intl } = this.props;
+    const {
+      asiaOfficeList,
+      americaOfficeList,
+      europeOfficeList,
+      africaOfficeList,
+      oceaniaOfficeList,
+      latlngList,
+    } = this.state;
+
+    return (
+      <section className={styles.networkPage}>
+        <TitleSection
+          subTitle="GLOBAL SALES NETWORKS"
+          title={intl.formatMessage({ id: "NETWORK.title" })}
+          bgImage="https://d2ivzy5c3eic08.cloudfront.net/contactPage/media-background@2x.jpg"
         />
-      </div>
 
-      <div className={styles.networkListWrapper}>
-        <div className={styles.continentLabel}>ASIA</div>
-        {asiaCompanyList.map(elem => <CompanyItem {...elem} />)}
-      </div>
-    </div>
-  </section>
-);
+        <div className={styles.innerContainer}>
+          <div className={styles.mapWrapper}>
+            <NetworkMapComponent
+              isMarkerShown
+              googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyC2l8AiJrv0oRBAQIKI60rgH16h93W98Ac"
+              loadingElement={<div style={{ height: `100%` }} />}
+              containerElement={<div style={{ height: `450px` }} />}
+              mapElement={<div style={{ height: `100%` }} />}
+              markerList={latlngList}
+            />
+          </div>
+
+          <div className={styles.networkListWrapper}>
+            {asiaOfficeList.length > 0 ? <div className={styles.continentLabel}>ASIA</div> : ""}
+            {asiaOfficeList.map(elem => <CompanyItem key={elem.id} {...elem} />)}
+
+            {americaOfficeList.length > 0 ? <div className={styles.continentLabel}>AMERICA</div> : ""}
+            {americaOfficeList.map(elem => <CompanyItem key={elem.id} {...elem} />)}
+
+            {europeOfficeList.length > 0 ? <div className={styles.continentLabel}>EUROPE</div> : ""}
+            {europeOfficeList.map(elem => <CompanyItem key={elem.id} {...elem} />)}
+
+            {africaOfficeList.length > 0 ? <div className={styles.continentLabel}>AFRICA</div> : ""}
+            {africaOfficeList.map(elem => <CompanyItem key={elem.id} {...elem} />)}
+
+            {oceaniaOfficeList.length > 0 ? <div className={styles.continentLabel}>OCEANIA</div> : ""}
+            {oceaniaOfficeList.map(elem => <CompanyItem key={elem.id} {...elem} />)}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  getOfficeList() {
+    axios.get("/api/office").then(res => {
+      const officeList = res.data;
+
+      const latlngList = officeList.filter(elem => elem.marker_visible !== 0).map(elem => {
+        return { lat: elem.latitude, lng: elem.longitude };
+      });
+      this.setState({
+        asiaOfficeList: officeList.filter(elem => elem.continent === "ASIA"),
+        americaOfficeList: officeList.filter(elem => elem.continent === "AMERICA"),
+        europeOfficeList: officeList.filter(elem => elem.continent === "EUROPE"),
+        africaOfficeList: officeList.filter(elem => elem.continent === "AFRICA"),
+        oceaniaOfficeList: officeList.filter(elem => elem.continent === "OCEANIA"),
+        latlngList: latlngList,
+      });
+    });
+  }
+}
 
 export default injectIntl(NetworkPage);

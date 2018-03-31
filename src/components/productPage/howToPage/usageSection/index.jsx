@@ -59,7 +59,9 @@ class UsageSection extends React.PureComponent {
         </div>
 
         <div className={styles.tabSection}>
-          <div className={styles.innerContainer}>{cardList.map(elem => <CardItem {...elem} intl={intl} />)}</div>
+          <div className={styles.innerContainer}>
+            {cardList.map((elem, idx) => <CardItem key={idx} {...elem} intl={intl} />)}
+          </div>
         </div>
       </section>
     );

@@ -40,7 +40,9 @@ class FifthContainer extends React.PureComponent {
           <div className={styles.title}>NEWS</div>
           <div className={styles.bigTitle}>{intl.formatMessage({ id: "MAIN.FIFTH.bigTitle" })}</div>
 
-          <div className={styles.newsWrapper}>{recentArticles.map(elem => <RecentItem {...elem} />)}</div>
+          <div className={styles.newsWrapper}>
+            {recentArticles.map((elem, idx) => <RecentItem key={idx} {...elem} />)}
+          </div>
 
           <Link to="/news/media" className={styles.readmoreBtn}>
             Read More

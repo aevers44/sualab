@@ -15,7 +15,6 @@ const sortFunc = (a, b) => {
 
 const makePeopleCards = (peopleList, locale) => {
   let result = [];
-  console.log(locale);
   for (let idx in peopleList) {
     const people = peopleList[idx];
     result.push(<PeopleCard locale={locale} key={idx} {...people} />);
