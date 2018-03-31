@@ -133,6 +133,22 @@ db.serialize(() => {
       link TEXT
     )
   `);
+
+  db.run(`
+    CREATE TABLE IF NOT EXISTS global_office
+    (
+      id INTEGER PRIMARY KEY,
+      continent TEXT,
+      country TEXT,
+      company TEXT,
+      address TEXT,
+      phone TEXT,
+      email TEXT,
+      latitude DOUBLE,
+      longitude DOUBLE,
+      marker_visible INTEGER DEFAULT 1
+    )
+  `);
 });
 
 db.close();
