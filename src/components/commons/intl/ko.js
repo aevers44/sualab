@@ -164,6 +164,10 @@ export default {
   "DOWNLOAD.RELEASE.date": `출시일`,
   "DOWNLOAD.RELEASE.detail": `상세 내용`,
   "DOWNLOAD.RELEASE.fold": `접기`,
+  "DOWNLOAD.AUTH.companyName": "회사명",
+  "DOWNLOAD.AUTH.companyKey": "인증코드",
+  "DOWNLOAD.AUTH.authBtn": "인증",
+  "DOWNLOAD.AUTH.authFailMessage": "인증에 실패하였습니다.\n 다시 확인해주세요.",
 
   "MEDIA.title": `*언론*에 보도된 *SUALAB*을 확인해 보세요`,
   "MEDIA.newsDetail.prev": `이전 글`,

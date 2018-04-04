@@ -7,11 +7,27 @@ import FeatureSection from "./featureSection";
 import DocumentSection from "./documentSection";
 import ReleaseSection from "./releaseSection";
 
+import AuthSection from "./authSection";
+
 import styles from "./downloadPage.scss";
 
 class DownloadPage extends React.PureComponent {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isAuthed: false,
+      companyName: "",
+      companyKey: "",
+    };
+
+    this.handleAuth = this.handleAuth.bind(this);
+  }
+
   render() {
     const { intl } = this.props;
+    const { isAuthed, companyName, companyKey } = this.state;
+
     return (
       <section className={styles.downloadPage}>
         <TitleSection
@@ -20,12 +36,26 @@ class DownloadPage extends React.PureComponent {
           bgImage="https://d2ivzy5c3eic08.cloudfront.net/productPage/product-download%402x.png"
         />
 
-        <SuakitSection intl={intl} />
-        <FeatureSection intl={intl} />
-        <DocumentSection intl={intl} />
-        <ReleaseSection intl={intl} />
+        {!isAuthed ? (
+          <AuthSection intl={intl} handleAuth={this.handleAuth} />
+        ) : (
+          <div>
+            <SuakitSection intl={intl} companyName={companyName} companyKey={companyKey} />
+            <FeatureSection intl={intl} />
+            <DocumentSection intl={intl} />
+            <ReleaseSection intl={intl} />
+          </div>
+        )}
       </section>
     );
+  }
+
+  handleAuth(res, companyName, companyKey) {
+    this.setState({
+      isAuthed: res,
+      companyName: companyName,
+      companyKey: companyKey,
+    });
   }
 }
 

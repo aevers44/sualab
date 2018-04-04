@@ -38,7 +38,7 @@ class ReleaseSection extends React.PureComponent {
               </span>
             </div>
 
-            {noteList.map(elem => <TableItem {...elem} intl={intl} />)}
+            {noteList.map((elem, idx) => <TableItem key={idx} {...elem} intl={intl} />)}
           </div>
         </div>
       </section>

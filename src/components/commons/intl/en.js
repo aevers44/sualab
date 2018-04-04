@@ -164,6 +164,10 @@ export default {
   "DOWNLOAD.RELEASE.date": `Release Date`,
   "DOWNLOAD.RELEASE.detail": `Details`,
   "DOWNLOAD.RELEASE.fold": `Fold`,
+  "DOWNLOAD.AUTH.companyName": "Company Name",
+  "DOWNLOAD.AUTH.companyKey": "Authentication Key",
+  "DOWNLOAD.AUTH.authBtn": "Authenticate",
+  "DOWNLOAD.AUTH.authFailMessage": "Authentication Failed.\nPlease check your company name and key",
 
   "MEDIA.title": `Check out the *Press Coverage of SUALAB*`,
   "MEDIA.newsDetail.prev": `Previous`,

@@ -28,8 +28,8 @@ class FeatureSection extends React.PureComponent {
           <div className={styles.title}>New Features</div>
 
           <div className={styles.contentWrapper}>
-            {featureList.map(elem => (
-              <div className={styles.featureItem}>
+            {featureList.map((elem, idx) => (
+              <div className={styles.featureItem} key={idx}>
                 <div className={styles.featureTitle}>{intl.locale === "ko" ? elem.title : elem.en_title}</div>
                 <div className={styles.featureImage} style={{ backgroundImage: `url(${elem.image})` }} />
                 <div className={styles.featureContent}>{intl.locale === "ko" ? elem.content : elem.en_content}</div>
