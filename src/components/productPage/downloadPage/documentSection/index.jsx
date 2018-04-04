@@ -32,8 +32,8 @@ class DocumentSection extends React.PureComponent {
           <div className={styles.documentTable}>
             <div className={styles.tableTitle}>Basics</div>
 
-            {basicList.map(elem => (
-              <div className={styles.tableItem}>
+            {basicList.map((elem, idx) => (
+              <div className={styles.tableItem} key={idx}>
                 <span className={styles.version}>{elem.version}</span>
                 <span className={styles.documentName}>{intl.locale === "ko" ? elem.name : elem.en_name}</span>
                 <a href={intl.locale === "ko" ? elem.link : elem.en_link || elem.link} className={styles.downBtn}>
@@ -46,8 +46,8 @@ class DocumentSection extends React.PureComponent {
           <div className={styles.documentTable}>
             <div className={styles.tableTitle}>For Programmers</div>
 
-            {programmerList.map(elem => (
-              <div className={styles.tableItem}>
+            {programmerList.map((elem, idx) => (
+              <div className={styles.tableItem} key={idx}>
                 <span className={styles.version}>{elem.version}</span>
                 <span className={styles.documentName}>{intl.locale === "ko" ? elem.name : elem.en_name}</span>
                 <a href={intl.locale === "ko" ? elem.link : elem.en_link || elem.link} className={styles.downBtn}>
@@ -60,8 +60,8 @@ class DocumentSection extends React.PureComponent {
           <div className={styles.documentTable}>
             <div className={styles.tableTitle}>Application Notes</div>
 
-            {noteList.map(elem => (
-              <div className={styles.tableItem}>
+            {noteList.map((elem, idx) => (
+              <div className={styles.tableItem} key={idx}>
                 <span className={styles.version}>{elem.version}</span>
                 <span className={styles.documentName}>{intl.locale === "ko" ? elem.name : elem.en_name}</span>
                 <a href={intl.locale === "ko" ? elem.link : elem.en_link || elem.link} className={styles.downBtn}>

@@ -4,16 +4,14 @@ import axios from "axios";
 import modal from "react-modal";
 
 import styles from "./suakitSection.scss";
-import Modal from "react-modal/lib/components/Modal";
 
 class SuakitSection extends React.PureComponent {
   constructor(props) {
     super(props);
 
     this.state = {
-      modalOpen: false,
-      companyName: "",
-      companyKey: "",
+      companyName: props.companyName,
+      companyKey: props.companyKey,
 
       suakitName: "",
       suakitInfo: "",
@@ -21,8 +19,6 @@ class SuakitSection extends React.PureComponent {
     };
 
     this.getSuakitInfo = this.getSuakitInfo.bind(this);
-    this.handleCloseModal = this.handleCloseModal.bind(this);
-    this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.getDownloadLink = this.getDownloadLink.bind(this);
   }
@@ -33,8 +29,8 @@ class SuakitSection extends React.PureComponent {
 
   render() {
     const { suakitName, suakitInfo, suakitLink } = this.state;
-    const { modalOpen, companyName, companyKey } = this.state;
     const { intl } = this.props;
+
     return (
       <section className={styles.suakitSection}>
         <div className={styles.innerContainer}>
@@ -46,51 +42,13 @@ class SuakitSection extends React.PureComponent {
             </div>
 
             <div className={styles.rightWrapper}>
-              <a href="#" onClick={this.handleOpenModal} className={styles.downloadBtn}>
+              <a href="#" onClick={this.getDownloadLink} className={styles.downloadBtn}>
                 Download
               </a>
             </div>
           </div>
           <div className={styles.underline} />
         </div>
-
-        <Modal
-          isOpen={modalOpen}
-          bodyOpenClassName={styles.infoModalBody}
-          className={styles.infoModal}
-          overlayClassName={styles.infoModalOverlay}
-          onRequestClose={this.handleCloseModal}
-        >
-          <h2>SuaKIT Download</h2>
-          <label htmlFor="companyName" className={styles.label}>
-            회사명
-          </label>
-          <input
-            type="text"
-            className={styles.textForm}
-            id="companyName"
-            onChange={ev => this.handleChange(ev, "companyName")}
-            value={this.state.companyName}
-            name="companyName"
-          />
-          <label htmlFor="companyKey" className={styles.label}>
-            인증코드
-          </label>
-          <input
-            type="text"
-            className={styles.textForm}
-            id="companyKey"
-            onChange={ev => this.handleChange(ev, "companyKey")}
-            value={this.state.companyKey}
-            name="companyKey"
-          />
-          <button onClick={this.getDownloadLink} className={`${styles.closeBtn} ${styles.submitBtn}`}>
-            Download
-          </button>
-          <button onClick={this.handleCloseModal} className={styles.closeBtn}>
-            Cancel
-          </button>
-        </Modal>
       </section>
     );
   }
@@ -127,15 +85,6 @@ class SuakitSection extends React.PureComponent {
         window.open(res.data.url, "_blank");
       }
     });
-  }
-
-  handleOpenModal(ev) {
-    ev.preventDefault();
-    this.setState({ modalOpen: true });
-  }
-
-  handleCloseModal() {
-    this.setState({ modalOpen: false });
   }
 }
 
