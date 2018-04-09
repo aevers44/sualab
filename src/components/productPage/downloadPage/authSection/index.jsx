@@ -12,6 +12,7 @@ class AuthSection extends React.PureComponent {
       companyKey: "",
     };
 
+    this.handleKeyPress = this.handleKeyPress.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.getAuthentication = this.getAuthentication.bind(this);
   }
@@ -32,6 +33,7 @@ class AuthSection extends React.PureComponent {
             className={styles.textForm}
             id="companyName"
             onChange={ev => this.handleChange(ev, "companyName")}
+            onKeyPress={ev => this.handleKeyPress(ev, handleAuth)}
             value={this.state.companyName}
             name="companyName"
           />
@@ -39,10 +41,11 @@ class AuthSection extends React.PureComponent {
             {intl.formatMessage({ id: "DOWNLOAD.AUTH.companyKey" })}
           </label>
           <input
-            type="text"
+            type="password"
             className={styles.textForm}
             id="companyKey"
             onChange={ev => this.handleChange(ev, "companyKey")}
+            onKeyPress={ev => this.handleKeyPress(ev, handleAuth)}
             value={this.state.companyKey}
             name="companyKey"
           />
@@ -52,6 +55,13 @@ class AuthSection extends React.PureComponent {
         </div>
       </section>
     );
+  }
+
+  handleKeyPress(ev, handleAuth) {
+    if (ev.key === "Enter" && ev.shiftKey === false) {
+      ev.preventDefault();
+      this.getAuthentication(ev, handleAuth);
+    }
   }
 
   handleChange(ev, type) {

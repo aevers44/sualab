@@ -86,7 +86,7 @@ export default {
   "SUAKIT.FIFTH.answer_5": `SuaKIT은 C++, C# API를 제공하고 있습니다. 기존 검사 알고리즘이 C++, C#으로 개발되어 있다면 API를 통해 쉽게 연동할 수 있습니다.`,
   "SUAKIT.FIFTH.question_6": `SuaKIT 데모 버전이 있나요?`,
   "SUAKIT.FIFTH.answer_6": `없습니다. 대신 영업일 기준 20일 동안 SuaKIT을 대여할 수 있으며, 필요시 추가 계약을 통해 1회 연장할 수 있습니다.`,
-  "SUAKIT.SIXTH.subTitle": "Suakit 브로셔",
+  "SUAKIT.SIXTH.subTitle": "SuaKIT 브로셔",
 
   "HOWTO.title": `*누구나* 손쉽게 *딥러닝 모델을* 생성하고 *제조 현장에 적용*할 수 있습니다`,
   "HOWTO.USAGE.subTitle": `SuaKIT 사용 Process`,
