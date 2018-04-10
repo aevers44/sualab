@@ -149,6 +149,16 @@ db.serialize(() => {
       marker_visible INTEGER DEFAULT 1
     )
   `);
+
+  // add image_en column to feature_item table
+  db.run(
+    `
+    ALTER TABLE feature_item ADD COLUMN image_en TEXT
+  `,
+    err => {
+      console.error(err);
+    },
+  );
 });
 
 db.close();
