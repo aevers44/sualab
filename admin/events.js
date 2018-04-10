@@ -95,12 +95,14 @@ exports.preSave = function(req, res, args, next) {
     next();
   } else if (args.name == "feature") {
     var image = args.upload.manyToOne.feature_item.records[0].columns.image;
+    var image_en = args.upload.manyToOne.feature_item.records[0].columns.image_en;
     var imageList = args.upload.manyToOne.feature_item.records;
 
     let promiseList = [];
 
     for (let idx = 0; idx < imageList.length; idx++) {
       let image = imageList[idx].columns.image;
+      let image_en = imageList[idx].columns.image_en;
 
       if (image.name) {
         let fname = args.data.manyToOne.feature_item.records[idx].columns.image;
@@ -138,7 +140,45 @@ exports.preSave = function(req, res, args, next) {
           }),
         );
       }
+
+      if (image_en.name) {
+        let fname = args.data.manyToOne.feature_item.records[idx].columns.image_en;
+        let record = args.data.manyToOne.feature_item.records[idx].columns;
+
+        let date = new Date();
+        let datePath = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + "/";
+
+        var s3_params = {
+          Bucket: "sualab-asset",
+          Key: "upload/" + datePath + "en_" + image_en.name,
+          ACL: "public-read",
+          ContentType: image_en.type,
+        };
+
+        var s3 = new AWS.S3({ params: s3_params });
+
+        promiseList.push(
+          new Promise(function(resolve, reject) {
+            s3
+              .upload({ Body: fs.createReadStream(image_en.path) })
+              .on("httpUploadProgress", function(evt) {
+                console.log(evt);
+              })
+              .send(function(err, data) {
+                //S3 File URL
+                var url = data.Location;
+                var parseUrl = parse(url);
+                parseUrl.set("hostname", CLOUDFRONT_LINK);
+                1;
+                // record path
+                record.image_en = parseUrl.href;
+                resolve(record);
+              });
+          }),
+        );
+      }
     }
+
     Promise.all(promiseList).then(function(vals) {
       next();
     });

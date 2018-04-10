@@ -1207,6 +1207,22 @@
                 "editview": {
                     "show": true
                 }
+            },
+            {
+                "name": "image_en",
+                "verbose": "image_en",
+                "control": {
+                    "file": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
             }
         ],
         "mainview": {
