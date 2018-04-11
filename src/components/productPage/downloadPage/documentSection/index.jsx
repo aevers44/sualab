@@ -36,7 +36,11 @@ class DocumentSection extends React.PureComponent {
               <div className={styles.tableItem} key={idx}>
                 <span className={styles.version}>{elem.version}</span>
                 <span className={styles.documentName}>{intl.locale === "ko" ? elem.name : elem.en_name}</span>
-                <a href={intl.locale === "ko" ? elem.link : elem.en_link || elem.link} className={styles.downBtn}>
+                <a
+                  target="_blank"
+                  href={intl.locale === "ko" ? elem.link : elem.en_link || elem.link}
+                  className={styles.downBtn}
+                >
                   Download
                 </a>
               </div>
@@ -50,7 +54,11 @@ class DocumentSection extends React.PureComponent {
               <div className={styles.tableItem} key={idx}>
                 <span className={styles.version}>{elem.version}</span>
                 <span className={styles.documentName}>{intl.locale === "ko" ? elem.name : elem.en_name}</span>
-                <a href={intl.locale === "ko" ? elem.link : elem.en_link || elem.link} className={styles.downBtn}>
+                <a
+                  target="_blank"
+                  href={intl.locale === "ko" ? elem.link : elem.en_link || elem.link}
+                  className={styles.downBtn}
+                >
                   Download
                 </a>
               </div>
@@ -64,7 +72,11 @@ class DocumentSection extends React.PureComponent {
               <div className={styles.tableItem} key={idx}>
                 <span className={styles.version}>{elem.version}</span>
                 <span className={styles.documentName}>{intl.locale === "ko" ? elem.name : elem.en_name}</span>
-                <a href={intl.locale === "ko" ? elem.link : elem.en_link || elem.link} className={styles.downBtn}>
+                <a
+                  target="_blank"
+                  href={intl.locale === "ko" ? elem.link : elem.en_link || elem.link}
+                  className={styles.downBtn}
+                >
                   Download
                 </a>
               </div>
