@@ -13,6 +13,7 @@ $container-width: 1080px;
 
 .titleWrapper {
   display: flex;
+  align-items: flex-end;
   padding-right: 90px;
   margin-bottom: 45px;
 
@@ -86,10 +87,49 @@ $container-width: 1080px;
     color: #666d7c;
     word-break: keep-all;
     white-space: pre-wrap;
+
+    .useCase {
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+      color: #666d7c;
+    }
   }
 
   &:hover {
     box-shadow: 0 7px 17px 0 #e7eaf2;
     transition: 0.3s ease-in-out;
+  }
+}
+
+.subTitle {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #0c1020;
+  margin-bottom: 20px;
+}
+
+.itemWrapper.methodItemWrapper {
+  margin-bottom: 66px;
+  .itemCard {
+    max-width: 256px;
+    .imgWrapper {
+      position: relative;
+      margin: 0 auto;
+      width: 160px;
+      height: 135px;
+      margin-bottom: 33px;
+
+      img {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+      }
+    }
   }
 }
