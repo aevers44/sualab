@@ -36,7 +36,7 @@ export default {
   "PEOPLE.business": `Sales Team`,
   "PEOPLE.manage": `Management Support Team`,
 
-  "SUAKIT.title": `*Deep learning-based* SuaKIT extends the spectrum of *machine vision inspection*`,
+  "SUAKIT.title": `SuaKIT, *front-runner in deep learning*, expands the spectrum of *machine vision inspection*`,
   "SUAKIT.FIRST.content": `SuaKIT is a deep learning machine vision inspection software that can be used in various manufacturing fields such as display, solar, PCB, film, and semiconductor.`,
   "SUAKIT.FIRST.subTitle_1": `SuaKIT Training Methods`,
   "SUAKIT.FIRST.subTitle_2": `SuaKIT Core Functions`,
