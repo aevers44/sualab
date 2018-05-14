@@ -13,14 +13,14 @@ const SixthSection = ({ intl }) => (
         <div className={styles.buttonWrapper}>
           <a
             target="_blank"
-            href="http://d2ivzy5c3eic08.cloudfront.net/SuaKIT_brochure_v2.0_ko.pdf"
+            href="http://d2ivzy5c3eic08.cloudfront.net/SuaKIT_brochure_v2.1_kor.pdf"
             className={styles.downloadBtn}
           >
             KOREAN
           </a>
           <a
             target="_blank"
-            href="http://d2ivzy5c3eic08.cloudfront.net/SuaKIT_brochure_v2.0_en.pdf"
+            href="http://d2ivzy5c3eic08.cloudfront.net/SuaKIT_brochure_v2.1_en.pdf"
             className={styles.downloadBtn}
           >
             ENGLISH
