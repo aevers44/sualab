@@ -8,7 +8,7 @@ import ko from "react-intl/locale-data/ko";
 import locale from "./locale";
 
 addLocaleData([...en, ...ko]);
-let defaultLang = navigator.languages ? navigator.languages[0] : navigator.language || navigator.userLanguage;
+let defaultLang = navigator.language || navigator.userLanguage || navigator.languages[0];
 defaultLang = defaultLang.split("-")[0];
 if (defaultLang !== "ko") {
   defaultLang = "en";

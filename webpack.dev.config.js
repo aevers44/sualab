@@ -36,8 +36,9 @@ module.exports = {
   ],
 
   module: {
-    rules: [
-      {
+    strictExportPresence: true,
+
+    rules: [{
         test: /\.svg$/,
         exclude: /node_modules/,
         loader: "svg-inline-loader",
@@ -47,8 +48,9 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: [
-          { loader: "style-loader" },
+        use: [{
+            loader: "style-loader"
+          },
           {
             loader: "css-loader",
             options: {
@@ -65,7 +67,9 @@ module.exports = {
               },
             },
           },
-          { loader: "sass-loader" },
+          {
+            loader: "sass-loader"
+          },
         ],
       },
       {
