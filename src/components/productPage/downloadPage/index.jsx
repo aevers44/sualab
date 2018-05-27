@@ -6,6 +6,7 @@ import SuakitSection from "./suakitSection";
 import FeatureSection from "./featureSection";
 import DocumentSection from "./documentSection";
 import ReleaseSection from "./releaseSection";
+import PreviousSection from "./previousSection";
 
 import AuthSection from "./authSection";
 
@@ -42,6 +43,7 @@ class DownloadPage extends React.PureComponent {
           <div>
             <SuakitSection intl={intl} companyName={companyName} companyKey={companyKey} />
             <FeatureSection intl={intl} />
+            <PreviousSection intl={intl} companyName={companyName} companyKey={companyKey} />
             <DocumentSection intl={intl} />
             <ReleaseSection intl={intl} />
           </div>

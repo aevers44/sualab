@@ -31,9 +31,9 @@ export default {
 
   "PEOPLE.title": `SUALAB은 *최고의 사람들*과 함께 합니다`,
   "PEOPLE.c-level": `경영진`,
-  "PEOPLE.laboratory": `연구소`,
-  "PEOPLE.business": `영업 본부`,
-  "PEOPLE.manage": `경영관리 본부`,
+  "PEOPLE.laboratory": `연구/개발/제품기획`,
+  "PEOPLE.business": `사업개발`,
+  "PEOPLE.manage": `경영관리`,
 
   "SUAKIT.title": `*딥러닝*을 탑재한 SuaKIT, *머신비전 검사*의 스펙트럼을 넓힙니다`,
   "SUAKIT.FIRST.content": `SuaKIT은 디스플레이, 태양광, PCB, 필름, 반도체 등 다양한 제조업 현장에서 사용할 수 있는 딥러닝 머신비전 검사 소프트웨어입니다.`,

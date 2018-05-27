@@ -19,9 +19,13 @@ router.post("/auth", (req, res) => {
       res.status(500);
     } else {
       if (row !== undefined) {
-        result = { auth: true };
+        result = {
+          auth: true
+        };
       } else {
-        result = { auth: false };
+        result = {
+          auth: false
+        };
       }
     }
   });
@@ -39,13 +43,33 @@ router.get("/suakit", (req, res) => {
       console.error(err);
       res.status(500);
     } else {
-      result = { ...row };
+      result = { ...row
+      };
     }
   });
   db.close(err => {
     res.json(result);
   });
 });
+
+router.get("/previous-suakit", (req, res) => {
+  const db = new sqlite3.Database("./sualabdb.sqlite3");
+
+  let result = [];
+
+  db.all("SELECT * FROM suakit_release ORDER BY id DESC ", (err, rows) => {
+    if (err) {
+      console.error(err);
+      res.status(500);
+    } else {
+      result = rows;
+    }
+  });
+
+  db.close(err => {
+    res.json(result);
+  });
+})
 
 router.get("/documentation", (req, res) => {
   const db = new sqlite3.Database("./sualabdb.sqlite3");
