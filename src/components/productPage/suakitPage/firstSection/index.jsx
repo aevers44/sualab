@@ -28,7 +28,7 @@ const FirstSection = ({ intl }) => (
             <img src="https://d2ivzy5c3eic08.cloudfront.net/productPage/training-methods-2@2x.png" />
           </div>
           <div className={styles.cardTitle}>Image Comparison</div>
-          <div className={styles.cardContent}>{intl.formatMessage({ id: "SUAKIT.FIRST.methodContent_1" })}</div>
+          <div className={styles.cardContent}>{intl.formatMessage({ id: "SUAKIT.FIRST.methodContent_2" })}</div>
         </div>
 
         <div className={styles.itemCard}>
@@ -36,7 +36,7 @@ const FirstSection = ({ intl }) => (
             <img src="https://d2ivzy5c3eic08.cloudfront.net/productPage/training-methods-3@2x.png" />
           </div>
           <div className={styles.cardTitle}>Multi Image Analysis</div>
-          <div className={styles.cardContent}>{intl.formatMessage({ id: "SUAKIT.FIRST.methodContent_2" })}</div>
+          <div className={styles.cardContent}>{intl.formatMessage({ id: "SUAKIT.FIRST.methodContent_3" })}</div>
         </div>
 
         <div className={styles.itemCard}>
@@ -44,11 +44,11 @@ const FirstSection = ({ intl }) => (
             {intl.locale === "ko" ? (
               <img src="https://d2ivzy5c3eic08.cloudfront.net/productPage/training-methods-4@2x.png" />
             ) : (
-              <img src="https://d2ivzy5c3eic08.cloudfront.net/productPage/training-methods-4-en@2x.png" />
-            )}
+                <img src="https://d2ivzy5c3eic08.cloudfront.net/productPage/training-methods-4-en@2x.png" />
+              )}
           </div>
           <div className={styles.cardTitle}>One Class Learning</div>
-          <div className={styles.cardContent}>{intl.formatMessage({ id: "SUAKIT.FIRST.methodContent_3" })}</div>
+          <div className={styles.cardContent}>{intl.formatMessage({ id: "SUAKIT.FIRST.methodContent_4" })}</div>
         </div>
       </div>
 
