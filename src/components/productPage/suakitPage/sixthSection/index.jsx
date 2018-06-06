@@ -1,34 +1,60 @@
 import React from "react";
+import axios from "axios";
 
 import styles from "./sixthSection.scss";
 
-const SixthSection = ({ intl }) => (
-  <section className={styles.sixthSection}>
-    <div className={styles.innerContainer}>
-      <div className={styles.line} />
-      <div className={styles.subTitle}>{intl.formatMessage({ id: "SUAKIT.SIXTH.subTitle" })}</div>
+class SixthSection extends React.PureComponent {
+  constructor(props) {
+    super(props);
 
-      <div className={styles.brochureWrapper}>
-        <img src="https://d2ivzy5c3eic08.cloudfront.net/productPage/whitepaper@2x.png" alt="" />
-        <div className={styles.buttonWrapper}>
-          <a
-            target="_blank"
-            href="http://d2ivzy5c3eic08.cloudfront.net/SuaKIT_brochure_v2.1_ko.pdf"
-            className={styles.downloadBtn}
-          >
-            KOREAN
-          </a>
-          <a
-            target="_blank"
-            href="http://d2ivzy5c3eic08.cloudfront.net/SuaKIT_brochure_v2.1_eng.pdf"
-            className={styles.downloadBtn}
-          >
-            ENGLISH
-          </a>
+    this.state = {
+      koBrochure: "",
+      enBrochure: "",
+      brochureImage: "",
+    };
+
+    this.getBrochureInfo = this.getBrochureInfo.bind(this);
+  }
+
+  componentWillMount() {
+    this.getBrochureInfo();
+  }
+
+  render() {
+    const { intl } = this.props;
+    const { koBrochure, enBrochure, brochureImage } = this.state;
+
+    return (
+      <section className={styles.sixthSection}>
+        <div className={styles.innerContainer}>
+          <div className={styles.line} />
+          <div className={styles.subTitle}>{intl.formatMessage({ id: "SUAKIT.SIXTH.subTitle" })}</div>
+
+          <div className={styles.brochureWrapper}>
+            <img src={brochureImage} alt="" />
+            <div className={styles.buttonWrapper}>
+              <a target="_blank" href={koBrochure} className={styles.downloadBtn}>
+                KOREAN
+              </a>
+              <a target="_blank" href={enBrochure} className={styles.downloadBtn}>
+                ENGLISH
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
-);
+      </section>
+    );
+  }
+
+  getBrochureInfo() {
+    axios.get("/api/brochure").then(res => {
+      this.setState({
+        koBrochure: res.data.ko_brochure,
+        enBrochure: res.data.en_brochure,
+        brochureImage: res.data.image,
+      });
+    });
+  }
+}
 
 export default SixthSection;
