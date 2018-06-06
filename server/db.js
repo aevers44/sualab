@@ -159,6 +159,62 @@ db.serialize(() => {
       console.error(err);
     },
   );
+
+  db.run("ALTER TABLE customer ADD COLUMN company_name TEXT",
+    err => {
+      console.error(err);
+    },
+  );
+  db.run("ALTER TABLE customer ADD COLUMN department TEXT",
+    err => {
+      console.error(err);
+    },
+  );
+  db.run("ALTER TABLE customer ADD COLUMN project_name TEXT",
+    err => {
+      console.error(err);
+    },
+  );
+  db.run("ALTER TABLE customer ADD COLUMN manager_name TEXT",
+    err => {
+      console.error(err);
+    },
+  );
+  db.run("ALTER TABLE customer ADD COLUMN manager_position TEXT",
+    err => {
+      console.error(err);
+    },
+  );
+  db.run("ALTER TABLE customer ADD COLUMN manager_contact TEXT",
+    err => {
+      console.error(err);
+    },
+  );
+  db.run("ALTER TABLE customer ADD COLUMN etc1 TEXT",
+    err => {
+      console.error(err);
+    },
+  );
+  db.run("ALTER TABLE customer ADD COLUMN etc2 TEXT",
+    err => {
+      console.error(err);
+    },
+  );
+  db.run("ALTER TABLE customer ADD COLUMN etc3 TEXT",
+    err => {
+      console.error(err);
+    },
+  );
+  db.run("ALTER TABLE customer ADD COLUMN etc4 TEXT",
+    err => {
+      console.error(err);
+    },
+  );
+  db.run("ALTER TABLE customer ADD COLUMN etc5 TEXT",
+    err => {
+      console.error(err);
+    },
+  );
 });
 
 db.close();
