@@ -5,6 +5,9 @@ import styles from "./suakitSection.scss";
 
 import FeatureSection from "./featureSection";
 
+const PAGE_LIMIT = 10;
+const LIST_ITEM_NUMBER = 10;
+
 class SuakitSection extends React.PureComponent {
   constructor(props) {
     super(props);
@@ -16,11 +19,14 @@ class SuakitSection extends React.PureComponent {
       openFeatureIdx: 0,
 
       previousSuakit: [],
+      suakitLength: 0,
+      curPageNum: 1,
     };
 
     this.getPreviousVersion = this.getPreviousVersion.bind(this);
     this.getDownloadLink = this.getDownloadLink.bind(this);
     this.openFeatureDetailItem = this.openFeatureDetailItem.bind(this);
+    this.openPage = this.openPage.bind(this);
   }
 
   componentWillMount() {
@@ -28,14 +34,25 @@ class SuakitSection extends React.PureComponent {
   }
 
   render() {
-    const { previousSuakit, openFeatureIdx } = this.state;
+    const { previousSuakit, openFeatureIdx, suakitLength, curPageNum } = this.state;
     const { intl } = this.props;
+
+    const totalPageNum = Math.ceil(suakitLength / LIST_ITEM_NUMBER);
+    const startPageNum = (Math.ceil(curPageNum / PAGE_LIMIT) - 1) * PAGE_LIMIT + 1;
+    const endPageNum = Math.min((Math.ceil(curPageNum / PAGE_LIMIT) - 1) * PAGE_LIMIT + PAGE_LIMIT, totalPageNum);
+    const pageArray = [];
+    for (let idx = startPageNum; idx <= endPageNum; idx++) {
+      pageArray.push(idx);
+    }
+
+    const suakitListShown = previousSuakit.slice((curPageNum - 1) * LIST_ITEM_NUMBER, curPageNum * LIST_ITEM_NUMBER);
+
     return (
       <section className={styles.previousSection}>
         <div className={styles.innerContainer}>
-          {previousSuakit.map((elem, idx) => (
+          {suakitListShown.map((elem, idx) => (
             <div key={idx}>
-              <div className={styles.contentWrapper}>
+              <div className={`${styles.contentWrapper} ${idx === 0 ? styles.first : ""}`}>
                 <div className={styles.leftWrapper}>
                   {idx === 0 ? <div className={styles.tag}>Last Update</div> : ""}
                   <div className={styles.suakitName}>{elem.name}</div>
@@ -53,7 +70,7 @@ class SuakitSection extends React.PureComponent {
                     Download
                   </a>
                   <a href="#" onClick={ev => this.openFeatureDetailItem(ev, idx)} className={styles.featureBtn}>
-                    상세보기
+                    {intl.formatMessage({ id: "DOWNLOAD.SUAKIT.detail" })}
                   </a>
                 </div>
               </div>
@@ -62,6 +79,33 @@ class SuakitSection extends React.PureComponent {
               </div>
             </div>
           ))}
+
+          <div className={styles.pageWrapper}>
+            <a
+              className={`${styles.pageLink} ${startPageNum > 1 ? "" : styles.disabled}`}
+              href="#"
+              onClick={ev => this.openPage(ev, startPageNum - 1)}
+            >
+              &lt;
+            </a>
+            {pageArray.map((elem, idx) => (
+              <a
+                className={`${styles.pageLink} ${elem == curPageNum ? styles.active : ""}`}
+                href="#"
+                onClick={ev => this.openPage(ev, elem)}
+                key={idx}
+              >
+                {elem}
+              </a>
+            ))}
+            <a
+              className={`${styles.pageLink} ${endPageNum < totalPageNum ? "" : styles.disabled}`}
+              href="#"
+              onClick={ev => this.openPage(ev, endPageNum + 1)}
+            >
+              &gt;
+            </a>
+          </div>
         </div>
       </section>
     );
@@ -72,6 +116,7 @@ class SuakitSection extends React.PureComponent {
       const data = res.data;
       this.setState({
         previousSuakit: data,
+        suakitLength: data.length,
       });
     });
   }
@@ -106,6 +151,14 @@ class SuakitSection extends React.PureComponent {
         openFeatureIdx: -1,
       });
     }
+  }
+
+  openPage(ev, pageNum) {
+    ev.preventDefault();
+    this.setState({
+      curPageNum: pageNum,
+      openFeatureIdx: -1,
+    });
   }
 }
 

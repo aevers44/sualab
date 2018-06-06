@@ -177,6 +177,7 @@ export default {
   "DOWNLOAD.AUTH.companyKey": "인증코드",
   "DOWNLOAD.AUTH.authBtn": "인증",
   "DOWNLOAD.AUTH.authFailMessage": "인증에 실패하였습니다.\n 다시 확인해주세요.",
+  "DOWNLOAD.SUAKIT.detail": "상세보기",
 
   "MEDIA.title": `*언론*에 보도된 *SUALAB*을 확인해 보세요`,
   "MEDIA.newsDetail.prev": `이전 글`,

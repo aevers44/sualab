@@ -15,7 +15,7 @@ class DownloadPage extends React.PureComponent {
     super(props);
 
     this.state = {
-      isAuthed: false,
+      isAuthed: true,
       companyName: "",
       companyKey: "",
     };

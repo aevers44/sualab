@@ -15,6 +15,10 @@ $container-width: 1080px;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 50px;
+  &.first {
+    border-top: none;
+    padding-top: 80px;
+  }
 }
 
 .leftWrapper {
@@ -85,4 +89,28 @@ $container-width: 1080px;
   letter-spacing: normal;
   text-decoration: underline;
   color: #202d3e;
+}
+
+.pageWrapper {
+  text-align: center;
+  margin-top: 50px;
+  .pageLink {
+    display: inline-block;
+    padding: 4px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #9aa3b5;
+    &.active {
+      color: #000000;
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+      border-image-source: linear-gradient(94deg, #29dcf9, #1ff2d2);
+      border-image-slice: 1;
+    }
+    &.disabled {
+      visibility: hidden;
+    }
+  }
 }

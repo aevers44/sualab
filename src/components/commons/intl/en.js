@@ -177,6 +177,7 @@ export default {
   "DOWNLOAD.AUTH.companyKey": "Authentication Key",
   "DOWNLOAD.AUTH.authBtn": "Authenticate",
   "DOWNLOAD.AUTH.authFailMessage": "Authentication Failed.\nPlease check your company name and key",
+  "DOWNLOAD.SUAKIT.detail": "Details",
 
   "MEDIA.title": `Check out the *Press Coverage of SUALAB*`,
   "MEDIA.newsDetail.prev": `Previous`,
