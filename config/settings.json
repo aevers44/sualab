@@ -649,6 +649,122 @@
             "readonly": false
         }
     },
+    "brochure": {
+        "slug": "brochure",
+        "table": {
+            "name": "brochure",
+            "pk": "id",
+            "verbose": "Product / Brochure 다운로드 링크 테이블"
+        },
+        "columns": [
+            {
+                "name": "id",
+                "verbose": "id",
+                "control": {
+                    "text": true
+                },
+                "type": "INTEGER",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "name",
+                "verbose": "name",
+                "control": {
+                    "text": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "date",
+                "verbose": "date",
+                "control": {
+                    "text": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "ko_brochure",
+                "verbose": "한글 brochure",
+                "control": {
+                    "file": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "en_brochure",
+                "verbose": "영문 brochure",
+                "control": {
+                    "file": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "image",
+                "verbose": "brochure 이미지",
+                "control": {
+                    "file": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
     "inquiry": {
         "slug": "inquiry",
         "table": {
