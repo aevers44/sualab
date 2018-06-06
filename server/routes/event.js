@@ -13,8 +13,7 @@ router.get("/", (req, res) => {
   const ARTICLE_NUM = 5;
 
   db.all(
-    "SELECT * FROM event ORDER BY date DESC LIMIT ? OFFSET ?",
-    [ARTICLE_NUM, ARTICLE_NUM * (pageNo - 1)],
+    "SELECT * FROM event ORDER BY date DESC LIMIT ? OFFSET ?", [ARTICLE_NUM, ARTICLE_NUM * (pageNo - 1)],
     (err, rows) => {
       if (err) {
         console.error(err);
@@ -51,30 +50,39 @@ router.get("/:id", (req, res) => {
       } else if (!row) {
         res.status(404);
       } else {
-        result = { ...row };
+        result = { ...row
+        };
         // res.json(row);
       }
     });
 
-    db.get("SELECT id, title FROM event WHERE id=(SELECT MAX(id) FROM event WHERE id < ?)", [id], (err, row) => {
+    db.get("SELECT id, title FROM event WHERE id=(SELECT MAX(id) FROM event WHERE date < (SELECT date FROM event WHERE id = ?))", [id], (err, row) => {
       if (err) {
         console.error(err);
         res.status(500);
       } else if (row) {
-        result.prev = { ...row };
+        result.prev = { ...row
+        };
       } else {
-        result.prev = { id: -1, title: "" };
+        result.prev = {
+          id: -1,
+          title: ""
+        };
       }
     });
 
-    db.get("SELECT id, title FROM event WHERE id=(SELECT MIN(id) FROM event WHERE id > ?)", [id], (err, row) => {
+    db.get("SELECT id, title FROM event WHERE id=(SELECT MIN(id) FROM event WHERE date > (SELECT date FROM event WHERE id = ?))", [id], (err, row) => {
       if (err) {
         console.error(err);
         res.status(500);
       } else if (row) {
-        result.next = { ...row };
+        result.next = { ...row
+        };
       } else {
-        result.next = { id: -1, title: "" };
+        result.next = {
+          id: -1,
+          title: ""
+        };
       }
     });
   });

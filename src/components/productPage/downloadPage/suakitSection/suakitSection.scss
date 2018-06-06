@@ -1,9 +1,5 @@
 $container-width: 1080px;
-
-.suakitSection {
-  padding-top: 70px;
-  padding-bottom: 40px;
-
+.previousSection {
   .innerContainer {
     max-width: $container-width;
     margin: 0 auto;
@@ -13,16 +9,20 @@ $container-width: 1080px;
 }
 
 .contentWrapper {
+  border-top: solid 1px #d8dde7;
+  padding-top: 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   margin-bottom: 50px;
+  &.first {
+    border-top: none;
+    padding-top: 80px;
+  }
 }
 
 .leftWrapper {
   flex: 1 0px;
-
   .tag {
     display: inline-block;
     padding: 0 10px;
@@ -33,10 +33,8 @@ $container-width: 1080px;
     letter-spacing: normal;
     text-align: center;
     color: #202d3e;
-
     margin-bottom: 11px;
   }
-
   .suakitName {
     font-size: 36px;
     font-weight: bold;
@@ -46,7 +44,6 @@ $container-width: 1080px;
     color: #202d3e;
     margin-bottom: 5px;
   }
-
   .suakitInfo {
     font-size: 18px;
     font-weight: normal;
@@ -59,22 +56,21 @@ $container-width: 1080px;
 
 .rightWrapper {
   flex: 0 0px;
-
+  text-align: right;
   .downloadBtn {
     display: block;
-
     width: 223px;
     height: 60px;
     line-height: 60px;
     border-radius: 4px;
     background-color: #f5f7fb;
-
     border: solid 1px #d8dde7;
     font-size: 20px;
     font-weight: normal;
     letter-spacing: normal;
     text-align: center;
     color: #202d3e;
+    margin-bottom: 8px;
   }
 }
 
@@ -82,4 +78,39 @@ $container-width: 1080px;
   width: 100%;
   height: 1px;
   border-bottom: solid 1px #e7eaf2;
+}
+
+.featureBtn {
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.78;
+  letter-spacing: normal;
+  text-decoration: underline;
+  color: #202d3e;
+}
+
+.pageWrapper {
+  text-align: center;
+  margin-top: 50px;
+  .pageLink {
+    display: inline-block;
+    padding: 4px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #9aa3b5;
+    &.active {
+      color: #000000;
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+      border-image-source: linear-gradient(94deg, #29dcf9, #1ff2d2);
+      border-image-slice: 1;
+    }
+    &.disabled {
+      visibility: hidden;
+    }
+  }
 }

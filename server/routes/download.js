@@ -38,7 +38,7 @@ router.post("/auth", (req, res) => {
 router.get("/suakit", (req, res) => {
   const db = new sqlite3.Database("./sualabdb.sqlite3");
   let result = {};
-  db.get("SELECT * FROM suakit_release ORDER BY id DESC LIMIT 1", (err, row) => {
+  db.get("SELECT * FROM suakit_release ORDER BY DATE DESC LIMIT 1", (err, row) => {
     if (err) {
       console.error(err);
       res.status(500);
@@ -57,7 +57,7 @@ router.get("/previous-suakit", (req, res) => {
 
   let result = [];
 
-  db.all("SELECT * FROM suakit_release ORDER BY id DESC ", (err, rows) => {
+  db.all("SELECT * FROM suakit_release ORDER BY date DESC ", (err, rows) => {
     if (err) {
       console.error(err);
       res.status(500);

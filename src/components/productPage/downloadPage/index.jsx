@@ -2,11 +2,9 @@ import React from "react";
 import { injectIntl } from "react-intl";
 
 import TitleSection from "../../commons/titleSection";
-import SuakitSection from "./suakitSection";
-import FeatureSection from "./featureSection";
 import DocumentSection from "./documentSection";
 import ReleaseSection from "./releaseSection";
-import PreviousSection from "./previousSection";
+import SuakitSection from "./suakitSection";
 
 import AuthSection from "./authSection";
 
@@ -17,7 +15,7 @@ class DownloadPage extends React.PureComponent {
     super(props);
 
     this.state = {
-      isAuthed: false,
+      isAuthed: true,
       companyName: "",
       companyKey: "",
     };
@@ -42,8 +40,6 @@ class DownloadPage extends React.PureComponent {
         ) : (
           <div>
             <SuakitSection intl={intl} companyName={companyName} companyKey={companyKey} />
-            <FeatureSection intl={intl} />
-            <PreviousSection intl={intl} companyName={companyName} companyKey={companyKey} />
             <DocumentSection intl={intl} />
             <ReleaseSection intl={intl} />
           </div>
