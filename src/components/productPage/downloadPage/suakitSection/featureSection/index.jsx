@@ -10,15 +10,15 @@ class FeatureSection extends React.PureComponent {
     this.state = {
       featureList: [],
     };
-    this.getLatestFeature = this.getLatestFeature.bind(this);
+    this.getPreviousFeature = this.getPreviousFeature.bind(this);
   }
 
   componentDidMount() {
-    this.getLatestFeature();
+    this.getPreviousFeature();
   }
 
   render() {
-    const { intl } = this.props;
+    const { intl, name } = this.props;
     const { featureList } = this.state;
 
     const imageUrl = elem => {
@@ -27,7 +27,6 @@ class FeatureSection extends React.PureComponent {
         en: elem.image_en || elem.image,
       };
     };
-
     return (
       <section className={styles.featureSection}>
         <div className={styles.innerContainer}>
@@ -51,8 +50,10 @@ class FeatureSection extends React.PureComponent {
     );
   }
 
-  getLatestFeature() {
-    axios.get("/api/feature").then(res => {
+  getPreviousFeature() {
+    const { name } = this.props;
+
+    axios.get("/api/feature/" + name).then(res => {
       this.setState({
         featureList: res.data.items,
       });
