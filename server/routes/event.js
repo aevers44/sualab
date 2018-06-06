@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
   const ARTICLE_NUM = 5;
 
   db.all(
-    "SELECT * FROM event ORDER BY id DESC LIMIT ? OFFSET ?",
+    "SELECT * FROM event ORDER BY date DESC LIMIT ? OFFSET ?",
     [ARTICLE_NUM, ARTICLE_NUM * (pageNo - 1)],
     (err, rows) => {
       if (err) {

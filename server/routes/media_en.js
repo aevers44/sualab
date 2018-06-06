@@ -13,8 +13,7 @@ router.get("/", (req, res) => {
   const ARTICLE_NUM = 5;
 
   db.all(
-    "SELECT * FROM media_en ORDER BY id DESC LIMIT ? OFFSET ?",
-    [ARTICLE_NUM, ARTICLE_NUM * (pageNo - 1)],
+    "SELECT * FROM media_en ORDER BY date DESC LIMIT ? OFFSET ?", [ARTICLE_NUM, ARTICLE_NUM * (pageNo - 1)],
     (err, rows) => {
       if (err) {
         console.error(err);
@@ -51,7 +50,8 @@ router.get("/:id", (req, res) => {
       } else if (!row) {
         res.status(404);
       } else {
-        result = { ...row };
+        result = { ...row
+        };
       }
     });
 
@@ -60,9 +60,13 @@ router.get("/:id", (req, res) => {
         console.error(err);
         res.status(500);
       } else if (row) {
-        result.prev = { ...row };
+        result.prev = { ...row
+        };
       } else {
-        result.prev = { id: -1, title: "" };
+        result.prev = {
+          id: -1,
+          title: ""
+        };
       }
     });
 
@@ -71,9 +75,13 @@ router.get("/:id", (req, res) => {
         console.error(err);
         res.status(500);
       } else if (row) {
-        result.next = { ...row };
+        result.next = { ...row
+        };
       } else {
-        result.next = { id: -1, title: "" };
+        result.next = {
+          id: -1,
+          title: ""
+        };
       }
     });
   });
