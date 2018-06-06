@@ -55,7 +55,7 @@ router.get("/:id", (req, res) => {
       }
     });
 
-    db.get("SELECT id, title FROM media WHERE id=(SELECT MAX(id) FROM media WHERE id < ?)", [id], (err, row) => {
+    db.get("SELECT id, title FROM media WHERE id=(SELECT MAX(id) FROM media WHERE date < (SELECT date FROM media WHERE id = ?))", [id], (err, row) => {
       if (err) {
         console.error(err);
         res.status(500);
@@ -70,7 +70,7 @@ router.get("/:id", (req, res) => {
       }
     });
 
-    db.get("SELECT id, title FROM media WHERE id=(SELECT MIN(id) FROM media WHERE id > ?)", [id], (err, row) => {
+    db.get("SELECT id, title FROM media WHERE id=(SELECT MIN(id) FROM media WHERE date > (SELECT date FROM media WHERE id = ?))", [id], (err, row) => {
       if (err) {
         console.error(err);
         res.status(500);
