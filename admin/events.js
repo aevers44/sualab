@@ -13,7 +13,7 @@ AWS.config.update({
   secretAccessKey: "8OL9K/a/rCkxg0RqlpO+FOV8f4iSY98h7paU34A/",
 });
 
-exports.preSave = function(req, res, args, next) {
+exports.preSave = function (req, res, args, next) {
   if (args.name == "media" || args.name == "event" || args.name == "media_en" || args.name == "event_en") {
     var image = args.upload.view[args.name].records[0].columns.image;
 
@@ -31,14 +31,18 @@ exports.preSave = function(req, res, args, next) {
         ContentType: image.type,
       };
 
-      var s3 = new AWS.S3({ params: s3_params });
+      var s3 = new AWS.S3({
+        params: s3_params
+      });
 
       s3
-        .upload({ Body: fs.createReadStream(image.path) })
-        .on("httpUploadProgress", function(evt) {
+        .upload({
+          Body: fs.createReadStream(image.path)
+        })
+        .on("httpUploadProgress", function (evt) {
           console.log(evt);
         })
-        .send(function(err, data) {
+        .send(function (err, data) {
           //S3 File URL
           var url = data.Location;
           var parseUrl = parse(url);
@@ -64,14 +68,18 @@ exports.preSave = function(req, res, args, next) {
         ContentType: image.type,
       };
 
-      var s3 = new AWS.S3({ params: s3_params });
+      var s3 = new AWS.S3({
+        params: s3_params
+      });
 
       s3
-        .upload({ Body: fs.createReadStream(image.path) })
-        .on("httpUploadProgress", function(evt) {
+        .upload({
+          Body: fs.createReadStream(image.path)
+        })
+        .on("httpUploadProgress", function (evt) {
           console.log(evt);
         })
-        .send(function(err, data) {
+        .send(function (err, data) {
           //S3 File URL
           var url = data.Location;
           var parseUrl = parse(url);
@@ -118,16 +126,20 @@ exports.preSave = function(req, res, args, next) {
           ContentType: image.type,
         };
 
-        var s3 = new AWS.S3({ params: s3_params });
+        var s3 = new AWS.S3({
+          params: s3_params
+        });
 
         promiseList.push(
-          new Promise(function(resolve, reject) {
+          new Promise(function (resolve, reject) {
             s3
-              .upload({ Body: fs.createReadStream(image.path) })
-              .on("httpUploadProgress", function(evt) {
+              .upload({
+                Body: fs.createReadStream(image.path)
+              })
+              .on("httpUploadProgress", function (evt) {
                 console.log(evt);
               })
-              .send(function(err, data) {
+              .send(function (err, data) {
                 //S3 File URL
                 var url = data.Location;
                 var parseUrl = parse(url);
@@ -155,16 +167,20 @@ exports.preSave = function(req, res, args, next) {
           ContentType: image_en.type,
         };
 
-        var s3 = new AWS.S3({ params: s3_params });
+        var s3 = new AWS.S3({
+          params: s3_params
+        });
 
         promiseList.push(
-          new Promise(function(resolve, reject) {
+          new Promise(function (resolve, reject) {
             s3
-              .upload({ Body: fs.createReadStream(image_en.path) })
-              .on("httpUploadProgress", function(evt) {
+              .upload({
+                Body: fs.createReadStream(image_en.path)
+              })
+              .on("httpUploadProgress", function (evt) {
                 console.log(evt);
               })
-              .send(function(err, data) {
+              .send(function (err, data) {
                 //S3 File URL
                 var url = data.Location;
                 var parseUrl = parse(url);
@@ -179,9 +195,135 @@ exports.preSave = function(req, res, args, next) {
       }
     }
 
-    Promise.all(promiseList).then(function(vals) {
+    Promise.all(promiseList).then(function (vals) {
       next();
     });
+  } else if (args.name == "brochure") {
+    var image = args.upload.view[args.name].records[0].columns.image;
+    var ko_brochure = args.upload.view[args.name].records[0].columns.ko_brochure;
+    var en_brochure = args.upload.view[args.name].records[0].columns.en_brochure;
+
+    let promiseList = [];
+
+    if (image.name) {
+      var fname = args.data.view[args.name].records[0].columns.image;
+      var record = args.data.view[args.name].records[0].columns;
+
+      var s3_params = {
+        Bucket: "sualab-asset",
+        Key: "upload/brochure/" + image.name,
+        ACL: "public-read",
+        ContentType: image.type,
+      };
+
+      var s3 = new AWS.S3({
+        params: s3_params
+      });
+
+      promiseList.push(
+        new Promise(function (resolve, reject) {
+          s3
+            .upload({
+              Body: fs.createReadStream(image.path)
+            })
+            .on("httpUploadProgress", function (evt) {
+              console.log(evt);
+            })
+            .send(function (err, data) {
+              //S3 File URL
+              var url = data.Location;
+              var parseUrl = parse(url);
+              parseUrl.set("hostname", CLOUDFRONT_LINK);
+              1;
+              // record path
+              record.image = parseUrl.href;
+              resolve(record);
+            });
+        }),
+      );
+    }
+
+    if (ko_brochure.name) {
+      var fname = args.data.view[args.name].records[0].columns.ko_brochure;
+      var record = args.data.view[args.name].records[0].columns;
+
+      var s3_params = {
+        Bucket: "sualab-asset",
+        Key: "upload/brochure/" + ko_brochure.name,
+        ACL: "public-read",
+        ContentType: ko_brochure.type,
+      };
+
+      var s3 = new AWS.S3({
+        params: s3_params
+      });
+
+      promiseList.push(
+        new Promise(function (resolve, reject) {
+          s3
+            .upload({
+              Body: fs.createReadStream(ko_brochure.path)
+            })
+            .on("httpUploadProgress", function (evt) {
+              console.log(evt);
+            })
+            .send(function (err, data) {
+              //S3 File URL
+              var url = data.Location;
+              var parseUrl = parse(url);
+              parseUrl.set("hostname", CLOUDFRONT_LINK);
+              1;
+              // record path
+              record.ko_brochure = parseUrl.href;
+              resolve(record);
+            });
+        }),
+      );
+    }
+
+    if (en_brochure.name) {
+      var fname = args.data.view[args.name].records[0].columns.en_brochure;
+      var record = args.data.view[args.name].records[0].columns;
+
+      var s3_params = {
+        Bucket: "sualab-asset",
+        Key: "upload/brochure/" + en_brochure.name,
+        ACL: "public-read",
+        ContentType: en_brochure.type,
+      };
+
+      var s3 = new AWS.S3({
+        params: s3_params
+      });
+
+      promiseList.push(
+        new Promise(function (resolve, reject) {
+          s3
+            .upload({
+              Body: fs.createReadStream(en_brochure.path)
+            })
+            .on("httpUploadProgress", function (evt) {
+              console.log(evt);
+            })
+            .send(function (err, data) {
+              //S3 File URL
+              var url = data.Location;
+              var parseUrl = parse(url);
+              parseUrl.set("hostname", CLOUDFRONT_LINK);
+              1;
+              // record path
+              record.en_brochure = parseUrl.href;
+              resolve(record);
+            });
+        }),
+      );
+    }
+
+
+    Promise.all(promiseList).then(function (vals) {
+      next();
+    });
+
   } else {
     next();
   }

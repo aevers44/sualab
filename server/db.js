@@ -215,6 +215,15 @@ db.serialize(() => {
       console.error(err);
     },
   );
+
+  db.run(
+    "CREATE TABLE IF NOT EXISTS brochure \
+    (id INTEGER PRIMARY KEY, \
+    name TEXT, date TEXT, \
+    ko_brochure TEXT, en_brochure TEXT, \
+    image TEXT)",
+  );
+
 });
 
 db.close();
