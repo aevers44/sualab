@@ -28,4 +28,7 @@ router.use("/download", downloadRouter);
 import officeRouter from "./office";
 router.use("/office", officeRouter);
 
+import brochureRouter from "./brochure";
+router.use("/brochure", brochureRouter);
+
 export default router;
