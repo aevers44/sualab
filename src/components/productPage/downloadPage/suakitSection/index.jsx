@@ -63,9 +63,11 @@ class SuakitSection extends React.PureComponent {
                   <a
                     href="#"
                     onClick={ev => {
-                      this.getDownloadLink(ev, elem.link);
+                      if (elem.link) {
+                        this.getDownloadLink(ev, elem.link);
+                      }
                     }}
-                    className={styles.downloadBtn}
+                    className={`${styles.downloadBtn} ${elem.link === "" ? styles.disable : ""}`}
                   >
                     Download
                   </a>

@@ -71,6 +71,10 @@ $container-width: 1080px;
     text-align: center;
     color: #202d3e;
     margin-bottom: 8px;
+    &.disable {
+      visibility: hidden;
+      opacity: 0;
+    }
   }
 }
 
