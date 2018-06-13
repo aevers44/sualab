@@ -198,7 +198,7 @@ class Header extends React.Component {
                 className={styles.mobileMenuBtn}
                 onClick={ev => {
                   ev.preventDefault();
-                  this.setState({ mobileMenuOpen: true });
+                  this.setState({ mobileMenuOpen: !mobileMenuOpen });
                 }}
               >
                 <img src="http://placehold.it/40x40" alt="" />
