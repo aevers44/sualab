@@ -1,13 +1,15 @@
 $container-width: 1080px;
-
 .firstSection {
   padding-top: 60px;
   padding-bottom: 50px;
   background-color: #f5f7fb;
-
   .innerContainer {
     max-width: $container-width;
     margin: 0 auto;
+    @media (max-width: 768px) {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
   }
 }
 
@@ -33,7 +35,6 @@ $container-width: 1080px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   .cardItem {
     flex: 1 100%;
     max-width: 347px;
@@ -43,7 +44,6 @@ $container-width: 1080px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     .cardTitle {
       font-size: 20px;
       font-weight: 500;
@@ -53,7 +53,6 @@ $container-width: 1080px;
       color: #ffffff;
       margin-bottom: 20px;
     }
-
     .cardContent {
       font-size: 16px;
       font-weight: 300;
@@ -63,7 +62,6 @@ $container-width: 1080px;
       color: #b5bac5;
       white-space: pre-wrap;
     }
-
     &:nth-child(1) {
       background-image: url(https://d2ivzy5c3eic08.cloudfront.net/careerPage/philosophy-1.jpg);
     }
@@ -72,6 +70,13 @@ $container-width: 1080px;
     }
     &:nth-child(3) {
       background-image: url(https://d2ivzy5c3eic08.cloudfront.net/careerPage/philosophy-3.jpg);
+    }
+  }
+  @media (max-width: 768px) {
+    flex-flow: column wrap;
+    .cardItem {
+      margin-bottom: 16px;
+      width: 100%;
     }
   }
 }

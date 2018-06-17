@@ -1,13 +1,19 @@
 $container-width: 1080px;
-
 .thirdSection {
   padding-top: 60px;
   padding-bottom: 160px;
   background-color: #202d3e;
-
   .innerContainer {
     max-width: $container-width;
     margin: 0 auto;
+  }
+  @media (max-width: 768px) {
+    padding-top: 55px;
+    padding-bottom: 51px;
+    .innerContainer {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
   }
 }
 
@@ -33,27 +39,36 @@ $container-width: 1080px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   .contentItem {
     position: relative;
-
     flex: 1 100%;
     max-width: 255px;
     height: 131px;
     border-radius: 8px;
     background-color: #34495e;
     border: solid 1px #5f7591;
-
     font-family: NotoSansCJKkr;
     font-size: 19px;
     font-weight: normal;
     letter-spacing: normal;
     text-align: center;
     color: #ffffff;
-
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  @media (max-width: 768px) {
+    flex-direction: column;
+    .contentItem {
+      max-width: initial;
+      width: 100%;
+      height: 80px;
+      margin-bottom: 16px;
+      &:nth-child(3) {
+        border: solid 1px red;
+        margin-bottom: 87px;
+      }
+    }
   }
 }
 
@@ -67,9 +82,12 @@ $container-width: 1080px;
   line-height: normal;
   letter-spacing: -0.3px;
   text-align: left;
-  color: #b5bac5;
-
+  color: #f5f9fb;
   span {
     font-size: 15px;
+  }
+  @media (max-width: 768px) {
+    top: 90px;
+    font-size: 12px !important;
   }
 }
