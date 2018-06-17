@@ -1,11 +1,16 @@
 $container-width: 1080px;
-
 .recruitPage {
   .innerContainer {
     max-width: $container-width;
     margin: 0 auto;
     padding-top: 100px;
     padding-bottom: 100px;
+    @media (max-width: 768px) {
+      padding-top: 40px;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-bottom: 40px;
+    }
   }
 }
 
@@ -25,11 +30,18 @@ $container-width: 1080px;
   text-align: center;
   color: #0c1020;
   margin-bottom: 45px;
+  @media (max-width: 768px) {
+    margin-bottom: 24px;
+  }
 }
 
 .rndGroupWrapper {
   padding-bottom: 200px;
   margin-bottom: 80px;
+  @media (max-width: 768px) {
+    padding-bottom: 0;
+    margin-bottom: 60px;
+  }
 }
 
 .stepCircleWrapper {
@@ -39,13 +51,18 @@ $container-width: 1080px;
   position: relative;
   padding-top: 30px;
   padding-bottom: 30px;
-
   .bgLine {
     position: absolute;
     left: 0;
     right: 0;
     height: 1px;
     border-bottom: dashed 2px #e7eaf2;
+  }
+  @media (max-width: 768px) {
+    flex-direction: column;
+    .bgLine {
+      display: none;
+    }
   }
 }
 
@@ -67,7 +84,6 @@ $container-width: 1080px;
     color: #9aa3b5;
     margin-bottom: 4px;
   }
-
   .text {
     font-size: 20px;
     font-weight: 500;
@@ -76,7 +92,6 @@ $container-width: 1080px;
     color: #34495e;
     text-align: center;
   }
-
   &.step2 {
     z-index: 0;
     width: 136px;
@@ -85,28 +100,44 @@ $container-width: 1080px;
     margin-left: -5px;
     margin-right: -5px;
   }
-
-  &.step4 {
-    z-index: 2;
-    width: 245px;
-    height: 245px;
-    background-color: #5f7591;
-    margin-left: -15px;
-    margin-right: -15px;
-    .step,
-    .text {
-      color: #ffffff;
+  @media (min-width: 768px) {
+    &.step4 {
+      z-index: 2;
+      width: 245px;
+      height: 245px;
+      background-color: #5f7591;
+      margin-left: -15px;
+      margin-right: -15px;
+      .step,
+      .text {
+        color: #ffffff;
+      }
+    }
+    &.step6 {
+      z-index: 2;
+      width: 184px;
+      height: 184px;
+      background-image: linear-gradient(137deg, #29dcf9, #1ff2d2);
+      margin-left: -10px;
+      .step {
+        color: #34495e;
+      }
     }
   }
-
-  &.step6 {
-    z-index: 2;
-    width: 184px;
-    height: 184px;
-    background-image: linear-gradient(137deg, #29dcf9, #1ff2d2);
-    margin-left: -10px;
+  @media (max-width: 768px) {
+    width: 100% !important;
+    height: initial !important;
+    background: initial !important;
+    border-radius: initial;
+    flex-direction: row;
+    justify-content: flex-start;
+    border-top: solid 1px #d8dde7;
+    padding: 20px;
     .step {
-      color: #34495e;
+      margin-right: 20px;
+    }
+    &:last-child {
+      border-bottom: solid 1px #d8dde7;
     }
   }
 }
@@ -120,12 +151,10 @@ $container-width: 1080px;
   color: #34495e;
   padding-left: 80px;
   white-space: pre-wrap;
-
   span {
     font-weight: bold;
     text-decoration: underline;
   }
-
   &:before {
     content: "";
     width: 36px;
@@ -134,16 +163,17 @@ $container-width: 1080px;
     border-bottom: solid 1px #34495e;
     margin-bottom: 13px;
   }
+  @media (max-width: 768px) {
+    padding-left: 0;
+  }
 }
 
 .step4 {
   position: relative;
-
   .infoTextBox2 {
     position: absolute;
     top: 160px;
     left: 65px;
-
     white-space: pre;
     overflow: hidden;
     font-size: 16px;
@@ -151,11 +181,9 @@ $container-width: 1080px;
     line-height: normal;
     letter-spacing: normal;
     color: #34495e;
-
     span {
       color: #f54b5e;
     }
-
     &:before {
       content: "";
       display: block;
@@ -164,5 +192,20 @@ $container-width: 1080px;
       border-left: solid 1px #7e92ad;
       margin-bottom: 8px;
     }
+    @media (max-width: 768px) {
+      left: 0;
+      top: 70px;
+      font-size: 13px;
+      white-space: pre-wrap;
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .mobilePadding {
+    margin-bottom: 80px;
   }
 }
