@@ -1,9 +1,15 @@
 import React from "react";
 import { BrowserRouter, Route, Link, Switch, Redirect } from "react-router-dom";
+import ScrollToTop from "../components/commons/scrollToTop";
 
 import MainPage from "./mainPage";
 import { AboutUsPage, PeoplePage } from "./companyPage";
-import { SuakitPage, SupportPage, HowToPage, DownloadPage } from "./productPage";
+import {
+  SuakitPage,
+  SupportPage,
+  HowToPage,
+  DownloadPage,
+} from "./productPage";
 import { MediaPage, NewsDetail, EventPage, EventDetail } from "./newsPage";
 import { RecruitPage, PhilosophyPage } from "./careerPage";
 import { OfficePage, NetworkPage } from "./contactPage";
@@ -18,7 +24,7 @@ class App extends React.PureComponent {
   render() {
     return (
       <BrowserRouter onUpdate={() => window.scrollTo(0, 0)}>
-        <div>
+        <ScrollToTop>
           <Header />
 
           <Switch>
@@ -45,14 +51,18 @@ class App extends React.PureComponent {
             <Redirect from="/career" to="/career/philosophy" />
 
             <Route exact path="/contact/office" component={OfficePage} />
-            <Route exact path="/contact/global-sales-network" component={NetworkPage} />
+            <Route
+              exact
+              path="/contact/global-sales-network"
+              component={NetworkPage}
+            />
             <Redirect from="/contact" to="/contact/office" />
 
             <Redirect from="*" to="/" />
           </Switch>
 
           <Footer />
-        </div>
+        </ScrollToTop>
       </BrowserRouter>
     );
   }
