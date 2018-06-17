@@ -8,6 +8,7 @@ import { Link, Route } from "react-router-dom";
 
 import Navbar from "./navbar";
 import styles from "./header.scss";
+import Icon from "../icons";
 
 class Header extends React.Component {
   constructor(props) {
@@ -16,6 +17,7 @@ class Header extends React.Component {
     this.state = {
       curScrollTop: 0,
       isVisible: true,
+      mobileMenuOpen: false,
     };
 
     this.handleScroll = this.handleScroll.bind(this);
@@ -60,58 +62,184 @@ class Header extends React.Component {
 
     const isVisible = this.state.isVisible || this.state.curScrollTop <= 80;
 
+    const { mobileMenuOpen } = this.state;
+
     return (
       <div>
         <Helmet>
           <meta property="og:title" content="SUALAB" />
           <meta property="og:url" content="http://sualab.com/" />
-          <meta property="og:description" content={props.intl.formatMessage({ id: "META.description" })} />
+          <meta
+            property="og:description"
+            content={props.intl.formatMessage({ id: "META.description" })}
+          />
         </Helmet>
-        <header className={`${styles.header} ${isVisible ? styles.visible : ""}`}>
+        <header
+          className={`${styles.header} ${isVisible ? styles.visible : ""}`}
+        >
           <div className={styles.innerContainer}>
             <div className={styles.logoImage}>
               <Link to="/">
-                <img src="https://d2ivzy5c3eic08.cloudfront.net/mainPage/sualab-logo@2x.png" alt="" />
+                <img
+                  src="https://d2ivzy5c3eic08.cloudfront.net/mainPage/sualab-logo@2x.png"
+                  alt=""
+                />
               </Link>
             </div>
 
-            <div className={styles.menuWrapper}>
-              <Link className={`${styles.menuItem} ${curPath === "company" ? styles.active : ""}`} to="/company">
+            <div
+              onClick={ev => this.setState({ mobileMenuOpen: false })}
+              className={`${styles.menuWrapper} ${
+                mobileMenuOpen ? "" : styles.hidden
+              }`}
+            >
+              <Link
+                className={`${styles.menuItem} ${
+                  curPath === "company" ? styles.active : ""
+                }`}
+                to="/company"
+              >
                 Company
+                {curPath === "company" ? (
+                  <div className={styles.mobileMenu}>
+                    <Route path="/:page/:subpage" component={Navbar} />
+                  </div>
+                ) : (
+                  ""
+                )}
               </Link>
-              <Link className={`${styles.menuItem} ${curPath === "product" ? styles.active : ""}`} to="/product">
+              <Link
+                className={`${styles.menuItem} ${
+                  curPath === "product" ? styles.active : ""
+                }`}
+                to="/product"
+              >
                 Product
+                {curPath === "product" ? (
+                  <div className={styles.mobileMenu}>
+                    <Route path="/:page/:subpage" component={Navbar} />
+                  </div>
+                ) : (
+                  ""
+                )}
               </Link>
-              <Link className={`${styles.menuItem} ${curPath === "news" ? styles.active : ""}`} to="/news">
+              <Link
+                className={`${styles.menuItem} ${
+                  curPath === "news" ? styles.active : ""
+                }`}
+                to="/news"
+              >
                 News
+                {curPath === "news" ? (
+                  <div className={styles.mobileMenu}>
+                    <Route path="/:page/:subpage" component={Navbar} />
+                  </div>
+                ) : (
+                  ""
+                )}
               </Link>
-              <Link className={`${styles.menuItem} ${curPath === "career" ? styles.active : ""}`} to="/career">
+              <Link
+                className={`${styles.menuItem} ${
+                  curPath === "career" ? styles.active : ""
+                }`}
+                to="/career"
+              >
                 Career
+                {curPath === "career" ? (
+                  <div className={styles.mobileMenu}>
+                    <Route path="/:page/:subpage" component={Navbar} />
+                  </div>
+                ) : (
+                  ""
+                )}
               </Link>
-              <a className={styles.menuItem} href="http://research.sualab.com/" target="_blank">
+              <a
+                className={styles.menuItem}
+                href="http://research.sualab.com/"
+                target="_blank"
+              >
                 Blog
               </a>
-              <Link className={`${styles.menuItem} ${curPath === "contact" ? styles.active : ""}`} to="/contact">
+              <Link
+                className={`${styles.menuItem} ${
+                  curPath === "contact" ? styles.active : ""
+                }`}
+                to="/contact"
+              >
                 Contact
+                {curPath === "contact" ? (
+                  <div className={styles.mobileMenu}>
+                    <Route path="/:page/:subpage" component={Navbar} />
+                  </div>
+                ) : (
+                  ""
+                )}
               </Link>
-              <Link className={styles.menuItem} to={localeBtnPath} onClick={changeLocale}>
-                <span className={`${locale === "ko" ? styles.activeLocale : ""}`}>KO </span>
+              <Link
+                className={styles.menuItem}
+                to={localeBtnPath}
+                onClick={changeLocale}
+              >
+                <span
+                  className={`${locale === "ko" ? styles.activeLocale : ""}`}
+                >
+                  KO{" "}
+                </span>
                 |
-                <span className={`${locale === "en" ? styles.activeLocale : ""}`}> EN</span>
+                <span
+                  className={`${locale === "en" ? styles.activeLocale : ""}`}
+                >
+                  {" "}
+                  EN
+                </span>
               </Link>
+            </div>
+
+            <div className={styles.mobileMenu}>
+              <span
+                className={styles.mobileMenuBtn}
+                onClick={ev => {
+                  ev.preventDefault();
+                  this.setState({ mobileMenuOpen: !mobileMenuOpen });
+                }}
+              >
+                {mobileMenuOpen ? (
+                  <Icon icon="CANCEL_ICON" />
+                ) : (
+                  <Icon icon="MENU_ICON" />
+                )}
+              </span>
             </div>
           </div>
 
-          <Route path="/:page/:subpage" component={Navbar} />
+          <div className={styles.fullsizeMenu}>
+            <Route path="/:page/:subpage" component={Navbar} />
+          </div>
         </header>
 
-        <div style={{ paddingTop: paddingHeightForBlank, backgroundColor: "#202d3e" }} />
+        {mobileMenuOpen ? (
+          <div
+            onClick={ev => this.setState({ mobileMenuOpen: false })}
+            className={styles.menuOverlay}
+          />
+        ) : (
+          ""
+        )}
+
+        <div
+          className={styles.paddingForTitleSection}
+          style={{
+            paddingTop: paddingHeightForBlank,
+          }}
+        />
       </div>
     );
   }
 
   handleScroll() {
-    const top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+    const top =
+      (document.documentElement && document.documentElement.scrollTop) ||
+      document.body.scrollTop;
     this.setState({ curScrollTop: top });
   }
 

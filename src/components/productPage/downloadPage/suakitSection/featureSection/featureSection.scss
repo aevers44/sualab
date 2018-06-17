@@ -51,4 +51,10 @@ $container-width: 1080px;
     color: #34495e;
     white-space: pre-wrap;
   }
+  @media (max-width: 768px) {
+    .featureImage {
+      height: 160px;
+      background-position: center center;
+    }
+  }
 }

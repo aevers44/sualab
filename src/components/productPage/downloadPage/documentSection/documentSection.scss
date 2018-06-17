@@ -1,13 +1,15 @@
 $container-width: 1080px;
-
 .documentSection {
   padding-top: 70px;
-
   .innerContainer {
     max-width: $container-width;
     margin: 0 auto;
     padding-left: 90px;
     padding-right: 90px;
+    @media (max-width: 768px) {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
   }
 }
 
@@ -25,13 +27,11 @@ $container-width: 1080px;
   letter-spacing: normal;
   text-align: left;
   color: #0c1020;
-
   margin-bottom: 35px;
 }
 
 .documentTable {
   margin-bottom: 40px;
-
   .tableTitle {
     font-size: 18px;
     font-weight: normal;
@@ -42,13 +42,11 @@ $container-width: 1080px;
     border-bottom: solid 1px #e7eaf2;
     padding-bottom: 12px;
   }
-
   .tableItem {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 6px 0;
-
     .version,
     .documentName,
     .downBtn {
@@ -58,18 +56,22 @@ $container-width: 1080px;
       letter-spacing: normal;
       text-align: center;
       color: #16212f;
+      @media (max-width: 768px) {
+        font-size: 14px;
+      }
     }
-
     .version {
       flex: 2 0px;
     }
-
     .documentName {
       flex: 6 0px;
       overflow: hidden;
       text-align: left;
+      @media (max-width: 768px) {
+        word-break: break-all;
+        margin-right: 8px;
+      }
     }
-
     .downBtn {
       flex: 2 0px;
       text-decoration: underline;

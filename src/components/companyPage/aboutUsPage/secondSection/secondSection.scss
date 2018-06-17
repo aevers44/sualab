@@ -1,13 +1,15 @@
 $container-width: 1080px;
-
 .secondSection {
   padding-top: 60px;
   padding-bottom: 60px;
-
   .innerContainer {
     max-width: $container-width;
     margin: 0 auto;
     text-align: center;
+    @media (max-width: 768px) {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
   }
 }
 
@@ -24,6 +26,7 @@ $container-width: 1080px;
   line-height: normal;
   letter-spacing: normal;
   color: #0c1020;
+  margin-bottom: 60px;
 }
 
 .subTitle {
@@ -32,9 +35,7 @@ $container-width: 1080px;
   line-height: normal;
   letter-spacing: normal;
   color: #202d3e;
-  margin-top: 60px;
   margin-bottom: 14px;
-
   .mint {
     color: #1ae8c9;
   }
@@ -47,4 +48,8 @@ $container-width: 1080px;
   letter-spacing: normal;
   text-align: center;
   white-space: pre-wrap;
+  margin-bottom: 24px;
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 }

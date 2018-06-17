@@ -30,7 +30,11 @@ class TableItem extends React.PureComponent {
               ? intl.formatMessage({ id: "DOWNLOAD.RELEASE.detail" })
               : intl.formatMessage({ id: "DOWNLOAD.RELEASE.fold" })}
           </a>
-          {isOpen ? printContent : ""}
+          {isOpen ? (
+            <div className={styles.releaseContentBox}>{printContent} </div>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     );

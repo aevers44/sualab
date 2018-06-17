@@ -1,16 +1,21 @@
 $container-width: 1080px;
-
 .navbar {
   background-color: #16212f;
-
   .innerContainer {
     max-width: $container-width;
     margin: 0 auto;
-
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
+  }
+  @media (max-width: 768px) {
+    padding: 8px;
+    background-color: initial;
+    .innerContainer {
+      height: auto;
+      justify-content: flex-start;
+    }
   }
 }
 
@@ -24,13 +29,19 @@ $container-width: 1080px;
     line-height: normal;
     letter-spacing: normal;
     color: #5f7591;
-
     &.active {
       color: #ffffff;
     }
     &:hover {
       color: #ffffff;
       transition: 0.2s ease-in-out;
+    }
+  }
+  @media (max-width: 768px) {
+    margin-right: 0 !important;
+    .linkItem {
+      padding: 4px 0;
+      display: block;
     }
   }
 }

@@ -1,11 +1,14 @@
 $container-width: 1080px;
-
 .sixthSection {
   .innerContainer {
     max-width: $container-width;
     margin: 0 auto;
     padding-top: 48px;
     padding-bottom: 60px;
+    @media (max-width: 768px) {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
   }
 }
 
@@ -29,12 +32,10 @@ $container-width: 1080px;
   display: flex;
   justify-content: center;
   align-items: center;
-
   img {
     height: 280px;
     margin-right: 80px;
   }
-
   .buttonWrapper {
     .downloadBtn {
       display: block;
@@ -48,15 +49,19 @@ $container-width: 1080px;
       letter-spacing: normal;
       text-align: center;
       color: #5f7591;
-
       &:hover {
         background-color: #f5f7fb;
         transition: 0.3s ease-in-out;
       }
-
       &:nth-child(even) {
         margin: 10px 0;
       }
+    }
+  }
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    img {
+      margin-right: 0;
     }
   }
 }

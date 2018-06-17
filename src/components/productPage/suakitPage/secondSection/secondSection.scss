@@ -1,13 +1,17 @@
 $container-width: 1080px;
-
 .secondSection {
   background-color: #16212f;
-
   .innerContainer {
     max-width: $container-width;
     margin: 0 auto;
     padding-top: 70px;
     padding-bottom: 80px;
+    @media (max-width: 768px) {
+      padding-top: 50px;
+      padding-bottom: 50px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
   }
 }
 
@@ -32,11 +36,9 @@ $container-width: 1080px;
 .contentWrapper {
   display: flex;
   margin-bottom: 30px;
-
   .contentItem {
     flex: 1 auto;
     text-align: center;
-
     .imgWrapper {
       img {
         border-radius: 50%;
@@ -49,7 +51,6 @@ $container-width: 1080px;
         }
       }
     }
-
     .imgCaption {
       font-size: 18px;
       font-weight: 300;
@@ -58,6 +59,9 @@ $container-width: 1080px;
       text-align: center;
       color: #fff;
     }
+  }
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
   }
 }
 

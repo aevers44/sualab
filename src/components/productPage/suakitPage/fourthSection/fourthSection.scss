@@ -1,5 +1,4 @@
 $container-width: 1080px;
-
 .fourthSection {
   word-break: keep-all;
   .innerContainer {
@@ -7,6 +6,10 @@ $container-width: 1080px;
     margin: 0 auto;
     padding-top: 48px;
     padding-bottom: 60px;
+    @media (max-width: 768px) {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
   }
 }
 
@@ -35,13 +38,11 @@ $container-width: 1080px;
   flex: 1 auto;
   max-width: 33%;
   padding: 10px;
-
   .imgWrapper {
     img {
       height: 93px;
     }
   }
-
   .itemTitle {
     font-size: 20px;
     font-weight: 500;
@@ -57,5 +58,8 @@ $container-width: 1080px;
     letter-spacing: normal;
     color: #666d7c;
     white-space: pre-wrap;
+  }
+  @media (max-width: 768px) {
+    max-width: 50%;
   }
 }

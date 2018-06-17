@@ -1,10 +1,12 @@
 $container-width: 1080px;
-
 .supportPage {
   .innerContainer {
     max-width: $container-width;
     margin: 0 auto;
     padding: 90px;
+    @media (max-width: 768px) {
+      padding: 60px 10px;
+    }
   }
 }
 
@@ -24,18 +26,23 @@ $container-width: 1080px;
   text-align: center;
   color: #0c1020;
   margin-bottom: 60px;
+  @media (max-width: 768px) {
+    margin-bottom: 36px;
+  }
 }
 
 .formWrapper {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 20px;
-  .inputWrapper {
-    &:nth-child(odd) {
-      padding-right: 10px;
-    }
-    &:nth-child(even) {
-      padding-left: 10px;
+  @media (min-width: 768px) {
+    .inputWrapper {
+      &:nth-child(odd) {
+        padding-right: 10px;
+      }
+      &:nth-child(even) {
+        padding-left: 10px;
+      }
     }
   }
 }
@@ -64,7 +71,6 @@ $container-width: 1080px;
   border-radius: 4px;
   background-color: #ffffff;
   border: solid 1px #bbc2d0;
-
   font-size: 19px;
   font-weight: normal;
   line-height: normal;
@@ -74,7 +80,6 @@ $container-width: 1080px;
 
 .selectWrapper {
   margin-bottom: 22px;
-
   &.reasonSelect {
     text-align: center;
     .selectForm {
@@ -90,7 +95,6 @@ $container-width: 1080px;
   border-radius: 4px;
   background-color: #ffffff;
   border: solid 1px #bbc2d0;
-
   font-size: 16px;
   font-weight: normal;
   line-height: normal;
@@ -108,15 +112,17 @@ $container-width: 1080px;
   color: #666d7c;
   margin-bottom: 90px;
   white-space: pre-wrap;
-
   a {
     color: #1ae8c9;
+  }
+  @media (max-width: 768px) {
+    margin-bottom: 56px;
   }
 }
 
 .radioBtn {
   display: none;
-  & + label {
+  &+label {
     cursor: pointer;
     display: inline-block;
     margin-right: 16px;
@@ -130,7 +136,7 @@ $container-width: 1080px;
     text-align: center;
     color: #9aa3b5;
   }
-  &:checked + label {
+  &:checked+label {
     color: #1ae8c9;
     border-color: #1ae8c9;
   }
@@ -140,6 +146,10 @@ $container-width: 1080px;
   padding-left: 90px;
   padding-right: 90px;
   margin-bottom: 30px;
+  @media (max-width: 768px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .textWrapper {
@@ -167,15 +177,15 @@ $container-width: 1080px;
     letter-spacing: normal;
     color: #5f7591;
     margin-bottom: 11px;
-
     input {
       margin-right: 16px;
+      vertical-align: middle;
     }
     label {
       text-align: left;
       display: inline-block;
       min-width: 310px;
-
+      vertical-align: middle;
       .modalBtn {
         margin-left: 10px;
         color: #34495e;
@@ -183,11 +193,17 @@ $container-width: 1080px;
         cursor: help;
       }
     }
+    @media (max-width: 768px) {
+      label {
+        min-width: initial;
+        width: calc(100% - 40px);
+      }
+    }
   }
-
   .submitBtn {
     margin-top: 30px;
-    width: 347px;
+    max-width: 347px;
+    width: 100%;
     height: 69px;
     line-height: 69px;
     border-radius: 4px;
@@ -198,7 +214,6 @@ $container-width: 1080px;
     letter-spacing: normal;
     text-align: center;
     color: #5f7591;
-
     &.active {
       cursor: pointer;
       border-color: #34495e;
@@ -233,6 +248,9 @@ $container-width: 1080px;
   background-color: #ffffff;
   overflow: auto;
   padding: 50px 50px 30px 50px;
+  @media (max-width: 768px) {
+    padding: 24px 20px 16px 20px;
+  }
 }
 
 .modalContent {
@@ -243,23 +261,19 @@ $container-width: 1080px;
   text-align: left;
   color: #16212f;
   margin-bottom: 50px;
-
   white-space: pre-wrap;
   max-height: 70vh;
   overflow-y: auto;
-
   h1 {
     font-size: 24px;
     font-weight: bold;
     margin-top: 0;
   }
-
   .lead {
     display: block;
     font-size: 16px;
     font-weight: bold;
   }
-
   a {
     color: #1ae8c9;
   }
@@ -269,14 +283,12 @@ $container-width: 1080px;
   cursor: pointer;
   display: block;
   margin: 0 auto;
-
   width: 183px;
   height: 57px;
   line-height: 57px;
   border-radius: 4px;
   background-color: #ffffff;
   border: solid 1px #d8dde7;
-
   font-size: 18px;
   font-weight: normal;
   letter-spacing: normal;

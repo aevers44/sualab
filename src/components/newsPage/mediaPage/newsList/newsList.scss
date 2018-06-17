@@ -1,10 +1,12 @@
 $container-width: 1080px;
-
 .newsList {
   .innerContainer {
     max-width: $container-width;
     margin: 0 auto;
     padding: 80px 90px;
+    @media (max-width: 768px) {
+      padding: 24px 10px 90px 10px;
+    }
   }
 }
 
@@ -16,27 +18,22 @@ $container-width: 1080px;
   justify-content: center;
   align-items: center;
   text-decoration: none;
-
   &:hover {
     background-color: #e7eaf2;
     transition: 0.2s, ease-in-out;
   }
-
   .imgWrapper {
     flex: 1 0px;
     max-width: 220px;
     height: 220px;
-
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center top;
   }
-
   .contentWrapper {
     flex: 1 0px;
     padding-left: 40px;
     padding-right: 40px;
-
     .title {
       font-size: 24px;
       font-weight: 500;
@@ -45,7 +42,6 @@ $container-width: 1080px;
       color: #202d3e;
       margin-bottom: 6px;
     }
-
     .date {
       font-size: 14px;
       font-weight: normal;
@@ -54,7 +50,6 @@ $container-width: 1080px;
       color: #202d3e;
       margin-bottom: 18px;
     }
-
     .content {
       font-size: 15px;
       font-weight: normal;
@@ -63,12 +58,26 @@ $container-width: 1080px;
       color: #5f7591;
     }
   }
+  @media (max-width: 768px) {
+    flex-direction: column;
+    height: auto;
+    padding-bottom: 24px;
+    .imgWrapper {
+      flex: 1 100%;
+      width: 100%;
+      max-width: initial;
+      margin-bottom: 16px;
+    }
+    .contentWrapper {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  }
 }
 
 .pageWrapper {
   text-align: center;
   margin-top: 50px;
-
   .pageLink {
     display: inline-block;
     padding: 4px;
@@ -77,7 +86,6 @@ $container-width: 1080px;
     line-height: normal;
     letter-spacing: normal;
     color: #9aa3b5;
-
     &.active {
       color: #000000;
       border-bottom-style: solid;
@@ -85,9 +93,11 @@ $container-width: 1080px;
       border-image-source: linear-gradient(94deg, #29dcf9, #1ff2d2);
       border-image-slice: 1;
     }
-
     &.disabled {
       visibility: hidden;
     }
+  }
+  @media (max-width: 768px) {
+    margin-top: 10px;
   }
 }
