@@ -47,7 +47,7 @@ $mobile-header-height: 75px;
 }
 
 .menuWrapper {
-  transition: visibility 0s linear, opacity .25s ease;
+  transition: visibility 0s linear 0s, opacity .20s ease-in-out;
   .menuItem {
     text-decoration: none;
     font-size: 14px;
@@ -72,7 +72,7 @@ $mobile-header-height: 75px;
   }
   &.hidden {
     @media (max-width: 768px) {
-      transition: visibility .25s linear, opacity .25s ease;
+      transition: visibility 0s linear .2s, opacity .20s ease-in-out;
       visibility: hidden;
       opacity: 0;
     }
@@ -107,10 +107,8 @@ $mobile-header-height: 75px;
 
 .mobileMenu {
   display: none;
-  visibility: hidden;
   @media (max-width: 768px) {
     display: initial;
-    visibility: initial;
   }
 }
 
