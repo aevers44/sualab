@@ -74,6 +74,9 @@ $container-width: 1080px;
 
 .contentWrapper {
   float: left;
+  @media (max-width: 768px) {
+    float: none;
+  }
 }
 
 .imageWrapper {
@@ -84,6 +87,8 @@ $container-width: 1080px;
     width: 100%;
   }
   @media (max-width: 768px) {
+    float: none;
     width: 100%;
+    max-width: 100%;
   }
 }

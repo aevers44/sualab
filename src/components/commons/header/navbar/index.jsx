@@ -20,24 +20,43 @@ const marginList = {
 
 const makeLinks = (curPath, subPath, intl) => {
   const linkItem = {
-    company: [{ name: "About Us", link: "about-us" }, { name: "People", link: "people" }],
+    company: [
+      { name: "About Us", link: "about-us" },
+      { name: "People", link: "people" },
+    ],
     product: [
       { name: "SuaKIT", link: "suakit" },
       { name: "How to Apply SuaKIT", link: "how-to-apply" },
-      { name: intl.formatMessage({ id: "NAVBAR.product.support" }), link: "support" },
+      {
+        name: intl.formatMessage({ id: "NAVBAR.product.support" }),
+        link: "support",
+      },
       { name: "Download", link: "download" },
     ],
-    news: [{ name: "SUALAB in Media", link: "media" }, { name: "Events", link: "event" }],
+    news: [
+      { name: "SUALAB in Media", link: "media" },
+      { name: "Events", link: "event" },
+    ],
     career: [
-      { name: intl.formatMessage({ id: "NAVBAR.career.philosophy" }), link: "philosophy" },
-      { name: intl.formatMessage({ id: "NAVBAR.career.recruit" }), link: "recruit" },
+      {
+        name: intl.formatMessage({ id: "NAVBAR.career.philosophy" }),
+        link: "philosophy",
+      },
+      {
+        name: intl.formatMessage({ id: "NAVBAR.career.recruit" }),
+        link: "recruit",
+      },
       {
         name: intl.formatMessage({ id: "NAVBAR.career.open_position" }),
-        link: "https://sualab.shallwe.kr/_client/base/recruit/apply/recruit_list.asp",
+        link:
+          "https://sualab.shallwe.kr/_client/base/recruit/apply/recruit_list.asp",
         type: "href",
       },
     ],
-    contact: [{ name: "Office", link: "office" }, { name: "Global Sales Networks", link: "global-sales-network" }],
+    contact: [
+      { name: "Office", link: "office" },
+      { name: "Global Sales Networks", link: "global-sales-network" },
+    ],
   };
 
   let result = [];
@@ -47,13 +66,24 @@ const makeLinks = (curPath, subPath, intl) => {
 
     result.push(
       item.type === "href" ? (
-        <a key={item.link} href={item.link} target="_blank" className={styles.linkItem}>
+        <a
+          onClick={ev => {
+            ev.preventDefault();
+            window.open(item.link, "_blank");
+          }}
+          key={item.link}
+          href={item.link}
+          target="_blank"
+          className={styles.linkItem}
+        >
           {item.name}
         </a>
       ) : (
         <Link
           key={item.link}
-          className={`${styles.linkItem} ${subPath === item.link ? styles.active : ""}`}
+          className={`${styles.linkItem} ${
+            subPath === item.link ? styles.active : ""
+          }`}
           to={`/${curPath}/${item.link}`}
         >
           {item.name}
@@ -72,7 +102,10 @@ const Navbar = ({ match, intl }) => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.innerContainer}>
-        <div className={styles.linkWrapper} style={{ marginRight: `${marginList[intl.locale][curPath]}px` }}>
+        <div
+          className={styles.linkWrapper}
+          style={{ marginRight: `${marginList[intl.locale][curPath]}px` }}
+        >
           {linkItems}
         </div>
       </div>
