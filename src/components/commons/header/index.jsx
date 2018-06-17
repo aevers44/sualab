@@ -8,6 +8,7 @@ import { Link, Route } from "react-router-dom";
 
 import Navbar from "./navbar";
 import styles from "./header.scss";
+import Icon from "../icons";
 
 class Header extends React.Component {
   constructor(props) {
@@ -87,6 +88,7 @@ class Header extends React.Component {
             </div>
 
             <div
+              onClick={ev => this.setState({ mobileMenuOpen: false })}
               className={`${styles.menuWrapper} ${
                 mobileMenuOpen ? "" : styles.hidden
               }`}
@@ -201,7 +203,11 @@ class Header extends React.Component {
                   this.setState({ mobileMenuOpen: !mobileMenuOpen });
                 }}
               >
-                <img src="http://placehold.it/40x40" alt="" />
+                {mobileMenuOpen ? (
+                  <Icon icon="CANCEL_ICON" />
+                ) : (
+                  <Icon icon="MENU_ICON" />
+                )}
               </span>
             </div>
           </div>
