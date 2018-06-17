@@ -1,5 +1,4 @@
 $container-width: 1080px;
-
 .fifthSection {
   background-color: #f5f9fb;
   .innerContainer {
@@ -7,6 +6,10 @@ $container-width: 1080px;
     margin: 0 auto;
     padding-top: 48px;
     padding-bottom: 40px;
+    @media (max-width: 768px) {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
   }
 }
 
@@ -38,7 +41,6 @@ $container-width: 1080px;
     text-align: left;
     color: #30343f;
   }
-
   .answer {
     font-size: 16px;
     font-weight: normal;
@@ -46,8 +48,7 @@ $container-width: 1080px;
     letter-spacing: normal;
     text-align: left;
     color: #666d7c;
-    white-space: pre;
-
+    white-space: pre-wrap;
     svg {
       width: 19px;
       height: 19px;

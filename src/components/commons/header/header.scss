@@ -94,6 +94,13 @@ $header-height: 80px;
   }
 }
 
+.paddingForTitleSection {
+  background-color: #202d3e;
+  @media (max-width: 768px) {
+    padding-top: 80px !important;
+  }
+}
+
 .mobileMenu {
   display: none;
   visibility: hidden;

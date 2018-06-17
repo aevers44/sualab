@@ -212,9 +212,9 @@ class Header extends React.Component {
         </header>
 
         <div
+          className={styles.paddingForTitleSection}
           style={{
             paddingTop: paddingHeightForBlank,
-            backgroundColor: "#202d3e",
           }}
         />
       </div>
