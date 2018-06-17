@@ -67,7 +67,6 @@ $container-width: 1080px;
 }
 
 .itemCard {
-  flex-grow: 1;
   max-width: 347px;
   padding: 40px 20px 20px 20px;
   background-color: #ffffff;
@@ -143,7 +142,7 @@ $container-width: 1080px;
     }
     @media (max-width: 768px) {
       padding: 20px 10px 20px 10px;
-      max-width: 160px;
+      width: calc(50% - 10px);
       margin-bottom: 20px;
       .imgWrapper {
         width: 93px;

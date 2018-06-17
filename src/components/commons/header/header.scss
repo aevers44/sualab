@@ -109,8 +109,8 @@ $mobile-header-height: 75px;
   display: none;
   visibility: hidden;
   @media (max-width: 768px) {
-    display: inherit;
-    visibility: inherit;
+    display: initial;
+    visibility: initial;
   }
 }
 
@@ -121,5 +121,17 @@ $mobile-header-height: 75px;
   svg {
     width: 20px;
     height: 20px;
+  }
+}
+
+.menuOverlay {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  @media (min-width: 768px) {
+    display: none;
   }
 }

@@ -217,6 +217,15 @@ class Header extends React.Component {
           </div>
         </header>
 
+        {mobileMenuOpen ? (
+          <div
+            onClick={ev => this.setState({ mobileMenuOpen: false })}
+            className={styles.menuOverlay}
+          />
+        ) : (
+          ""
+        )}
+
         <div
           className={styles.paddingForTitleSection}
           style={{
