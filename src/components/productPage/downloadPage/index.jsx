@@ -39,7 +39,11 @@ class DownloadPage extends React.PureComponent {
           <AuthSection intl={intl} handleAuth={this.handleAuth} />
         ) : (
           <div>
-            <SuakitSection intl={intl} companyName={companyName} companyKey={companyKey} />
+            <SuakitSection
+              intl={intl}
+              companyName={companyName}
+              companyKey={companyKey}
+            />
             <DocumentSection intl={intl} />
             <ReleaseSection intl={intl} />
           </div>

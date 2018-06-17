@@ -6,13 +6,13 @@ $mobile-header-height: 75px;
   position: fixed;
   width: 100%;
   background-color: #202d3e;
-  transition: visibility 0s linear 0.25s, opacity 0.25s ease-in-out;
+  transition: visibility 0s linear 0.20s, opacity 0.20s ease-in-out;
   opacity: 0;
   visibility: hidden;
   &.visible {
     opacity: 1;
     visibility: visible;
-    transition: visibility 0s linear 0s, opacity 0.25s ease-in-out;
+    transition: visibility 0s linear 0s, opacity 0.20s ease-in-out;
   }
   .innerContainer {
     position: relative;
