@@ -1,16 +1,28 @@
 $container-width: 1080px;
-
 .networkPage {
   .innerContainer {
     max-width: $container-width;
     margin: 0 auto;
     padding: 55px 90px;
     text-align: center;
+    @media (max-width: 768px) {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
   }
 }
 
 .mapWrapper {
   margin-bottom: 55px;
+  .mapContainer {
+    height: 450px;
+  }
+  @media (max-width: 768px) {
+    .mapContainer {
+      height: 240px;
+    }
+    margin-bottom: 44px;
+  }
 }
 
 .networkListWrapper {
@@ -22,6 +34,12 @@ $container-width: 1080px;
     text-align: left;
     color: #9aa3b5;
     margin-bottom: 16px;
+    @media (max-width: 768px) {
+      margin-top: 80px;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
   }
 }
 
@@ -31,7 +49,6 @@ $container-width: 1080px;
   padding-top: 30px;
   padding-bottom: 30px;
   border-top: solid 1px #d8dde7;
-
   .country {
     flex: 0 180px;
     min-width: 180px;
@@ -41,7 +58,6 @@ $container-width: 1080px;
     letter-spacing: normal;
     color: #0c1020;
   }
-
   .infoWrapper {
     flex: 0 auto;
     .infoLine {
@@ -57,7 +73,6 @@ $container-width: 1080px;
         text-align: left;
         color: #34495e;
       }
-
       .content {
         display: inline-block;
         font-size: 18px;
@@ -70,8 +85,21 @@ $container-width: 1080px;
       }
     }
   }
-
   &:last-child {
     border-bottom: solid 1px #d8dde7;
+  }
+  @media (max-width: 768px) {
+    flex-direction: column;
+    .country {
+      margin-bottom: 16px;
+      flex: 0 auto;
+    }
+    .label {
+      margin-right: 16px;
+    }
+    .label,
+    .content {
+      font-size: 16px !important;
+    }
   }
 }

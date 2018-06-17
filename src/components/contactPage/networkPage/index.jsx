@@ -82,27 +82,57 @@ class NetworkPage extends React.PureComponent {
               isMarkerShown
               googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyC2l8AiJrv0oRBAQIKI60rgH16h93W98Ac"
               loadingElement={<div style={{ height: `100%` }} />}
-              containerElement={<div style={{ height: `450px` }} />}
+              containerElement={<div className={styles.mapContainer} />}
               mapElement={<div style={{ height: `100%` }} />}
               markerList={latlngList}
             />
           </div>
 
           <div className={styles.networkListWrapper}>
-            {asiaOfficeList.length > 0 ? <div className={styles.continentLabel}>ASIA</div> : ""}
-            {asiaOfficeList.map(elem => <CompanyItem key={elem.id} {...elem} />)}
+            {asiaOfficeList.length > 0 ? (
+              <div className={styles.continentLabel}>ASIA</div>
+            ) : (
+              ""
+            )}
+            {asiaOfficeList.map(elem => (
+              <CompanyItem key={elem.id} {...elem} />
+            ))}
 
-            {americaOfficeList.length > 0 ? <div className={styles.continentLabel}>AMERICA</div> : ""}
-            {americaOfficeList.map(elem => <CompanyItem key={elem.id} {...elem} />)}
+            {americaOfficeList.length > 0 ? (
+              <div className={styles.continentLabel}>AMERICA</div>
+            ) : (
+              ""
+            )}
+            {americaOfficeList.map(elem => (
+              <CompanyItem key={elem.id} {...elem} />
+            ))}
 
-            {europeOfficeList.length > 0 ? <div className={styles.continentLabel}>EUROPE</div> : ""}
-            {europeOfficeList.map(elem => <CompanyItem key={elem.id} {...elem} />)}
+            {europeOfficeList.length > 0 ? (
+              <div className={styles.continentLabel}>EUROPE</div>
+            ) : (
+              ""
+            )}
+            {europeOfficeList.map(elem => (
+              <CompanyItem key={elem.id} {...elem} />
+            ))}
 
-            {africaOfficeList.length > 0 ? <div className={styles.continentLabel}>AFRICA</div> : ""}
-            {africaOfficeList.map(elem => <CompanyItem key={elem.id} {...elem} />)}
+            {africaOfficeList.length > 0 ? (
+              <div className={styles.continentLabel}>AFRICA</div>
+            ) : (
+              ""
+            )}
+            {africaOfficeList.map(elem => (
+              <CompanyItem key={elem.id} {...elem} />
+            ))}
 
-            {oceaniaOfficeList.length > 0 ? <div className={styles.continentLabel}>OCEANIA</div> : ""}
-            {oceaniaOfficeList.map(elem => <CompanyItem key={elem.id} {...elem} />)}
+            {oceaniaOfficeList.length > 0 ? (
+              <div className={styles.continentLabel}>OCEANIA</div>
+            ) : (
+              ""
+            )}
+            {oceaniaOfficeList.map(elem => (
+              <CompanyItem key={elem.id} {...elem} />
+            ))}
           </div>
         </div>
       </section>
@@ -113,15 +143,25 @@ class NetworkPage extends React.PureComponent {
     axios.get("/api/office").then(res => {
       const officeList = res.data;
 
-      const latlngList = officeList.filter(elem => elem.marker_visible !== 0).map(elem => {
-        return { lat: elem.latitude, lng: elem.longitude };
-      });
+      const latlngList = officeList
+        .filter(elem => elem.marker_visible !== 0)
+        .map(elem => {
+          return { lat: elem.latitude, lng: elem.longitude };
+        });
       this.setState({
         asiaOfficeList: officeList.filter(elem => elem.continent === "ASIA"),
-        americaOfficeList: officeList.filter(elem => elem.continent === "AMERICA"),
-        europeOfficeList: officeList.filter(elem => elem.continent === "EUROPE"),
-        africaOfficeList: officeList.filter(elem => elem.continent === "AFRICA"),
-        oceaniaOfficeList: officeList.filter(elem => elem.continent === "OCEANIA"),
+        americaOfficeList: officeList.filter(
+          elem => elem.continent === "AMERICA",
+        ),
+        europeOfficeList: officeList.filter(
+          elem => elem.continent === "EUROPE",
+        ),
+        africaOfficeList: officeList.filter(
+          elem => elem.continent === "AFRICA",
+        ),
+        oceaniaOfficeList: officeList.filter(
+          elem => elem.continent === "OCEANIA",
+        ),
         latlngList: latlngList,
       });
     });
