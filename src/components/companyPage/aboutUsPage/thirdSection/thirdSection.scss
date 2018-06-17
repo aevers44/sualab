@@ -1,15 +1,22 @@
 $container-width: 1080px;
-
 .thirdSection {
   padding-top: 100px;
   padding-bottom: 100px;
   background-color: #16212f;
-
   .innerContainer {
     max-width: $container-width;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+  }
+  @media (max-width: 768px) {
+    padding-top: 50px;
+    padding-bottom: 60px;
+    .innerContainer {
+      padding-left: 10px;
+      padding-right: 10px;
+      flex-direction: column;
+    }
   }
 }
 
@@ -21,7 +28,6 @@ $container-width: 1080px;
 
 .leftWrapper {
   flex: 1 40%;
-
   .title {
     font-size: 28px;
     font-weight: 300;
@@ -29,12 +35,13 @@ $container-width: 1080px;
     letter-spacing: normal;
     color: #ffffff;
     margin-bottom: 42px;
-
     span {
       font-weight: bold;
+      @media (max-width: 768px) {
+        display: block;
+      }
     }
   }
-
   .content {
     word-break: keep-all;
     padding-right: 80px;
@@ -45,6 +52,9 @@ $container-width: 1080px;
     color: #d8dde7;
     font-weight: 100;
     white-space: pre-wrap;
+    @media (max-width: 768px) {
+      padding-right: 0;
+    }
   }
 }
 
@@ -52,7 +62,6 @@ $container-width: 1080px;
   flex: 1 40%;
   position: relative;
   text-align: right;
-
   .itemName {
     position: absolute;
     top: 0;
@@ -62,23 +71,19 @@ $container-width: 1080px;
     line-height: normal;
     letter-spacing: normal;
     color: #5f7591;
-
     &.first {
       top: 245px;
       left: 35px;
     }
-
     &.second {
       top: 300px;
       left: 130px;
     }
-
     &.third {
       top: 360px;
       left: 210px;
     }
   }
-
   .imageWrapper {
     display: inline-block;
     width: 405px;
@@ -86,5 +91,8 @@ $container-width: 1080px;
     background-image: url(https://d2ivzy5c3eic08.cloudfront.net/companyPage/about-us-illust@2x.png);
     background-size: contain;
     background-repeat: no-repeat;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
 }

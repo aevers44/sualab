@@ -1,13 +1,19 @@
 $container-width: 1080px;
-
 .fourthSection {
   padding-top: 50px;
   padding-bottom: 72px;
-
   .innerContainer {
     max-width: $container-width;
     margin: 0 auto;
     text-align: center;
+    @media (max-width: 768px) {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+  @media (max-width: 768px) {
+    padding-top: 60px;
+    padding-bottom: 20px;
   }
 }
 
@@ -25,7 +31,6 @@ $container-width: 1080px;
   letter-spacing: normal;
   color: #0c1020;
   margin-bottom: 45px;
-
   .strong {
     font-weight: bold;
   }
@@ -52,13 +57,11 @@ $container-width: 1080px;
 
 .contentWrapper {
   display: flex;
-  align-content: flex-start;
+  align-items: flex-start;
   justify-content: space-between;
-
   .contentItem {
     width: 280px;
     word-break: keep-all;
-
     .icon {
       height: 180px;
       padding: 20px;
@@ -67,7 +70,6 @@ $container-width: 1080px;
         height: 100%;
       }
     }
-
     .itemContent {
       font-size: 16px;
       font-weight: 300;
@@ -76,17 +78,25 @@ $container-width: 1080px;
       color: #666d7c;
     }
   }
-
   .contentLine {
     max-width: 85px;
     width: 100px;
-
     &:after {
       content: "";
       display: block;
       height: 100px;
       width: 100%;
       border-bottom: dotted 4px #d3dae6;
+    }
+  }
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    .contentItem {
+      margin-bottom: 50px;
+    }
+    .contentLine {
+      display: none;
     }
   }
 }

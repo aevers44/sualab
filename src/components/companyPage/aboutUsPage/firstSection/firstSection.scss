@@ -1,5 +1,4 @@
 $container-width: 1080px;
-
 .firstSection {
   background-image: url(https://d2ivzy5c3eic08.cloudfront.net/companyPage/aboutus-background@2x.png);
   background-repeat: no-repeat;
@@ -7,11 +6,18 @@ $container-width: 1080px;
   background-position: center center;
   height: 208px;
   padding-top: 68px;
-
   .innerContainer {
     max-width: $container-width;
     margin: 0 auto;
     text-align: center;
+  }
+  @media (max-width: 768px) {
+    height: 240px;
+    padding-top: 42px;
+    .innerContainer {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
   }
 }
 
@@ -32,7 +38,6 @@ $container-width: 1080px;
   color: #16212f;
   margin-bottom: 15px;
   white-space: pre-wrap;
-
   span {
     font-weight: bold;
   }
