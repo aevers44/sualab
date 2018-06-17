@@ -1,11 +1,13 @@
 $container-width: 1080px;
-
 .peoplePage {
   .innerContainer {
     padding-bottom: 60px;
-
     max-width: $container-width;
     margin: 0 auto;
+    @media (max-width: 768px) {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
   }
 }
 
@@ -13,6 +15,9 @@ $container-width: 1080px;
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
+  @media (max-width: 768px) {
+    justify-content: space-between;
+  }
 }
 
 .line {
@@ -20,6 +25,9 @@ $container-width: 1080px;
   border-bottom: solid 2px #1ae8c9;
   margin-top: 100px;
   margin-bottom: 20px;
+  @media (max-width: 768px) {
+    margin-top: 60px;
+  }
 }
 
 .subTitle {
