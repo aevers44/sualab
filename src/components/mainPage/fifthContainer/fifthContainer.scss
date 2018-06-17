@@ -8,6 +8,15 @@ $container-width: 1080px;
     padding-left: 90px;
     padding-right: 90px;
   }
+  @media (max-width: 768px) {
+    padding-top: 36px;
+    padding-bottom: 48px;
+    .innerContainer {
+      padding-left: 50px;
+      padding-right: 50px;
+      text-align: center;
+    }
+  }
 }
 
 .title {
@@ -35,6 +44,10 @@ $container-width: 1080px;
   display: flex;
   justify-content: space-between;
   margin-bottom: 50px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    margin-bottom: 24px;
+  }
 }
 
 .newsItem {
@@ -42,6 +55,7 @@ $container-width: 1080px;
   max-width: 30%;
   border-top: solid 2px #d8dde7;
   padding: 15px 1px 0 1px;
+  text-align: left;
   .newsHeader {
     font-size: 16px;
     letter-spacing: -0.1px;
@@ -71,6 +85,10 @@ $container-width: 1080px;
     border-top: solid 2px #1ff2d2;
     transition: 0.3s ease-in-out;
   }
+  @media (max-width: 768px) {
+    max-width: initial;
+    margin-bottom: 28px;
+  }
 }
 
 .readmoreBtn {
@@ -85,5 +103,8 @@ $container-width: 1080px;
     margin-left: 18px;
     margin-bottom: 5px;
     vertical-align: middle;
+  }
+  @media (max-width: 768px) {
+    text-align: left;
   }
 }

@@ -1,18 +1,24 @@
 $container-width: 1080px;
-
 .fourthContainer {
-  height: 270px;
   background-color: #16212f;
   background-image: url(https://d2ivzy5c3eic08.cloudfront.net/mainPage/blog-section-background%402x.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   padding-top: 70px;
-
+  padding-bottom: 70px;
   .innerContainer {
     max-width: $container-width;
     margin: 0 auto;
     text-align: center;
+  }
+  @media (max-width: 768px) {
+    padding-top: 48px;
+    padding-bottom: 56px;
+    .innerContainer {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
   }
 }
 
@@ -27,6 +33,11 @@ $container-width: 1080px;
   font-size: 16px;
   color: #666d7c;
   margin-bottom: 36px;
+  @media (max-width: 768px) {
+    padding-left: 24px;
+    padding-right: 24px;
+    margin-bottom: 22px;
+  }
 }
 
 .blogBtn {
@@ -36,7 +47,6 @@ $container-width: 1080px;
   line-height: 42px;
   border-radius: 100px;
   background-image: linear-gradient(103deg, #29dcf9, #1ff2d2);
-
   font-size: 16px;
   font-weight: 500;
   text-align: center;

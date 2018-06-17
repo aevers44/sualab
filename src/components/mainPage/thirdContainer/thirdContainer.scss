@@ -1,16 +1,13 @@
 $container-width: 1080px;
-
 .thirdContainer {
   background-color: #f5f7fb;
   padding-top: 60px;
   padding-bottom: 40px;
-
   .innerContainer {
     max-width: $container-width;
     margin: 0 auto;
     padding-left: 90px;
     padding-right: 90px;
-
     &:before,
     &:after {
       content: " ";
@@ -18,6 +15,15 @@ $container-width: 1080px;
     }
     &:after {
       clear: both;
+    }
+  }
+  @media (max-width: 768px) {
+    padding-top: 36px;
+    padding-bottom: 36px;
+    .innerContainer {
+      padding-left: 10px;
+      padding-right: 10px;
+      text-align: center;
     }
   }
 }
@@ -44,6 +50,11 @@ $container-width: 1080px;
   line-height: normal;
   margin-bottom: 35px;
   white-space: pre-wrap;
+  @media (max-width: 768px) {
+    padding-left: 24px;
+    padding-right: 24px;
+    margin-bottom: 50px;
+  }
 }
 
 .readmoreBtn {
@@ -53,7 +64,6 @@ $container-width: 1080px;
   color: #30343f;
   vertical-align: middle;
   text-decoration: none;
-
   img {
     width: 13px;
     margin-left: 18px;
@@ -71,6 +81,9 @@ $container-width: 1080px;
   max-width: 340px;
   width: 50%;
   .customers {
+    width: 100%;
+  }
+  @media (max-width: 768px) {
     width: 100%;
   }
 }
