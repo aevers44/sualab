@@ -6,6 +6,10 @@ $container-width: 1080px;
     margin: 0 auto;
     padding-top: 60px;
     padding-bottom: 48px;
+    @media (max-width: 768px) {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
   }
 }
 
@@ -104,6 +108,9 @@ $container-width: 1080px;
     }
     &:nth-child(1) {
       border-right: dashed 1px #e7eaf2;
+    }
+    @media (max-width: 768px) {
+      flex-direction: column;
     }
   }
   &:nth-child(2n + 1) {
