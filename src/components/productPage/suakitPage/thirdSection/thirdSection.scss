@@ -38,8 +38,28 @@ $container-width: 1080px;
   margin-bottom: 50px;
 }
 
+.mobileTableWrapper {
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+  }
+  .downIcon {
+    width: 58px;
+    margin: 15px auto 40px auto;
+  }
+}
+
+.desktopTableWrapper {
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
 .compareTable {
   margin-top: 60px;
+  @media (max-width: 768px) {
+    margin-top: 30px;
+  }
 }
 
 .tableHeader {
@@ -104,6 +124,16 @@ $container-width: 1080px;
         line-height: normal;
         letter-spacing: normal;
         color: #666d7c;
+      }
+      @media (max-width: 768px) {
+        .title {
+          margin-top: 0;
+          margin-bottom: 8px;
+        }
+        .content {
+          margin-top: 0;
+          margin-bottom: 8px;
+        }
       }
     }
     &:nth-child(1) {

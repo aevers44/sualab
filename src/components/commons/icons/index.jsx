@@ -15,6 +15,7 @@ const ICONS = {
   PRODUCT_RIGHT_ARROW: require("./long-arrow-point-to-right.svg"),
   MENU_ICON: require("./menu.svg"),
   CANCEL_ICON: require("./cancel.svg"),
+  SUAKIT_ARROW_DOWN: require("./arrow-to-down.svg"),
 };
 
 class Icon extends React.PureComponent {
