@@ -1,5 +1,4 @@
 $container-width: 1080px;
-
 .usageSection {
   padding-top: 72px;
   word-break: keep-all;
@@ -8,6 +7,10 @@ $container-width: 1080px;
 .innerContainer {
   max-width: $container-width;
   margin: 0 auto;
+  @media (max-width: 768px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 .line {
@@ -38,7 +41,6 @@ $container-width: 1080px;
 .tabButtons {
   display: flex;
   align-items: center;
-
   .button {
     cursor: pointer;
     height: 70px;
@@ -51,10 +53,14 @@ $container-width: 1080px;
     color: #9aa3b5;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-
     &.active {
       background-color: #f5f7fb;
       color: #34495e;
+    }
+    @media (max-width: 768px) {
+      font-size: 16px;
+      height: 48px;
+      line-height: 48px;
     }
   }
 }
@@ -63,11 +69,14 @@ $container-width: 1080px;
   background-color: #f5f7fb;
   padding-top: 35px;
   padding-bottom: 10px;
-
   .innerContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    @media (max-width: 768px) {
+      justify-content: space-around;
+      padding-bottom: 32px;
+    }
   }
 }
 
@@ -80,7 +89,6 @@ $container-width: 1080px;
   box-shadow: 0 4px 5px 0 rgba(181, 186, 197, 0.44);
   padding: 30px 24px;
   margin-bottom: 40px;
-
   .cardTitle {
     font-size: 18px;
     font-weight: 500;
@@ -97,12 +105,10 @@ $container-width: 1080px;
     color: #000000;
     margin-bottom: 36px;
   }
-
   .imgWrapper {
     text-align: center;
     width: 100%;
     height: 140px;
-
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center top;
@@ -118,5 +124,9 @@ $container-width: 1080px;
       padding-top: 10px;
       height: 120px;
     }
+  }
+  @media (max-width: 768px) {
+    flex: 1 100%;
+    margin-bottom: 8px;
   }
 }

@@ -126,7 +126,7 @@ export default {
   "HOWTO.APPLY.itemContent_3": `도출된 데이터를 중심으로 목표 수치를 달성 할 수 있도록 분석 후 모델 재생성 과정을 반복합니다.`,
   "HOWTO.APPLY.itemTitle_4": `라인 적용`,
   "HOWTO.APPLY.itemContent_4": `완성된 모델을 라인에 적용합니다.`,
-  "HOWTO.APPLY.itemTitle_5": `맞춤형 솔루션이 필요한 경우`,
+  "HOWTO.APPLY.itemTitle_5": `맞춤형 솔루션이 필요한 경우*`,
   "HOWTO.APPLY.itemContent_5": `딥러닝 알고리즘에 익숙하지 않은 고객을 위해 SUALAB은 응용개발팀을 운영하여 맞춤형 모델 생성,\n현장 기술 지원 등 유형별 솔루션을 제공하고 있습니다.`,
 
   "SUPPORT.title": `SUALAB의 딥러닝 검사 솔루션에 대한 고객분들의 *문의*를 기다립니다`,
@@ -176,7 +176,8 @@ export default {
   "DOWNLOAD.AUTH.companyName": "회사명",
   "DOWNLOAD.AUTH.companyKey": "인증코드",
   "DOWNLOAD.AUTH.authBtn": "인증",
-  "DOWNLOAD.AUTH.authFailMessage": "인증에 실패하였습니다.\n 다시 확인해주세요.",
+  "DOWNLOAD.AUTH.authFailMessage":
+    "인증에 실패하였습니다.\n 다시 확인해주세요.",
   "DOWNLOAD.SUAKIT.detail": "상세보기",
 
   "MEDIA.title": `*언론*에 보도된 *SUALAB*을 확인해 보세요`,

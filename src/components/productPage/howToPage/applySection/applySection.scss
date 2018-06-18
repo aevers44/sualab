@@ -1,13 +1,19 @@
 $container-width: 1080px;
-
 .applySection {
   word-break: keep-all;
   padding-top: 72px;
   padding-bottom: 72px;
-
   .innerContainer {
     max-width: $container-width;
     margin: 0 auto;
+  }
+  @media (max-width: 768px) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    .innerContainer {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
   }
 }
 
@@ -34,18 +40,27 @@ $container-width: 1080px;
   letter-spacing: normal;
   color: #666d7c;
   margin-bottom: 60px;
+  @media (max-width: 768px) {
+    margin-bottom: 24px;
+  }
 }
 
 .processWrapper {
   display: flex;
-
   .leftWrapper {
     flex: 7 0px;
     padding-right: 20px;
   }
-
   .rightWrapper {
     flex: 5 0px;
+  }
+  @media (max-width: 768px) {
+    flex-direction: column;
+    .leftWrapper,
+    .rightWrapper {
+      padding-right: 0;
+      flex: 1;
+    }
   }
 }
 
@@ -57,11 +72,9 @@ $container-width: 1080px;
   justify-content: center;
   align-items: flex-start;
   padding: 45px 60px;
-
   .contentWrapper {
     flex: 1 0px;
     margin-right: 60px;
-
     .itemTitle {
       font-size: 20px;
       font-weight: bold;
@@ -70,7 +83,6 @@ $container-width: 1080px;
       color: #202d3e;
       margin-bottom: 15px;
     }
-
     .itemContent {
       font-size: 15px;
       font-weight: 300;
@@ -80,14 +92,21 @@ $container-width: 1080px;
       white-space: pre-wrap;
     }
   }
-
   .imgWrapper {
     width: 170px;
     height: 120px;
-
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center top;
+  }
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 23px 21px;
+    margin-bottom: 24px;
+    .contentWrapper {
+      margin-right: 0;
+      margin-bottom: 8px;
+    }
   }
 }
 
@@ -95,37 +114,46 @@ $container-width: 1080px;
   display: block;
   margin: 6px auto;
   height: 9px;
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .rightWrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-
   .arrowWrapper {
     flex: 1 0px;
     padding-right: 20px;
-
     .blank {
       height: 200px;
     }
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
-
   .processItem {
     flex: 4 0px;
     flex-direction: column;
-
     .imgWrapper {
       flex: 0 0 auto;
       margin: 0 auto;
       margin-bottom: 20px;
     }
-
     .contentWrapper {
       flex: 0 0 auto;
       width: 100%;
       margin-right: 0;
       text-align: center;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .leftWrapper {
+    .imgWrapper {
+      margin-left: auto;
     }
   }
 }

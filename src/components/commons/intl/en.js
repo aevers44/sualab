@@ -126,7 +126,7 @@ export default {
   "HOWTO.APPLY.itemContent_3": `Upon analysis, repeat the model regeneration process in order to achieve the target value around the derived data.`,
   "HOWTO.APPLY.itemTitle_4": `Line Application`,
   "HOWTO.APPLY.itemContent_4": `Apply the completed model to the line.`,
-  "HOWTO.APPLY.itemTitle_5": `If you need customized solutions`,
+  "HOWTO.APPLY.itemTitle_5": `If you need customized solutions*`,
   "HOWTO.APPLY.itemContent_5": `For customers who are unfamiliar with deep learning algorithms, SUALAB operates an Solution Development Department to provide customized model creation and on-site technical support.`,
 
   "SUPPORT.title": `We appreciate *your inquiries and feedback* regarding SUALAB’s deep learning inspection solutions`,
@@ -176,7 +176,8 @@ export default {
   "DOWNLOAD.AUTH.companyName": "Company Name",
   "DOWNLOAD.AUTH.companyKey": "Authentication Key",
   "DOWNLOAD.AUTH.authBtn": "Authenticate",
-  "DOWNLOAD.AUTH.authFailMessage": "Authentication Failed.\nPlease check your company name and key",
+  "DOWNLOAD.AUTH.authFailMessage":
+    "Authentication Failed.\nPlease check your company name and key",
   "DOWNLOAD.SUAKIT.detail": "Details",
 
   "MEDIA.title": `Check out the *Press Coverage of SUALAB*`,
