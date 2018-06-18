@@ -62,37 +62,16 @@ $container-width: 1080px;
   flex: 1 40%;
   position: relative;
   text-align: right;
-  .itemName {
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 16px;
-    font-weight: 300;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #5f7591;
-    &.first {
-      top: 245px;
-      left: 35px;
-    }
-    &.second {
-      top: 300px;
-      left: 130px;
-    }
-    &.third {
-      top: 360px;
-      left: 210px;
-    }
-  }
   .imageWrapper {
     display: inline-block;
-    width: 405px;
-    height: 391px;
-    background-image: url(https://d2ivzy5c3eic08.cloudfront.net/companyPage/about-us-illust@2x.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    @media (max-width: 768px) {
+    max-width: 500px;
+    width: 100%;
+    img {
       width: 100%;
+    }
+    @media (max-width: 768px) {
+      max-width: initial;
+      margin-top: 36px;
     }
   }
 }
