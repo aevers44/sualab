@@ -208,7 +208,7 @@ export default {
   "PHILOSOPHY.THIRD.contentItem_3.infoContent": `교육비, 도서비, Gym 이용비 등 자기계발에 필요한 비용을 일정 지원금액 내에서 선택하여 사용하는 제도`,
 
   "RECRUIT.title": `함께 *즐겁게* 일할 *최고의 인재*를 기다립니다`,
-  "RECRUIT.LAB.subTitle": `연구소`,
+  "RECRUIT.LAB.subTitle": `연구/개발/제품기획`,
   "RECRUIT.LAB.infoTextBox1": `연구 인력 채용은 각 직무 별로 상이 할 수 있으니,\n자세한 내용은 _채용공고_를 통해 확인 바랍니다.`,
   "RECRUIT.LAB.infoTextBox2": `프로젝트 과제는 직무의 필요한 역량을 검증하기 위한 단계이며,\n평가에 따라 2차 면접 진행 여부가 결정됩니다.\n_*해당 전형은 일부 직무에서만 진행됩니다._`,
   "RECRUIT.LAB.step_1": `서류 심사`,
@@ -217,7 +217,7 @@ export default {
   "RECRUIT.LAB.step_4": `프로젝트 과제`,
   "RECRUIT.LAB.step_5": `2차 면접`,
   "RECRUIT.LAB.step_6": `채용 확정`,
-  "RECRUIT.MANAGE.subTitle": `영업본부 및 경영관리본부`,
+  "RECRUIT.MANAGE.subTitle": `사업개발 및 경영관리`,
   "RECRUIT.MANAGE.step_1": `서류 심사`,
   "RECRUIT.MANAGE.step_2": `1차 면접`,
   "RECRUIT.MANAGE.step_3": `2차 면접`,

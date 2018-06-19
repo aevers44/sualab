@@ -32,9 +32,9 @@ export default {
 
   "PEOPLE.title": `SUALAB works with the *best colleagues*`,
   "PEOPLE.c-level": `Management`,
-  "PEOPLE.laboratory": `Research Lab`,
-  "PEOPLE.business": `Sales Team`,
-  "PEOPLE.manage": `Management Support Team`,
+  "PEOPLE.laboratory": `R&D/Product Managing`,
+  "PEOPLE.business": `Business Development`,
+  "PEOPLE.manage": `Management Support`,
 
   "SUAKIT.title": `SuaKIT, *front-runner in deep learning*, expands the spectrum of *machine vision inspection*`,
   "SUAKIT.FIRST.content": `SuaKIT is a deep learning machine vision inspection software that can be used in various manufacturing fields such as display, solar, PCB, film, and semiconductor.`,
@@ -209,7 +209,7 @@ export default {
   "PHILOSOPHY.THIRD.contentItem_3.infoContent": `This system allows an employee to select certain expenses required for self-development such as educational expenses, book costs, and gym fees`,
 
   "RECRUIT.title": `We're looking for the *best talent* to join our team`,
-  "RECRUIT.LAB.subTitle": `Research Lab`,
+  "RECRUIT.LAB.subTitle": `R&D/Product Managing`,
   "RECRUIT.LAB.infoTextBox1": `Recruitment of research personnel may vary for each job.\nPlease check the job announcement for details.`,
   "RECRUIT.LAB.infoTextBox2": `The project assignment is a step to verify the required\ncompetency of the job, and the evaluation of this step\nwill determine whether or not the second interview will take place.\n_* The selection process is only applicable for select jobs_`,
   "RECRUIT.LAB.step_1": `Document Review`,
@@ -218,7 +218,7 @@ export default {
   "RECRUIT.LAB.step_4": `Project Assignment`,
   "RECRUIT.LAB.step_5": `2nd Interview`,
   "RECRUIT.LAB.step_6": `Hire Decision`,
-  "RECRUIT.MANAGE.subTitle": `Sales and Management`,
+  "RECRUIT.MANAGE.subTitle": `Business Development and Management Support`,
   "RECRUIT.MANAGE.step_1": `Document Review`,
   "RECRUIT.MANAGE.step_2": `1st Interview`,
   "RECRUIT.MANAGE.step_3": `2nd Interview`,
