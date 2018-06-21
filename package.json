@@ -13,7 +13,8 @@
     "dev:server": "NODE_ENV=development node ./build/main.js",
     "dev": "webpack-dev-server --hot --host 0.0.0.0",
     "init-db": "node ./build/db.js",
-    "temp": "npm run build:server && npm start"
+    "temp": "npm run build:server && npm start",
+    "deploy": "sudo forever stopall && sudo forever start build/main.js"
   },
   "repository": {
     "type": "git",
