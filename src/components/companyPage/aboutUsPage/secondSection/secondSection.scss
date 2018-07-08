@@ -51,5 +51,6 @@ $container-width: 1080px;
   margin-bottom: 24px;
   @media (max-width: 768px) {
     font-size: 14px;
+    white-space: normal;
   }
 }

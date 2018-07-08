@@ -1,25 +1,19 @@
 $container-width: 1080px;
 .footer {
-  height: 208px;
   background-color: #f5f7fb;
   padding-top: 36px;
   padding-bottom: 50px;
   .innerContainer {
     max-width: $container-width;
     margin: 0 auto;
-    &:before,
-    &:after {
-      content: " ";
-      display: table;
-    }
-    &:after {
-      clear: both;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
   }
   @media (max-width: 768px) {
-    height: auto;
-    padding-bottom: 10px;
+    padding-bottom: 36px;
     .innerContainer {
+      flex-direction: column;
       padding-left: 10px;
       padding-right: 10px;
     }
@@ -27,7 +21,6 @@ $container-width: 1080px;
 }
 
 .leftSection {
-  float: left;
   width: 50%;
   @media (max-width: 768px) {
     width: 100%;
@@ -50,13 +43,15 @@ $container-width: 1080px;
   color: #9aa3b5;
   white-space: pre-wrap;
   @media (max-width: 768px) {
-    font-style: 9px;
+    font-size: 11px;
   }
 }
 
 .rightSection {
-  float: right;
   text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 50%;
   @media (max-width: 768px) {
     width: 100%;
@@ -77,7 +72,6 @@ $container-width: 1080px;
 }
 
 .menuWrapper {
-  margin-bottom: 80px;
   .menuItem {
     margin-left: 18px;
     margin-right: 18px;
@@ -96,6 +90,8 @@ $container-width: 1080px;
   }
   @media (max-width: 768px) {
     .menuItem {
+      color: #34495e;
+      text-decoration: underline;
       font-size: 10px;
     }
   }
@@ -128,15 +124,20 @@ $container-width: 1080px;
   background-color: #ffffff;
   overflow: auto;
   padding: 50px 50px 30px 50px;
+  @media (max-width: 768px) {
+    padding: 20px 16px;
+  }
 }
 
 .modalContent {
+  background-color: #f5f7fb;
+  padding: 8px;
   font-size: 14px;
   font-weight: normal;
   line-height: normal;
   letter-spacing: normal;
   text-align: left;
-  color: #16212f;
+  color: #34495e;
   margin-bottom: 50px;
   white-space: pre-wrap;
   max-height: 70vh;
@@ -153,6 +154,9 @@ $container-width: 1080px;
   }
   a {
     color: #1ae8c9;
+  }
+  @media (max-width: 768px) {
+    margin-bottom: 24px;
   }
 }
 

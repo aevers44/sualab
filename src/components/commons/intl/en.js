@@ -6,7 +6,7 @@ export default {
   "NAVBAR.career.recruit": `Hiring Process`,
   "NAVBAR.career.open_position": `Open Positions`,
 
-  "FOOTER.sualabInfo": `Business Registration Number: 220-88-55558  |  CEO: Kiyoung Song\nAddress: Seoul National University Research Park 511, Gwanak-ro 1, Gwanak-gu, Seoul\nGeneral Inquiry: 02-6264-0366 | Sales Inquiry: 02-6264-0362\nCopyright ⓒSualab. All Rights Reserved.`,
+  "FOOTER.sualabInfo": `Business Registration Number: 220-88-55558\nCEO: Kiyoung Song\nAddress: Seoul National University Research Park 511, Gwanak-ro 1, Gwanak-gu, Seoul\nGeneral Inquiry: 02-6264-0366\nSales Inquiry: 02-6264-0362\nCopyright ⓒSualab. All Rights Reserved.`,
   "FOOTER.privateTerms": `Privacy Policy`,
 
   "MAIN.FIRST.subTitle": `SUALAB believes that artificial intelligence can contribute to the world\nby automating tasks that have required human effort.`,
@@ -176,8 +176,7 @@ export default {
   "DOWNLOAD.AUTH.companyName": "Company Name",
   "DOWNLOAD.AUTH.companyKey": "Authentication Key",
   "DOWNLOAD.AUTH.authBtn": "Authenticate",
-  "DOWNLOAD.AUTH.authFailMessage":
-    "Authentication Failed.\nPlease check your company name and key",
+  "DOWNLOAD.AUTH.authFailMessage": "Authentication Failed.\nPlease check your company name and key",
   "DOWNLOAD.SUAKIT.detail": "Details",
 
   "MEDIA.title": `Check out the *Press Coverage of SUALAB*`,

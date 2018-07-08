@@ -5,7 +5,7 @@ export default {
   "NAVBAR.career.recruit": `채용 절차`,
   "NAVBAR.career.open_position": `진행중인 채용공고`,
 
-  "FOOTER.sualabInfo": `사업자등록번호 : 220-88-55558 l 일반문의 : 02-6264-0366 | 영업문의 : 02-6264-0362\n대표이사 : 송기영 l 주소 : 서울시 관악구 관악로 1 서울대학교 연구공원 본관 511호\nCopyright ⓒSualab. All Rights Reserved.`,
+  "FOOTER.sualabInfo": `사업자등록번호 : 220-88-55558\n일반문의 : 02-6264-0366\n영업문의 : 02-6264-0362\n대표이사 : 송기영\n주소 : 서울시 관악구 관악로 1 서울대학교 연구공원 본관 511호\nCopyright ⓒSualab. All Rights Reserved.`,
   "FOOTER.privateTerms": `개인정보처리방침`,
 
   "MAIN.FIRST.subTitle": `SUALAB은 인공지능을 기반으로 기계 대신 사람이 하던 일을 자동화함으로써\n세상에 기여할 수 있다고 믿습니다.`,
@@ -176,8 +176,7 @@ export default {
   "DOWNLOAD.AUTH.companyName": "회사명",
   "DOWNLOAD.AUTH.companyKey": "인증코드",
   "DOWNLOAD.AUTH.authBtn": "인증",
-  "DOWNLOAD.AUTH.authFailMessage":
-    "인증에 실패하였습니다.\n 다시 확인해주세요.",
+  "DOWNLOAD.AUTH.authFailMessage": "인증에 실패하였습니다.\n 다시 확인해주세요.",
   "DOWNLOAD.SUAKIT.detail": "상세보기",
 
   "MEDIA.title": `*언론*에 보도된 *SUALAB*을 확인해 보세요`,
