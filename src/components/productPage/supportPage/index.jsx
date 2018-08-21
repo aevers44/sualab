@@ -100,6 +100,12 @@ class SupportPage extends React.PureComponent {
     this.validateSubmit = this.validateSubmit.bind(this);
     this.submitInquiry = this.submitInquiry.bind(this);
   }
+  componentDidMount() {
+    window._nasa = {};
+    if (typeof(window.wcs) !== 'undefined') {
+      window._nasa["cnv"] = window.wcs.cnv("1","10");
+    }
+  }
   componentDidUpdate() {
     this.validateSubmit();
   }
