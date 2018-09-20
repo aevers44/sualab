@@ -72,7 +72,7 @@ class SuakitSection extends React.PureComponent {
                     Download
                   </a>
                   <a href="#" onClick={ev => this.openFeatureDetailItem(ev, idx)} className={styles.featureBtn}>
-                    {intl.formatMessage({ id: "DOWNLOAD.SUAKIT.detail" })}
+                    { openFeatureIdx === -1 ? intl.formatMessage({ id: "DOWNLOAD.SUAKIT.detail" }) : intl.formatMessage({ id: "DOWNLOAD.SUAKIT.fold" })}
                   </a>
                 </div>
               </div>

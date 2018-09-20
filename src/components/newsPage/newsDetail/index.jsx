@@ -17,7 +17,7 @@ class NewsDetail extends React.PureComponent {
       date: "-",
       media: "-",
       link: "-",
-      image: "-",
+      images: [],
       content: "-",
       prevTitle: "-",
       prevId: -1,
@@ -67,7 +67,11 @@ class NewsDetail extends React.PureComponent {
             </div>
             <div className={styles.grayLine} />
             <div className={styles.imgWrapper}>
-              <img src={article.image} alt="" />
+              {
+                article.images.length !== 0 ? article.images.map((img, idx) => {
+                  return (<img key={idx} src={img} alt="" />)
+                }) : ''
+              }
             </div>
             <div className={styles.content}>{article.content}</div>
           </div>
@@ -113,7 +117,7 @@ class NewsDetail extends React.PureComponent {
           date: res.data.date,
           media: res.data.media,
           link: res.data.link,
-          image: res.data.image,
+          images: res.data.images,
           content: res.data.content,
           prevId: res.data.prev.id,
           prevTitle: res.data.prev.title,

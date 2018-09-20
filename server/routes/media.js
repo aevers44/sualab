@@ -13,7 +13,9 @@ router.get("/", (req, res) => {
   const ARTICLE_NUM = 5;
 
   db.all(
-    "SELECT * FROM media ORDER BY date DESC LIMIT ? OFFSET ? ", [ARTICLE_NUM, ARTICLE_NUM * (pageNo - 1)],
+    `select A.*, (select image from media_image where media_id = A.id limit 1) as image
+    from media A
+    order by date desc LIMIT ? OFFSET ? `, [ARTICLE_NUM, ARTICLE_NUM * (pageNo - 1)],
     (err, rows) => {
       if (err) {
         console.error(err);
@@ -43,14 +45,22 @@ router.get("/:id", (req, res) => {
   const db = new sqlite3.Database("./sualabdb.sqlite3");
   let result = {};
   db.serialize(() => {
-    db.get("SELECT * FROM media WHERE id=?", [id], (err, row) => {
+    db.all(`
+    select A.*, B.image as image 
+    from media A
+    inner join media_image B
+    on A.id = B.media_id
+    and A.id = ?
+    order by B.priority`, [id], (err, rows) => {
       if (err) {
         console.error(err);
         res.status(500);
-      } else if (!row) {
+      } else if (rows.length === 0) {
         res.status(404);
       } else {
-        result = { ...row
+        result = { 
+          ...rows[0],
+          images: rows.map(row => row.image)
         };
       }
     });

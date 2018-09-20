@@ -103,3 +103,111 @@ $container-width: 1080px;
     }
   }
 }
+
+.areaSelection {
+  max-width: $container-width;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  margin-bottom: 2px;  
+}
+
+.area {
+  flex: 1;
+  padding: 12px 24px;
+  color: #111721;
+  font-weight: 400;
+  cursor: pointer;
+  &.selected {
+    background-color: #111721;
+    color: #ffffff;
+  }
+}
+
+.companyWrapper {
+  display: flex;
+  width: 100%;
+  text-align: left;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-top: solid 1px #d8dde7;
+  border-bottom: solid 1px #d8dde7;
+  margin-bottom: 8px;
+  .ciWrapper {
+    margin-right: 24px;
+    min-width: 180px;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #0c1020;
+  }
+  .companyType {
+    span {
+      background-color: #3cdaaa;
+      color: #ffffff;
+      padding:6px 12px;
+      font-size: 12px;
+    }
+  }
+  .infoWrapper {
+    width: 100%;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #0c1020;
+    .company {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4px;
+      div {
+        font-size: 16px;
+      }
+      .companyLink{
+        font-size: 14px;
+        margin-right: 4px;
+      }
+    }
+    .countryWrapper {
+      background-color: #efefef;
+      margin-bottom: 6px;
+      display: flex;
+      flex-direction: row;
+      .countries {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 4px;
+        div {
+          margin-right: 4px;
+        }
+      }
+    }
+    .companyLine {
+      margin-bottom: 6px;
+      .infoLine {
+        display: flex;
+        justify-content: flex-start;
+        .label {
+          display: inline-block;
+          width: 80px;
+          font-size: 14px;
+          font-weight: bold;
+          line-height: 1.6;
+          letter-spacing: normal;
+          text-align: left;
+          color: #34495e;
+        }
+        .content {
+          display: inline-block;
+          font-size: 14px;
+          font-weight: normal;
+          line-height: 1.6;
+          letter-spacing: normal;
+          text-align: left;
+          color: #34495e;
+          width: 460px;
+        }
+      }
+    }
+  }
+}

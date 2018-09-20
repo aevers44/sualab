@@ -15,7 +15,7 @@ const adminConfig = {
   dpath: __dirname + "/../config/",
   config: require(__dirname + "/../config/config.json"),
   settings: require(__dirname + "/../config/settings.json"),
-  custom: require(__dirname + "/../config/custom.json"),
+  // custom: require(__dirname + "/../config/custom.json"),
   users: require(__dirname + "/../config/users.json"),
 };
 

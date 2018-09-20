@@ -31,4 +31,7 @@ router.use("/office", officeRouter);
 import brochureRouter from "./brochure";
 router.use("/brochure", brochureRouter);
 
+import productRouter from "./product";
+router.use("/product", productRouter);
+
 export default router;
