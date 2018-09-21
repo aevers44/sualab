@@ -105,6 +105,7 @@ $container-width: 1080px;
 }
 
 .areaSelection {
+  min-width: 900px;
   max-width: $container-width;
   margin: 0 auto;
   text-align: center;
@@ -118,10 +119,16 @@ $container-width: 1080px;
   color: #111721;
   font-weight: 400;
   cursor: pointer;
+  border: 1px solid #cccccc;
   &.selected {
-    background-color: #111721;
+    background-color: #202d3e;
     color: #ffffff;
   }
+}
+
+.companyArea{
+  min-width: 900px;
+  max-width: $container-width;
 }
 
 .companyWrapper {
@@ -135,18 +142,24 @@ $container-width: 1080px;
   margin-bottom: 8px;
   .ciWrapper {
     margin-right: 24px;
-    min-width: 180px;
+    min-width: 200px;
     line-height: normal;
     letter-spacing: normal;
     color: #0c1020;
   }
   .companyType {
+    margin-top: -9px;
     span {
-      background-color: #3cdaaa;
+      background-color: #00c4b3;
       color: #ffffff;
       padding:6px 12px;
-      font-size: 12px;
-    }
+      font-size: 14px;
+      letter-spacing: normal;
+    } 
+  }
+  .campanyLogo {
+    padding: 12px;
+    text-align: center;
   }
   .infoWrapper {
     width: 100%;
@@ -158,17 +171,19 @@ $container-width: 1080px;
     .company {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 4px;
+      margin-bottom: 12px;
       div {
-        font-size: 16px;
+        font-size: 20px;
       }
       .companyLink{
         font-size: 14px;
         margin-right: 4px;
+        color: #34495e;
       }
     }
     .countryWrapper {
-      background-color: #efefef;
+      background-color: #f4f4f4;
+      padding: 4px 6px;
       margin-bottom: 6px;
       display: flex;
       flex-direction: row;
@@ -177,13 +192,14 @@ $container-width: 1080px;
         flex-direction: row;
         align-items: center;
         padding: 4px;
+        font-weight: bold;
         div {
           margin-right: 4px;
         }
       }
     }
     .companyLine {
-      margin-bottom: 6px;
+      margin-bottom: 12px;
       .infoLine {
         display: flex;
         justify-content: flex-start;
@@ -204,7 +220,7 @@ $container-width: 1080px;
           line-height: 1.6;
           letter-spacing: normal;
           text-align: left;
-          color: #34495e;
+          color: #666d7c;
           width: 460px;
         }
       }
