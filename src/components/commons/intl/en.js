@@ -239,4 +239,5 @@ export default {
   "OFFICE.china": `China Office`,
 
   "NETWORK.title": `SUALAB is expanding throughout the *world* with *global business partners*`,
+  "NETWORK.location": `Location`,
 };
