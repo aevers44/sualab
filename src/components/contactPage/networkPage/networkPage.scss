@@ -110,7 +110,68 @@ $container-width: 1080px;
   margin: 0 auto;
   text-align: center;
   display: flex;
-  margin-bottom: 2px;  
+  margin-bottom: 2px;
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.areaSelectionForMobile {
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+    margin-bottom: 16px;
+    .selectedWrapper {
+      display: flex;
+      justify-content: space-between;
+      border: 1px solid #cccccc;
+      padding: 12px;
+      :nth-child(1) {
+        color: #adb3b9;
+      }
+      :nth-child(2) {
+        color: #202d3e;
+        font-weight: bold;
+      }
+    }
+    
+    .selection {
+      position: absolute;
+      z-index: 999;
+      display:block;
+      background-color: #ffffff;
+      width: 100% - 5;
+      
+      ul {
+        padding: 0;
+        margin-top: 0;
+        text-align: left;
+        li {
+          list-style: none;
+          border-top: 1px solid #cccccc;
+          border-left: 1px solid #cccccc;
+          border-right: 1px solid #cccccc;
+          padding: 12px;
+          &:last-child {
+            border-bottom: solid 1px #cccccc;
+          }
+        }
+        .selected {
+          color: #00c4b3;
+        }
+      }
+    }
+    .hidden {
+      display: none;
+    }
+  }
+}
+.areaSelectionForMobile:focus {
+  outline: none;
+  .selection {
+    outline: none;
+    display:block;
+  }
 }
 
 .area {
@@ -126,14 +187,24 @@ $container-width: 1080px;
   }
 }
 
+.mapArea {
+  display: show;
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
 .companyArea{
   min-width: 900px;
   max-width: $container-width;
+  @media (max-width: 768px) {
+    min-width: 0px;
+  }
 }
+
 
 .companyWrapper {
   display: flex;
-  width: 100%;
   text-align: left;
   padding-top: 12px;
   padding-bottom: 12px;
@@ -146,21 +217,22 @@ $container-width: 1080px;
     line-height: normal;
     letter-spacing: normal;
     color: #0c1020;
+    .companyType {
+      margin-top: -9px;
+      span {
+        background-color: #00c4b3;
+        color: #ffffff;
+        padding:6px 12px;
+        font-size: 14px;
+        letter-spacing: normal;
+      } 
+    }
+    .campanyLogo {
+      padding: 12px;
+      text-align: center;
+    }
   }
-  .companyType {
-    margin-top: -9px;
-    span {
-      background-color: #00c4b3;
-      color: #ffffff;
-      padding:6px 12px;
-      font-size: 14px;
-      letter-spacing: normal;
-    } 
-  }
-  .campanyLogo {
-    padding: 12px;
-    text-align: center;
-  }
+  
   .infoWrapper {
     width: 100%;
     font-size: 14px;
@@ -179,6 +251,9 @@ $container-width: 1080px;
         font-size: 14px;
         margin-right: 4px;
         color: #34495e;
+      }
+      @media (max-width: 768px) {
+        flex-direction: column;
       }
     }
     .countryWrapper {
@@ -225,5 +300,8 @@ $container-width: 1080px;
         }
       }
     }
+  }
+  @media (max-width: 768px) {
+    flex-direction: column;
   }
 }

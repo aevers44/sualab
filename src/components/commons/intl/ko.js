@@ -238,4 +238,5 @@ export default {
   "OFFICE.china": `중국 법인`,
 
   "NETWORK.title": `SUALAB은 *비즈니스 파트너*들과 함께 *세계*로 나아가고 있습니다`,
+  "NETWORK.location": `지역`,
 };

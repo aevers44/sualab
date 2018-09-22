@@ -3,7 +3,10 @@ import axios from "axios";
 import { injectIntl } from "react-intl";
 
 import TitleSection from "../../commons/titleSection";
-import NetworkMapComponent from "./googleMap";
+import Icon from 'react-icons-kit';
+import {arrow_down, arrow_up} from 'react-icons-kit/ikons';
+import {externalLink} from 'react-icons-kit/fa/externalLink'
+
 
 import styles from "./networkPage.scss";
 
@@ -27,7 +30,7 @@ const CompanyItem = ({name, ci, companies, type, link}) => {
           <div><strong>{name}</strong></div>
           <div>
             <span className={styles.companyLink}>{link}</span>
-            <a href={`http://${link}`} target="_blank"><img src={`https://fakeimg.pl/20x20/?text=link`}/></a>
+            <a href={`http://${link}`} target="_blank"><Icon icon={externalLink}/></a>
           </div>
         </div>
         {
@@ -110,7 +113,8 @@ class NetworkPage extends React.PureComponent {
       africaOfficeList: [],
       oceaniaOfficeList: [],
       latlngList: [],
-      selectedArea: AREA[0]
+      selectedArea: AREA[0],
+      selectionMenuOpen: false
     };
 
     this.getOfficeList = this.getOfficeList.bind(this);
@@ -122,15 +126,7 @@ class NetworkPage extends React.PureComponent {
 
   render() {
     const { intl } = this.props;
-    const {
-      selectedArea,
-      asiaOfficeList,
-      americaOfficeList,
-      europeOfficeList,
-      africaOfficeList,
-      oceaniaOfficeList,
-      latlngList,
-    } = this.state;
+    const { selectedArea, selectionMenuOpen } = this.state;
 
     return (
       <section className={styles.networkPage}>
@@ -145,13 +141,36 @@ class NetworkPage extends React.PureComponent {
           <div className={styles.areaSelection}>
             {
               AREA.map(ar => <div 
-                className={`${styles.area}  ${selectedArea.value == ar.value ? styles.selected: ''}`}                
+                className={`${styles.area}  ${selectedArea.value == ar.value ? styles.selected: ''}`} 
                 key={ar.value} 
                 value={ar.value}
                 onClick={() =>this.onSelectArea(ar)}>
                   {ar.name}
                 </div>)
             }
+          </div>
+          <div className={styles.areaSelectionForMobile} 
+          onClick={ev => this.setState({ selectionMenuOpen: !selectionMenuOpen })}>
+            <div className={styles.selectedWrapper}>
+              <div>{intl.formatMessage({ id: "NETWORK.location" })}</div> 
+              <div>{selectedArea.name}</div>
+              <div>
+                {selectionMenuOpen? <Icon icon={arrow_up}/> : <Icon icon={arrow_down}/>}
+              </div>
+            </div>
+            <div className={`${styles.selection} ${!selectionMenuOpen ? styles.hidden: ''}`}>
+              <ul>
+              {
+                AREA.map(ar => <li
+                  key={ar.value}
+                  onClick={() => this.onSelectArea(ar)}
+                  className={`${selectedArea.value == ar.value ? styles.selected: ''}`}
+                  >
+                  {ar.name}
+                </li>)
+              }
+              </ul>
+            </div>
           </div>
           <div className={styles.companyArea}>
             { this.displayCompanies() }
@@ -162,111 +181,35 @@ class NetworkPage extends React.PureComponent {
   }
 
   displayCompanies() {
-    const {
-      selectedArea,
-      asiaOfficeList,
-      americaOfficeList,
-      europeOfficeList,
-      africaOfficeList,
-      oceaniaOfficeList
-    } = this.state;
+    const {selectedArea} = this.state;
+    const officeList = this.getOffice(selectedArea.value);
 
-    switch (selectedArea.value) {
-      case "ASIA":
-        return (
-          <div>
-            <div>
-              <img src={selectedArea.image}/>
-            </div>
-            {
-              Object.keys(asiaOfficeList).length > 0 ? (
-                Object.keys(asiaOfficeList).map((key,idx) => (
-                  <CompanyItem key={idx} {...asiaOfficeList[key]} />
-                ))
-              ) : (
-                ""
-              )
-            }
-          </div>
-        )
-        break;
-      
-      case "AMERICA":
-        return (
-          <div>
-            <div>
-              <img src={selectedArea.image}/>
-            </div>
-            {
-              Object.keys(americaOfficeList).length > 0 ? (
-                Object.keys(americaOfficeList).map((key,idx) => (
-                  <CompanyItem key={idx} {...americaOfficeList[key]} />
-                ))
-              ) : (
-                ""
-              )
-            }
-          </div>
-        )
-        break;
-      
-      case "EUROPE":
-        return (
-          <div>
-            <div>
-              <img src={selectedArea.image}/>
-            </div>
-            {
-              Object.keys(europeOfficeList).length > 0 ? (
-                Object.keys(europeOfficeList).map((key,idx) => (
-                  <CompanyItem key={idx} {...europeOfficeList[key]} />
-                ))
-              ) : (
-                ""
-              )
-            }
-          </div>
-        )
-        break;
-      
-      case "AFRICA":
-        return (
-          <div>
-            <div>
-              <img src={selectedArea.image}/>
-            </div>
-            {
-              Object.keys(africaOfficeList).length > 0 ? (
-                Object.keys(africaOfficeList).map((key,idx) => (
-                  <CompanyItem key={idx} {...africaOfficeList[key]} />
-                ))
-              ) : (
-                ""
-              )
-            }
-          </div>
-        )
-        break;
-      
-      case "OCEANIA":
-        return (
-          <div>
-            <div>
-              <img src={selectedArea.image}/>
-            </div>
-            {
-              Object.keys(oceaniaOfficeList).length > 0 ? (
-                Object.keys(oceaniaOfficeList).map((key,idx) => (
-                  <CompanyItem key={idx} {...oceaniaOfficeList[key]} />
-                ))
-              ) : (
-                ""
-              )
-            }
-          </div>
-        )
-        break;
-    
+    return (
+      <div>
+        <div className={styles.mapArea}>
+          <img src={selectedArea.image}/>
+        </div>
+        {
+          Object.keys(officeList).length > 0 ? (
+            Object.keys(officeList).map((key,idx) => (
+              <CompanyItem key={idx} {...officeList[key]} />
+            ))
+          ) : (
+            ""
+          )
+        }
+      </div>
+    )
+  }
+
+  getOffice(area){
+    const { asiaOfficeList, americaOfficeList, europeOfficeList, africaOfficeList, oceaniaOfficeList } = this.state;
+    switch (area) {
+      case "ASIA": return asiaOfficeList; break;
+      case "AMERICA": return americaOfficeList; break;
+      case "EUROPE": return europeOfficeList; break;
+      case "AFRICA": return africaOfficeList; break;
+      case "OCEANIA": return oceaniaOfficeList; break;
       default:
         break;
     }

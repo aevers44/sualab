@@ -73,3 +73,4 @@ build/
 config/custom.json
 
 .DS_Store
+package-lock.json

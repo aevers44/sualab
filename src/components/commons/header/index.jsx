@@ -81,7 +81,7 @@ class Header extends React.Component {
             <div className={styles.logoImage}>
               <Link to="/">
                 <img
-                  src="https://d2ivzy5c3eic08.cloudfront.net/mainPage/sualab-logo@2x.png"
+                  src="https://d2ivzy5c3eic08.cloudfront.net/mainPage/sualab_logo_mint%403x.png"
                   alt=""
                 />
               </Link>
