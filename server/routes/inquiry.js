@@ -1,5 +1,5 @@
 import express from "express";
-import sqlite3 from "sqlite3";
+import db from "../api/config";
 import nodemailer from "nodemailer";
 /*
   get / : artilce list
@@ -8,8 +8,6 @@ import nodemailer from "nodemailer";
 const router = express.Router();
 
 router.post("/", (req, res) => {
-  const db = new sqlite3.Database("./sualabdb.sqlite3");
-
   const {
     name,
     phone,
@@ -28,44 +26,25 @@ router.post("/", (req, res) => {
     content,
     adAgree,
   } = req.body;
-  let stmt = db
-    .prepare(
-      "INSERT INTO inquiry (name, phone, company, department, status, email, country, reason, \
-              has_vision, industry, product_type, fault_type, num_of_line, \
-              path, content, ad_agree) \
-              VALUES (?, ?, ?, ?, ?, ?, ?, ?, \
-                      ?, ?, ?, ?, ?, \
-                      ?, ?, ?)",
-      [
-        name,
-        phone,
-        company,
-        department,
-        status,
-        email,
-        country,
-        reason,
-        hasVision,
-        industry,
-        productType,
-        faultType,
-        numOfLine,
-        path,
-        content,
-        adAgree,
-      ],
-    )
-    .run(err => {
-      if (err) {
-        console.error(err);
-        res.status(500);
-      } else {
-        res.status(204).json(stmt.lastID);
-      }
-    });
-  stmt.finalize();
 
-  db.close();
+  const sql = `
+  INSERT INTO inquiry (name, phone, company, department, status, email, country, reason,
+    has_vision, industry, product_type, fault_type, num_of_line,
+    path, content, ad_agree)
+    VALUES ('${name}', '${phone}', '${company}', '${department}', '${status}', '${email}', '${country}',
+    '${reason}', '${hasVision}', '${industry}', '${productType}', '${faultType}', '${numOfLine}', '${path}', '${content}'
+    '${adAgree}')
+  `;
+
+  conn.query(sql, (err) => {
+    conn.release();
+    if (err) {
+      console.error(err);
+      res.status(500);
+    } else {
+      res.status(204);
+    }
+  });
 
   // send email
   const transporter = nodemailer.createTransport({

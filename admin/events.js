@@ -85,7 +85,7 @@ exports.preSave = function (req, res, args, next) {
           var parseUrl = parse(url);
           parseUrl.set("hostname", CLOUDFRONT_LINK);
           // record path
-          record.imgUrl = parseUrl.href;
+          record.image = parseUrl.href;
           next();
         });
     } else {

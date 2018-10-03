@@ -1,5 +1,5 @@
 import express from "express";
-import sqlite3 from "sqlite3";
+import db from '../api/config';
 /*
   get / : event list
   get /id : event
@@ -7,89 +7,124 @@ import sqlite3 from "sqlite3";
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  const db = new sqlite3.Database("./sualabdb.sqlite3");
+  
   let result;
   const pageNo = req.query.pageNo || 1;
   const ARTICLE_NUM = 5;
 
-  db.all(
-    "SELECT * FROM event_en ORDER BY date DESC LIMIT ? OFFSET ?", [ARTICLE_NUM, ARTICLE_NUM * (pageNo - 1)],
-    (err, rows) => {
-      if (err) {
-        console.error(err);
-        res.status(500);
-      } else {
-        result = rows;
-      }
-    },
-  );
+  db.getConnection((err, conn) => {
+    const step1 = new Promise((resolve, reject) => {
+      conn.query("SELECT * FROM event_en ORDER BY date DESC LIMIT ? OFFSET ?", [ARTICLE_NUM, ARTICLE_NUM * (pageNo - 1)],
+        (err, rows) => {
+          if (err) {
+            console.error(err);
+            res.status(500);
+            resolve(false)
+          } else {
+            result = rows;
+            resolve(true)
+          }
+        },
+      );
+    })
 
-  db.get("SELECT COUNT(id) AS total FROM event_en", (err, row) => {
-    if (err) {
-      console.error(err);
-      res.status(500);
-    } else {
-      res.set("X-Total-Count", row["total"]);
-    }
+    const step2 = new Promise((resolve, reject) => {
+      conn.query("SELECT COUNT(id) AS total FROM event_en", (err, row) => {
+        if (err) {
+          console.error(err);
+          res.status(500);
+          reject(false);
+        } else {
+          res.set("X-Total-Count", row["total"]);
+          resolve(true)
+        }
+      });
+    })
+
+    Promise.all([step1, step2])
+    .then(() => {
+      conn.release();
+      res.json(result);
+    }).catch(err => {
+      conn.release();
+      res.json(result);
+    })
   });
 
-  db.close(err => {
-    res.json(result);
-  });
 });
 
 router.get("/:id", (req, res) => {
   const id = req.params.id;
-  const db = new sqlite3.Database("./sualabdb.sqlite3");
+  
   let result = {};
-  db.serialize(() => {
-    db.get("SELECT * FROM event_en WHERE id=?", [id], (err, row) => {
-      if (err) {
-        console.error(err);
-        res.status(500);
-      } else if (!row) {
-        res.status(404);
-      } else {
-        result = { ...row
-        };
-        // res.json(row);
-      }
-    });
 
-    db.get("SELECT id, title FROM event_en WHERE id=(SELECT MAX(id) FROM event_en WHERE date < (SELECT date FROM event_en WHERE id = ?))", [id], (err, row) => {
-      if (err) {
-        console.error(err);
-        res.status(500);
-      } else if (row) {
-        result.prev = { ...row
-        };
-      } else {
-        result.prev = {
-          id: -1,
-          title: ""
-        };
-      }
-    });
+  db.getConnection((err, conn) => {
+    const step1 = new Promise((resolve, reject) => {
+      conn.query("SELECT * FROM event_en WHERE id=?", [id], (err, row) => {
+        if (err) {
+          console.error(err);
+          res.status(500);
+          reject(false);
+        } else if (!row) {
+          res.status(404);
+          reject(false);
+        } else {
+          result = { ...row[0]};
+          resolve(true)
+        }
+      });
+    })
 
-    db.get("SELECT id, title FROM event_en WHERE id=(SELECT MIN(id) FROM event_en WHERE date > (SELECT date FROM event_en WHERE id = ?))", [id], (err, row) => {
-      if (err) {
-        console.error(err);
-        res.status(500);
-      } else if (row) {
-        result.next = { ...row
-        };
-      } else {
-        result.next = {
-          id: -1,
-          title: ""
-        };
-      }
-    });
-  });
+    const step2 = new Promise((resolve, reject) => {
+      conn.query("SELECT id, title FROM event_en WHERE id=(SELECT MAX(id) FROM event_en WHERE date < (SELECT date FROM event_en WHERE id = ?))", [id], (err, row) => {
+        if (err) {
+          console.error(err);
+          res.status(500);
+          reject(false);
+        } else if (row) {
+          result.prev = { ...row[0]};
+          resolve(true);
+        } else {
+          result.prev = {
+            id: -1,
+            title: ""
+          };
+          resolve(true);
+        }
+      });
+    })
 
-  db.close(err => {
+    const step3 = new Promise((resolve, reject) => {
+      conn.query("SELECT id, title FROM event_en WHERE id=(SELECT MIN(id) FROM event_en WHERE date > (SELECT date FROM event_en WHERE id = ?))", [id], (err, row) => {
+        if (err) {
+          console.error(err);
+          res.status(500);
+          reject(false);
+        } else if (row) {
+          result.next = { ...row[0] };
+          resolve(true);
+        } else {
+          result.next = {
+            id: -1,
+            title: ""
+          };
+          resolve(true);
+        }
+      });
+    })
+  })
+
+  Promise.all([step1, step2, step3])
+  .then(() => {
+    conn.release();
     res.json(result);
-  });
+  })
+  .catch(err => {
+    conn.release();
+    res.json(result);
+  })
+  
 });
+
 
 export default router;
