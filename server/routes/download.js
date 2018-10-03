@@ -42,6 +42,7 @@ router.get("/suakit", (req, res) => {
       } else {
         result = { ...row[0]};
       }
+      res.json(result);
     });
   })
 
@@ -59,6 +60,7 @@ router.get("/previous-suakit", (req, res) => {
       } else {
         result = rows;
       }
+      res.json(result);
     });
   });
 })
@@ -75,6 +77,7 @@ router.get("/documentation", (req, res) => {
       } else {
         result = rows;
       }
+      res.json(result);
     });
   })
 });
@@ -91,6 +94,7 @@ router.get("/release", (req, res) => {
       } else {
         result = rows;
       }
+      res.json(result);
     });
   });
 });
