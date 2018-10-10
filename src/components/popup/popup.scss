@@ -1,0 +1,26 @@
+.popupWrapper {
+    position: absolute;
+    z-index: 99;
+    top: 100px;
+    right: 100px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center bottom;
+}
+
+.checkboxStyle {
+    padding: 4px;
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    right: 0;
+    color: #ffffff;
+    font-size: 14px;
+    
+    label {
+        margin: 0px 4px;
+    }
+    .closeBtn {
+        cursor: pointer;
+    }
+}
