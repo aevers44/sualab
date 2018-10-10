@@ -14,7 +14,7 @@ AWS.config.update({
 });
 
 exports.preSave = function (req, res, args, next) {
-  if (args.name == "media" || args.name == "event" || args.name == "media_en" || args.name == "event_en") {
+  if (args.name == "media" || args.name == "event" || args.name == "media_en" || args.name == "event_en" || args.name == "popup") {
     var image = args.upload.view[args.name].records[0].columns.image;
 
     if (image.name) {

@@ -32,8 +32,8 @@ router.post("/", (req, res) => {
     has_vision, industry, product_type, fault_type, num_of_line,
     path, content, ad_agree)
     VALUES ('${name}', '${phone}', '${company}', '${department}', '${status}', '${email}', '${country}',
-    '${reason}', '${hasVision}', '${industry}', '${productType}', '${faultType}', '${numOfLine}', '${path}', '${content}'
-    '${adAgree}')
+    '${reason}', ${hasVision}, '${industry}', '${productType}', '${faultType}', '${numOfLine}', ${path}, '${content}',
+    ${adAgree === "true" ? 1 : 0})
   `;
   
   db.getConnection((err, conn) => {
@@ -43,14 +43,27 @@ router.post("/", (req, res) => {
         console.error(err);
         res.status(500);
       } else {
-        res.status(204);
+        res.status(204).json({});;
       }
     });
   })
 
   // send email
+  // const transporter = nodemailer.createTransport({
+  //   host: "smtp.office365.com",
+  //   port: 587,
+  //   secure: false,
+  //   auth: {
+  //     user: "sales@sualab.com",
+  //     pass: "su@l@b.c0m"
+  //   },
+  //   tls: {
+  //     ciphers: "SSLv3"
+  //   },
+  //   requireTLS: true
+  // });
   const transporter = nodemailer.createTransport({
-    sendmail: true,
+    sendmail:true
   });
 
   let pathString = "";
@@ -100,7 +113,7 @@ router.post("/", (req, res) => {
       <p>${adAgree}</p>`,
     },
     (err, info) => {
-      console.log(info);
+      console.log(err, info);
     },
   );
 });
