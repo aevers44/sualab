@@ -2618,5 +2618,193 @@
         "editview": {
             "readonly": false
         }
+    },
+    "popup": {
+        "slug": "popup",
+        "table": {
+            "name": "popup",
+            "pk": "id",
+            "verbose": "팝업"
+        },
+        "columns": [
+            {
+                "name": "id",
+                "verbose": "id",
+                "control": {
+                    "text": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "name",
+                "verbose": "팝업 이름",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(100)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "lang",
+                "verbose": "언어",
+                "control": {
+                    "select": true,
+                    "options": [
+                        "ko",
+                        "en"
+                    ]
+                },
+                "type": "varchar(2)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "image",
+                "verbose": "image",
+                "control": {
+                    "file": true
+                },
+                "type": "varchar(100)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "width",
+                "verbose": "이미지 크기 (가로)",
+                "control": {
+                    "text": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "height",
+                "verbose": "이미지 크기 (세로) 필수",
+                "control": {
+                    "text": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "url",
+                "verbose": "url (클릭시 이동할 경로)",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(100)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "start_at",
+                "verbose": "start_at",
+                "control": {
+                    "date": true
+                },
+                "type": "datetime",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "end_at",
+                "verbose": "end_at",
+                "control": {
+                    "date": true
+                },
+                "type": "datetime",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "active",
+                "verbose": "팝업 노출여부",
+                "control": {
+                    "radio": true,
+                    "options": [
+                        "노출",
+                        "미노출"
+                    ]
+                },
+                "type": "tinyint(1)",
+                "allowNull": true,
+                "defaultValue": "0",
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
     }
 }
