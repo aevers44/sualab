@@ -31,6 +31,8 @@ class PeoplePage extends React.PureComponent {
       researchList: [],
       salesList: [],
       manageList: [],
+      categoryList: [],
+      peoples: [],
     };
 
     this.getPeopleList = this.getPeopleList.bind(this);
@@ -42,7 +44,8 @@ class PeoplePage extends React.PureComponent {
 
   render() {
     const { intl } = this.props;
-    const { ceoList, researchList, salesList, manageList } = this.state;
+    const { ceoList, researchList, salesList, manageList, categoryList } = this.state;
+    const locale = this.props.intl.locale;
     return (
       <section className={styles.peoplePage}>
         <TitleSection
@@ -52,32 +55,44 @@ class PeoplePage extends React.PureComponent {
         />
 
         <div className={styles.innerContainer}>
-          <div className={styles.line} />
-          <div className={styles.subTitle}>{intl.formatMessage({ id: "PEOPLE.c-level" })}</div>
-          <div className={styles.cardWrapper}>{makePeopleCards(ceoList, intl.locale)}</div>
-
-          <div className={styles.line} />
-          <div className={styles.subTitle}>{intl.formatMessage({ id: "PEOPLE.laboratory" })}</div>
-
-          <div className={styles.cardWrapper}>{makePeopleCards(researchList.sort(sortFunc), intl.locale)}</div>
-
-          <div className={styles.line} />
-          <div className={styles.subTitle}>{intl.formatMessage({ id: "PEOPLE.business" })}</div>
-
-          <div className={styles.cardWrapper}>{makePeopleCards(salesList.sort(sortFunc), intl.locale)}</div>
-
-          <div className={styles.line} />
-          <div className={styles.subTitle}>{intl.formatMessage({ id: "PEOPLE.manage" })}</div>
-
-          <div className={styles.cardWrapper}>{makePeopleCards(manageList.sort(sortFunc), intl.locale)}</div>
+          {
+            categoryList.map(item => {
+              const peopleList = this.getPeoples(item.category)
+              return (
+                <div key={item.category}>
+                  <div className={styles.line} />
+                  <div className={styles.subTitle}>{locale === "ko" ? item.name_kr : item.name_en }</div>
+                  <div className={styles.cardWrapper}>{makePeopleCards(peopleList, intl.locale)}</div>
+                </div>
+              )
+            })
+          }
         </div>
       </section>
     );
   }
 
+  getPeoples(category){
+    return this.state.peoples.filter(elem => elem.category === category);
+  }
+
   getPeopleList() {
     axios.get("/api/people").then(res => {
+      let categoryList = [];
+      
+      res.data.forEach(row => {
+        if (categoryList.findIndex(item => item.category === row.category) === -1){
+          categoryList.push({
+            category: row.category,
+            name_kr: row.name_kr,
+            name_en: row.name_en,
+          });
+        }
+      })
+
       this.setState({
+        categoryList,
+        peoples: res.data,
         ceoList: res.data.filter(elem => elem.department === "c-level"),
         researchList: res.data.filter(elem => elem.department === "research"),
         salesList: res.data.filter(elem => elem.department === "sales"),

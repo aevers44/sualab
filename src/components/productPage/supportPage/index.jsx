@@ -76,6 +76,7 @@ class SupportPage extends React.PureComponent {
       name: "",
       phone: "",
       company: "",
+      department: "",
       status: "",
       email: "",
       country: "",
@@ -164,6 +165,20 @@ class SupportPage extends React.PureComponent {
                 onChange={ev => this.handleChange(ev, "company")}
                 value={this.state.company}
                 name="company"
+              />
+            </div>
+
+            <div className={styles.inputWrapper}>
+              <label htmlFor="company" className={styles.label}>
+                {intl.formatMessage({ id: "SUPPORT.department" })}*
+              </label>
+              <input
+                type="text"
+                className={styles.textForm}
+                id="department"
+                onChange={ev => this.handleChange(ev, "department")}
+                value={this.state.department}
+                name="department"
               />
             </div>
 
@@ -476,6 +491,7 @@ class SupportPage extends React.PureComponent {
     data["name"] = this.state.name;
     data["phone"] = this.state.phone;
     data["company"] = this.state.company;
+    data["department"] = this.state.department;
     data["status"] = this.state.status;
     data["email"] = this.state.email;
     data["country"] = this.state.country;

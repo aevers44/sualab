@@ -3,38 +3,103 @@ import axios from "axios";
 import { injectIntl } from "react-intl";
 
 import TitleSection from "../../commons/titleSection";
-import NetworkMapComponent from "./googleMap";
+import Icon from 'react-icons-kit';
+import {arrow_down, arrow_up} from 'react-icons-kit/ikons';
+import {externalLink} from 'react-icons-kit/fa/externalLink'
+
 
 import styles from "./networkPage.scss";
 
-const CompanyItem = ({ country, company, address, phone, email }) => {
+const CompanyItem = ({name, ci, companies, type, link}) => {
   return (
-    <div className={styles.companyItem}>
-      <div className={styles.country}>{country}</div>
-
-      <div className={styles.infoWrapper}>
-        <div className={styles.infoLine}>
-          <div className={styles.label}>Company</div>
-          <div className={styles.content}>{company}</div>
+    <div className={styles.companyWrapper}>
+      <div className={styles.ciWrapper}>
+        <div className={styles.companyType}>
+          <span>{type}</span>
         </div>
-        <div className={styles.infoLine}>
-          <div className={styles.label}>Address</div>
-          <div className={styles.content}>{address}</div>
-        </div>
-        <div className={styles.infoLine}>
-          <div className={styles.label}>Phone</div>
-          <div className={styles.content}>{phone}</div>
-        </div>
-        <div className={styles.infoLine}>
-          <div className={styles.label}>Email</div>
-          <div className={styles.content}>
-            <a href={`mailto:${email}`}>{email}</a>
-          </div>
+        <div className={styles.campanyLogo}>
+        {
+          ci ? <img src={ci}/> 
+          : <img src={`https://fakeimg.pl/180x180/?text=${name}`}/>
+        }
         </div>
       </div>
+
+      <div className={styles.infoWrapper}>
+        <div className={styles.company}>
+          <div><strong>{name}</strong></div>
+          <div>
+            <span className={styles.companyLink}>{link}</span>
+            <a href={`http://${link}`} target="_blank"><Icon icon={externalLink}/></a>
+          </div>
+        </div>
+        {
+          companies.map((company,idx) => {
+            const countries = company.country.split(',');
+            return (
+              <div key={idx} className={styles.companyLine}>
+                <div className={styles.countryWrapper}>
+                {
+                  countries.map(country => {
+                    return (
+                      <div key={country} className={styles.countries}>
+                        <div><img src={FLAG[country]}/></div>
+                        <div>{country}</div>
+                      </div>
+                    )
+                  })
+                }
+                </div>
+                <div className={styles.infoLine}>
+                  <div className={styles.label}>Phone</div>
+                  <div className={styles.content}>{company.phone}</div>
+                </div>
+                <div className={styles.infoLine}>
+                  <div className={styles.label}>Email</div>
+                  <div className={styles.content}>{company.email}</div>
+                </div>
+                <div className={styles.infoLine}>
+                  <div className={styles.label}>Address</div>
+                  <div className={styles.content}>{company.address}</div>
+                </div>
+              </div>    
+            )
+          })
+        }
+      </div>
     </div>
-  );
+  )
 };
+
+
+const AREA = [
+  {name:"Asia Pacific", value:"ASIA", image: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/map/Asiapacific.png"},
+  {name:"Europe", value:"EUROPE", image: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/map/Europe.png"},
+  {name:"Americas", value:"AMERICA", image: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/map/Americas.png"},
+  {name:"Africa", value:"AFRICA", image: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/map/Africa.png"}
+];
+
+const FLAG = {
+  Argentina: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Argentina.png",
+  Brazil: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Brazil.png",
+  Chile: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Chile.png",
+  Colombia: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Colombia.png",
+  Japan: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Japan.png",
+  Liechtenstein: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Liechtenstein.png",
+  Malaysia: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Malaysia.png",
+  Mexico: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Mexico.png",
+  Morocco: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Morocco.png",
+  Myanmar: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Myanmar.png",
+  Peru: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Peru.png",
+  Portugal: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Portugal.png",
+  Singapore: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Singapore.png",
+  Spain: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Spain.png",
+  Switzerland: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Switzerland.png",
+  Taiwan: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Taiwan.png",
+  Thailand: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Thailand.png",
+  Usa: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Usa.png",
+  Vietnam: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Vietnam.png",
+}
 
 class NetworkPage extends React.PureComponent {
   constructor(props) {
@@ -48,6 +113,8 @@ class NetworkPage extends React.PureComponent {
       africaOfficeList: [],
       oceaniaOfficeList: [],
       latlngList: [],
+      selectedArea: AREA[0],
+      selectionMenuOpen: false
     };
 
     this.getOfficeList = this.getOfficeList.bind(this);
@@ -59,14 +126,7 @@ class NetworkPage extends React.PureComponent {
 
   render() {
     const { intl } = this.props;
-    const {
-      asiaOfficeList,
-      americaOfficeList,
-      europeOfficeList,
-      africaOfficeList,
-      oceaniaOfficeList,
-      latlngList,
-    } = this.state;
+    const { selectedArea, selectionMenuOpen } = this.state;
 
     return (
       <section className={styles.networkPage}>
@@ -77,66 +137,107 @@ class NetworkPage extends React.PureComponent {
         />
 
         <div className={styles.innerContainer}>
-          <div className={styles.mapWrapper}>
-            <NetworkMapComponent
-              isMarkerShown
-              googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyC2l8AiJrv0oRBAQIKI60rgH16h93W98Ac"
-              loadingElement={<div style={{ height: `100%` }} />}
-              containerElement={<div className={styles.mapContainer} />}
-              mapElement={<div style={{ height: `100%` }} />}
-              markerList={latlngList}
-            />
+
+          <div className={styles.areaSelection}>
+            {
+              AREA.map(ar => <div 
+                className={`${styles.area}  ${selectedArea.value == ar.value ? styles.selected: ''}`} 
+                key={ar.value} 
+                value={ar.value}
+                onClick={() =>this.onSelectArea(ar)}>
+                  {ar.name}
+                </div>)
+            }
           </div>
-
-          <div className={styles.networkListWrapper}>
-            {asiaOfficeList.length > 0 ? (
-              <div className={styles.continentLabel}>ASIA</div>
-            ) : (
-              ""
-            )}
-            {asiaOfficeList.map(elem => (
-              <CompanyItem key={elem.id} {...elem} />
-            ))}
-
-            {americaOfficeList.length > 0 ? (
-              <div className={styles.continentLabel}>AMERICA</div>
-            ) : (
-              ""
-            )}
-            {americaOfficeList.map(elem => (
-              <CompanyItem key={elem.id} {...elem} />
-            ))}
-
-            {europeOfficeList.length > 0 ? (
-              <div className={styles.continentLabel}>EUROPE</div>
-            ) : (
-              ""
-            )}
-            {europeOfficeList.map(elem => (
-              <CompanyItem key={elem.id} {...elem} />
-            ))}
-
-            {africaOfficeList.length > 0 ? (
-              <div className={styles.continentLabel}>AFRICA</div>
-            ) : (
-              ""
-            )}
-            {africaOfficeList.map(elem => (
-              <CompanyItem key={elem.id} {...elem} />
-            ))}
-
-            {oceaniaOfficeList.length > 0 ? (
-              <div className={styles.continentLabel}>OCEANIA</div>
-            ) : (
-              ""
-            )}
-            {oceaniaOfficeList.map(elem => (
-              <CompanyItem key={elem.id} {...elem} />
-            ))}
+          <div className={styles.areaSelectionForMobile} 
+          onClick={ev => this.setState({ selectionMenuOpen: !selectionMenuOpen })}>
+            <div className={styles.selectedWrapper}>
+              <div>{intl.formatMessage({ id: "NETWORK.location" })}</div> 
+              <div>{selectedArea.name}</div>
+              <div>
+                {selectionMenuOpen? <Icon icon={arrow_up}/> : <Icon icon={arrow_down}/>}
+              </div>
+            </div>
+            <div className={`${styles.selection} ${!selectionMenuOpen ? styles.hidden: ''}`}>
+              <ul>
+              {
+                AREA.map(ar => <li
+                  key={ar.value}
+                  onClick={() => this.onSelectArea(ar)}
+                  className={`${selectedArea.value == ar.value ? styles.selected: ''}`}
+                  >
+                  {ar.name}
+                </li>)
+              }
+              </ul>
+            </div>
+          </div>
+          <div className={styles.companyArea}>
+            { this.displayCompanies() }
           </div>
         </div>
       </section>
     );
+  }
+
+  displayCompanies() {
+    const {selectedArea} = this.state;
+    const officeList = this.getOffice(selectedArea.value);
+
+    return (
+      <div>
+        <div className={styles.mapArea}>
+          <img src={selectedArea.image}/>
+        </div>
+        {
+          Object.keys(officeList).length > 0 ? (
+            Object.keys(officeList).map((key,idx) => (
+              <CompanyItem key={idx} {...officeList[key]} />
+            ))
+          ) : (
+            ""
+          )
+        }
+      </div>
+    )
+  }
+
+  getOffice(area){
+    const { asiaOfficeList, americaOfficeList, europeOfficeList, africaOfficeList, oceaniaOfficeList } = this.state;
+    switch (area) {
+      case "ASIA": return asiaOfficeList; break;
+      case "AMERICA": return americaOfficeList; break;
+      case "EUROPE": return europeOfficeList; break;
+      case "AFRICA": return africaOfficeList; break;
+      case "OCEANIA": return oceaniaOfficeList; break;
+      default:
+        break;
+    }
+  }
+
+  onSelectArea(selectedArea) {
+    this.setState({selectedArea});
+  }
+
+  groupBy(list, keyGetter){
+    const map = {};
+    list.forEach(item => {
+      const key = keyGetter(item);
+      const collection = map.hasOwnProperty(key);
+      if (!collection) {
+        map[key] = {
+          name: item.company,
+          ci: item.image,
+          link: item.link,
+          type: item.type,
+          companies: [item]
+        }
+      } else {
+        map[key].companies.push(item);
+      }
+    })
+    console.log(map);
+    return map;
   }
 
   getOfficeList() {
@@ -148,24 +249,20 @@ class NetworkPage extends React.PureComponent {
         .map(elem => {
           return { lat: elem.latitude, lng: elem.longitude };
         });
+      
       this.setState({
-        asiaOfficeList: officeList.filter(elem => elem.continent === "ASIA"),
-        americaOfficeList: officeList.filter(
-          elem => elem.continent === "AMERICA",
-        ),
-        europeOfficeList: officeList.filter(
-          elem => elem.continent === "EUROPE",
-        ),
-        africaOfficeList: officeList.filter(
-          elem => elem.continent === "AFRICA",
-        ),
-        oceaniaOfficeList: officeList.filter(
-          elem => elem.continent === "OCEANIA",
-        ),
+        asiaOfficeList: this.groupBy(officeList.filter(elem => elem.continent === "ASIA"), item => item.company),
+        americaOfficeList: this.groupBy(officeList.filter(elem => elem.continent === "AMERICA"), item => item.company),
+        europeOfficeList: this.groupBy(officeList.filter(elem => elem.continent === "EUROPE"), item => item.company),
+        africaOfficeList: this.groupBy(officeList.filter(elem => elem.continent === "AFRICA"), item => item.company),
+        oceaniaOfficeList: this.groupBy(officeList.filter(elem => elem.continent === "OCEANIA"), item => item.company),
         latlngList: latlngList,
       });
     });
   }
+
+  
+
 }
 
 export default injectIntl(NetworkPage);

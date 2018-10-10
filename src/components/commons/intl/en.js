@@ -137,6 +137,7 @@ export default {
   "SUPPORT.status": `Job Title`,
   "SUPPORT.email": `Email`,
   "SUPPORT.country": `Country`,
+  "SUPPORT.department": `Department`,
   "SUPPORT.reason": `Reason for contacting us`,
   "SUPPORT.reason.item_0": `Please select one`,
   "SUPPORT.reason.item_1": `Product Inquiry`,
@@ -178,6 +179,7 @@ export default {
   "DOWNLOAD.AUTH.authBtn": "Authenticate",
   "DOWNLOAD.AUTH.authFailMessage": "Authentication Failed.\nPlease check your company name and key",
   "DOWNLOAD.SUAKIT.detail": "Details",
+  "DOWNLOAD.SUAKIT.fold": "fold",
 
   "MEDIA.title": `Check out the *Press Coverage of SUALAB*`,
   "MEDIA.newsDetail.prev": `Previous`,
@@ -237,4 +239,5 @@ export default {
   "OFFICE.china": `China Office`,
 
   "NETWORK.title": `SUALAB is expanding throughout the *world* with *global business partners*`,
+  "NETWORK.location": `Location`,
 };

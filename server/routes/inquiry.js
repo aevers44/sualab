@@ -17,6 +17,7 @@ router.post("/", (req, res) => {
     status,
     email,
     country,
+    department,
     reason,
     hasVision,
     industry,
@@ -29,16 +30,17 @@ router.post("/", (req, res) => {
   } = req.body;
   let stmt = db
     .prepare(
-      "INSERT INTO inquiry (name, phone, company, status, email, country, reason, \
+      "INSERT INTO inquiry (name, phone, company, department, status, email, country, reason, \
               has_vision, industry, product_type, fault_type, num_of_line, \
               path, content, ad_agree) \
-              VALUES (?, ?, ?, ?, ?, ?, ?, \
+              VALUES (?, ?, ?, ?, ?, ?, ?, ?, \
                       ?, ?, ?, ?, ?, \
                       ?, ?, ?)",
       [
         name,
         phone,
         company,
+        department,
         status,
         email,
         country,
@@ -80,7 +82,8 @@ router.post("/", (req, res) => {
   transporter.sendMail(
     {
       from: `${name} <${email}>`,
-      to: process.env.GET_INQUIRY_EMAIL,
+      // to: process.env.GET_INQUIRY_EMAIL,
+      to: `mith1004@gmail.com`,
       subject: `[문의] ${name}님의 문의 (${company}, ${country})`,
       text: "text",
       html: `<h3>이름</h3>
@@ -89,6 +92,8 @@ router.post("/", (req, res) => {
       <p>${phone}</p>
       <h3>회사</h3>
       <p>${company}</p>
+      <h3>부서</h3>
+      <p>${department}</p>
       <h3>직급</h3>
       <p>${status}</p>
       <h3>이메일</h3>

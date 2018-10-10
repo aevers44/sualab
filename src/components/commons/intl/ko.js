@@ -137,6 +137,7 @@ export default {
   "SUPPORT.status": `직급`,
   "SUPPORT.email": `Email`,
   "SUPPORT.country": `국가`,
+  "SUPPORT.department": `부서`,
   "SUPPORT.reason": `문의이유`,
   "SUPPORT.reason.item_0": `문의 이유를 선택하세요.`,
   "SUPPORT.reason.item_1": `제품 문의`,
@@ -178,6 +179,7 @@ export default {
   "DOWNLOAD.AUTH.authBtn": "인증",
   "DOWNLOAD.AUTH.authFailMessage": "인증에 실패하였습니다.\n 다시 확인해주세요.",
   "DOWNLOAD.SUAKIT.detail": "상세보기",
+  "DOWNLOAD.SUAKIT.fold": "접기",
 
   "MEDIA.title": `*언론*에 보도된 *SUALAB*을 확인해 보세요`,
   "MEDIA.newsDetail.prev": `이전 글`,
@@ -236,4 +238,5 @@ export default {
   "OFFICE.china": `중국 법인`,
 
   "NETWORK.title": `SUALAB은 *비즈니스 파트너*들과 함께 *세계*로 나아가고 있습니다`,
+  "NETWORK.location": `지역`,
 };

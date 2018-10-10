@@ -9,7 +9,7 @@ router.get("/", (req, res) => {
   const db = new sqlite3.Database("./sualabdb.sqlite3");
   let result;
 
-  db.all("SELECT * FROM global_office", (err, rows) => {
+  db.all("SELECT * FROM global_office order by company", (err, rows) => {
     if (err) {
       console.error(err);
       res.status(500);

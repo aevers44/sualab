@@ -147,6 +147,263 @@
         },
         "listview": {
             "order": {},
+            "page": 25,
+            "filter": [
+                "name",
+                "department",
+                "eng_name"
+            ]
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "category_people": {
+        "slug": "category_people",
+        "table": {
+            "name": "category_people",
+            "pk": "id",
+            "verbose": "Company / People 회사 사원 연관 테이블"
+        },
+        "columns": [
+            {
+                "name": "id",
+                "verbose": "id",
+                "control": {
+                    "text": true
+                },
+                "type": "INTEGER",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "category_id",
+                "verbose": "카테고리 id",
+                "control": {
+                    "select": true
+                },
+                "type": "INTEGER",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                },
+                "oneToMany": {
+                    "table": "category",
+                    "pk": "id",
+                    "columns": [
+                        "category",
+                        "name_kr"
+                    ]
+                }
+            },
+            {
+                "name": "people_id",
+                "verbose": "사원 id",
+                "control": {
+                    "select": true
+                },
+                "type": "INTEGER",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                },
+                "oneToMany": {
+                    "table": "people",
+                    "pk": "id",
+                    "columns": [
+                        "department",
+                        "name"
+                    ]
+                }
+            },
+            {
+                "name": "priority",
+                "verbose": "우선순위",
+                "control": {
+                    "text": true
+                },
+                "type": "INTEGER",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "sqlite_sequence": {
+        "slug": "sqlite_sequence",
+        "table": {
+            "name": "sqlite_sequence",
+            "pk": "",
+            "verbose": "sqlite_sequence"
+        },
+        "columns": [
+            {
+                "name": "name",
+                "verbose": "name",
+                "control": {
+                    "text": true
+                },
+                "type": "",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "seq",
+                "verbose": "seq",
+                "control": {
+                    "text": true
+                },
+                "type": "",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "category": {
+        "slug": "category",
+        "table": {
+            "name": "category",
+            "pk": "id",
+            "verbose": "Company / People 카테고리(경영진, 연구/개발/제품기획 등..)"
+        },
+        "columns": [
+            {
+                "name": "id",
+                "verbose": "id",
+                "control": {
+                    "text": true
+                },
+                "type": "INTEGER",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "category",
+                "verbose": "category name(영문으로만)",
+                "control": {
+                    "text": true
+                },
+                "type": "TEXT",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "name_kr",
+                "verbose": "디스플레이용 카테고리명 (한글)",
+                "control": {
+                    "text": true
+                },
+                "type": "TEXT",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "name_en",
+                "verbose": "디스플레이용 카테고리명 (영문)",
+                "control": {
+                    "text": true
+                },
+                "type": "TEXT",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "priority",
+                "verbose": "우선순위",
+                "control": {
+                    "text": true
+                },
+                "type": "INTEGER",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
             "page": 25
         },
         "editview": {
@@ -158,7 +415,7 @@
         "table": {
             "name": "media",
             "pk": "id",
-            "verbose": "News / SuaLAB in MEDIA 한글"
+            "verbose": "News / SuaLAB in MEDIA"
         },
         "columns": [
             {
@@ -242,22 +499,6 @@
                 }
             },
             {
-                "name": "image",
-                "verbose": "image",
-                "control": {
-                    "file": true
-                },
-                "type": "TEXT",
-                "allowNull": true,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
                 "name": "content",
                 "verbose": "content",
                 "control": {
@@ -282,7 +523,10 @@
             "page": 25
         },
         "editview": {
-            "readonly": false
+            "readonly": false,
+            "manyToOne": {
+                "media_image": "media_id"
+            }
         }
     },
     "media_en": {
@@ -374,22 +618,6 @@
                 }
             },
             {
-                "name": "image",
-                "verbose": "image",
-                "control": {
-                    "file": true
-                },
-                "type": "TEXT",
-                "allowNull": true,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
                 "name": "content",
                 "verbose": "content",
                 "control": {
@@ -414,7 +642,10 @@
             "page": 25
         },
         "editview": {
-            "readonly": false
+            "readonly": false,
+            "manyToOne": {
+                "media_en_image": "media_id"
+            }
         }
     },
     "event": {
@@ -1016,6 +1247,22 @@
             {
                 "name": "reason",
                 "verbose": "reason",
+                "control": {
+                    "text": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "department",
+                "verbose": "department",
                 "control": {
                     "text": true
                 },
@@ -2043,10 +2290,326 @@
                 "editview": {
                     "show": true
                 }
+            },
+            {
+                "name": "link",
+                "verbose": "회사 링크",
+                "control": {
+                    "text": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "image",
+                "verbose": "회사 이미지",
+                "control": {
+                    "file": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "type",
+                "verbose": "구분",
+                "control": {
+                    "text": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
             }
         ],
         "mainview": {
             "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "suakit_example": {
+        "slug": "suakit_example",
+        "table": {
+            "name": "suakit_example",
+            "pk": "id",
+            "verbose": "Product / SuaKIT 적용사례"
+        },
+        "columns": [
+            {
+                "name": "id",
+                "verbose": "id",
+                "control": {
+                    "text": true
+                },
+                "type": "INTEGER",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "name_kr",
+                "verbose": "적용사례 (한글)",
+                "control": {
+                    "text": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "name_en",
+                "verbose": "적용사례 (영문)",
+                "control": {
+                    "text": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "image",
+                "verbose": "image",
+                "control": {
+                    "file": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "priority",
+                "verbose": "노출 순서",
+                "control": {
+                    "text": true
+                },
+                "type": "INTEGER",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "media_image": {
+        "slug": "media_image",
+        "table": {
+            "name": "media_image",
+            "pk": "id",
+            "verbose": "이미지"
+        },
+        "columns": [
+            {
+                "name": "id",
+                "verbose": "id",
+                "control": {
+                    "text": true
+                },
+                "type": "INTEGER",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "media_id",
+                "verbose": "media_id",
+                "control": {
+                    "select": true
+                },
+                "type": "INTEGER",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "image",
+                "verbose": "image",
+                "control": {
+                    "file": true
+                },
+                "type": "TEXT",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "priority",
+                "verbose": "priority",
+                "control": {
+                    "text": true
+                },
+                "type": "INTEGER",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": false
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "media_en_image": {
+        "slug": "media_en_image",
+        "table": {
+            "name": "media_en_image",
+            "pk": "id",
+            "verbose": "media_en_image"
+        },
+        "columns": [
+            {
+                "name": "id",
+                "verbose": "id",
+                "control": {
+                    "text": true
+                },
+                "type": "INTEGER",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "media_id",
+                "verbose": "media_id",
+                "control": {
+                    "text": true
+                },
+                "type": "INTEGER",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "image",
+                "verbose": "image",
+                "control": {
+                    "text": true
+                },
+                "type": "TEXT",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "priority",
+                "verbose": "priority",
+                "control": {
+                    "text": true
+                },
+                "type": "INTEGER",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": false
         },
         "listview": {
             "order": {},
