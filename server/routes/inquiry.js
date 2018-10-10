@@ -35,16 +35,18 @@ router.post("/", (req, res) => {
     '${reason}', '${hasVision}', '${industry}', '${productType}', '${faultType}', '${numOfLine}', '${path}', '${content}'
     '${adAgree}')
   `;
-
-  conn.query(sql, (err) => {
-    conn.release();
-    if (err) {
-      console.error(err);
-      res.status(500);
-    } else {
-      res.status(204);
-    }
-  });
+  
+  db.getConnection((err, conn) => {
+    conn.query(sql, (err) => {
+      conn.release();
+      if (err) {
+        console.error(err);
+        res.status(500);
+      } else {
+        res.status(204);
+      }
+    });
+  })
 
   // send email
   const transporter = nodemailer.createTransport({
@@ -61,8 +63,7 @@ router.post("/", (req, res) => {
   transporter.sendMail(
     {
       from: `${name} <${email}>`,
-      // to: process.env.GET_INQUIRY_EMAIL,
-      to: `mith1004@gmail.com`,
+      to: process.env.GET_INQUIRY_EMAIL,
       subject: `[문의] ${name}님의 문의 (${company}, ${country})`,
       text: "text",
       html: `<h3>이름</h3>
