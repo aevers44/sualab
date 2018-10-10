@@ -1,5 +1,5 @@
 import express from "express";
-import sqlite3 from "sqlite3";
+import db from "../api/config";
 import nodemailer from "nodemailer";
 /*
   get / : artilce list
@@ -8,8 +8,6 @@ import nodemailer from "nodemailer";
 const router = express.Router();
 
 router.post("/", (req, res) => {
-  const db = new sqlite3.Database("./sualabdb.sqlite3");
-
   const {
     name,
     phone,
@@ -28,44 +26,27 @@ router.post("/", (req, res) => {
     content,
     adAgree,
   } = req.body;
-  let stmt = db
-    .prepare(
-      "INSERT INTO inquiry (name, phone, company, department, status, email, country, reason, \
-              has_vision, industry, product_type, fault_type, num_of_line, \
-              path, content, ad_agree) \
-              VALUES (?, ?, ?, ?, ?, ?, ?, ?, \
-                      ?, ?, ?, ?, ?, \
-                      ?, ?, ?)",
-      [
-        name,
-        phone,
-        company,
-        department,
-        status,
-        email,
-        country,
-        reason,
-        hasVision,
-        industry,
-        productType,
-        faultType,
-        numOfLine,
-        path,
-        content,
-        adAgree,
-      ],
-    )
-    .run(err => {
+
+  const sql = `
+  INSERT INTO inquiry (name, phone, company, department, status, email, country, reason,
+    has_vision, industry, product_type, fault_type, num_of_line,
+    path, content, ad_agree)
+    VALUES ('${name}', '${phone}', '${company}', '${department}', '${status}', '${email}', '${country}',
+    '${reason}', '${hasVision}', '${industry}', '${productType}', '${faultType}', '${numOfLine}', '${path}', '${content}'
+    '${adAgree}')
+  `;
+  
+  db.getConnection((err, conn) => {
+    conn.query(sql, (err) => {
+      conn.release();
       if (err) {
         console.error(err);
         res.status(500);
       } else {
-        res.status(204).json(stmt.lastID);
+        res.status(204);
       }
     });
-  stmt.finalize();
-
-  db.close();
+  })
 
   // send email
   const transporter = nodemailer.createTransport({
@@ -82,8 +63,7 @@ router.post("/", (req, res) => {
   transporter.sendMail(
     {
       from: `${name} <${email}>`,
-      // to: process.env.GET_INQUIRY_EMAIL,
-      to: `mith1004@gmail.com`,
+      to: process.env.GET_INQUIRY_EMAIL,
       subject: `[문의] ${name}님의 문의 (${company}, ${country})`,
       text: "text",
       html: `<h3>이름</h3>

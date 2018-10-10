@@ -1,6 +1,10 @@
 {
-  "sqlite": {
-    "database": "sualabdb.sqlite3"
+  "mysql": {
+    "host": "13.125.83.115",
+    "user": "sualab",
+    "password": "sualab!@34",
+    "port": 3306,
+    "database": "sualab_dev"
   },
   "server": {
     "port": 3030
