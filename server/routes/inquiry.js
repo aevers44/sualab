@@ -49,22 +49,22 @@ router.post("/", (req, res) => {
   })
 
   // send email
-  // const transporter = nodemailer.createTransport({
-  //   host: "smtp.office365.com",
-  //   port: 587,
-  //   secure: false,
-  //   auth: {
-  //     user: "sales@sualab.com",
-  //     pass: "su@l@b.c0m"
-  //   },
-  //   tls: {
-  //     ciphers: "SSLv3"
-  //   },
-  //   requireTLS: true
-  // });
   const transporter = nodemailer.createTransport({
-    sendmail:true
+    host: "smtp.office365.com",
+    port: 587,
+    secure: false,
+    auth: {
+      user: "sales@sualab.com",
+      pass: "su@l@b.c0m"
+    },
+    tls: {
+      ciphers: "SSLv3"
+    },
+    requireTLS: true
   });
+  // const transporter = nodemailer.createTransport({
+  //   sendmail:true
+  // });
 
   let pathString = "";
   if (path == 0) pathStrng = "전시회/세미나";
@@ -75,7 +75,7 @@ router.post("/", (req, res) => {
 
   transporter.sendMail(
     {
-      from: `${name} <${email}>`,
+      from: process.env.GET_INQUIRY_EMAIL,
       to: process.env.GET_INQUIRY_EMAIL,
       subject: `[문의] ${name}님의 문의 (${company}, ${country})`,
       text: "text",

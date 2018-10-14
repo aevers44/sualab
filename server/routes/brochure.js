@@ -15,7 +15,7 @@ router.get("/", (req, res) => {
       } else if (!row) {
         res.status(404);
       } else {
-        result = { ...row};
+        result = row[0];
         res.json(result);
       }
     });

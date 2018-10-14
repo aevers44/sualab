@@ -19,7 +19,7 @@ const CompanyItem = ({name, ci, companies, type, link}) => {
         </div>
         <div className={styles.campanyLogo}>
         {
-          ci ? <img src={ci}/> 
+          ci ? <img src={ci} /> 
           : <img src={`https://fakeimg.pl/180x180/?text=${name}`}/>
         }
         </div>
@@ -43,7 +43,7 @@ const CompanyItem = ({name, ci, companies, type, link}) => {
                   countries.map(country => {
                     return (
                       <div key={country} className={styles.countries}>
-                        <div><img src={FLAG[country]}/></div>
+                        <div><img src={FLAG[country.trim()]}/></div>
                         <div>{country}</div>
                       </div>
                     )
@@ -56,7 +56,9 @@ const CompanyItem = ({name, ci, companies, type, link}) => {
                 </div>
                 <div className={styles.infoLine}>
                   <div className={styles.label}>Email</div>
-                  <div className={styles.content}>{company.email}</div>
+                  <div className={styles.content}>
+                    <a href={`mailto:${company.email}`}>{company.email}</a>
+                  </div>
                 </div>
                 <div className={styles.infoLine}>
                   <div className={styles.label}>Address</div>
