@@ -14,7 +14,7 @@ AWS.config.update({
 });
 
 exports.preSave = function (req, res, args, next) {
-  if (args.name == "media" || args.name == "event" || args.name == "media_en" || args.name == "event_en" || args.name == "popup") {
+  if ( args.name == "event" || args.name == "event_en" || args.name == "popup") {
     var image = args.upload.view[args.name].records[0].columns.image;
 
     if (image.name) {
@@ -54,6 +54,112 @@ exports.preSave = function (req, res, args, next) {
     } else {
       next();
     }
+  } if (args.name == "media") {
+    var image = args.upload.manyToOne.media_image.records[0].columns.image;
+    var imageList = args.upload.manyToOne.media_image.records;
+
+    let promiseList = [];
+
+    for (let idx =0; idx < imageList.length; idx++){
+      let image = imageList[idx].columns.image;
+      if (image.name){
+        var fname = args.data.manyToOne.media_image.records[idx].columns.image;
+        var record = args.data.manyToOne.media_image.records[idx].columns;
+
+        var date = new Date();
+        var datePath = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + "/";
+
+        var s3_params = {
+          Bucket: "sualab-asset",
+          Key: "upload/" + datePath + image.name,
+          ACL: "public-read",
+          ContentType: image.type,
+        };
+
+        var s3 = new AWS.S3({
+          params: s3_params
+        });
+
+        promiseList.push(
+          new Promise(function(resolve, reject){
+            s3
+            .upload({
+              Body: fs.createReadStream(image.path)
+            })
+            .on("httpUploadProgress", function (evt) {
+              console.log(evt);
+            })
+            .send(function (err, data) {
+              //S3 File URL
+              var url = data.Location;
+              var parseUrl = parse(url);
+              parseUrl.set("hostname", CLOUDFRONT_LINK);
+              // record path
+              record.image = parseUrl.href;
+              resolve(record);
+            });
+          }),
+        );
+      }
+    }
+
+    Promise.all(promiseList).then(function (vals){
+      next();
+    })
+
+  } if (args.name == "media_en") {
+    var image = args.upload.manyToOne.media_en_image.records[0].columns.image;
+    var imageList = args.upload.manyToOne.media_en_image.records;
+
+    let promiseList = [];
+
+    for (let idx =0; idx < imageList.length; idx++){
+      let image = imageList[idx].columns.image;
+      if (image.name){
+        var fname = args.data.manyToOne.media_en_image.records[idx].columns.image;
+        var record = args.data.manyToOne.media_en_image.records[idx].columns;
+
+        var date = new Date();
+        var datePath = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + "/";
+
+        var s3_params = {
+          Bucket: "sualab-asset",
+          Key: "upload/" + datePath + image.name,
+          ACL: "public-read",
+          ContentType: image.type,
+        };
+
+        var s3 = new AWS.S3({
+          params: s3_params
+        });
+
+        promiseList.push(
+          new Promise(function(resolve, reject){
+            s3
+            .upload({
+              Body: fs.createReadStream(image.path)
+            })
+            .on("httpUploadProgress", function (evt) {
+              console.log(evt);
+            })
+            .send(function (err, data) {
+              //S3 File URL
+              var url = data.Location;
+              var parseUrl = parse(url);
+              parseUrl.set("hostname", CLOUDFRONT_LINK);
+              // record path
+              record.image = parseUrl.href;
+              resolve(record);
+            });
+          }),
+        );
+      }
+    }
+
+    Promise.all(promiseList).then(function (vals){
+      next();
+    })
+
   } else if (args.name == "suakit_example") {
     var image = args.upload.view[args.name].records[0].columns.image;
 
@@ -157,9 +263,11 @@ exports.preSave = function (req, res, args, next) {
           //S3 File URL
           var url = data.Location;
           var parseUrl = parse(url);
+          console.log(parseUrl);
           parseUrl.set("hostname", CLOUDFRONT_LINK);
           // record path
-          record.image = parseUrl.href;
+          record.imgUrl = parseUrl.href;
+          console.log(record);
           next();
         });
     } else {
