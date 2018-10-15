@@ -29,8 +29,10 @@ const CompanyItem = ({name, ci, companies, type, link}) => {
         <div className={styles.company}>
           <div><strong>{name}</strong></div>
           <div>
-            <span className={styles.companyLink}>{link}</span>
-            <a href={`http://${link}`} target="_blank"><Icon icon={externalLink}/></a>
+            <a href={`http://${link}`} target="_blank">
+              <span className={styles.companyLink}>{link}</span>
+              <Icon icon={externalLink}/>
+            </a>
           </div>
         </div>
         {

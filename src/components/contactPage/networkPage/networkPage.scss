@@ -120,6 +120,7 @@ $container-width: 1080px;
   @media (max-width: 768px) {
     display: block;
     margin-bottom: 16px;
+    width: 100%;
     .selectedWrapper {
       display: flex;
       justify-content: space-between;
@@ -129,7 +130,7 @@ $container-width: 1080px;
         color: #adb3b9;
       }
       :nth-child(2) {
-        color: #202d3e;
+        color: rgb(32, 45, 62);
         font-weight: bold;
       }
     }
@@ -139,21 +140,17 @@ $container-width: 1080px;
       z-index: 999;
       display:block;
       background-color: #ffffff;
-      width: 100% - 5;
-      
+      width: calc(100% - 20px);
       ul {
         padding: 0;
         margin-top: 0;
         text-align: left;
         li {
           list-style: none;
-          border-top: 1px solid #cccccc;
+          border-bottom: 1px solid #cccccc;
           border-left: 1px solid #cccccc;
           border-right: 1px solid #cccccc;
           padding: 12px;
-          &:last-child {
-            border-bottom: solid 1px #cccccc;
-          }
         }
         .selected {
           color: #00c4b3;
@@ -304,6 +301,7 @@ $container-width: 1080px;
         }
         .content {
           display: inline-block;
+          padding-left: 10px;
           font-size: 14px;
           font-weight: normal;
           line-height: 1.6;
