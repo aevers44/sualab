@@ -16,7 +16,7 @@ router.get("/", (req, res) => {
       conn.query(
         `select A.*, (select image from media_en_image where media_id = A.id limit 1) as image
         from media_en A
-        order by date desc LIMIT ? OFFSET `, [ARTICLE_NUM, ARTICLE_NUM * (pageNo - 1)],
+        order by date desc LIMIT ? OFFSET ? `, [ARTICLE_NUM, ARTICLE_NUM * (pageNo - 1)],
         (err, rows) => {
           if (err) {
             console.error(err);
@@ -37,7 +37,7 @@ router.get("/", (req, res) => {
           res.status(500);
           reject(false);
         } else {
-          res.set("X-Total-Count", row["total"]);
+          res.set("X-Total-Count", row[0]["total"]);
           resolve(true)
         }
       });

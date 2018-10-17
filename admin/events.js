@@ -54,7 +54,8 @@ exports.preSave = function (req, res, args, next) {
     } else {
       next();
     }
-  } if (args.name == "media") {
+
+  } else if (args.name == "media") {
     var image = args.upload.manyToOne.media_image.records[0].columns.image;
     var imageList = args.upload.manyToOne.media_image.records;
 
@@ -62,6 +63,7 @@ exports.preSave = function (req, res, args, next) {
 
     for (let idx =0; idx < imageList.length; idx++){
       let image = imageList[idx].columns.image;
+
       if (image.name){
         var fname = args.data.manyToOne.media_image.records[idx].columns.image;
         var record = args.data.manyToOne.media_image.records[idx].columns;
@@ -90,12 +92,16 @@ exports.preSave = function (req, res, args, next) {
               console.log(evt);
             })
             .send(function (err, data) {
+              if(err){
+                reject();
+              }
               //S3 File URL
               var url = data.Location;
               var parseUrl = parse(url);
               parseUrl.set("hostname", CLOUDFRONT_LINK);
               // record path
               record.image = parseUrl.href;
+              console.log(record);
               resolve(record);
             });
           }),
@@ -103,11 +109,15 @@ exports.preSave = function (req, res, args, next) {
       }
     }
 
+    console.log(promiseList);
+
     Promise.all(promiseList).then(function (vals){
       next();
+    }).catch(function(err){
+      console.log(err);
     })
 
-  } if (args.name == "media_en") {
+  } else if (args.name == "media_en") {
     var image = args.upload.manyToOne.media_en_image.records[0].columns.image;
     var imageList = args.upload.manyToOne.media_en_image.records;
 
@@ -115,6 +125,7 @@ exports.preSave = function (req, res, args, next) {
 
     for (let idx =0; idx < imageList.length; idx++){
       let image = imageList[idx].columns.image;
+
       if (image.name){
         var fname = args.data.manyToOne.media_en_image.records[idx].columns.image;
         var record = args.data.manyToOne.media_en_image.records[idx].columns;
@@ -263,11 +274,9 @@ exports.preSave = function (req, res, args, next) {
           //S3 File URL
           var url = data.Location;
           var parseUrl = parse(url);
-          console.log(parseUrl);
           parseUrl.set("hostname", CLOUDFRONT_LINK);
           // record path
           record.imgUrl = parseUrl.href;
-          console.log(record);
           next();
         });
     } else {

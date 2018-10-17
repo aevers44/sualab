@@ -2556,7 +2556,7 @@
                     "show": true
                 },
                 "editview": {
-                    "show": true
+                    "show": false
                 }
             },
             {
@@ -2572,14 +2572,14 @@
                     "show": true
                 },
                 "editview": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "image",
                 "verbose": "image",
                 "control": {
-                    "text": true
+                    "file": true
                 },
                 "type": "TEXT",
                 "allowNull": false,
