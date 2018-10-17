@@ -45,7 +45,7 @@ const CompanyItem = ({name, ci, companies, type, link}) => {
                   countries.map(country => {
                     return (
                       <div key={country} className={styles.countries}>
-                        <div><img src={FLAG[country.trim()]}/></div>
+                        <div><img src={FLAG[country.trim()]} style={{width:"26px", height:"26px"}}/></div>
                         <div>{country}</div>
                       </div>
                     )
