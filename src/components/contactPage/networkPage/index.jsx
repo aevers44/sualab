@@ -101,7 +101,7 @@ const FLAG = {
   Switzerland: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Switzerland.png",
   Taiwan: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Taiwan.png",
   Thailand: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Thailand.png",
-  Usa: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Usa.png",
+  USA: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Usa.png",
   Vietnam: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Vietnam.png",
 }
 

@@ -35,7 +35,7 @@ router.get("/", (req, res) => {
           res.status(500);
           reject(false);
         } else {
-          res.set("X-Total-Count", row["total"]);
+          res.set("X-Total-Count", row[0]["total"]);
           resolve(true)
         }
       });
