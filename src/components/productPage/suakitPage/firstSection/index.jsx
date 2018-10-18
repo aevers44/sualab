@@ -14,6 +14,42 @@ const FirstSection = ({ intl }) => (
         <div className={styles.content}>{intl.formatMessage({ id: "SUAKIT.FIRST.content" })}</div>
       </div>
 
+      <div className={styles.subTitle}>{intl.formatMessage({ id: "SUAKIT.FIRST.subTitle_2" })}</div>
+      <div className={styles.itemWrapper}>
+        <div className={styles.itemCard}>
+          <div className={styles.svgWrapper}>
+            <Icon icon="SUAKIT_FEATURE_2" />
+          </div>
+          <div className={styles.cardTitle}>Segmentation</div>
+          <div className={styles.cardContent}>
+            {intl.formatMessage({ id: "SUAKIT.FIRST.cardContent_1" })}
+            <p className={styles.useCase}>{intl.formatMessage({ id: "SUAKIT.FIRST.useCase_1" })}</p>
+          </div>
+        </div>
+
+        <div className={styles.itemCard}>
+          <div className={styles.svgWrapper}>
+            <Icon icon="SUAKIT_FEATURE_3" />
+          </div>
+          <div className={styles.cardTitle}>Classification</div>
+          <div className={styles.cardContent}>
+            {intl.formatMessage({ id: "SUAKIT.FIRST.cardContent_2" })}
+            <p className={styles.useCase}>{intl.formatMessage({ id: "SUAKIT.FIRST.useCase_1" })}</p>
+          </div>
+        </div>
+
+        <div className={styles.itemCard}>
+          <div className={styles.svgWrapper}>
+            <Icon icon="SUAKIT_FEATURE_1" />
+          </div>
+          <div className={styles.cardTitle}>Detection</div>
+          <div className={styles.cardContent}>
+            {intl.formatMessage({ id: "SUAKIT.FIRST.cardContent_3" })}
+            <p className={styles.useCase}>{intl.formatMessage({ id: "SUAKIT.FIRST.useCase_1" })}</p>
+          </div>
+        </div>
+      </div>
+      <br/><br/>
       <div className={styles.subTitle}>{intl.formatMessage({ id: "SUAKIT.FIRST.subTitle_1" })}</div>
       <div className={`${styles.itemWrapper} ${styles.methodItemWrapper}`}>
         <div className={styles.itemCard}>
@@ -49,42 +85,6 @@ const FirstSection = ({ intl }) => (
           </div>
           <div className={styles.cardTitle}>One Class Learning</div>
           <div className={styles.cardContent}>{intl.formatMessage({ id: "SUAKIT.FIRST.methodContent_4" })}</div>
-        </div>
-      </div>
-
-      <div className={styles.subTitle}>{intl.formatMessage({ id: "SUAKIT.FIRST.subTitle_2" })}</div>
-      <div className={styles.itemWrapper}>
-        <div className={styles.itemCard}>
-          <div className={styles.svgWrapper}>
-            <Icon icon="SUAKIT_FEATURE_2" />
-          </div>
-          <div className={styles.cardTitle}>Segmentation</div>
-          <div className={styles.cardContent}>
-            {intl.formatMessage({ id: "SUAKIT.FIRST.cardContent_1" })}
-            <p className={styles.useCase}>{intl.formatMessage({ id: "SUAKIT.FIRST.useCase_1" })}</p>
-          </div>
-        </div>
-
-        <div className={styles.itemCard}>
-          <div className={styles.svgWrapper}>
-            <Icon icon="SUAKIT_FEATURE_3" />
-          </div>
-          <div className={styles.cardTitle}>Classification</div>
-          <div className={styles.cardContent}>
-            {intl.formatMessage({ id: "SUAKIT.FIRST.cardContent_2" })}
-            <p className={styles.useCase}>{intl.formatMessage({ id: "SUAKIT.FIRST.useCase_1" })}</p>
-          </div>
-        </div>
-
-        <div className={styles.itemCard}>
-          <div className={styles.svgWrapper}>
-            <Icon icon="SUAKIT_FEATURE_1" />
-          </div>
-          <div className={styles.cardTitle}>Detection</div>
-          <div className={styles.cardContent}>
-            {intl.formatMessage({ id: "SUAKIT.FIRST.cardContent_3" })}
-            <p className={styles.useCase}>{intl.formatMessage({ id: "SUAKIT.FIRST.useCase_1" })}</p>
-          </div>
         </div>
       </div>
     </div>
