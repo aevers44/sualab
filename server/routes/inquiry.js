@@ -1,5 +1,5 @@
 import express from "express";
-import sqlite3 from "sqlite3";
+import db from "../api/config";
 import nodemailer from "nodemailer";
 /*
   get / : artilce list
@@ -8,8 +8,6 @@ import nodemailer from "nodemailer";
 const router = express.Router();
 
 router.post("/", (req, res) => {
-  const db = new sqlite3.Database("./sualabdb.sqlite3");
-
   const {
     name,
     phone,
@@ -28,49 +26,45 @@ router.post("/", (req, res) => {
     content,
     adAgree,
   } = req.body;
-  let stmt = db
-    .prepare(
-      "INSERT INTO inquiry (name, phone, company, department, status, email, country, reason, \
-              has_vision, industry, product_type, fault_type, num_of_line, \
-              path, content, ad_agree) \
-              VALUES (?, ?, ?, ?, ?, ?, ?, ?, \
-                      ?, ?, ?, ?, ?, \
-                      ?, ?, ?)",
-      [
-        name,
-        phone,
-        company,
-        department,
-        status,
-        email,
-        country,
-        reason,
-        hasVision,
-        industry,
-        productType,
-        faultType,
-        numOfLine,
-        path,
-        content,
-        adAgree,
-      ],
-    )
-    .run(err => {
+
+  const sql = `
+  INSERT INTO inquiry (name, phone, company, department, status, email, country, reason,
+    has_vision, industry, product_type, fault_type, num_of_line,
+    path, content, ad_agree)
+    VALUES ('${name}', '${phone}', '${company}', '${department}', '${status}', '${email}', '${country}',
+    '${reason}', ${hasVision}, '${industry}', '${productType}', '${faultType}', '${numOfLine}', ${path}, '${content}',
+    ${adAgree === "true" ? 1 : 0})
+  `;
+  
+  db.getConnection((err, conn) => {
+    conn.query(sql, (err) => {
+      conn.release();
       if (err) {
         console.error(err);
         res.status(500);
       } else {
-        res.status(204).json(stmt.lastID);
+        res.status(204).json({});;
       }
     });
-  stmt.finalize();
-
-  db.close();
+  })
 
   // send email
   const transporter = nodemailer.createTransport({
-    sendmail: true,
+    host: "smtp.office365.com",
+    port: 587,
+    secure: false,
+    auth: {
+      user: "sales@sualab.com",
+      pass: "su@l@b.c0m"
+    },
+    tls: {
+      ciphers: "SSLv3"
+    },
+    requireTLS: true
   });
+  // const transporter = nodemailer.createTransport({
+  //   sendmail:true
+  // });
 
   let pathString = "";
   if (path == 0) pathStrng = "전시회/세미나";
@@ -81,9 +75,8 @@ router.post("/", (req, res) => {
 
   transporter.sendMail(
     {
-      from: `${name} <${email}>`,
-      // to: process.env.GET_INQUIRY_EMAIL,
-      to: `mith1004@gmail.com`,
+      from: process.env.GET_INQUIRY_EMAIL,
+      to: process.env.GET_INQUIRY_EMAIL,
       subject: `[문의] ${name}님의 문의 (${company}, ${country})`,
       text: "text",
       html: `<h3>이름</h3>
@@ -120,7 +113,7 @@ router.post("/", (req, res) => {
       <p>${adAgree}</p>`,
     },
     (err, info) => {
-      console.log(info);
+      console.log(err, info);
     },
   );
 });

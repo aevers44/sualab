@@ -1,5 +1,4 @@
 import express from "express";
-import sqlite3 from "sqlite3";
 
 const router = express.Router();
 
@@ -33,5 +32,8 @@ router.use("/brochure", brochureRouter);
 
 import productRouter from "./product";
 router.use("/product", productRouter);
+
+import popupRouter from "./popup";
+router.use("/popup", popupRouter);
 
 export default router;

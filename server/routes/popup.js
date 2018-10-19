@@ -1,20 +1,22 @@
 import express from "express";
 import db from '../api/config';
 /*
-  get / : product example
+  get / : people list
 */
-
 const router = express.Router();
 
-router.get("/example",(req, res) => {
+router.get("/:ln", (req, res) => {
+  const ln = req.params.ln;
   let result;
 
-  const sql = `select * from suakit_example order by priority`;
+  const sql = `select * from popup
+  where start_at <= now()  and end_at >= now()
+  and active = 1 and lang='${ln}'`;
 
-  db.getConnection((err, conn) => {
+  db.getConnection((err,conn) => {
     conn.query(sql, (err, rows) => {
       conn.release();
-      if(err) {
+      if (err) {
         console.error(err);
         res.status(500);
       } else {
@@ -23,7 +25,6 @@ router.get("/example",(req, res) => {
       }
     });  
   })
-
 });
 
 export default router;

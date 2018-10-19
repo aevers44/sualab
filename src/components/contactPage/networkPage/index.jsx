@@ -19,7 +19,7 @@ const CompanyItem = ({name, ci, companies, type, link}) => {
         </div>
         <div className={styles.campanyLogo}>
         {
-          ci ? <img src={ci}/> 
+          ci ? <img src={ci} /> 
           : <img src={`https://fakeimg.pl/180x180/?text=${name}`}/>
         }
         </div>
@@ -29,8 +29,10 @@ const CompanyItem = ({name, ci, companies, type, link}) => {
         <div className={styles.company}>
           <div><strong>{name}</strong></div>
           <div>
-            <span className={styles.companyLink}>{link}</span>
-            <a href={`http://${link}`} target="_blank"><Icon icon={externalLink}/></a>
+            <a href={`http://${link}`} target="_blank">
+              <span className={styles.companyLink}>{link}</span>
+              <Icon icon={externalLink}/>
+            </a>
           </div>
         </div>
         {
@@ -43,7 +45,7 @@ const CompanyItem = ({name, ci, companies, type, link}) => {
                   countries.map(country => {
                     return (
                       <div key={country} className={styles.countries}>
-                        <div><img src={FLAG[country]}/></div>
+                        <div><img src={FLAG[country.trim()]} style={{width:"26px", height:"26px"}}/></div>
                         <div>{country}</div>
                       </div>
                     )
@@ -56,7 +58,9 @@ const CompanyItem = ({name, ci, companies, type, link}) => {
                 </div>
                 <div className={styles.infoLine}>
                   <div className={styles.label}>Email</div>
-                  <div className={styles.content}>{company.email}</div>
+                  <div className={styles.content}>
+                    <a href={`mailto:${company.email}`}>{company.email}</a>
+                  </div>
                 </div>
                 <div className={styles.infoLine}>
                   <div className={styles.label}>Address</div>
@@ -97,7 +101,7 @@ const FLAG = {
   Switzerland: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Switzerland.png",
   Taiwan: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Taiwan.png",
   Thailand: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Thailand.png",
-  Usa: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Usa.png",
+  USA: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Usa.png",
   Vietnam: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Vietnam.png",
 }
 

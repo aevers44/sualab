@@ -1,26 +1,23 @@
 import express from "express";
-import sqlite3 from "sqlite3";
+import db from '../api/config'
 
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  const db = new sqlite3.Database("./sualabdb.sqlite3");
+  
   let result = {};
-  db.serialize(() => {
-    db.get("SELECT * FROM brochure ORDER BY date DESC LIMIT 1", (err, row) => {
+  db.getConnection((err, conn) => {
+    conn.query("SELECT * FROM brochure ORDER BY date DESC LIMIT 1", (err, row) => {
+      conn.release();
       if (err) {
         console.error(err);
         res.status(500);
       } else if (!row) {
         res.status(404);
       } else {
-        result = { ...row
-        };
+        result = row[0];
+        res.json(result);
       }
-    });
-
-    db.close(err => {
-      res.json(result);
     });
   });
 });

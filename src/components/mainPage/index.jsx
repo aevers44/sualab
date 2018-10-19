@@ -1,5 +1,6 @@
 import React from "react";
 import { injectIntl } from "react-intl";
+import axios from "axios";
 
 import FirstContainer from "./firstContainer";
 import SecondContainer from "./secondContainer";
@@ -9,23 +10,6 @@ import FifthContainer from "./fifthContainer";
 
 import Popup from "../popup/popup";
 
-
-const dummyPopup = [
-  {
-    id: 1,
-    image: "http://www.freedigitalphotos.net/blog/wp-content/uploads/2013/11/archie.jpg",
-    width: 300,
-    height: 400,
-    url: "http://www.naver.com"
-  },
-  {
-    id: 2,
-    image: "http://www.freedigitalphotos.net/blog/wp-content/uploads/2013/11/archie.jpg",
-    width: 600,
-    height: 200,
-    url: "http://www.naver.com"
-  }
-]
 class MainPage extends React.PureComponent {
   constructor(props) {
     super(props)
@@ -36,12 +20,6 @@ class MainPage extends React.PureComponent {
   
   componentWillMount() {
     this.getPopup();
-  }
-
-  getPopup(){
-    this.setState({
-      popups: dummyPopup
-    })
   }
 
   renderPopup() {
@@ -63,6 +41,15 @@ class MainPage extends React.PureComponent {
         <FifthContainer intl={intl} />
       </div>
     )
+  }
+
+  getPopup() {
+    const { locale } = this.props.intl;
+    axios.get(`/api/popup/${locale}`).then(res => {
+      this.setState({
+        popups: res.data.map(popup => popup)
+      });
+    });
   }
 }
 

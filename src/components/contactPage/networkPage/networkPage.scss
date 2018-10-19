@@ -110,7 +110,6 @@ $container-width: 1080px;
   margin: 0 auto;
   text-align: center;
   display: flex;
-  margin-bottom: 2px;
   @media (max-width: 768px) {
     display: none;
   }
@@ -121,6 +120,7 @@ $container-width: 1080px;
   @media (max-width: 768px) {
     display: block;
     margin-bottom: 16px;
+    width: 100%;
     .selectedWrapper {
       display: flex;
       justify-content: space-between;
@@ -130,7 +130,7 @@ $container-width: 1080px;
         color: #adb3b9;
       }
       :nth-child(2) {
-        color: #202d3e;
+        color: rgb(32, 45, 62);
         font-weight: bold;
       }
     }
@@ -140,21 +140,17 @@ $container-width: 1080px;
       z-index: 999;
       display:block;
       background-color: #ffffff;
-      width: 100% - 5;
-      
+      width: calc(100% - 20px);
       ul {
         padding: 0;
         margin-top: 0;
         text-align: left;
         li {
           list-style: none;
-          border-top: 1px solid #cccccc;
+          border-bottom: 1px solid #cccccc;
           border-left: 1px solid #cccccc;
           border-right: 1px solid #cccccc;
           padding: 12px;
-          &:last-child {
-            border-bottom: solid 1px #cccccc;
-          }
         }
         .selected {
           color: #00c4b3;
@@ -180,17 +176,25 @@ $container-width: 1080px;
   color: #111721;
   font-weight: 400;
   cursor: pointer;
-  border: 1px solid #cccccc;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  border-left: 1px solid #cccccc;
   &.selected {
     background-color: #202d3e;
     color: #ffffff;
+  }
+  &:last-child {
+    border-right: 1px solid #cccccc;
   }
 }
 
 .mapArea {
   display: show;
+  background-color: rgb(238,238,238);
+  margin-bottom:10px;
   @media (max-width: 768px) {
     display: none;
+    margin-bottom:0;
   }
 }
 
@@ -220,16 +224,21 @@ $container-width: 1080px;
     .companyType {
       margin-top: -9px;
       span {
-        background-color: #00c4b3;
+        background-color:rgb(0,196,179);
         color: #ffffff;
         padding:6px 12px;
         font-size: 14px;
         letter-spacing: normal;
+        font-weight: bold;
       } 
     }
     .campanyLogo {
       padding: 12px;
       text-align: center;
+      img {
+        width: 180px;
+        height: 180px;
+      }
     }
   }
   
@@ -244,6 +253,7 @@ $container-width: 1080px;
       display: flex;
       justify-content: space-between;
       margin-bottom: 12px;
+      padding-left: 10px;
       div {
         font-size: 20px;
       }
@@ -278,6 +288,7 @@ $container-width: 1080px;
       .infoLine {
         display: flex;
         justify-content: flex-start;
+        padding-left: 10px;
         .label {
           display: inline-block;
           width: 80px;
@@ -290,6 +301,7 @@ $container-width: 1080px;
         }
         .content {
           display: inline-block;
+          padding-left: 10px;
           font-size: 14px;
           font-weight: normal;
           line-height: 1.6;
