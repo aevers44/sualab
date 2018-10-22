@@ -26,7 +26,7 @@ const OfficePage = ({ intl }) => (
           <div className={styles.mapWrapper}>
             <OfficeMapComponent
               isMarkerShown
-              googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,placess&key=AIzaSyC2l8AiJrv0oRBAQIKI60rgH16h93W98Ac"
+              googleMapURL="https://www.google.co.kr/maps/place/SUALAB/@37.4906956,127.0037261,16.75z/data=!4m12!1m6!3m5!1s0x357ca16d0e022c55:0x7aa9f719547f1edd!2z64W57Iut7J6QIOyVhOydtOuplOuTnCDsnZjsm5A!8m2!3d37.4908523!4d127.0057607!3m4!1s0x357ca01bf553872b:0xd7721b0405ee5205!8m2!3d37.4902618!4d127.0051574"
               loadingElement={<div style={{ height: `100%` }} />}
               containerElement={<div className={styles.mapContainer} />}
               mapElement={<div style={{ height: `100%` }} />}
