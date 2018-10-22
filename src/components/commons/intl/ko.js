@@ -234,7 +234,7 @@ export default {
   "OFFICE.question.recruit": `채용 문의`,
   "OFFICE.phone.represent": `대표 번호`,
   "OFFICE.base": `본사`,
-  "OFFICE.base.address": `서울시 관악구 관악로1 서울대학교 연구공원 본관 511호`,
+  "OFFICE.base.address": `서울시 서초구 서초대로 38길 12 마제스타시티 타워2 6층`,
   "OFFICE.china": `중국 법인`,
 
   "NETWORK.title": `SUALAB은 *비즈니스 파트너*들과 함께 *세계*로 나아가고 있습니다`,

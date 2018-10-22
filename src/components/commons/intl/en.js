@@ -235,7 +235,7 @@ export default {
   "OFFICE.question.recruit": `Careers`,
   "OFFICE.phone.represent": `Main Phone`,
   "OFFICE.base": `Headquarters`,
-  "OFFICE.base.address": `Seoul National University Research Park 511\nGwanak-ro 1, Gwanak-gu, Seoul`,
+  "OFFICE.base.address": `6F Majesta Tower2, Seochodaero 38gil 12 Seocho-gu, Seoul 06655, Korea`,
   "OFFICE.china": `China Office`,
 
   "NETWORK.title": `SUALAB is expanding throughout the *world* with *global business partners*`,

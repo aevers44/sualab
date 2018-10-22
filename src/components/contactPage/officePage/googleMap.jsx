@@ -9,10 +9,10 @@ import {
 const OfficeMapComponent = withGoogleMap(props => (
   <GoogleMap
     defaultZoom={15}
-    defaultCenter={{ lat: 37.465518, lng: 126.95989 }}
+    defaultCenter={{ lat: 37.490406, lng: 127.005185 }}
   >
     {props.isMarkerShown && (
-      <Marker position={{ lat: 37.465518, lng: 126.95989 }} />
+      <Marker position={{ lat: 37.490406, lng: 127.005185 }} />
     )}
   </GoogleMap>
 ));
