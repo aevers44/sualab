@@ -271,10 +271,9 @@ $container-width: 1080px;
       padding: 4px 6px;
       margin-bottom: 6px;
       display: flex;
-      flex-direction: row;
+      flex-wrap: wrap;
       .countries {
         display: flex;
-        flex-direction: row;
         align-items: center;
         padding: 4px;
         font-weight: bold;
