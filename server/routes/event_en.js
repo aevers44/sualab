@@ -112,16 +112,16 @@ router.get("/:id", (req, res) => {
         }
       });
     })
-  })
-
-  Promise.all([step1, step2, step3])
-  .then(() => {
-    conn.release();
-    res.json(result);
-  })
-  .catch(err => {
-    conn.release();
-    res.json(result);
+    
+    Promise.all([step1, step2, step3])
+    .then(() => {
+      conn.release();
+      res.json(result);
+    })
+    .catch(err => {
+      conn.release();
+      res.json(result);
+    })
   })
   
 });
