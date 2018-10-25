@@ -44,6 +44,8 @@ class EventDetail extends React.PureComponent {
     const number = parseInt(match.params.number);
     const article = this.state;
 
+    console.log(article);
+
     return (
       <section className={styles.newsDetail}>
         <TitleSection
@@ -71,7 +73,7 @@ class EventDetail extends React.PureComponent {
           <div className={styles.otherArticle}>
             <Link
               to={`/news/event/${article.prevId}`}
-              className={`${styles.linkWrapper} ${article.prevId == -1 ? styles.hide : ""}`}
+              className={`${styles.linkWrapper} ${article.prevId == undefined ? styles.hide : ""}`}
             >
               <div className={styles.iconWrapper}>
                 <Icon icon="ARROW_UP" />
@@ -81,7 +83,7 @@ class EventDetail extends React.PureComponent {
             </Link>
             <Link
               to={`/news/event/${article.nextId}`}
-              className={`${styles.linkWrapper} ${article.nextId == -1 ? styles.hide : ""}`}
+              className={`${styles.linkWrapper} ${article.nextId == undefined ? styles.hide : ""}`}
             >
               <div className={styles.iconWrapper}>
                 <Icon icon="ARROW_DOWN" />
