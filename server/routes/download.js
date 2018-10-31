@@ -18,7 +18,7 @@ router.post("/auth", (req, res) => {
         console.error(err);
         res.status(500);
       } else {
-        if (row !== undefined) {
+        if (row.length !== 0) {
           result = { auth: true };
         } else {
           result = { auth: false };
