@@ -105,6 +105,7 @@ const FLAG = {
   Vietnam: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Vietnam.png",
   Germany: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Germany.png",
   India: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/India.png",
+  Israel: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Israel.png",
 }
 
 class NetworkPage extends React.PureComponent {
