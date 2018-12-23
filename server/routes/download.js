@@ -99,4 +99,97 @@ router.get("/release", (req, res) => {
   });
 });
 
+
+router.get("/suakits", (req, res) => {
+  let result = [];
+
+  db.getConnection((err,conn) => {
+    conn.query("SELECT * FROM suakit_release order by priority limit 4", (err, rows) => {
+      conn.release();
+      if (err) {
+        console.error(err);
+        res.status(500);
+      } else {
+        result = rows;
+      }
+      res.json(result);
+    });
+  });
+});
+
+router.get("/suakit/:id", (req, res) => {
+  const id = req.params.id;
+  let result = [];
+
+  db.getConnection((err,conn) => {
+    conn.query(`SELECT * FROM suakit_release WHERE id = ${id}`, (err, rows) => {
+      conn.release();
+      if (err) {
+        console.error(err);
+        res.status(500);
+      } else {
+        result = rows;
+      }
+      res.json(result);
+    });
+  });
+});
+
+router.get("/features/:id", (req, res) => {
+  const id = req.params.id;
+  let result = [];
+
+  db.getConnection((err,conn) => {
+    conn.query(`SELECT * FROM feature_item WHERE feature_id = (SELECT id FROM feature WHERE suakit_id = ${id})`, 
+    (err, rows) => {
+      conn.release();
+      if (err) {
+        console.error(err);
+        res.status(500);
+      } else {
+        result = rows;
+      }
+      res.json(result);
+    });
+  });
+});
+
+router.get("/document/:id", (req, res) => {
+  const id = req.params.id;
+  let result = [];
+
+  db.getConnection((err,conn) => {
+    conn.query(`SELECT * FROM documentation where suakit_id = ${id}`, 
+    (err, rows) => {
+      conn.release();
+      if (err) {
+        console.error(err);
+        res.status(500);
+      } else {
+        result = rows;
+      }
+      res.json(result);
+    });
+  });
+});
+
+router.get("/release/:id", (req, res) => {
+  const id = req.params.id;
+  let result = [];
+
+  db.getConnection((err,conn) => {
+    conn.query(`SELECT * FROM release_note where suakit_id = ${id} order by date desc`, 
+    (err, rows) => {
+      conn.release();
+      if (err) {
+        console.error(err);
+        res.status(500);
+      } else {
+        result = rows;
+      }
+      res.json(result);
+    });
+  });
+});
+
 export default router;

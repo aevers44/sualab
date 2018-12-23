@@ -1,0 +1,173 @@
+$container-width: 1080px;
+.innerContainer {
+  width: $container-width;
+  margin: 0 auto;
+  padding: 62px 0 262px 0;
+  text-align: center;
+  .contentWrapper {
+    margin-top: 32px;
+    border-top: 2px solid #1e2b3b;
+    padding: 30px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+
+  .leftWrapper {
+    .tag {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 125px;
+      background-image: url(https://d2ivzy5c3eic08.cloudfront.net/productPage/tag.png);
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      padding: 4px 10px 7px 10px;
+      font-size: 14px;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: center;
+      color: #ffffff;
+    }
+    .suakitName {
+      font-size: 32px;
+      font-weight: bold;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: left;
+      color: #333333;
+      margin-bottom: 5px;
+    }
+    .suakitInfo {
+      font-size: 16px;
+      text-align: left;
+      color: #999999;
+    }
+  }
+  .rightWrapper {
+    text-align: right;
+    .downloadBtn {
+      display: block;
+      width: 240px;
+      height: 56px;
+      padding: 16px 0;
+      background-color: #1e2b3b;
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: normal;
+      text-align: center;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+  }
+
+  .listBtn {
+    width: 300px;
+    background-color: #1e2b3b;
+    color: #ffffff;
+    text-align: center;
+    padding: 16px 0;
+    margin: 0 auto;
+    cursor: pointer;
+    margin-top: 50px;
+  }
+
+  .featureSection {
+    background-color: #f1f1f1;
+    padding: 16px 24px;
+    text-align: left;
+    color: #555555;
+    border-top: solid 1px #d8d8d8;
+    border-bottom: solid 1px #d8d8d8;
+    .title {
+      font-size: 22px;
+      font-weight: bold;
+    }
+    .featureItem {
+      margin-top: 12px;
+      .featureTitle {
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 3.33;
+      }
+      .featureImage {
+        height: 275px;
+        text-align: center;
+        margin-bottom: 20px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center top;
+      }
+
+      .featureContent {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .documentWrapper {
+    margin-top: 60px;
+    text-align: left;
+    .title {
+      font-size: 22px;
+      font-weight: bold;
+      color: #555555;
+    }
+    .detail {
+      font-size: 16px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: right;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  .tableWrapper {
+    margin-top: 20px;
+    table {
+      width: 100%;
+      font-size: 16px;
+      line-height: 2;
+      color: #555555;
+      border-collapse: collapse;
+      thead {
+        background-color: #dfdfdf;
+        border-bottom: solid 1px #d8d8d8;
+        color: #555555;
+        font-weight: bold;
+      }
+      td {
+        padding: 12px 16px;
+        .singleDownloadBtn {
+          display: flex;
+        }
+      }
+      .tdRelease {
+        td {
+          padding: 12px 16px;
+        }
+      }
+
+      tbody {
+        background-color: #ffffff;
+        tr {
+          border-bottom: 1px solid #f0f0f0;
+          font-size: 16px;
+        }
+        .details {
+          background-color: #f1f1f1;
+          text-align: left;
+        }
+      }
+    }
+  }
+}

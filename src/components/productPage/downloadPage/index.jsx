@@ -2,6 +2,9 @@ import React from "react";
 import { injectIntl } from "react-intl";
 
 import TitleSection from "../../commons/titleSection";
+import SuakitListSection from "./suakitListSection";
+import SuakitDetailSection from "./suakitDetailSection";
+
 import DocumentSection from "./documentSection";
 import ReleaseSection from "./releaseSection";
 import SuakitSection from "./suakitSection";
@@ -18,14 +21,29 @@ class DownloadPage extends React.PureComponent {
       isAuthed: false,
       companyName: "",
       companyKey: "",
+      selectedSuakit: null
     };
 
     this.handleAuth = this.handleAuth.bind(this);
+    this.onSelectSuakit = this.onSelectSuakit.bind(this);
+    this.onResetSelected = this.onResetSelected.bind(this);
+  }
+
+  onSelectSuakit(id) {
+    this.setState({
+      selectedSuakit: id
+    })
+  }
+
+  onResetSelected(){
+    this.setState({
+      selectedSuakit: null
+    })
   }
 
   render() {
     const { intl } = this.props;
-    const { isAuthed, companyName, companyKey } = this.state;
+    const { isAuthed, companyName, companyKey, selectedSuakit } = this.state;
 
     return (
       <section className={styles.downloadPage}>
@@ -38,15 +56,22 @@ class DownloadPage extends React.PureComponent {
         {!isAuthed ? (
           <AuthSection intl={intl} handleAuth={this.handleAuth} />
         ) : (
-          <div>
-            <SuakitSection
-              intl={intl}
-              companyName={companyName}
-              companyKey={companyKey}
-            />
-            <DocumentSection intl={intl} />
-            <ReleaseSection intl={intl} />
-          </div>
+          <React.Fragment>
+            {
+              selectedSuakit ? (
+                <div>
+                  <SuakitDetailSection 
+                    suakitId={selectedSuakit} 
+                    onBack={this.onResetSelected} 
+                    intl={intl}
+                    companyName={companyName}
+                    companyKey={companyKey}
+                  />
+                </div>
+              ) : <SuakitListSection onSelect={this.onSelectSuakit}/>
+            }
+            
+          </React.Fragment>  
         )}
       </section>
     );
@@ -62,3 +87,11 @@ class DownloadPage extends React.PureComponent {
 }
 
 export default injectIntl(DownloadPage);
+
+// <SuakitSection
+//   intl={intl}
+//   companyName={companyName}
+//   companyKey={companyKey}
+// />
+// <DocumentSection intl={intl} />
+// <ReleaseSection intl={intl} />
