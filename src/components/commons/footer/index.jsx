@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import styles from "./footer.scss";
 
 import termsText from "../../productPage/supportPage/terms";
+import InfoBar from "./infoBar.js";
 
 class Footer extends React.PureComponent {
   constructor(props) {
@@ -81,12 +82,13 @@ class Footer extends React.PureComponent {
             {intl.formatMessage({ id: "SUPPORT.modal.ok" })}
           </button>
         </Modal>
+        <InfoBar onPolicy={this.handleOpenModal}/>
       </footer>
     );
   }
 
   handleOpenModal(ev) {
-    ev.preventDefault();
+    // ev.preventDefault();
     this.setState({ showModal: true });
   }
 

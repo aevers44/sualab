@@ -116,7 +116,7 @@ class SupportPage extends React.PureComponent {
     return (
       <section className={styles.supportPage}>
         <TitleSection
-          subTitle="COUSTOMER SUPPORT"
+          subTitle="CUSTOMER SUPPORT"
           title={intl.formatMessage({ id: "SUPPORT.title" })}
           bgImage="https://d2ivzy5c3eic08.cloudfront.net/productPage/support-background%402x.jpg"
         />

@@ -23,4 +23,39 @@ router.get("/", (req, res) => {
 
 });
 
+router.get("/area", (req, res) => {
+  let result;
+
+  db.getConnection((err, conn) => {
+    conn.query("SELECT * FROM area order by priority", (err, rows) => {
+      conn.release();
+      if (err) {
+        console.error(err);
+        res.status(500);
+      } else {
+        result = rows;
+        res.json(result);
+      }
+    });
+  })
+
+});
+
+router.get("/flags", (req, res) => {
+  let result;
+
+  db.getConnection((err, conn) => {
+    conn.query("SELECT * FROM flags", (err, rows) => {
+      conn.release();
+      if (err) {
+        console.error(err);
+        res.status(500);
+      } else {
+        result = rows;
+        res.json(result);
+      }
+    });
+  })
+});
+
 export default router;

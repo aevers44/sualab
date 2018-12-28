@@ -44,8 +44,6 @@ class EventDetail extends React.PureComponent {
     const number = parseInt(match.params.number);
     const article = this.state;
 
-    console.log(article);
-
     return (
       <section className={styles.newsDetail}>
         <TitleSection

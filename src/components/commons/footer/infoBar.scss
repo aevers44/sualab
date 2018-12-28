@@ -1,0 +1,29 @@
+.barWrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  .message {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+  }
+  .policy {
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .close {
+    cursor: pointer;
+  }
+
+}

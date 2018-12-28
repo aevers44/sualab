@@ -245,6 +245,80 @@ exports.preSave = function (req, res, args, next) {
     } else {
       next();
     }
+  } else if (args.name == "area") {
+    var image = args.upload.view[args.name].records[0].columns.image;
+
+    if (image.name) {
+      var fname = args.data.view[args.name].records[0].columns.image;
+      var record = args.data.view[args.name].records[0].columns;
+
+      var s3_params = {
+        Bucket: "sualab-asset",
+        Key: "upload/area/" + image.name,
+        ACL: "public-read",
+        ContentType: image.type,
+      };
+
+      var s3 = new AWS.S3({
+        params: s3_params
+      });
+
+      s3
+        .upload({
+          Body: fs.createReadStream(image.path)
+        })
+        .on("httpUploadProgress", function (evt) {
+          console.log(evt);
+        })
+        .send(function (err, data) {
+          //S3 File URL
+          var url = data.Location;
+          var parseUrl = parse(url);
+          parseUrl.set("hostname", CLOUDFRONT_LINK);
+          // record path
+          record.image = parseUrl.href;
+          next();
+        });
+    } else {
+      next();
+    }
+  } else if (args.name == "flags") {
+    var image = args.upload.view[args.name].records[0].columns.image;
+
+    if (image.name) {
+      var fname = args.data.view[args.name].records[0].columns.image;
+      var record = args.data.view[args.name].records[0].columns;
+
+      var s3_params = {
+        Bucket: "sualab-asset",
+        Key: "upload/flags/" + image.name,
+        ACL: "public-read",
+        ContentType: image.type,
+      };
+
+      var s3 = new AWS.S3({
+        params: s3_params
+      });
+
+      s3
+        .upload({
+          Body: fs.createReadStream(image.path)
+        })
+        .on("httpUploadProgress", function (evt) {
+          console.log(evt);
+        })
+        .send(function (err, data) {
+          //S3 File URL
+          var url = data.Location;
+          var parseUrl = parse(url);
+          parseUrl.set("hostname", CLOUDFRONT_LINK);
+          // record path
+          record.image = parseUrl.href;
+          next();
+        });
+    } else {
+      next();
+    }
   } else if (args.name == "people") {
     var image = args.upload.view[args.name].records[0].columns.imgUrl;
 

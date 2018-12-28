@@ -10,7 +10,12 @@ import {externalLink} from 'react-icons-kit/fa/externalLink'
 
 import styles from "./networkPage.scss";
 
-const CompanyItem = ({name, ci, companies, type, link}) => {
+const CompanyItem = ({name, ci, companies, type, link, flags}) => {
+  const findFlags = (name) => {
+    const f = flags.filter(flag => flag.name === name);
+    return f.length === 0 ? "" : f[0].image;
+  }
+
   return (
     <div className={styles.companyWrapper}>
       <div className={styles.ciWrapper}>
@@ -45,7 +50,7 @@ const CompanyItem = ({name, ci, companies, type, link}) => {
                   countries.map(country => {
                     return (
                       <div key={country} className={styles.countries}>
-                        <div><img src={FLAG[country.trim()]} style={{width:"26px", height:"26px"}}/></div>
+                        <div><img src={findFlags(country.trim())} style={{width:"26px", height:"26px"}}/></div>
                         <div>{country}</div>
                       </div>
                     )
@@ -75,39 +80,6 @@ const CompanyItem = ({name, ci, companies, type, link}) => {
   )
 };
 
-
-const AREA = [
-  {name:"Asia Pacific", value:"ASIA", image: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/map/Asiapacific.png"},
-  {name:"Europe", value:"EUROPE", image: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/map/Europe.png"},
-  {name:"Americas", value:"AMERICA", image: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/map/Americas.png"},
-  {name:"Africa", value:"AFRICA", image: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/map/Africa.png"}
-];
-
-const FLAG = {
-  Argentina: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Argentina.png",
-  Brazil: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Brazil.png",
-  Chile: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Chile.png",
-  Colombia: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Colombia.png",
-  Japan: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Japan.png",
-  Liechtenstein: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Liechtenstein.png",
-  Malaysia: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Malaysia.png",
-  Mexico: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Mexico.png",
-  Morocco: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Morocco.png",
-  Myanmar: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Myanmar.png",
-  Peru: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Peru.png",
-  Portugal: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Portugal.png",
-  Singapore: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Singapore.png",
-  Spain: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Spain.png",
-  Switzerland: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Switzerland.png",
-  Taiwan: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Taiwan.png",
-  Thailand: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Thailand.png",
-  USA: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Usa.png",
-  Vietnam: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Vietnam.png",
-  Germany: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Germany.png",
-  India: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/India.png",
-  Israel: "https://s3.ap-northeast-2.amazonaws.com/sualab-asset/contactPage/flag/Israel.png",
-}
-
 class NetworkPage extends React.PureComponent {
   constructor(props) {
     super(props);
@@ -120,20 +92,27 @@ class NetworkPage extends React.PureComponent {
       africaOfficeList: [],
       oceaniaOfficeList: [],
       latlngList: [],
-      selectedArea: AREA[0],
-      selectionMenuOpen: false
+      selectedArea: null,
+      selectionMenuOpen: false,
+      area: [],
+      flags: [],
+      isLoaded: false
     };
 
     this.getOfficeList = this.getOfficeList.bind(this);
+    this.getArea = this.getArea.bind(this);
+    this.getFlags = this.getFlags.bind(this);
   }
 
   componentDidMount() {
+    this.getArea();
+    this.getFlags();
     this.getOfficeList();
   }
 
   render() {
     const { intl } = this.props;
-    const { selectedArea, selectionMenuOpen } = this.state;
+    const { selectedArea, selectionMenuOpen, area, flags, isLoaded } = this.state;
 
     return (
       <section className={styles.networkPage}>
@@ -143,52 +122,57 @@ class NetworkPage extends React.PureComponent {
           bgImage="https://d2ivzy5c3eic08.cloudfront.net/contactPage/media-background@2x.jpg"
         />
 
-        <div className={styles.innerContainer}>
-
-          <div className={styles.areaSelection}>
-            {
-              AREA.map(ar => <div 
-                className={`${styles.area}  ${selectedArea.value == ar.value ? styles.selected: ''}`} 
-                key={ar.value} 
-                value={ar.value}
-                onClick={() =>this.onSelectArea(ar)}>
-                  {ar.name}
-                </div>)
-            }
-          </div>
-          <div className={styles.areaSelectionForMobile} 
-          onClick={ev => this.setState({ selectionMenuOpen: !selectionMenuOpen })}>
-            <div className={styles.selectedWrapper}>
-              <div>{intl.formatMessage({ id: "NETWORK.location" })}</div> 
-              <div>{selectedArea.name}</div>
-              <div>
-                {selectionMenuOpen? <Icon icon={arrow_up}/> : <Icon icon={arrow_down}/>}
+        {
+          isLoaded ? (
+            <div className={styles.innerContainer}>
+              <div className={styles.areaSelection}>
+                {
+                  area.map(ar => <div 
+                    className={`${styles.area}  ${selectedArea.value == ar.value ? styles.selected: ''}`} 
+                    key={ar.value} 
+                    value={ar.value}
+                    onClick={() =>this.onSelectArea(ar)}>
+                      {ar.name}
+                    </div>)
+                }
+              </div>
+              <div className={styles.areaSelectionForMobile} 
+              onClick={ev => this.setState({ selectionMenuOpen: !selectionMenuOpen })}>
+                <div className={styles.selectedWrapper}>
+                  <div>{intl.formatMessage({ id: "NETWORK.location" })}</div> 
+                  <div>{selectedArea.name}</div>
+                  <div>
+                    {selectionMenuOpen? <Icon icon={arrow_up}/> : <Icon icon={arrow_down}/>}
+                  </div>
+                </div>
+                <div className={`${styles.selection} ${!selectionMenuOpen ? styles.hidden: ''}`}>
+                  <ul>
+                  {
+                    area.map(ar => <li
+                      key={ar.value}
+                      onClick={() => this.onSelectArea(ar)}
+                      className={`${selectedArea.value == ar.value ? styles.selected: ''}`}
+                      >
+                      {ar.name}
+                    </li>)
+                  }
+                  </ul>
+                </div>
+              </div>
+              <div className={styles.companyArea}>
+                { this.displayCompanies() }
               </div>
             </div>
-            <div className={`${styles.selection} ${!selectionMenuOpen ? styles.hidden: ''}`}>
-              <ul>
-              {
-                AREA.map(ar => <li
-                  key={ar.value}
-                  onClick={() => this.onSelectArea(ar)}
-                  className={`${selectedArea.value == ar.value ? styles.selected: ''}`}
-                  >
-                  {ar.name}
-                </li>)
-              }
-              </ul>
-            </div>
-          </div>
-          <div className={styles.companyArea}>
-            { this.displayCompanies() }
-          </div>
-        </div>
+          )
+          : null
+        }
+        
       </section>
     );
   }
 
   displayCompanies() {
-    const {selectedArea} = this.state;
+    const {selectedArea, flags} = this.state;
     const officeList = this.getOffice(selectedArea.value);
 
     return (
@@ -199,7 +183,7 @@ class NetworkPage extends React.PureComponent {
         {
           Object.keys(officeList).length > 0 ? (
             Object.keys(officeList).map((key,idx) => (
-              <CompanyItem key={idx} {...officeList[key]} />
+              <CompanyItem key={idx} {...officeList[key]} flags={flags}/>
             ))
           ) : (
             ""
@@ -243,8 +227,12 @@ class NetworkPage extends React.PureComponent {
         map[key].companies.push(item);
       }
     })
-    console.log(map);
     return map;
+  }
+
+  findFlags(name) {
+    const {flags} = this.state;
+    flags.filter()
   }
 
   getOfficeList() {
@@ -266,6 +254,28 @@ class NetworkPage extends React.PureComponent {
         latlngList: latlngList,
       });
     });
+  }
+
+  getArea() {
+    axios.get("/api/office/area").then(res => {
+      const area = res.data;
+
+      this.setState({
+        area,
+        selectedArea: area[0],
+        isLoaded: true
+      })
+    })
+  }
+
+  getFlags() {
+    axios.get("/api/office/flags").then(res => {
+      const flags = res.data;
+      
+      this.setState({
+        flags
+      })
+    })
   }
 
   
