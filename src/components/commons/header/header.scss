@@ -16,7 +16,7 @@ $mobile-header-height: 75px;
   }
   .innerContainer {
     position: relative;
-    line-height: $header-height;
+    // line-height: $header-height;
     height: $header-height;
     max-width: $container-width;
     margin: 0 auto;
@@ -48,6 +48,8 @@ $mobile-header-height: 75px;
 
 .menuWrapper {
   transition: visibility 0s linear 0s, opacity .20s ease-in-out;
+  display: flex;
+  justify-content: space-between;
   .menuItem {
     text-decoration: none;
     font-size: 14px;
@@ -80,11 +82,28 @@ $mobile-header-height: 75px;
   @media (max-width: 768px) {
     margin-top: -1px;
     background-color: #202d3e;
-    padding-top: 10px;
     padding-bottom: 20px;
+    display: block;
     .menuItem {
       display: block;
     }
+  }
+  
+}
+
+.partners {
+  font-size: 10px;
+  color: #57C1B3;
+  text-align: right;
+  padding: 16px;
+  a {
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid #57C1B3;
+    cursor: pointer;
+  }
+  @media (max-width: 768px) {
+    text-align: left;
   }
 }
 
@@ -114,7 +133,7 @@ $mobile-header-height: 75px;
 }
 
 .mobileMenuBtn {
-  top: 5px;
+  top: 24px;
   right: 15px;
   position: absolute;
   svg {

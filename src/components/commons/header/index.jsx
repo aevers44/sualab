@@ -17,7 +17,7 @@ class Header extends React.Component {
     this.state = {
       curScrollTop: 0,
       isVisible: true,
-      mobileMenuOpen: false,
+      mobileMenuOpen: false
     };
 
     this.handleScroll = this.handleScroll.bind(this);
@@ -93,106 +93,117 @@ class Header extends React.Component {
                 mobileMenuOpen ? "" : styles.hidden
               }`}
             >
-              <Link
-                className={`${styles.menuItem} ${
-                  curPath === "company" ? styles.active : ""
-                }`}
-                to="/company"
-              >
-                Company
-                {curPath === "company" ? (
-                  <div className={styles.mobileMenu}>
-                    <Route path="/:page/:subpage" component={Navbar} />
-                  </div>
-                ) : (
-                  ""
-                )}
-              </Link>
-              <Link
-                className={`${styles.menuItem} ${
-                  curPath === "product" ? styles.active : ""
-                }`}
-                to="/product"
-              >
-                Product
-                {curPath === "product" ? (
-                  <div className={styles.mobileMenu}>
-                    <Route path="/:page/:subpage" component={Navbar} />
-                  </div>
-                ) : (
-                  ""
-                )}
-              </Link>
-              <Link
-                className={`${styles.menuItem} ${
-                  curPath === "news" ? styles.active : ""
-                }`}
-                to="/news"
-              >
-                News
-                {curPath === "news" ? (
-                  <div className={styles.mobileMenu}>
-                    <Route path="/:page/:subpage" component={Navbar} />
-                  </div>
-                ) : (
-                  ""
-                )}
-              </Link>
-              <Link
-                className={`${styles.menuItem} ${
-                  curPath === "career" ? styles.active : ""
-                }`}
-                to="/career"
-              >
-                Career
-                {curPath === "career" ? (
-                  <div className={styles.mobileMenu}>
-                    <Route path="/:page/:subpage" component={Navbar} />
-                  </div>
-                ) : (
-                  ""
-                )}
-              </Link>
-              <a
-                className={styles.menuItem}
-                href="http://research.sualab.com/"
-                target="_blank"
-              >
-                Blog
-              </a>
-              <Link
-                className={`${styles.menuItem} ${
-                  curPath === "contact" ? styles.active : ""
-                }`}
-                to="/contact"
-              >
-                Contact
-                {curPath === "contact" ? (
-                  <div className={styles.mobileMenu}>
-                    <Route path="/:page/:subpage" component={Navbar} />
-                  </div>
-                ) : (
-                  ""
-                )}
-              </Link>
-              <Link
-                className={styles.menuItem}
-                to={localeBtnPath}
-                onClick={changeLocale}
-              >
-                <span
-                  className={`${locale === "ko" ? styles.activeLocale : ""}`}
-                >
-                  KO{" "}
-                </span>
-                |
-                <span
-                  className={`${locale === "en" ? styles.activeLocale : ""}`}
-                >
-                  {" "}
-                  EN
-                </span>
-              </Link>
+              <div className={styles.menu}>
+                <div className={styles.partners}>
+                  <a href="http://partners.sualab.com" target="_blank">PARTNERS.SUALAB.COM</a>
+                </div>
+                <div>
+                  <Link
+                    className={`${styles.menuItem} ${
+                      curPath === "company" ? styles.active : ""
+                    }`}
+                    to="/company"
+                  >
+                    Company
+                    {curPath === "company" ? (
+                      <div className={styles.mobileMenu}>
+                        <Route path="/:page/:subpage" component={Navbar} />
+                      </div>
+                    ) : (
+                      ""
+                    )}
+                  </Link>
+                  <Link
+                    className={`${styles.menuItem} ${
+                      curPath === "product" ? styles.active : ""
+                    }`}
+                    to="/product"
+                  >
+                    Product
+                    {curPath === "product" ? (
+                      <div className={styles.mobileMenu}>
+                        <Route path="/:page/:subpage" component={Navbar} />
+                      </div>
+                    ) : (
+                      ""
+                    )}
+                  </Link>
+                  <Link
+                    className={`${styles.menuItem} ${
+                      curPath === "news" ? styles.active : ""
+                    }`}
+                    to="/news"
+                  >
+                    News
+                    {curPath === "news" ? (
+                      <div className={styles.mobileMenu}>
+                        <Route path="/:page/:subpage" component={Navbar} />
+                      </div>
+                    ) : (
+                      ""
+                    )}
+                  </Link>
+                  <Link
+                    className={`${styles.menuItem} ${
+                      curPath === "career" ? styles.active : ""
+                    }`}
+                    to="/career"
+                  >
+                    Career
+                    {curPath === "career" ? (
+                      <div className={styles.mobileMenu}>
+                        <Route path="/:page/:subpage" component={Navbar} />
+                      </div>
+                    ) : (
+                      ""
+                    )}
+                  </Link>
+                  <a
+                    className={styles.menuItem}
+                    href="http://research.sualab.com/"
+                    target="_blank"
+                  >
+                    Blog
+                  </a>
+                  <Link
+                    className={`${styles.menuItem} ${
+                      curPath === "contact" ? styles.active : ""
+                    }`}
+                    to="/contact"
+                  >
+                    Contact
+                    {curPath === "contact" ? (
+                      <div className={styles.mobileMenu}>
+                        <Route path="/:page/:subpage" component={Navbar} />
+                      </div>
+                    ) : (
+                      ""
+                    )}
+                  </Link>
+                  <Link
+                    className={styles.menuItem}
+                    to={localeBtnPath}
+                    onClick={changeLocale}
+                  >
+                    <span
+                      className={`${
+                        locale === "ko" ? styles.activeLocale : ""
+                      }`}
+                    >
+                      KO{" "}
+                    </span>
+                    |
+                    <span
+                      className={`${
+                        locale === "en" ? styles.activeLocale : ""
+                      }`}
+                    >
+                      {" "}
+                      EN
+                    </span>
+                  </Link>
+                </div>
+              </div>
             </div>
 
             <div className={styles.mobileMenu}>
@@ -229,7 +240,7 @@ class Header extends React.Component {
         <div
           className={styles.paddingForTitleSection}
           style={{
-            paddingTop: paddingHeightForBlank,
+            paddingTop: paddingHeightForBlank
           }}
         />
       </div>
@@ -245,13 +256,13 @@ class Header extends React.Component {
 
   changeVisible(isVisible) {
     this.setState({
-      isVisible: isVisible,
+      isVisible: isVisible
     });
   }
 }
 
 Header.contextTypes = {
-  changeLocale: PropTypes.func,
+  changeLocale: PropTypes.func
 };
 
 export default injectIntl(Header);
