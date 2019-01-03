@@ -95,7 +95,12 @@ class Header extends React.Component {
             >
               <div className={styles.menu}>
                 <div className={styles.partners}>
-                  <a href="http://partners.sualab.com" target="_blank">PARTNERS.SUALAB.COM</a>
+                  <a href="http://partners.sualab.com" target="_blank">
+                    <img 
+                      src="https://d2ivzy5c3eic08.cloudfront.net/mainPage/partners.png" 
+                      alt="partners"
+                    />
+                  </a>
                 </div>
                 <div>
                   <Link
@@ -202,6 +207,14 @@ class Header extends React.Component {
                       EN
                     </span>
                   </Link>
+                </div>
+                <div className={styles.mobilePartners}>
+                  <a href="http://partners.sualab.com" target="_blank">
+                    <img 
+                      src="https://d2ivzy5c3eic08.cloudfront.net/mainPage/partners.png" 
+                      alt="partners"
+                    />
+                  </a>
                 </div>
               </div>
             </div>

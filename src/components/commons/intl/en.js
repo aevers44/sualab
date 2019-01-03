@@ -6,7 +6,7 @@ export default {
   "NAVBAR.career.recruit": `Hiring Process`,
   "NAVBAR.career.open_position": `Open Positions`,
 
-  "FOOTER.sualabInfo": `Business Registration Number: 220-88-55558\nCEO: Kiyoung Song\nAddress: 6F Majestar Tower2, Seochodaero 38gil 12 Seocho-gu, Seoul 06655, Korea\nGeneral Inquiry: 02-6264-0366\nSales Inquiry: 02-6264-0362\nCopyright ⓒSualab. All Rights Reserved.`,
+  "FOOTER.sualabInfo": `Business Registration Number: 220-88-55558\nCEO: Kiyoung Song\nAddress: 6F Majestar Tower2, Seochodaero 38gil 12 Seocho-gu, Seoul 06655, Korea\nGeneral Inquiry : +82-2-6264-0366\nSales Inquiry : +82-2-6264-0362\nCopyright ⓒSualab. All Rights Reserved.`,
   "FOOTER.privateTerms": `Privacy Policy`,
 
   "MAIN.FIRST.subTitle": `SUALAB believes that artificial intelligence can contribute to the world\nby automating tasks that have required human effort.`,

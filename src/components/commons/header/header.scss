@@ -92,18 +92,32 @@ $mobile-header-height: 75px;
 }
 
 .partners {
-  font-size: 10px;
-  color: #57C1B3;
+  padding: 8px 16px;
   text-align: right;
-  padding: 16px;
   a {
-    padding: 4px 8px;
-    border-radius: 4px;
-    border: 1px solid #57C1B3;
     cursor: pointer;
+  }
+  img {
+    width: 174px;
+
   }
   @media (max-width: 768px) {
     text-align: left;
+    display: none;
+  }
+}
+.mobilePartners {
+  display: none;
+  padding: 10px 16px;
+  a {
+    cursor: pointer;
+  }
+  img {
+    width: 174px;
+  }
+  @media (max-width: 768px) {
+    text-align: left;
+    display: block;
   }
 }
 

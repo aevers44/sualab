@@ -49,7 +49,7 @@ class InfoBar extends React.PureComponent {
       <section className={styles.barWrapper}>
         <div></div>
         <div className={styles.message}>
-          Cookies are required to provide our sevices, By using our website you agree to the use of cookies. 
+          Cookies are required to provide our services. By using our website you agree to the use of cookies. 
           Find more information and details our <span className={styles.policy} onClick={this.onShowPolicy}>Privacy Policy</span>
         </div>
         <div className={styles.close} onClick={this.onClosePopup}>
