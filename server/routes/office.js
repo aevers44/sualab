@@ -9,7 +9,7 @@ router.get("/", (req, res) => {
   let result;
 
   db.getConnection((err, conn) => {
-    conn.query("SELECT * FROM global_office order by company", (err, rows) => {
+    conn.query("SELECT * FROM global_office order by priority, company", (err, rows) => {
       conn.release();
       if (err) {
         console.error(err);

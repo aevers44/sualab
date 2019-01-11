@@ -2446,6 +2446,22 @@
                 "editview": {
                     "show": true
                 }
+            },
+            {
+                "name": "priority",
+                "verbose": "priority",
+                "control": {
+                    "text": true
+                },
+                "type": "int(11)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
             }
         ],
         "mainview": {
