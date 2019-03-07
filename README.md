@@ -1,4 +1,4 @@
-#SUALAB 개발 가이드
+# SUALAB 개발 가이드
 
 프로젝트는 서버와 클라이언트 하나의 Repository에서 개발되었습니다.
 
@@ -8,7 +8,7 @@
 
 
 
-##기본 개발환경 셋팅
+## 기본 개발환경 셋팅
 
 개발환경에 기본적으로 `node.js` 와 `create-react-app` 이 설치되어 있어야 합니다.
 
@@ -28,21 +28,21 @@ npm i -g create-react-app
 
 
 
-##Project Setup
+## Project Setup
 
-####git 에서 프로젝트 다운로드
+#### git 에서 프로젝트 다운로드
 
 ```
 git clone https://github.com/sualab01/sualab-renew.git
 ```
 
-####Dependency 설치
+#### Dependency 설치
 
 ```
 npm install
 ```
 
-####프로젝트 최상위 폴더에 .env 파일 생성
+#### 프로젝트 최상위 폴더에 .env 파일 생성
 
 아래 내용 입력 후 저장
 
@@ -63,7 +63,7 @@ DB_DEV_DATABASE=sualab_dev
 DB_DEV_PORT=3306
 ```
 
-####custom.json 파일 생성
+#### custom.json 파일 생성
 
 - /config 폴더 안에 `custom.json` 파일을 생성합니다.
 - `custom.json` 파일은 `express admin` 의 custom action에 대해 정의해놓은 파일의 경로를 설정하는 파일입니다.
@@ -117,7 +117,7 @@ npm run build:server
 
 
 
-##프로젝트 폴더 설명
+## 프로젝트 폴더 설명
 
 ```
 /admin
@@ -206,7 +206,7 @@ components 폴더 안에 commons 와 popup 폴더를 제외하고 각각 하나�
 
 
 
-##프로젝트 배포
+## 프로젝트 배포
 
 #### 프로젝트 빌드
 
