@@ -5,13 +5,13 @@ import styles from "./navbar.scss";
 
 const marginList = {
   ko: {
-    company: 393,
+    company: 453,
     product: 160,
     news: 207,
     career: 150,
   },
   en: {
-    company: 393,
+    company: 453,
     product: 119,
     news: 207,
     career: 70,
@@ -22,7 +22,7 @@ const makeLinks = (curPath, subPath, intl) => {
   const linkItem = {
     company: [
       { name: "About Us", link: "about-us" },
-      { name: "People", link: "people" },
+      // { name: "People", link: "people" },
     ],
     product: [
       { name: "SuaKIT", link: "suakit" },
