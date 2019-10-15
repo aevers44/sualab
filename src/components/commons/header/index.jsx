@@ -148,21 +148,13 @@ class Header extends React.Component {
                       ""
                     )}
                   </Link>
-                  <Link
-                    className={`${styles.menuItem} ${
-                      curPath === "career" ? styles.active : ""
-                    }`}
-                    to="/career"
+				  <a
+                    className={styles.menuItem}
+                    href="http://career.sualab.com/"
+                    target="_blank"
                   >
                     Career
-                    {curPath === "career" ? (
-                      <div className={styles.mobileMenu}>
-                        <Route path="/:page/:subpage" component={Navbar} />
-                      </div>
-                    ) : (
-                      ""
-                    )}
-                  </Link>
+                  </a>
                   <a
                     className={styles.menuItem}
                     href="http://research.sualab.com/"
