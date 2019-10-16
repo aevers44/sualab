@@ -69,7 +69,7 @@ class NewPopup extends React.PureComponent {
     
         return (
             this.state.show ? 
-            <div className={styles.popupWrapper} style={divStyle} onClick={this.onClickPopup}>
+            <a className={styles.popupWrapper} style={divStyle} href={url} target="_blank" >
                 <div className={styles.checkboxStyle}>
                     <input type="checkbox" onChange={this.onDoNotShowToday}/>
                     <label>오늘 하루 더이상 보지 않겠습니다</label>
@@ -77,7 +77,7 @@ class NewPopup extends React.PureComponent {
                         <Icon icon={cross}/>
                     </div>
                 </div>
-            </div> : <div></div>
+            </a> : <div></div>
         )
     }
 }
