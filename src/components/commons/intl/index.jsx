@@ -15,7 +15,7 @@ const setLangCookie = (value, exp) => {
 }
 
 const getLangCookie = () => {
-    const value = document.cookie.match('(^|;) ?lnag=([^;]*)(;|$)');
+    const value = document.cookie.match('(^|;) ?lang=([^;]*)(;|$)');
     return value? value[2] : null;
 }
 
