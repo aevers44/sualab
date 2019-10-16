@@ -60,7 +60,11 @@ class NewPopup extends React.PureComponent {
 
     render() { 
         const {image, width, height, url, lang} = this.props;
-		const linkBoxStyle = `linkBoxStyle_${lang}`;
+		const aaa = styles.linkBoxStyle_ko;
+		
+		if(`${lang}` == "en")
+			linkBoxStyle = styles.linkBoxStyle_en;
+		
         const divStyle = { 
             height,
             width,
