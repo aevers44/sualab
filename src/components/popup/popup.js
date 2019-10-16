@@ -70,7 +70,7 @@ class NewPopup extends React.PureComponent {
         return (
             this.state.show ? 
             <a className={styles.popupWrapper} style={divStyle} href={url} target="_blank" >
-                <div className={styles.checkboxStyle}>
+                <div className={styles.checkboxStyle} onClick="return false;">
                     <input type="checkbox" onChange={this.onDoNotShowToday}/>
                     <label>오늘 하루 더이상 보지 않겠습니다</label>
                     <div className={styles.closeBtn} onClick={this.onClosePopup}>
