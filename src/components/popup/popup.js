@@ -24,6 +24,7 @@ class NewPopup extends React.PureComponent {
         }
         this.onDoNotShowToday = this.onDoNotShowToday.bind(this);
         this.onClosePopup = this.onClosePopup.bind(this);
+		this.onClickPopup = this.onClickPopup.bind(this);
     }
 
     componentWillMount(){
@@ -51,11 +52,16 @@ class NewPopup extends React.PureComponent {
             show: false
         })
     }
+	
+	onClickPopup(){
+		
+		window.open(`${this.props.url}`, "_blank");
+	}
 
     render() { 
         const {image, width, height, url} = this.props;
 
-        const divStyle = {
+        const divStyle = { 
             height,
             width,
             backgroundImage: `url(${image})`,
@@ -63,7 +69,7 @@ class NewPopup extends React.PureComponent {
     
         return (
             this.state.show ? 
-            <div className={styles.popupWrapper} style={divStyle}>
+            <div className={styles.popupWrapper} style={divStyle} onClick={this.onClickPopup}>
                 <div className={styles.checkboxStyle}>
                     <input type="checkbox" onChange={this.onDoNotShowToday}/>
                     <label>오늘 하루 더이상 보지 않겠습니다</label>
