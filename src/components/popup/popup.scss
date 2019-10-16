@@ -6,7 +6,36 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center bottom;
-	cursor:pointer;
+}
+
+.popupWrapper {
+    position: absolute;
+    z-index: 100;
+    top: 100px;
+    right: 100px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center bottom;
+}
+
+.linkBoxStyle_en {
+    position: absolute;
+    z-index: 100;
+    top: 460px;
+    right: 112px;
+    width: 248px;
+	height: 20px;
+	background:green;
+}
+
+.linkBoxStyle_ko {
+    position: absolute;
+    z-index: 100;
+	right: 32px;
+    top: 443px;
+    width: 284px;
+	height: 23px;
+	background:green;
 }
 
 .checkboxStyle {

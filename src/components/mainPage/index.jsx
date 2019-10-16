@@ -24,7 +24,7 @@ class MainPage extends React.PureComponent {
 
   renderPopup() {
     return this.state.popups.map((popup,idx) => 
-    <Popup key={idx} popupId={popup.id} image={popup.image} width={popup.width} height={popup.height} url={popup.url}/>)
+    <Popup key={idx} popupId={popup.id} image={popup.image} width={popup.width} height={popup.height} url={popup.url} lang={popup.lang}/>)
   }
 
   render () {

@@ -7,12 +7,28 @@ import ko from "react-intl/locale-data/ko";
 
 import locale from "./locale";
 
+
+const setLangCookie = (value, exp) => {
+    const date = new Date();
+    date.setTime(date.getTime() + exp*24*60*60*1000);
+    document.cookie = 'lang=' + value + ';expires=' + date.toUTCString() + ';path=/';
+}
+
+const getLangCookie = () => {
+    const value = document.cookie.match('(^|;) ?lnag=([^;]*)(;|$)');
+    return value? value[2] : null;
+}
+
 addLocaleData([...en, ...ko]);
 let defaultLang = navigator.language || navigator.userLanguage || navigator.languages[0];
 defaultLang = defaultLang.split("-")[0];
 if (defaultLang !== "ko") {
   defaultLang = "en";
 }
+
+let cookieLang = getLangCookie();
+if(cookieLang != null)
+	defaultLang = cookieLang;
 
 class MyIntlProvider extends React.Component {
   getChildContext() {
@@ -48,10 +64,12 @@ class MyIntlProvider extends React.Component {
     const { currentLang } = this.state;
 
     if (currentLang !== "ko") {
+	  setLangCookie("ko", 1);
       this.setState({
         currentLang: "ko",
       });
     } else {
+	  setLangCookie("en", 1);
       this.setState({
         currentLang: "en",
       });

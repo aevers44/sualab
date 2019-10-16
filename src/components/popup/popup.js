@@ -59,17 +59,19 @@ class NewPopup extends React.PureComponent {
 	}
 
     render() { 
-        const {image, width, height, url} = this.props;
-
+        const {image, width, height, url, lang} = this.props;
+		const linkBoxStyle = `linkBoxStyle_${lang}`;
         const divStyle = { 
             height,
             width,
             backgroundImage: `url(${image})`,
-        } 
+        }
     
         return (
             this.state.show ? 
-            <a className={styles.popupWrapper} style={divStyle} href={url} target="_blank" >
+            <div className={styles.popupWrapper} style={divStyle}>
+				<a className={linkBoxStyle} href={url} target="_blank" >
+				</a>
                 <div className={styles.checkboxStyle}>
                     <input type="checkbox" onChange={this.onDoNotShowToday}/>
                     <label>오늘 하루 더이상 보지 않겠습니다</label>
@@ -77,7 +79,7 @@ class NewPopup extends React.PureComponent {
                         <Icon icon={cross}/>
                     </div>
                 </div>
-            </a> : <div></div>
+            </div> : <div></div>
         )
     }
 }
