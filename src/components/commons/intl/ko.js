@@ -5,7 +5,7 @@ export default {
   "NAVBAR.career.recruit": `채용 절차`,
   "NAVBAR.career.open_position": `진행중인 채용공고`,
 
-  "FOOTER.sualabInfo": `사업자등록번호 : 220-88-55558\n일반문의 : 02-6264-0366\n영업문의 : 02-6264-0362\n대표이사 : 송기영\n주소 : 서울시 서초구 서초대로 38길 12 마제스타시티 타워2 6층\nCopyright ⓒSualab. All Rights Reserved.`,
+  "FOOTER.sualabInfo": `사업자등록번호 : 220-88-55558\n일반문의 : 02-6264-0366\n영업문의 : 02-6264-0362\n대표이사 : 문응진\n주소 : 서울시 서초구 서초대로 38길 12 마제스타시티 타워2 6층\nCopyright ⓒSualab. All Rights Reserved.`,
   "FOOTER.privateTerms": `개인정보처리방침`,
 
   "MAIN.FIRST.subTitle": `SUALAB은 인공지능을 기반으로 기계 대신 사람이 하던 일을 자동화함으로써\n세상에 기여할 수 있다고 믿습니다.`,
